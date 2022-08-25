@@ -8,12 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestbedDAQ.UseClass;
 
 namespace TestbedDAQ.Forms
 {
     public partial class frmMain : Form
     {
-        private bool Check = false;
+        private bool _Check = false;
+        private Form _ManuForm = new Form();
+        private TestbedAPI _API = new TestbedAPI();
 
         private Motor _SpindleX;
         private Motor _SpindleY;
@@ -39,21 +42,57 @@ namespace TestbedDAQ.Forms
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            cmbCompany.SelectedIndex = 0;
-            pnlView.Controls.Clear();
-            pnlView.Dock = DockStyle.Fill;
+            Menu_Click(lblMonitor, null);
+        }
 
-            _SpindleX = new Motor();
+        private void Menu_Click(object sender, EventArgs e)
+        {
 
+            switch (((Control)sender).Name)
+            {
+                
+                case "lblMonitor":
+                    
+                    _ManuForm.Close();
+                    pnlView.Controls.Clear();
 
-            frmMonitor frm = new frmMonitor();
-            frm.Owner = this;
-            frm.TopLevel = false;
+                    
+                    frmMonitor MonitorForm = new frmMonitor();
+                    
+                    MonitorForm.Owner = this;
+                    MonitorForm.TopLevel = false;
+                    MonitorForm.Location = new Point(0, 0);
 
-            pnlView.Controls.Clear();
-            pnlView.Controls.Add(frm);
+                    _ManuForm = MonitorForm;
 
-            frm.Show();
+                    pnlView.Controls.Add(_ManuForm);
+                    _ManuForm.Show();
+
+                    _API.SelectScreen(lblMonitor, lblManager, true);
+
+                    break;
+
+                case "lblManager":
+                
+                    _ManuForm.Close();
+                    pnlView.Controls.Clear();
+
+                    frmMCManager ManagerForm = new frmMCManager();
+
+                    ManagerForm.Owner = this;
+                    ManagerForm.TopLevel = false;
+                    ManagerForm.Location = new Point(0, 0);
+
+                    _ManuForm = ManagerForm;
+
+                    pnlView.Controls.Add(_ManuForm);
+                    _ManuForm.Show();
+
+                    _API.SelectScreen(lblMonitor, lblManager, false);
+
+                    break;
+
+            }
         }
 
         private void InitInfo()
@@ -80,57 +119,6 @@ namespace TestbedDAQ.Forms
             // DB 쿼리
             // list에 Add
         }
-
-
-        private void lblMonitor_Click(object sender, EventArgs e)
-        {
-            frmMonitor frm = new frmMonitor();
-
-            frm.Owner = this;
-            frm.TopLevel = false;
-
-            pnlView.Controls.Clear();
-            pnlView.Controls.Add(frm);
-
-            frm.Show();
-        }
-
-        private void lblMCManager_Click(object sender, EventArgs e)
-        {
-            frmMCManager frm = new frmMCManager();
-
-            frm.Owner = this;
-            frm.TopLevel = false;
-            frm.MachineInformationList = MachineInformationList;
-            
-            //MachineInformationList = frm.MachineInformationList;
-            
-
-            pnlView.Controls.Clear();
-            pnlView.Controls.Add(frm);
-
-            frm.Show();
-        }
-
-        public void label3_Click(object sender, EventArgs e)
-        {
-            if(Check)
-            {
-                pnlView.Dock = DockStyle.Fill;
-                
-                Check = true;
-            }
-            else
-            {
-                pnlView.Dock = DockStyle.None;
-                pnlView.Location = new Point(0, 0);
-                pnlView.Size = new Size(1920, 1080);
-
-                Check = true;
-            }
-            
-        }
-
 
     }
 }
