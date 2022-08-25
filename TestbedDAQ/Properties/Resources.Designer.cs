@@ -73,6 +73,56 @@ namespace TestbedDAQ.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap all_body {
+            get {
+                object obj = ResourceManager.GetObject("all_body", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap all_icon01 {
+            get {
+                object obj = ResourceManager.GetObject("all_icon01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap all_icon02 {
+            get {
+                object obj = ResourceManager.GetObject("all_icon02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap all_item {
+            get {
+                object obj = ResourceManager.GetObject("all_item", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg_ComboBox {
+            get {
+                object obj = ResourceManager.GetObject("bg_ComboBox", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap body_bottom01 {
             get {
                 object obj = ResourceManager.GetObject("body_bottom01", resourceCulture);
@@ -106,6 +156,16 @@ namespace TestbedDAQ.Properties {
         internal static System.Drawing.Bitmap button_allimmore {
             get {
                 object obj = ResourceManager.GetObject("button_allimmore", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap button_close {
+            get {
+                object obj = ResourceManager.GetObject("button_close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

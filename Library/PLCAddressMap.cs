@@ -8,6 +8,7 @@ namespace Library
 {
     public class PLCAddressMap : IPLCAddress
     {
+        private int _Idx;
         // Bit
         private int _AutoStartAddress;      // 제품 가공 시작
 

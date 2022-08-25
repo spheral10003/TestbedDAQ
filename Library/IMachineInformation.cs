@@ -9,7 +9,7 @@ namespace Library
     internal interface IMachineInformation
     {
         /// <summary>
-        /// 설비 명칭
+        /// 설비 명칭 (김명규 _ 2022.08.25 사유: )
         /// </summary>
         string MachineName { get; set; }
         /// <summary>

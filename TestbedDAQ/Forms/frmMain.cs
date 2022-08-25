@@ -35,13 +35,16 @@ namespace TestbedDAQ.Forms
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
+            frmCombo Combo = new frmCombo();
+
+            Combo.Owner = this;
+            Combo.TopLevel = false;
+            Combo.Location = new Point(364, 19);
+            this.Controls.Add(Combo);
+            Combo.Show();
+
             Menu_Click(lblMonitor, null);
         }
 
@@ -120,5 +123,9 @@ namespace TestbedDAQ.Forms
             // list에 Add
         }
 
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
