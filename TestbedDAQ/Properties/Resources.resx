@@ -118,17 +118,89 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="body_bottom01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\body_bottom01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Button2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Button2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="body_bottom02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\body_bottom02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RadioOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RadioOff.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="body_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\body_top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RadioOn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RadioOn.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_allimmore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_allimmore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_ing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_ing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="button_warring" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_warring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="container" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\container.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="container_none_content" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\container_none_content.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="container_warning01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\container_warning01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="container_warning02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\container_warning02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="design_sian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\design_sian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="full_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\full_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="full_bg01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\full_bg01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="full_bg02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\full_bg02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_Foundation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_Foundation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_notice_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_notice_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_notice_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_notice_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_side" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_side.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_top" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_top.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_wifi_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_wifi_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_wifi_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_wifi_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ssss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ssss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tab01_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tab01_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tab01_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tab01_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tab02_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tab02_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tab02_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tab02_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title_bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title_bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_46px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\46px.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

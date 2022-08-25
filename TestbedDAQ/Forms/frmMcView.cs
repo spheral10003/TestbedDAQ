@@ -27,7 +27,7 @@ namespace TestbedDAQ.Forms
             set
             {
                 _SpindleSpeed = value;
-                lblSpindleSpd.Text = value;
+                //lblSpindleSpd.Text = value;
             }
         }
 
@@ -38,7 +38,7 @@ namespace TestbedDAQ.Forms
             set
             { 
                 _SpindleVolt = value;
-                lblSpindleVolt.Text = value;
+                //lblSpindleVolt.Text = value;
             }
         }
 
@@ -48,7 +48,7 @@ namespace TestbedDAQ.Forms
             set
             {
                 _SpindleCurrent = value;
-                lblSpindleCurrent.Text = value;
+                //lblSpindleCurrent.Text = value;
             }
              
         }
@@ -58,7 +58,7 @@ namespace TestbedDAQ.Forms
             set
             {
                 _SpindleCuttentLoad = value;
-                lblSpindleCurrentLoad.Text = value;
+                //lblSpindleCurrentLoad.Text = value;
             }
         }
         public string SpindlePeakLoad 
@@ -67,7 +67,7 @@ namespace TestbedDAQ.Forms
             set
             {
                 _SpindlePeakLoad = value;
-                lblSpindlePeakLoad.Text = value;
+                //lblSpindlePeakLoad.Text = value;
             }
         }
         public string SpindleServoPos 
@@ -76,7 +76,7 @@ namespace TestbedDAQ.Forms
             set
             {
                 _SpindleServoPos = value;
-                lblSpindleServoPos.Text = value;
+                //lblSpindleServoPos.Text = value;
             }
         }
         public string BedServoPos 
@@ -85,7 +85,7 @@ namespace TestbedDAQ.Forms
             set
             { 
                 _BedServoPos = value;
-                lblBedServoPos.Text = value;    
+                //lblBedServoPos.Text = value;    
             }
         }
 
@@ -120,19 +120,19 @@ namespace TestbedDAQ.Forms
 
         private void InitColtrol()
         {
-            lblSpindleSpd.Text = string.Empty;
-            lblSpindleVolt.Text = string.Empty;
-            lblSpindleCurrent.Text = string.Empty;
-            lblSpindleCurrentLoad.Text = string.Empty;
-            lblSpindlePeakLoad.Text = string.Empty;
-            lblSpindleServoPos.Text = string.Empty;
-            lblBedServoPos.Text = string.Empty;
-            lblAlarmMsg.Text = string.Empty;    
+            //lblSpindleSpd.Text = string.Empty;
+            //lblSpindleVolt.Text = string.Empty;
+            //lblSpindleCurrent.Text = string.Empty;
+            //lblSpindleCurrentLoad.Text = string.Empty;
+            //lblSpindlePeakLoad.Text = string.Empty;
+            //lblSpindleServoPos.Text = string.Empty;
+            //lblBedServoPos.Text = string.Empty;
+            //lblAlarmMsg.Text = string.Empty;    
 
-            _UseAPI.MachineActiveChange(btnActive, false);
-            _UseAPI.NetworkChange(lblPlcConn, false);
-            _UseAPI.AlarmBackColorChange(lblAlarmFlag, false);
-            _UseAPI.AlarmBackColorChange(lblAlarmMsg, false);
+            //_UseAPI.MachineActiveChange(btnActive, false);
+            //_UseAPI.NetworkChange(lblPlcConn, false);
+            //_UseAPI.AlarmBackColorChange(lblAlarmFlag, false);
+            //_UseAPI.AlarmBackColorChange(lblAlarmMsg, false);
 
         }
 

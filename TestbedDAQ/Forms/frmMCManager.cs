@@ -27,9 +27,9 @@ namespace TestbedDAQ.Forms
         {
             frmMain frm = (frmMain)this.Owner;
 
-            frm.MachineInformationList = _MachineInformation;
+            //frm.MachineInformationList = _MachineInformation;
 
-            frm.label3_Click(null, null);
+            //frm.label3_Click(null, null);
         }
     }
 }

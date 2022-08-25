@@ -28,402 +28,325 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMCName = new System.Windows.Forms.Label();
-            this.picMcIcon = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lblBedServoPos = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblSpindleServoPos = new System.Windows.Forms.Label();
-            this.Label = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblSpindlePeakLoad = new System.Windows.Forms.Label();
-            this.lblSpindleCurrentLoad = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblSpindleCurrent = new System.Windows.Forms.Label();
-            this.lblSpindleVolt = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblSpindleSpd = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnActive = new System.Windows.Forms.Button();
-            this.lblAlarmFlag = new System.Windows.Forms.Label();
-            this.lblPlcConn = new System.Windows.Forms.Label();
-            this.lblAlarmMsg = new System.Windows.Forms.Label();
+            this.lblSpindleServoYPosition = new System.Windows.Forms.Label();
+            this.lblSpindleServoXPosition = new System.Windows.Forms.Label();
             this.lblMore = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picMcIcon)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.lblGuideServoPosition = new System.Windows.Forms.Label();
+            this.lblBedServoPosition = new System.Windows.Forms.Label();
+            this.lblSpindleXLoad = new System.Windows.Forms.Label();
+            this.lblSpindleXPeakLoad = new System.Windows.Forms.Label();
+            this.lblSpindleYLoad = new System.Windows.Forms.Label();
+            this.lblSpindleYPeakLoad = new System.Windows.Forms.Label();
+            this.lblSpindleYCurrent = new System.Windows.Forms.Label();
+            this.lblSpindleXCurrent = new System.Windows.Forms.Label();
+            this.lblSpindleYRpm = new System.Windows.Forms.Label();
+            this.lblSpindleXRpm = new System.Windows.Forms.Label();
+            this.lblStopTime = new System.Windows.Forms.Label();
+            this.lblRunTime = new System.Windows.Forms.Label();
+            this.lblMCName = new System.Windows.Forms.Label();
+            this.lblAlarmMessage = new System.Windows.Forms.Label();
+            this.lblAlarmNotice = new System.Windows.Forms.Label();
+            this.lblMCIcon = new System.Windows.Forms.Label();
+            this.lblNetworkStatus = new System.Windows.Forms.Label();
+            this.lblRun = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // lblMCName
+            // lblSpindleServoYPosition
             // 
-            this.lblMCName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.lblMCName.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblMCName.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblMCName.ForeColor = System.Drawing.Color.White;
-            this.lblMCName.Location = new System.Drawing.Point(0, 0);
-            this.lblMCName.Name = "lblMCName";
-            this.lblMCName.Size = new System.Drawing.Size(382, 37);
-            this.lblMCName.TabIndex = 1;
-            this.lblMCName.Text = "   | STC-34";
-            this.lblMCName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblSpindleServoYPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleServoYPosition.Font = new System.Drawing.Font("Play", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleServoYPosition.ForeColor = System.Drawing.Color.White;
+            this.lblSpindleServoYPosition.Location = new System.Drawing.Point(162, 231);
+            this.lblSpindleServoYPosition.Name = "lblSpindleServoYPosition";
+            this.lblSpindleServoYPosition.Size = new System.Drawing.Size(88, 23);
+            this.lblSpindleServoYPosition.TabIndex = 43;
+            this.lblSpindleServoYPosition.Text = "15000";
+            this.lblSpindleServoYPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // picMcIcon
+            // lblSpindleServoXPosition
             // 
-            this.picMcIcon.Location = new System.Drawing.Point(12, 50);
-            this.picMcIcon.Name = "picMcIcon";
-            this.picMcIcon.Size = new System.Drawing.Size(135, 114);
-            this.picMcIcon.TabIndex = 2;
-            this.picMcIcon.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.lblBedServoPos);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.lblSpindleServoPos);
-            this.panel1.Controls.Add(this.Label);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.lblSpindlePeakLoad);
-            this.panel1.Controls.Add(this.lblSpindleCurrentLoad);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblSpindleCurrent);
-            this.panel1.Controls.Add(this.lblSpindleVolt);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lblSpindleSpd);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(153, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(216, 163);
-            this.panel1.TabIndex = 3;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(178, 133);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(29, 13);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "mm";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblBedServoPos
-            // 
-            this.lblBedServoPos.BackColor = System.Drawing.Color.Transparent;
-            this.lblBedServoPos.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblBedServoPos.ForeColor = System.Drawing.Color.White;
-            this.lblBedServoPos.Location = new System.Drawing.Point(110, 113);
-            this.lblBedServoPos.Name = "lblBedServoPos";
-            this.lblBedServoPos.Size = new System.Drawing.Size(76, 42);
-            this.lblBedServoPos.TabIndex = 16;
-            this.lblBedServoPos.Text = "500";
-            this.lblBedServoPos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(178, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 13);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "mm";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSpindleServoPos
-            // 
-            this.lblSpindleServoPos.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpindleServoPos.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSpindleServoPos.ForeColor = System.Drawing.Color.White;
-            this.lblSpindleServoPos.Location = new System.Drawing.Point(110, 80);
-            this.lblSpindleServoPos.Name = "lblSpindleServoPos";
-            this.lblSpindleServoPos.Size = new System.Drawing.Size(76, 42);
-            this.lblSpindleServoPos.TabIndex = 14;
-            this.lblSpindleServoPos.Text = "250";
-            this.lblSpindleServoPos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Label
-            // 
-            this.Label.AutoSize = true;
-            this.Label.BackColor = System.Drawing.Color.Transparent;
-            this.Label.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Label.ForeColor = System.Drawing.Color.White;
-            this.Label.Location = new System.Drawing.Point(3, 128);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(96, 19);
-            this.Label.TabIndex = 13;
-            this.Label.Text = "베드 위치";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("굴림", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(3, 95);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(96, 19);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "서보 위치";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(143, 62);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "%";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(194, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "%";
-            // 
-            // lblSpindlePeakLoad
-            // 
-            this.lblSpindlePeakLoad.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpindlePeakLoad.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSpindlePeakLoad.ForeColor = System.Drawing.Color.White;
-            this.lblSpindlePeakLoad.Location = new System.Drawing.Point(168, 58);
-            this.lblSpindlePeakLoad.Name = "lblSpindlePeakLoad";
-            this.lblSpindlePeakLoad.Size = new System.Drawing.Size(28, 17);
-            this.lblSpindlePeakLoad.TabIndex = 8;
-            this.lblSpindlePeakLoad.Text = "80";
-            this.lblSpindlePeakLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSpindleCurrentLoad
-            // 
-            this.lblSpindleCurrentLoad.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpindleCurrentLoad.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSpindleCurrentLoad.ForeColor = System.Drawing.Color.White;
-            this.lblSpindleCurrentLoad.Location = new System.Drawing.Point(104, 59);
-            this.lblSpindleCurrentLoad.Name = "lblSpindleCurrentLoad";
-            this.lblSpindleCurrentLoad.Size = new System.Drawing.Size(40, 16);
-            this.lblSpindleCurrentLoad.TabIndex = 7;
-            this.lblSpindleCurrentLoad.Text = "45";
-            this.lblSpindleCurrentLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(194, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(15, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "A";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(138, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "AC";
-            // 
-            // lblSpindleCurrent
-            // 
-            this.lblSpindleCurrent.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpindleCurrent.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSpindleCurrent.ForeColor = System.Drawing.Color.White;
-            this.lblSpindleCurrent.Location = new System.Drawing.Point(168, 38);
-            this.lblSpindleCurrent.Name = "lblSpindleCurrent";
-            this.lblSpindleCurrent.Size = new System.Drawing.Size(28, 17);
-            this.lblSpindleCurrent.TabIndex = 4;
-            this.lblSpindleCurrent.Text = "25";
-            this.lblSpindleCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSpindleVolt
-            // 
-            this.lblSpindleVolt.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpindleVolt.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSpindleVolt.ForeColor = System.Drawing.Color.White;
-            this.lblSpindleVolt.Location = new System.Drawing.Point(102, 39);
-            this.lblSpindleVolt.Name = "lblSpindleVolt";
-            this.lblSpindleVolt.Size = new System.Drawing.Size(40, 16);
-            this.lblSpindleVolt.TabIndex = 3;
-            this.lblSpindleVolt.Text = "220";
-            this.lblSpindleVolt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(174, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Rpm";
-            // 
-            // lblSpindleSpd
-            // 
-            this.lblSpindleSpd.BackColor = System.Drawing.Color.Transparent;
-            this.lblSpindleSpd.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSpindleSpd.ForeColor = System.Drawing.Color.White;
-            this.lblSpindleSpd.Location = new System.Drawing.Point(100, 0);
-            this.lblSpindleSpd.Name = "lblSpindleSpd";
-            this.lblSpindleSpd.Size = new System.Drawing.Size(76, 42);
-            this.lblSpindleSpd.TabIndex = 1;
-            this.lblSpindleSpd.Text = "4000";
-            this.lblSpindleSpd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Spindle";
-            // 
-            // btnActive
-            // 
-            this.btnActive.BackgroundImage = global::TestbedDAQ.Properties.Resources.Button1;
-            this.btnActive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnActive.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnActive.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnActive.ForeColor = System.Drawing.Color.White;
-            this.btnActive.Location = new System.Drawing.Point(12, 170);
-            this.btnActive.Name = "btnActive";
-            this.btnActive.Size = new System.Drawing.Size(135, 43);
-            this.btnActive.TabIndex = 4;
-            this.btnActive.Text = "가동";
-            this.btnActive.UseVisualStyleBackColor = true;
-            // 
-            // lblAlarmFlag
-            // 
-            this.lblAlarmFlag.BackColor = System.Drawing.Color.IndianRed;
-            this.lblAlarmFlag.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblAlarmFlag.ForeColor = System.Drawing.Color.White;
-            this.lblAlarmFlag.Location = new System.Drawing.Point(101, 226);
-            this.lblAlarmFlag.Name = "lblAlarmFlag";
-            this.lblAlarmFlag.Size = new System.Drawing.Size(76, 44);
-            this.lblAlarmFlag.TabIndex = 15;
-            this.lblAlarmFlag.Text = "알람";
-            this.lblAlarmFlag.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblPlcConn
-            // 
-            this.lblPlcConn.BackColor = System.Drawing.Color.Transparent;
-            this.lblPlcConn.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblPlcConn.ForeColor = System.Drawing.Color.White;
-            this.lblPlcConn.Image = global::TestbedDAQ.Properties.Resources.RadioOff;
-            this.lblPlcConn.Location = new System.Drawing.Point(12, 225);
-            this.lblPlcConn.Name = "lblPlcConn";
-            this.lblPlcConn.Size = new System.Drawing.Size(80, 46);
-            this.lblPlcConn.TabIndex = 16;
-            this.lblPlcConn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAlarmMsg
-            // 
-            this.lblAlarmMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(93)))));
-            this.lblAlarmMsg.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblAlarmMsg.ForeColor = System.Drawing.Color.White;
-            this.lblAlarmMsg.Location = new System.Drawing.Point(12, 284);
-            this.lblAlarmMsg.Name = "lblAlarmMsg";
-            this.lblAlarmMsg.Size = new System.Drawing.Size(357, 44);
-            this.lblAlarmMsg.TabIndex = 17;
-            this.lblAlarmMsg.Text = ".....";
-            this.lblAlarmMsg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSpindleServoXPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleServoXPosition.Font = new System.Drawing.Font("Play", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleServoXPosition.ForeColor = System.Drawing.Color.White;
+            this.lblSpindleServoXPosition.Location = new System.Drawing.Point(67, 231);
+            this.lblSpindleServoXPosition.Name = "lblSpindleServoXPosition";
+            this.lblSpindleServoXPosition.Size = new System.Drawing.Size(88, 23);
+            this.lblSpindleServoXPosition.TabIndex = 42;
+            this.lblSpindleServoXPosition.Text = "15000";
+            this.lblSpindleServoXPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblMore
             // 
-            this.lblMore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(65)))), ((int)(((byte)(85)))));
-            this.lblMore.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblMore.ForeColor = System.Drawing.Color.White;
-            this.lblMore.Location = new System.Drawing.Point(303, 0);
+            this.lblMore.BackColor = System.Drawing.Color.Transparent;
+            this.lblMore.Location = new System.Drawing.Point(248, 9);
             this.lblMore.Name = "lblMore";
-            this.lblMore.Size = new System.Drawing.Size(78, 37);
-            this.lblMore.TabIndex = 18;
-            this.lblMore.Text = "MORE";
-            this.lblMore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMore.Size = new System.Drawing.Size(52, 38);
+            this.lblMore.TabIndex = 41;
+            // 
+            // lblGuideServoPosition
+            // 
+            this.lblGuideServoPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblGuideServoPosition.Font = new System.Drawing.Font("Play", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGuideServoPosition.ForeColor = System.Drawing.Color.White;
+            this.lblGuideServoPosition.Location = new System.Drawing.Point(162, 306);
+            this.lblGuideServoPosition.Name = "lblGuideServoPosition";
+            this.lblGuideServoPosition.Size = new System.Drawing.Size(88, 23);
+            this.lblGuideServoPosition.TabIndex = 40;
+            this.lblGuideServoPosition.Text = "15000";
+            this.lblGuideServoPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblBedServoPosition
+            // 
+            this.lblBedServoPosition.BackColor = System.Drawing.Color.Transparent;
+            this.lblBedServoPosition.Font = new System.Drawing.Font("Play", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBedServoPosition.ForeColor = System.Drawing.Color.White;
+            this.lblBedServoPosition.Location = new System.Drawing.Point(67, 306);
+            this.lblBedServoPosition.Name = "lblBedServoPosition";
+            this.lblBedServoPosition.Size = new System.Drawing.Size(88, 23);
+            this.lblBedServoPosition.TabIndex = 39;
+            this.lblBedServoPosition.Text = "15000";
+            this.lblBedServoPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleXLoad
+            // 
+            this.lblSpindleXLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleXLoad.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleXLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.lblSpindleXLoad.Location = new System.Drawing.Point(77, 199);
+            this.lblSpindleXLoad.Name = "lblSpindleXLoad";
+            this.lblSpindleXLoad.Size = new System.Drawing.Size(52, 23);
+            this.lblSpindleXLoad.TabIndex = 38;
+            this.lblSpindleXLoad.Text = "50 /";
+            this.lblSpindleXLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleXPeakLoad
+            // 
+            this.lblSpindleXPeakLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleXPeakLoad.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleXPeakLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.lblSpindleXPeakLoad.Location = new System.Drawing.Point(117, 199);
+            this.lblSpindleXPeakLoad.Name = "lblSpindleXPeakLoad";
+            this.lblSpindleXPeakLoad.Size = new System.Drawing.Size(43, 23);
+            this.lblSpindleXPeakLoad.TabIndex = 37;
+            this.lblSpindleXPeakLoad.Text = "80";
+            this.lblSpindleXPeakLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleYLoad
+            // 
+            this.lblSpindleYLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleYLoad.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleYLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.lblSpindleYLoad.Location = new System.Drawing.Point(167, 199);
+            this.lblSpindleYLoad.Name = "lblSpindleYLoad";
+            this.lblSpindleYLoad.Size = new System.Drawing.Size(52, 23);
+            this.lblSpindleYLoad.TabIndex = 36;
+            this.lblSpindleYLoad.Text = "50 /";
+            this.lblSpindleYLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleYPeakLoad
+            // 
+            this.lblSpindleYPeakLoad.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleYPeakLoad.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleYPeakLoad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.lblSpindleYPeakLoad.Location = new System.Drawing.Point(207, 199);
+            this.lblSpindleYPeakLoad.Name = "lblSpindleYPeakLoad";
+            this.lblSpindleYPeakLoad.Size = new System.Drawing.Size(43, 23);
+            this.lblSpindleYPeakLoad.TabIndex = 35;
+            this.lblSpindleYPeakLoad.Text = "80";
+            this.lblSpindleYPeakLoad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleYCurrent
+            // 
+            this.lblSpindleYCurrent.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleYCurrent.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleYCurrent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(225)))), ((int)(((byte)(255)))));
+            this.lblSpindleYCurrent.Location = new System.Drawing.Point(170, 173);
+            this.lblSpindleYCurrent.Name = "lblSpindleYCurrent";
+            this.lblSpindleYCurrent.Size = new System.Drawing.Size(80, 23);
+            this.lblSpindleYCurrent.TabIndex = 34;
+            this.lblSpindleYCurrent.Text = "25";
+            this.lblSpindleYCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleXCurrent
+            // 
+            this.lblSpindleXCurrent.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleXCurrent.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleXCurrent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(225)))), ((int)(((byte)(255)))));
+            this.lblSpindleXCurrent.Location = new System.Drawing.Point(80, 173);
+            this.lblSpindleXCurrent.Name = "lblSpindleXCurrent";
+            this.lblSpindleXCurrent.Size = new System.Drawing.Size(80, 23);
+            this.lblSpindleXCurrent.TabIndex = 33;
+            this.lblSpindleXCurrent.Text = "20";
+            this.lblSpindleXCurrent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleYRpm
+            // 
+            this.lblSpindleYRpm.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleYRpm.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleYRpm.ForeColor = System.Drawing.Color.White;
+            this.lblSpindleYRpm.Location = new System.Drawing.Point(170, 147);
+            this.lblSpindleYRpm.Name = "lblSpindleYRpm";
+            this.lblSpindleYRpm.Size = new System.Drawing.Size(80, 23);
+            this.lblSpindleYRpm.TabIndex = 32;
+            this.lblSpindleYRpm.Text = "15000";
+            this.lblSpindleYRpm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblSpindleXRpm
+            // 
+            this.lblSpindleXRpm.BackColor = System.Drawing.Color.Transparent;
+            this.lblSpindleXRpm.Font = new System.Drawing.Font("Play", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpindleXRpm.ForeColor = System.Drawing.Color.White;
+            this.lblSpindleXRpm.Location = new System.Drawing.Point(80, 147);
+            this.lblSpindleXRpm.Name = "lblSpindleXRpm";
+            this.lblSpindleXRpm.Size = new System.Drawing.Size(80, 23);
+            this.lblSpindleXRpm.TabIndex = 31;
+            this.lblSpindleXRpm.Text = "15000";
+            this.lblSpindleXRpm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblStopTime
+            // 
+            this.lblStopTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblStopTime.Font = new System.Drawing.Font("Play", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStopTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(158)))), ((int)(((byte)(214)))));
+            this.lblStopTime.Location = new System.Drawing.Point(159, 404);
+            this.lblStopTime.Name = "lblStopTime";
+            this.lblStopTime.Size = new System.Drawing.Size(136, 23);
+            this.lblStopTime.TabIndex = 30;
+            this.lblStopTime.Text = "02:25:20";
+            this.lblStopTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblRunTime
+            // 
+            this.lblRunTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblRunTime.Font = new System.Drawing.Font("Play", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRunTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(255)))));
+            this.lblRunTime.Location = new System.Drawing.Point(19, 404);
+            this.lblRunTime.Name = "lblRunTime";
+            this.lblRunTime.Size = new System.Drawing.Size(136, 23);
+            this.lblRunTime.TabIndex = 29;
+            this.lblRunTime.Text = "02:25:20";
+            this.lblRunTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMCName
+            // 
+            this.lblMCName.BackColor = System.Drawing.Color.Transparent;
+            this.lblMCName.Font = new System.Drawing.Font("Play", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMCName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(203)))), ((int)(((byte)(255)))));
+            this.lblMCName.Location = new System.Drawing.Point(18, 9);
+            this.lblMCName.Name = "lblMCName";
+            this.lblMCName.Size = new System.Drawing.Size(227, 38);
+            this.lblMCName.TabIndex = 28;
+            this.lblMCName.Text = "STC-34";
+            this.lblMCName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAlarmMessage
+            // 
+            this.lblAlarmMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblAlarmMessage.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblAlarmMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(190)))), ((int)(((byte)(0)))));
+            this.lblAlarmMessage.Location = new System.Drawing.Point(63, 341);
+            this.lblAlarmMessage.Name = "lblAlarmMessage";
+            this.lblAlarmMessage.Size = new System.Drawing.Size(233, 50);
+            this.lblAlarmMessage.TabIndex = 27;
+            this.lblAlarmMessage.Text = "운전 준비 On 상태";
+            this.lblAlarmMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblAlarmNotice
+            // 
+            this.lblAlarmNotice.BackColor = System.Drawing.Color.Transparent;
+            this.lblAlarmNotice.Image = global::TestbedDAQ.Properties.Resources.icon_notice_on;
+            this.lblAlarmNotice.Location = new System.Drawing.Point(16, 341);
+            this.lblAlarmNotice.Name = "lblAlarmNotice";
+            this.lblAlarmNotice.Size = new System.Drawing.Size(55, 50);
+            this.lblAlarmNotice.TabIndex = 26;
+            // 
+            // lblMCIcon
+            // 
+            this.lblMCIcon.BackColor = System.Drawing.Color.Transparent;
+            this.lblMCIcon.Image = global::TestbedDAQ.Properties.Resources.icon_Foundation;
+            this.lblMCIcon.Location = new System.Drawing.Point(159, 64);
+            this.lblMCIcon.Name = "lblMCIcon";
+            this.lblMCIcon.Size = new System.Drawing.Size(137, 38);
+            this.lblMCIcon.TabIndex = 25;
+            // 
+            // lblNetworkStatus
+            // 
+            this.lblNetworkStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblNetworkStatus.Image = global::TestbedDAQ.Properties.Resources.icon_wifi_off;
+            this.lblNetworkStatus.Location = new System.Drawing.Point(108, 64);
+            this.lblNetworkStatus.Name = "lblNetworkStatus";
+            this.lblNetworkStatus.Size = new System.Drawing.Size(47, 38);
+            this.lblNetworkStatus.TabIndex = 24;
+            // 
+            // lblRun
+            // 
+            this.lblRun.BackColor = System.Drawing.Color.Transparent;
+            this.lblRun.Image = global::TestbedDAQ.Properties.Resources.button_ing;
+            this.lblRun.Location = new System.Drawing.Point(17, 64);
+            this.lblRun.Name = "lblRun";
+            this.lblRun.Size = new System.Drawing.Size(86, 38);
+            this.lblRun.TabIndex = 23;
             // 
             // frmMcView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(45)))), ((int)(((byte)(66)))));
-            this.ClientSize = new System.Drawing.Size(382, 341);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(22)))), ((int)(((byte)(45)))));
+            this.BackgroundImage = global::TestbedDAQ.Properties.Resources.container;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(312, 447);
+            this.Controls.Add(this.lblSpindleServoYPosition);
+            this.Controls.Add(this.lblSpindleServoXPosition);
             this.Controls.Add(this.lblMore);
-            this.Controls.Add(this.lblAlarmMsg);
-            this.Controls.Add(this.lblPlcConn);
-            this.Controls.Add(this.lblAlarmFlag);
-            this.Controls.Add(this.btnActive);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.picMcIcon);
+            this.Controls.Add(this.lblGuideServoPosition);
+            this.Controls.Add(this.lblBedServoPosition);
+            this.Controls.Add(this.lblSpindleXLoad);
+            this.Controls.Add(this.lblSpindleXPeakLoad);
+            this.Controls.Add(this.lblSpindleYLoad);
+            this.Controls.Add(this.lblSpindleYPeakLoad);
+            this.Controls.Add(this.lblSpindleYCurrent);
+            this.Controls.Add(this.lblSpindleXCurrent);
+            this.Controls.Add(this.lblSpindleYRpm);
+            this.Controls.Add(this.lblSpindleXRpm);
+            this.Controls.Add(this.lblStopTime);
+            this.Controls.Add(this.lblRunTime);
             this.Controls.Add(this.lblMCName);
+            this.Controls.Add(this.lblAlarmMessage);
+            this.Controls.Add(this.lblAlarmNotice);
+            this.Controls.Add(this.lblMCIcon);
+            this.Controls.Add(this.lblNetworkStatus);
+            this.Controls.Add(this.lblRun);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMcView";
             this.Text = "frmMcView";
             this.Load += new System.EventHandler(this.frmMcView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picMcIcon)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblMCName;
-        private System.Windows.Forms.PictureBox picMcIcon;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lblBedServoPos;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lblSpindleServoPos;
-        private System.Windows.Forms.Label Label;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblSpindlePeakLoad;
-        private System.Windows.Forms.Label lblSpindleCurrentLoad;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblSpindleCurrent;
-        private System.Windows.Forms.Label lblSpindleVolt;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblSpindleSpd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnActive;
-        private System.Windows.Forms.Label lblAlarmFlag;
-        private System.Windows.Forms.Label lblPlcConn;
-        private System.Windows.Forms.Label lblAlarmMsg;
+        private System.Windows.Forms.Label lblSpindleServoYPosition;
+        private System.Windows.Forms.Label lblSpindleServoXPosition;
         private System.Windows.Forms.Label lblMore;
+        private System.Windows.Forms.Label lblGuideServoPosition;
+        private System.Windows.Forms.Label lblBedServoPosition;
+        private System.Windows.Forms.Label lblSpindleXLoad;
+        private System.Windows.Forms.Label lblSpindleXPeakLoad;
+        private System.Windows.Forms.Label lblSpindleYLoad;
+        private System.Windows.Forms.Label lblSpindleYPeakLoad;
+        private System.Windows.Forms.Label lblSpindleYCurrent;
+        private System.Windows.Forms.Label lblSpindleXCurrent;
+        private System.Windows.Forms.Label lblSpindleYRpm;
+        private System.Windows.Forms.Label lblSpindleXRpm;
+        private System.Windows.Forms.Label lblStopTime;
+        private System.Windows.Forms.Label lblRunTime;
+        private System.Windows.Forms.Label lblMCName;
+        private System.Windows.Forms.Label lblAlarmMessage;
+        private System.Windows.Forms.Label lblAlarmNotice;
+        private System.Windows.Forms.Label lblMCIcon;
+        private System.Windows.Forms.Label lblNetworkStatus;
+        private System.Windows.Forms.Label lblRun;
     }
 }

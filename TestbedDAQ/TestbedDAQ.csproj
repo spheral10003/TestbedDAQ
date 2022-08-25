@@ -135,5 +135,98 @@
       <Name>Library</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_allimmore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_ing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_warring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\container.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\container_none_content.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\container_warning01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_Foundation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_notice_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_notice_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_wifi_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_wifi_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tab01_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tab01_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tab02_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tab02_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_bg_Hight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\container_warning02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\design_sian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_bg01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_bg02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\title_bar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ssss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body_bottom01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body_bottom02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\body_top.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

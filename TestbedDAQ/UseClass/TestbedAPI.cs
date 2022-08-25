@@ -12,14 +12,14 @@ namespace TestbedDAQ.UseClass
     {
         public void NetworkChange(PictureBox pic, bool Enable)
         {
-            if (Enable) pic.Image = Properties.Resources.RadioOn;
-            else pic.Image = Properties.Resources.RadioOff;
+            if (Enable) pic.Image = Properties.Resources.icon_wifi_on;
+            else pic.Image = Properties.Resources.icon_wifi_off;
         }
 
         public void NetworkChange(Label lbl, bool Enable)
         {
-            if (Enable) lbl.Image = Properties.Resources.RadioOn;
-            else lbl.Image = Properties.Resources.RadioOff;
+            if (Enable) lbl.Image = Properties.Resources.icon_wifi_on;
+            else lbl.Image = Properties.Resources.icon_wifi_off;
         }
 
         public void MachineActiveChange(Button btn, bool Enable)
@@ -27,12 +27,12 @@ namespace TestbedDAQ.UseClass
             if (Enable)
             {
                 btn.Text = "가동";
-                btn.BackgroundImage = Properties.Resources.Button1;
+                btn.BackgroundImage = Properties.Resources.button_ing;
             }
             else
             {
                 btn.Text = "비가동";
-                btn.BackgroundImage = Properties.Resources.Button2;
+                btn.BackgroundImage = Properties.Resources.button_stop;
             }
         }
 
@@ -48,5 +48,18 @@ namespace TestbedDAQ.UseClass
             }
         }
 
+        public void SelectScreen(Label Monitor, Label Manager, bool Enable)
+        {
+            if (Enable)
+            {
+                Monitor.Image = Properties.Resources.tab01_on;
+                Manager.Image = Properties.Resources.tab02_off;
+            }
+            else
+            {
+                Monitor.Image = Properties.Resources.tab01_off;
+                Manager.Image = Properties.Resources.tab02_on;
+            }
+        }
     }
 }

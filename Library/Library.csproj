@@ -47,6 +47,7 @@
     <Compile Include="IMotor.cs" />
     <Compile Include="IPLCAddress.cs" />
     <Compile Include="IPLCData.cs" />
+    <Compile Include="IPLCInformation.cs" />
     <Compile Include="MachineInformation.cs" />
     <Compile Include="MachineStatus.cs" />
     <Compile Include="Motor.cs" />

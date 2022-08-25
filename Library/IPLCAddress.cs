@@ -53,5 +53,6 @@ namespace Library
         /// 가공 횟수 주소
         /// </summary>
         int MachiningCountAddress { get; set; }
+
     }
 }
