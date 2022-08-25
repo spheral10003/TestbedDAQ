@@ -51,7 +51,7 @@ namespace TestbedDAQ
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmMain());
-            //Application.Run(new frmCombo());
+            //Application.Run(new Form1());
         }
 
         private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)

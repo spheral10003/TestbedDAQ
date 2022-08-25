@@ -41,11 +41,14 @@ namespace TestbedDAQ.Forms
 
             Combo.Owner = this;
             Combo.TopLevel = false;
-            Combo.Location = new Point(364, 19);
+            Combo.Location = new Point(350,20);
+            //pnlCombo.Controls.Add(Combo);
             this.Controls.Add(Combo);
             Combo.Show();
+            Combo.BringToFront();
 
             Menu_Click(lblMonitor, null);
+
         }
 
         private void Menu_Click(object sender, EventArgs e)
@@ -127,5 +130,10 @@ namespace TestbedDAQ.Forms
         {
             Application.Exit();
         }
+
+        //private void pnlCombo_Click(object sender, EventArgs e)
+        //{
+        //    pnlCombo.Size = new Size(179, 165);
+        //}
     }
 }

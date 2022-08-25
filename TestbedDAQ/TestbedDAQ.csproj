@@ -127,18 +127,6 @@
     <None Include="46px.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Button1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Button2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RadioOff.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RadioOn.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Library\Library.csproj">
       <Project>{2380503a-b30c-4a44-b7ef-e8eefdbc5d78}</Project>
       <Name>Library</Name>
@@ -200,12 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\full_bg_Hight.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\body01.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\body02.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\container_warning02.png" />
