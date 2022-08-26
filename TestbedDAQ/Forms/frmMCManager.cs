@@ -7,16 +7,23 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library;
+using OpenQA.Selenium.Remote;
 using TestbedDAQ.UseClass;
 
 namespace TestbedDAQ.Forms
 {
     public partial class frmMCManager : Form
     {
+        private string _host = "ftp://f1lab.co.kr";
+        private string _path = @"ftp://f1lab.co.kr/wf_ftp_SJ_Testbed/img/mc/";
+        private string _userId = "ftpUser";
+        private string _password = "f1soft@95";
+        
 
         private TestbedDB _db;
         private StringBuilder _sQuery;
@@ -25,9 +32,9 @@ namespace TestbedDAQ.Forms
         private OpenFileDialog _diaLog;
         private ImageList _imageList;
 
+        private List<string> _listString = new List<string>();
         private List<Image> _listImage = new List<Image>();
 
-        //private List<Image> _imageList1;
 
         public static string _gbMcCode = string.Empty;
 
@@ -184,6 +191,7 @@ namespace TestbedDAQ.Forms
                 _imageList = null;
                 //_imageList1 = new List<Image>();
                 _listImage = new List<Image>();
+                _listString = new List<string>();
                 _diaLog = null;
                 _sqlParams = null;
                 _sQuery = null;
@@ -265,7 +273,7 @@ namespace TestbedDAQ.Forms
         {
             _db.ConnectDB();
             DataTable dt = new DataTable();
-            _imageList = new ImageList();
+            
             //_imageList1 = new List<Image>();
 
             string sIdx = string.Empty;
@@ -376,9 +384,12 @@ namespace TestbedDAQ.Forms
                     #region 이미지 VIEW
                     this.listView1.Items.Clear();
                     //flowLayoutPanel1.Controls.Clear();
+                    _imageList = new ImageList();
                     if (dgv2.Rows.Count > 0)
                     {
-                        
+                        WebClient ftpClient = new WebClient();
+                        ftpClient.Credentials = new NetworkCredential(_userId, _password);
+
                         for (int i = 0; i < dgv2.Rows.Count; i++)
                         {
                             if (dgv2.Rows[i].Cells["file_save2"].Value.ToString() == "Y" && dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == "Y")
@@ -387,8 +398,8 @@ namespace TestbedDAQ.Forms
                             }
 
                             //기존
-                            this._imageList.Images.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
-                                                        dgv2.Rows[i].Cells["new_name2"].Value.ToString()));
+                            //this._imageList.Images.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
+                            //                            dgv2.Rows[i].Cells["new_name2"].Value.ToString()));
 
                             #region 신규(플로우 패널)
                             //this._imageList1.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
@@ -434,24 +445,36 @@ namespace TestbedDAQ.Forms
                             //imgGdi.Dispose();
                             #endregion
 
+
+
+                            byte[] imageByte = ftpClient.DownloadData(dgv2.Rows[i].Cells["path2"].Value.ToString() + "/" +
+                                                        dgv2.Rows[i].Cells["new_name2"].Value.ToString());
+
+                            MemoryStream mStream = new MemoryStream();
+                            byte[] pData = imageByte;
+                            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                            Bitmap bm = new Bitmap(mStream, false);
+                            mStream.Dispose();
+
+                            this._imageList.Images.Add(bm);
+
                         }
 
-
                         #region 주석
-                        //Size nSize = new Size(_listImage[iImageIdx].Width, _listImage[iImageIdx].Height);
-                        //Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
-                        //Graphics grfx = Graphics.FromImage(imgGdi);
-                        //grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                        //grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                        //grfx.DrawImage(_listImage[iImageIdx], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _listImage[iImageIdx].Size), GraphicsUnit.Pixel);
-                        //grfx.Dispose();
-                        //imgGdi.Save(sFullPath);
-                        //imgGdi.Dispose();
-                        //iImageIdx++;
-                        #endregion
+                    //Size nSize = new Size(_listImage[iImageIdx].Width, _listImage[iImageIdx].Height);
+                    //Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
+                    //Graphics grfx = Graphics.FromImage(imgGdi);
+                    //grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    //grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    //grfx.DrawImage(_listImage[iImageIdx], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _listImage[iImageIdx].Size), GraphicsUnit.Pixel);
+                    //grfx.Dispose();
+                    //imgGdi.Save(sFullPath);
+                    //imgGdi.Dispose();
+                    //iImageIdx++;
+                    #endregion
 
 
-                        //기존
+                    //기존
                         this.listView1.View = View.LargeIcon;
                         this._imageList.ImageSize = new Size(256, 256);
                         this.listView1.LargeImageList = this._imageList;
@@ -666,6 +689,7 @@ namespace TestbedDAQ.Forms
                     foreach (string img in files)
                     {
                         _listImage.Add(Image.FromFile(img));
+                        _listString.Add(img);
                     }
                 }
             }
@@ -1027,9 +1051,12 @@ namespace TestbedDAQ.Forms
                     }
                     #endregion
 
+                    
                     #region 파일 저장
                     if (dgv2.Rows.Count > 0)
                     {
+                        
+
                         #region 기존 데이터 숨김처리
                         _sQuery = new StringBuilder();
                         _sQuery.Append("	update tb_file_detail set	    ");
@@ -1054,9 +1081,6 @@ namespace TestbedDAQ.Forms
                         #endregion
 
                         #region 신규 데이터 INSERT
-
-                        sPath = @"D:\image1\mc" + "\\" + sIdx;
-
                         _sQuery = new StringBuilder();
                         _sQuery.Append("	insert into tb_file_detail					                                           ");
                         _sQuery.Append("	(										                                               ");
@@ -1081,7 +1105,8 @@ namespace TestbedDAQ.Forms
                                 sNewName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + dgv2["origin_name2", i].Value.ToString();
                             }
 
-                            sFullPath = sPath + "\\" + sNewName;
+                            sPath = _path + sIdx + "/";
+                            sFullPath = sPath + sNewName;
 
                             _sqlParams = new SqlParameter[]
                             {
@@ -1104,24 +1129,20 @@ namespace TestbedDAQ.Forms
                                 continue;
                             }
 
+
                             #region     IMAGE 저장
-                            if (!File.Exists(sPath))
+                            bool chkDir;
+
+                            //트루반환 : 폴더 존재
+                            //펄스반환 : 폴더 미존재
+                            chkDir = DoesFtpDirectoryExist(sPath);
+
+                            if (!chkDir)
                             {
-                                DirectoryInfo di = new DirectoryInfo(sPath);
-                                di.Create();
+                                CreateFolder(sPath);
                             }
 
-
-                            //멀티
-                            Size nSize = new Size(_listImage[iImageIdx].Width, _listImage[iImageIdx].Height);
-                            Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
-                            Graphics grfx = Graphics.FromImage(imgGdi);
-                            grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                            grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                            grfx.DrawImage(_listImage[iImageIdx], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _listImage[iImageIdx].Size), GraphicsUnit.Pixel);
-                            grfx.Dispose();
-                            imgGdi.Save(sFullPath);
-                            imgGdi.Dispose();
+                            UploadFile(_listString[iImageIdx], sFullPath);
                             iImageIdx++;
 
                             if (!isCheck)
@@ -1145,7 +1166,9 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region 재조회
+                _imageList = new ImageList();
                 _listImage = new List<Image>();
+                _listString = new List<string>();
                 ComboSetting();
                 Search(sMcCode);
                 CtrColor();
@@ -1162,6 +1185,67 @@ namespace TestbedDAQ.Forms
                 if (dt != null) dt.Dispose();
                 _db.CloseDB();
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            }
+        }
+
+        public bool DoesFtpDirectoryExist(string dirPath)
+        {
+            bool isexist = false;
+
+            try
+            {
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dirPath + "/");
+                request.Credentials = new NetworkCredential(_userId, _password);
+                request.Method = WebRequestMethods.Ftp.ListDirectory;
+                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
+                {
+                    isexist = true;
+                }
+            }
+            catch (WebException ex)
+            {
+                if (ex.Response != null)
+                {
+                    FtpWebResponse response = (FtpWebResponse)ex.Response;
+                    if (response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return isexist;
+        }
+
+        public bool CreateFolder(string dirPath)
+        {
+            string path = dirPath;
+            bool IsCreated = true;
+            try
+            {
+                WebRequest request = WebRequest.Create(path);
+                request.Method = WebRequestMethods.Ftp.MakeDirectory;
+                request.Credentials = new NetworkCredential(_userId, _password);
+                using (var resp = (FtpWebResponse)request.GetResponse())
+                {
+                    Console.WriteLine(resp.StatusCode);
+                }
+            }
+            catch (Exception ex)
+            {
+                IsCreated = false;
+            }
+            return IsCreated;
+        }
+
+        public void UploadFile(string _From, string _To)
+        {
+            string From = _From;
+            string To = _To;
+
+            using (WebClient client = new WebClient())
+            {
+                client.Credentials = new NetworkCredential(_userId, _password);
+                client.UploadFile(To, WebRequestMethods.Ftp.UploadFile, From);
             }
         }
 
