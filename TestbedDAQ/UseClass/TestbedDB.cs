@@ -15,8 +15,6 @@ namespace TestbedDAQ.UseClass
 
         public static SqlConnection sqlConn = new SqlConnection();
 
-        //ㅁ
-
         /// <summary>
         /// DB 연결
         /// </summary>

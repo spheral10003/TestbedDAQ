@@ -24,15 +24,20 @@ namespace TestbedDAQ.Forms
 
         private OpenFileDialog _diaLog;
         private ImageList _imageList;
+
         private List<Image> _listImage = new List<Image>();
 
+        //private List<Image> _imageList1;
+
+        public static string _gbMcCode = string.Empty;
 
         private List<MachineInformation> _MachineInformation;
         private List<PLCAddressMap> _PLCAddressMap;
 
+
         public List<MachineInformation> MachineInformationList { get => _MachineInformation; set => _MachineInformation = value; }
         public List<PLCAddressMap> PLCAddressMap { get => _PLCAddressMap; set => _PLCAddressMap = value; }
-
+        
 
         public frmMCManager()
         {
@@ -52,7 +57,7 @@ namespace TestbedDAQ.Forms
                 CreateDB();
                 CtrInit();
                 ComboSetting();
-                Search();
+                Search(_gbMcCode);
                 CtrColor();
             }
             catch (Exception ex)
@@ -177,6 +182,7 @@ namespace TestbedDAQ.Forms
 
                 #region 각 생성자 초기화
                 _imageList = null;
+                //_imageList1 = new List<Image>();
                 _listImage = new List<Image>();
                 _diaLog = null;
                 _sqlParams = null;
@@ -255,11 +261,12 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void Search()
+        public void Search(string sMcCode)
         {
             _db.ConnectDB();
             DataTable dt = new DataTable();
             _imageList = new ImageList();
+            //_imageList1 = new List<Image>();
 
             string sIdx = string.Empty;
 
@@ -302,10 +309,16 @@ namespace TestbedDAQ.Forms
 
                 _sqlParams = new SqlParameter[]
                 {
-                    new SqlParameter("@pCode", cbCode.Text)
+                    //new SqlParameter("@pCode", cbCode.Text)
+                    new SqlParameter("@pCode", sMcCode)
                 };
 
                 dt = _db.GetDataView("Search", _sQuery, _sqlParams).Table;
+
+                //int x = 0;
+                //int y = 0;
+                //int maxheight = 0;
+                //int j = 0;
 
                 if (dt.Rows.Count > 0)
                 {
@@ -362,27 +375,92 @@ namespace TestbedDAQ.Forms
 
                     #region 이미지 VIEW
                     this.listView1.Items.Clear();
+                    //flowLayoutPanel1.Controls.Clear();
                     if (dgv2.Rows.Count > 0)
                     {
+                        
                         for (int i = 0; i < dgv2.Rows.Count; i++)
                         {
                             if (dgv2.Rows[i].Cells["file_save2"].Value.ToString() == "Y" && dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == "Y")
                             {
                                 continue;
                             }
+
+                            //기존
                             this._imageList.Images.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
                                                         dgv2.Rows[i].Cells["new_name2"].Value.ToString()));
+
+                            #region 신규(플로우 패널)
+                            //this._imageList1.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
+                            //                           dgv2.Rows[i].Cells["new_name2"].Value.ToString()));
+
+
+                            ////Size nSize = new Size(_imageList1[j].Width, _imageList1[j].Height);
+                            //Size nSize = new Size(350, 425);
+                            //Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
+                            //Graphics grfx = Graphics.FromImage(imgGdi);
+                            //grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                            //grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                            //grfx.DrawImage(_imageList1[j], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _imageList1[j].Size), GraphicsUnit.Pixel);
+
+
+                            //Panel pPanel = new Panel();
+                            //pPanel.BackColor = Color.White;
+                            //pPanel.Size = new Size(350, 425);
+                            //pPanel.Padding = new System.Windows.Forms.Padding(4);
+
+
+                            //PictureBox pBox = new PictureBox();
+                            //pBox.Dock = DockStyle.Fill;
+
+                            //pBox.Location = new Point(x, y);
+                            //x += pBox.Width + 10;
+                            //maxheight = Math.Max(pBox.Height, maxheight);
+                            //if (x > this.ClientSize.Width - 100)
+                            //{
+                            //    //x = 20;
+                            //    y += maxheight + 10;
+                            //}
+
+                            ////pBox.Image = _imageList1[j].GetThumbnailImage(350, 425, null, IntPtr.Zero);
+                            //pBox.Image = imgGdi.GetThumbnailImage(350, 425, null, IntPtr.Zero);
+
+
+                            //pPanel.Controls.Add(pBox);
+                            //this.flowLayoutPanel1.Controls.Add(pPanel);
+                            //j++;
+
+                            //grfx.Dispose();
+                            //imgGdi.Dispose();
+                            #endregion
+
                         }
 
+
+                        #region 주석
+                        //Size nSize = new Size(_listImage[iImageIdx].Width, _listImage[iImageIdx].Height);
+                        //Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
+                        //Graphics grfx = Graphics.FromImage(imgGdi);
+                        //grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        //grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        //grfx.DrawImage(_listImage[iImageIdx], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _listImage[iImageIdx].Size), GraphicsUnit.Pixel);
+                        //grfx.Dispose();
+                        //imgGdi.Save(sFullPath);
+                        //imgGdi.Dispose();
+                        //iImageIdx++;
+                        #endregion
+
+
+                        //기존
                         this.listView1.View = View.LargeIcon;
                         this._imageList.ImageSize = new Size(256, 256);
                         this.listView1.LargeImageList = this._imageList;
-
                         for (int i = 0; i < _imageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
-                            item.ImageIndex = i;
+                              item.ImageIndex = i;
                             this.listView1.Items.Add(item);
+
                         }
                     }
                     #endregion
@@ -629,6 +707,7 @@ namespace TestbedDAQ.Forms
             try
             {
                 CtrInit();
+                CtrColor();
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
                 this.cbCode.Text = string.Empty;
             }
@@ -892,7 +971,9 @@ namespace TestbedDAQ.Forms
                         for (int i = 0; i < dgv1.RowCount; i++)
                         {
                             sMcIdx2 = sIdx.ToString();
-                            sPlcVersion2 = dgv1.Rows[i].Cells["plc_version"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["plc_version"].Value.ToString();
+
+                            sPlcVersion2 = txtPlcVersion.Text == null ? string.Empty : txtPlcVersion.Text;
+                            //sPlcVersion2 = dgv1.Rows[i].Cells["plc_version"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["plc_version"].Value.ToString();
                             sAuto_start_address = dgv1.Rows[i].Cells["auto_start_address"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["auto_start_address"].Value.ToString();
                             sSpeed_address = dgv1.Rows[i].Cells["speed_address"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["speed_address"].Value.ToString();
                             sVolt_address = dgv1.Rows[i].Cells["volt_address"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["volt_address"].Value.ToString();
@@ -1065,7 +1146,8 @@ namespace TestbedDAQ.Forms
 
                 #region 재조회
                 _listImage = new List<Image>();
-                Search();
+                ComboSetting();
+                Search(sMcCode);
                 CtrColor();
                 #endregion
             }
@@ -1087,7 +1169,7 @@ namespace TestbedDAQ.Forms
         {
             try
             {
-                Search();
+                Search(cbCode.Text);
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 CtrColor();
             }
@@ -1186,6 +1268,46 @@ namespace TestbedDAQ.Forms
             finally
             {
 
+            }
+        }
+
+        private void btnCodeCopy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbCode.Text.Length < 1)
+                {
+                    MessageBox.Show("설비 코드를 입력하십시오.");
+                    cbCode.Focus();
+                    cbCode.SelectAll();
+                    return;
+                }
+
+                frmMcCodeCopy frm = new frmMcCodeCopy(cbCode, cbCode.Text);
+
+                if (frm.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+                else
+                {
+                    this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                    CtrInit();
+                    ComboSetting();
+                    Search(_gbMcCode);
+                    CtrColor();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+                return;
+            }
+            finally
+            {
+
+                //this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
         }
     }

@@ -32,7 +32,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdx = new System.Windows.Forms.TextBox();
             this.txtMaker = new System.Windows.Forms.TextBox();
-            this.btnCodeCopy = new System.Windows.Forms.Button();
             this.txtRemark = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -110,6 +109,7 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.btnCodeCopy = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -127,7 +127,7 @@
             this.cbCode.Location = new System.Drawing.Point(183, 33);
             this.cbCode.Name = "cbCode";
             this.cbCode.Size = new System.Drawing.Size(508, 33);
-            this.cbCode.TabIndex = 185;
+            this.cbCode.TabIndex = 201;
             this.cbCode.SelectedIndexChanged += new System.EventHandler(this.cbCode_SelectedIndexChanged);
             this.cbCode.Leave += new System.EventHandler(this.Control_Leave);
             // 
@@ -157,17 +157,8 @@
             this.txtMaker.Location = new System.Drawing.Point(183, 245);
             this.txtMaker.Name = "txtMaker";
             this.txtMaker.Size = new System.Drawing.Size(180, 32);
-            this.txtMaker.TabIndex = 167;
+            this.txtMaker.TabIndex = 207;
             this.txtMaker.Leave += new System.EventHandler(this.Control_Leave);
-            // 
-            // btnCodeCopy
-            // 
-            this.btnCodeCopy.Location = new System.Drawing.Point(697, 33);
-            this.btnCodeCopy.Name = "btnCodeCopy";
-            this.btnCodeCopy.Size = new System.Drawing.Size(129, 33);
-            this.btnCodeCopy.TabIndex = 182;
-            this.btnCodeCopy.Text = "다른 코드로 저장";
-            this.btnCodeCopy.UseVisualStyleBackColor = true;
             // 
             // txtRemark
             // 
@@ -270,7 +261,7 @@
             this.txtDept.Location = new System.Drawing.Point(183, 192);
             this.txtDept.Name = "txtDept";
             this.txtDept.Size = new System.Drawing.Size(180, 32);
-            this.txtDept.TabIndex = 165;
+            this.txtDept.TabIndex = 205;
             // 
             // label18
             // 
@@ -311,7 +302,7 @@
             this.cbLocation.Location = new System.Drawing.Point(511, 192);
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.Size = new System.Drawing.Size(180, 33);
-            this.cbLocation.TabIndex = 166;
+            this.cbLocation.TabIndex = 206;
             this.cbLocation.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label9
@@ -341,7 +332,7 @@
             this.txtMotorCount.Location = new System.Drawing.Point(511, 139);
             this.txtMotorCount.Name = "txtMotorCount";
             this.txtMotorCount.Size = new System.Drawing.Size(180, 32);
-            this.txtMotorCount.TabIndex = 164;
+            this.txtMotorCount.TabIndex = 204;
             this.txtMotorCount.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label12
@@ -370,7 +361,7 @@
             this.txtMakerDateTime.Location = new System.Drawing.Point(511, 245);
             this.txtMakerDateTime.Name = "txtMakerDateTime";
             this.txtMakerDateTime.Size = new System.Drawing.Size(180, 32);
-            this.txtMakerDateTime.TabIndex = 168;
+            this.txtMakerDateTime.TabIndex = 208;
             // 
             // cbState
             // 
@@ -382,7 +373,7 @@
             this.cbState.Location = new System.Drawing.Point(183, 351);
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(180, 33);
-            this.cbState.TabIndex = 171;
+            this.cbState.TabIndex = 211;
             this.cbState.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // txtPlcPort
@@ -391,7 +382,7 @@
             this.txtPlcPort.Location = new System.Drawing.Point(511, 298);
             this.txtPlcPort.Name = "txtPlcPort";
             this.txtPlcPort.Size = new System.Drawing.Size(180, 32);
-            this.txtPlcPort.TabIndex = 170;
+            this.txtPlcPort.TabIndex = 210;
             // 
             // txtPlcIp
             // 
@@ -399,7 +390,7 @@
             this.txtPlcIp.Location = new System.Drawing.Point(183, 298);
             this.txtPlcIp.Name = "txtPlcIp";
             this.txtPlcIp.Size = new System.Drawing.Size(180, 32);
-            this.txtPlcIp.TabIndex = 169;
+            this.txtPlcIp.TabIndex = 209;
             // 
             // txtSpec
             // 
@@ -407,7 +398,7 @@
             this.txtSpec.Location = new System.Drawing.Point(183, 139);
             this.txtSpec.Name = "txtSpec";
             this.txtSpec.Size = new System.Drawing.Size(180, 32);
-            this.txtSpec.TabIndex = 163;
+            this.txtSpec.TabIndex = 203;
             // 
             // txtName
             // 
@@ -416,7 +407,7 @@
             this.txtName.Location = new System.Drawing.Point(183, 86);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(508, 32);
-            this.txtName.TabIndex = 162;
+            this.txtName.TabIndex = 202;
             this.txtName.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label11
@@ -515,7 +506,7 @@
             this.dgv1.Location = new System.Drawing.Point(3, 43);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 23;
-            this.dgv1.Size = new System.Drawing.Size(1381, 306);
+            this.dgv1.Size = new System.Drawing.Size(1381, 336);
             this.dgv1.TabIndex = 193;
             // 
             // idx
@@ -720,7 +711,7 @@
             this.dgv2.Location = new System.Drawing.Point(3, 43);
             this.dgv2.Name = "dgv2";
             this.dgv2.RowTemplate.Height = 23;
-            this.dgv2.Size = new System.Drawing.Size(1381, 306);
+            this.dgv2.Size = new System.Drawing.Size(1381, 336);
             this.dgv2.TabIndex = 195;
             this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
             // 
@@ -876,6 +867,20 @@
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
+            // btnCodeCopy
+            // 
+            this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCodeCopy.FlatAppearance.BorderSize = 0;
+            this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCodeCopy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeCopy.Location = new System.Drawing.Point(697, 33);
+            this.btnCodeCopy.Name = "btnCodeCopy";
+            this.btnCodeCopy.Size = new System.Drawing.Size(141, 33);
+            this.btnCodeCopy.TabIndex = 212;
+            this.btnCodeCopy.Text = "다른 코드로 저장";
+            this.btnCodeCopy.UseVisualStyleBackColor = false;
+            this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
+            // 
             // frmMCManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -883,6 +888,7 @@
             this.BackgroundImage = global::TestbedDAQ.Properties.Resources.body_bottom02;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 928);
+            this.Controls.Add(this.btnCodeCopy);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNew);
@@ -892,7 +898,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtIdx);
             this.Controls.Add(this.txtMaker);
-            this.Controls.Add(this.btnCodeCopy);
             this.Controls.Add(this.txtRemark);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label14);
@@ -944,7 +949,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIdx;
         private System.Windows.Forms.TextBox txtMaker;
-        private System.Windows.Forms.Button btnCodeCopy;
         private System.Windows.Forms.TextBox txtRemark;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label14;
@@ -1022,5 +1026,6 @@
         private System.Windows.Forms.Button btnFileRemove;
         private System.Windows.Forms.Button btnFileUpload;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnCodeCopy;
     }
 }
