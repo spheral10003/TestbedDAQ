@@ -69,8 +69,8 @@ namespace TestbedDAQ.UseClass
 
             try
             {
-                sqlConn.ConnectionString = sConn;
-                sqlConn.Open();
+                //sqlConn.ConnectionString = sConn;
+                //sqlConn.Open();
 
                 cmd.Connection = sqlConn;
                 cmd.CommandText = strQuery.ToString();
@@ -95,7 +95,7 @@ namespace TestbedDAQ.UseClass
                 if (SqlAdapter != null) SqlAdapter.Dispose();
                 if (cmd.Parameters != null) cmd.Parameters.Clear();
                 if (cmd != null) cmd.Dispose();
-                if (sqlConn != null) sqlConn.Close();
+                //if (sqlConn != null) sqlConn.Close();
             }
             return returnView;
 
@@ -111,8 +111,8 @@ namespace TestbedDAQ.UseClass
             bool blRtv = true;
             try
             {
-                sqlConn.ConnectionString = sConn;
-                sqlConn.Open();
+                //sqlConn.ConnectionString = sConn;
+                //sqlConn.Open();
 
                 cmd.Connection = sqlConn;
 
@@ -133,7 +133,7 @@ namespace TestbedDAQ.UseClass
             {
                 if (cmd.Parameters != null) cmd.Parameters.Clear();
                 if (cmd != null) cmd.Dispose();
-                if (sqlConn != null) sqlConn.Close();
+                //if (sqlConn != null) sqlConn.Close();
             }
             return blRtv;
         }
@@ -226,7 +226,10 @@ namespace TestbedDAQ.UseClass
         //_db.ConnectDB();
         //SqlTransaction sTran = TestbedDB.sqlConn.BeginTransaction();
         //DataTable dt = new DataTable();
+        //쿼리문
         //dt = _db.GetDataView_Tran("Key_idx", _sQuery, _sqlParams, sTran).Table;
+        
+        //파이날리부분
         //if (sTran != null) sTran.Dispose();
         //if (dt != null) dt.Dispose();
         //_db.CloseDB();

@@ -87,9 +87,9 @@
             this.mod_worker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnPlcDataRemove = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnPlcDataAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,7 +109,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -129,6 +128,8 @@
             this.cbCode.Name = "cbCode";
             this.cbCode.Size = new System.Drawing.Size(508, 33);
             this.cbCode.TabIndex = 185;
+            this.cbCode.SelectedIndexChanged += new System.EventHandler(this.cbCode_SelectedIndexChanged);
+            this.cbCode.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label4
             // 
@@ -157,6 +158,7 @@
             this.txtMaker.Name = "txtMaker";
             this.txtMaker.Size = new System.Drawing.Size(180, 32);
             this.txtMaker.TabIndex = 167;
+            this.txtMaker.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // btnCodeCopy
             // 
@@ -250,6 +252,7 @@
             this.cbFac.Name = "cbFac";
             this.cbFac.Size = new System.Drawing.Size(508, 33);
             this.cbFac.TabIndex = 177;
+            this.cbFac.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label1
             // 
@@ -309,6 +312,7 @@
             this.cbLocation.Name = "cbLocation";
             this.cbLocation.Size = new System.Drawing.Size(180, 33);
             this.cbLocation.TabIndex = 166;
+            this.cbLocation.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label9
             // 
@@ -338,6 +342,7 @@
             this.txtMotorCount.Name = "txtMotorCount";
             this.txtMotorCount.Size = new System.Drawing.Size(180, 32);
             this.txtMotorCount.TabIndex = 164;
+            this.txtMotorCount.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label12
             // 
@@ -378,6 +383,7 @@
             this.cbState.Name = "cbState";
             this.cbState.Size = new System.Drawing.Size(180, 33);
             this.cbState.TabIndex = 171;
+            this.cbState.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // txtPlcPort
             // 
@@ -411,6 +417,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(508, 32);
             this.txtName.TabIndex = 162;
+            this.txtName.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label11
             // 
@@ -456,7 +463,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("굴림", 16F);
+            this.tabControl1.Font = new System.Drawing.Font("굴림", 9F);
             this.tabControl1.Location = new System.Drawing.Point(58, 417);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -466,14 +473,14 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgv1);
-            this.tabPage1.Controls.Add(this.btnRemove);
+            this.tabPage1.Controls.Add(this.btnPlcDataRemove);
             this.tabPage1.Controls.Add(this.btnExcel);
-            this.tabPage1.Controls.Add(this.btnAdd);
+            this.tabPage1.Controls.Add(this.btnPlcDataAdd);
             this.tabPage1.Font = new System.Drawing.Font("굴림", 9F);
-            this.tabPage1.Location = new System.Drawing.Point(4, 31);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1387, 376);
+            this.tabPage1.Size = new System.Drawing.Size(1387, 385);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PLC 데이터 주소";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -637,18 +644,19 @@
             this.del_datetime.HeaderText = "del_datetime";
             this.del_datetime.Name = "del_datetime";
             // 
-            // btnRemove
+            // btnPlcDataRemove
             // 
-            this.btnRemove.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnRemove.Location = new System.Drawing.Point(1219, 3);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(164, 37);
-            this.btnRemove.TabIndex = 192;
-            this.btnRemove.Text = "행 삭제";
-            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnPlcDataRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
+            this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlcDataRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnPlcDataRemove.Location = new System.Drawing.Point(1219, 3);
+            this.btnPlcDataRemove.Name = "btnPlcDataRemove";
+            this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataRemove.TabIndex = 192;
+            this.btnPlcDataRemove.Text = "행 삭제";
+            this.btnPlcDataRemove.UseVisualStyleBackColor = false;
+            this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
             // 
             // btnExcel
             // 
@@ -662,19 +670,21 @@
             this.btnExcel.TabIndex = 191;
             this.btnExcel.Text = "엑셀 업로드";
             this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
-            // btnAdd
+            // btnPlcDataAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnAdd.Location = new System.Drawing.Point(1052, 3);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(164, 37);
-            this.btnAdd.TabIndex = 190;
-            this.btnAdd.Text = "행 추가";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnPlcDataAdd.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
+            this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlcDataAdd.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnPlcDataAdd.Location = new System.Drawing.Point(1052, 3);
+            this.btnPlcDataAdd.Name = "btnPlcDataAdd";
+            this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataAdd.TabIndex = 190;
+            this.btnPlcDataAdd.Text = "행 추가";
+            this.btnPlcDataAdd.UseVisualStyleBackColor = false;
+            this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
             // 
             // tabPage2
             // 
@@ -684,7 +694,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1387, 350);
+            this.tabPage2.Size = new System.Drawing.Size(1387, 385);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "이미지 첨부";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -712,6 +722,7 @@
             this.dgv2.RowTemplate.Height = 23;
             this.dgv2.Size = new System.Drawing.Size(1381, 306);
             this.dgv2.TabIndex = 195;
+            this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
             // 
             // idx2
             // 
@@ -797,6 +808,7 @@
             this.btnFileRemove.TabIndex = 194;
             this.btnFileRemove.Text = "이미지 삭제";
             this.btnFileRemove.UseVisualStyleBackColor = false;
+            this.btnFileRemove.Click += new System.EventHandler(this.btnFileRemove_Click);
             // 
             // btnFileUpload
             // 
@@ -810,6 +822,7 @@
             this.btnFileUpload.TabIndex = 193;
             this.btnFileUpload.Text = "이미지 첨부";
             this.btnFileUpload.UseVisualStyleBackColor = false;
+            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
             // 
             // btnClose
             // 
@@ -836,6 +849,7 @@
             this.btnNew.TabIndex = 188;
             this.btnNew.Text = "신규";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
@@ -849,28 +863,18 @@
             this.btnSave.TabIndex = 187;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.button6.Location = new System.Drawing.Point(1484, 33);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(383, 33);
-            this.button6.TabIndex = 193;
-            this.button6.Text = "이미지";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1484, 86);
+            this.listView1.Location = new System.Drawing.Point(1484, 33);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(383, 810);
+            this.listView1.Size = new System.Drawing.Size(383, 863);
             this.listView1.TabIndex = 194;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
             // 
             // frmMCManager
             // 
@@ -880,7 +884,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 928);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnSave);
@@ -974,9 +977,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.Button btnPlcDataRemove;
         private System.Windows.Forms.Button btnExcel;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnPlcDataAdd;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnNew;
@@ -1018,7 +1021,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime2;
         private System.Windows.Forms.Button btnFileRemove;
         private System.Windows.Forms.Button btnFileUpload;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListView listView1;
     }
 }
