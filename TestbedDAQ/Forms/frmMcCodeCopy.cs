@@ -33,10 +33,11 @@ namespace TestbedDAQ.Forms
             try
             {
                 var tmpItems = _ComboBox.Items.Cast<Object>().ToArray();
-                var filteredItems = tmpItems;
+                //var filteredItems = tmpItems;
 
                 cbOfferCode.Items.Clear();
-                cbOfferCode.Items.AddRange(filteredItems);
+                //cbOfferCode.Items.AddRange(filteredItems);
+                cbOfferCode.Items.AddRange(tmpItems);
 
                 txtNewCode.Text = _McCode;
 

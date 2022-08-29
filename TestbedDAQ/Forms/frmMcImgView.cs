@@ -19,6 +19,11 @@ namespace TestbedDAQ.Forms
         private string _Name = string.Empty;
         private string _FullPath = string.Empty;
 
+
+        private int _XPos;
+        private int _YPos;
+        private bool _Dragging;
+
         TestbedFTP _Ftp = new TestbedFTP();
 
 
@@ -72,32 +77,27 @@ namespace TestbedDAQ.Forms
             }
         }
 
-
-        private int _xPos;
-        private int _yPos;
-        private bool _dragging;
-
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             var c = sender as PictureBox;
             if (null == c) return;
-            _dragging = false;
+            _Dragging = false;
         }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
-            _dragging = true;
-            _xPos = e.X;
-            _yPos = e.Y;
+            _Dragging = true;
+            _XPos = e.X;
+            _YPos = e.Y;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             var c = sender as PictureBox;
-            if (!_dragging || null == c) return;
-            c.Top = e.Y + c.Top - _yPos;
-            c.Left = e.X + c.Left - _xPos;
+            if (!_Dragging || null == c) return;
+            c.Top = e.Y + c.Top - _YPos;
+            c.Left = e.X + c.Left - _XPos;
         }
     }
 }

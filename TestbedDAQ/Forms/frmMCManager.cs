@@ -24,9 +24,11 @@ namespace TestbedDAQ.Forms
         private StringBuilder _Query;
         private SqlParameter[] _SqlParams;
 
+        //이미지를 한번에 여러개 첨부하는게 아닌
+        //하나 첨부, 하나 첨부, 하나 첨부했을경우 때문에 전역으로 선언
         private OpenFileDialog _Dialog;
 
-        private ImageList _ImageList;  //이미지 View할대 이미지 목록 담는 역할
+        private ImageList _ImageList;  //이미지를 Search 메서드에서 View할때 이미지 목록 담는 역할
         private List<string> _StringList = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
 
         public static string _GlobalMcCode = string.Empty;
@@ -185,8 +187,6 @@ namespace TestbedDAQ.Forms
 
                 #region 각 생성자 초기화
                 _ImageList = null;
-                //_imageList1 = new List<Image>();
-                //_listImage = new List<Image>();
                 _StringList = new List<string>();
                 _Dialog = null;
                 _SqlParams = null;
@@ -355,7 +355,7 @@ namespace TestbedDAQ.Forms
 
                     #region 이미지 DATA SELECT
                     _Query = new StringBuilder();
-                    _Query.Append("	SELECT	* from tb_file_detail with(nolock)		");
+                    _Query.Append("	select	* from tb_file_detail with(nolock)		");
                     _Query.Append("	where 1 = 1					                    ");
                     _Query.Append("	    and mc_idx = @pMc_idx and del_gubun = 'N'   ");
                     _SqlParams = new SqlParameter[]
@@ -398,6 +398,7 @@ namespace TestbedDAQ.Forms
                         this.lvwImage.View = View.LargeIcon;
                         this._ImageList.ImageSize = new Size(256, 256);
                         this.lvwImage.LargeImageList = this._ImageList;
+                        //this.lvwImage.SmallImageList = this._ImageList;
                         for (int i = 0; i < _ImageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
@@ -610,8 +611,8 @@ namespace TestbedDAQ.Forms
         private void btnFileUpload_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            string[] files;
-            string[] name;
+            string[] sFiles;
+            string[] sName;
 
             try
             {
@@ -624,21 +625,21 @@ namespace TestbedDAQ.Forms
 
                 if (dr == System.Windows.Forms.DialogResult.OK)
                 {
-                    files = _Dialog.FileNames;
-                    name = _Dialog.SafeFileNames;
+                    sFiles = _Dialog.FileNames;
+                    sName = _Dialog.SafeFileNames;
 
                     dt = dgv2.DataSource as DataTable;
 
-                    foreach (string img in name)
+                    foreach (string sImg in sName)
                     {
-                        dt.Rows.Add(0, 0, "", img, "", "N", "N", "", "", "", "", "");
+                        dt.Rows.Add(0, 0, "", sImg, "", "N", "N", "", "", "", "", "");
                     }
                     dgv2.DataSource = dt;
 
-                    foreach (string img in files)
+                    foreach (string sImg in sFiles)
                     {
                         //_listImage.Add(Image.FromFile(img));
-                        _StringList.Add(img);
+                        _StringList.Add(sImg);
                     }
                 }
             }
@@ -1037,6 +1038,7 @@ namespace TestbedDAQ.Forms
                         _Query.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save   ");
                         _Query.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pDel_datetime                ");
                         _Query.Append("	)										                                               ");
+
                         for (int i = 0; i < dgv2.Rows.Count; i++)
                         {
                             sOriginName = dgv2.Rows[i].Cells["origin_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["origin_name2"].Value.ToString();
@@ -1111,7 +1113,6 @@ namespace TestbedDAQ.Forms
 
                 #region 재조회
                 _ImageList = new ImageList();
-                //_listImage = new List<Image>();
                 _StringList = new List<string>();
                 ComboSetting();
                 Search(sMcCode);
@@ -1247,7 +1248,7 @@ namespace TestbedDAQ.Forms
 
                 if (txtIdx.Text.Length < 1)
                 {
-                    MessageBox.Show("저장되지 않는 데이터입니다.");
+                    MessageBox.Show("저장되지 않은 데이터입니다.");
                     cbCode.Focus();
                     cbCode.SelectAll();
                     return;
@@ -1297,12 +1298,7 @@ namespace TestbedDAQ.Forms
 
                 #region 재조회
                 _ImageList = new ImageList();
-                //_listImage = new List<Image>();
                 _StringList = new List<string>();
-                //CtrInit();
-                //ComboSetting();
-                //Search(_gbMcCode);
-                //CtrColor();
                 #endregion
             }
             catch (Exception ex)
