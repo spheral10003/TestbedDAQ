@@ -30,10 +30,10 @@ namespace TestbedDAQ.Forms
         private SqlParameter[] _sqlParams;
 
         private OpenFileDialog _diaLog;
-        private ImageList _imageList;
 
-        private List<string> _listString = new List<string>();
-        private List<Image> _listImage = new List<Image>();
+        private ImageList _imageList;  //이미지 View할대 이미지 목록 담는 역할
+        private List<string> _listString = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
+        //private List<Image> _listImage = new List<Image>();
 
 
         public static string _gbMcCode = string.Empty;
@@ -66,6 +66,7 @@ namespace TestbedDAQ.Forms
                 ComboSetting();
                 Search(_gbMcCode);
                 CtrColor();
+                DataGridViewVisible();
             }
             catch (Exception ex)
             {
@@ -190,7 +191,7 @@ namespace TestbedDAQ.Forms
                 #region 각 생성자 초기화
                 _imageList = null;
                 //_imageList1 = new List<Image>();
-                _listImage = new List<Image>();
+                //_listImage = new List<Image>();
                 _listString = new List<string>();
                 _diaLog = null;
                 _sqlParams = null;
@@ -234,9 +235,10 @@ namespace TestbedDAQ.Forms
             try
             {
                 _sQuery = new StringBuilder();
-                _sQuery.Append("	SELECT	a.code  as code                     ");
-                _sQuery.Append("	FROM	tb_machine_mst a WITH(NOLOCK)       ");
-                _sQuery.Append("	WHERE  1 = 1                                ");
+                _sQuery.Append("	select	a.code  as code                     ");
+                _sQuery.Append("	from	tb_machine_mst a WITH(NOLOCK)       ");
+                _sQuery.Append("	where  1 = 1                                ");
+                _sQuery.Append("	    and del_gubun = 'N'                     ");
                 _sqlParams = new SqlParameter[] { };
 
                 dt = _db.GetDataView("search_code", _sQuery, _sqlParams).Table;
@@ -474,7 +476,7 @@ namespace TestbedDAQ.Forms
                     #endregion
 
 
-                    //기존
+                        //기존
                         this.listView1.View = View.LargeIcon;
                         this._imageList.ImageSize = new Size(256, 256);
                         this.listView1.LargeImageList = this._imageList;
@@ -526,6 +528,37 @@ namespace TestbedDAQ.Forms
             }
             finally
             {
+            }
+        }
+
+        public void DataGridViewVisible()
+        {
+            try
+            {
+                this.dgv1.Columns["idx"].Visible = false;
+                this.dgv1.Columns["mc_idx"].Visible = false;
+                this.dgv1.Columns["del_gubun"].Visible = false;
+                this.dgv1.Columns["mod_worker"].Visible = false;
+                this.dgv1.Columns["mod_datetime"].Visible = false;
+                this.dgv1.Columns["del_datetime"].Visible = false;
+
+                this.dgv2.Columns["idx2"].Visible = false;
+                this.dgv2.Columns["mc_idx2"].Visible = false;
+                this.dgv2.Columns["new_name2"].Visible = false;
+                this.dgv2.Columns["file_save2"].Visible = false;
+                this.dgv2.Columns["del_gubun2"].Visible = false;
+                this.dgv2.Columns["mod_worker2"].Visible = false;
+                this.dgv2.Columns["mod_datetime2"].Visible = false;
+                this.dgv2.Columns["del_datetime2"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+                return;
+            }
+            finally
+            {
+
             }
         }
 
@@ -688,7 +721,7 @@ namespace TestbedDAQ.Forms
 
                     foreach (string img in files)
                     {
-                        _listImage.Add(Image.FromFile(img));
+                        //_listImage.Add(Image.FromFile(img));
                         _listString.Add(img);
                     }
                 }
@@ -1051,12 +1084,9 @@ namespace TestbedDAQ.Forms
                     }
                     #endregion
 
-                    
                     #region 파일 저장
                     if (dgv2.Rows.Count > 0)
                     {
-                        
-
                         #region 기존 데이터 숨김처리
                         _sQuery = new StringBuilder();
                         _sQuery.Append("	update tb_file_detail set	    ");
@@ -1160,14 +1190,13 @@ namespace TestbedDAQ.Forms
                         sTran.Commit();
                         MessageBox.Show("저장되었습니다.");
                     }
-
                     #endregion
                 }
                 #endregion
 
                 #region 재조회
                 _imageList = new ImageList();
-                _listImage = new List<Image>();
+                //_listImage = new List<Image>();
                 _listString = new List<string>();
                 ComboSetting();
                 Search(sMcCode);
@@ -1272,6 +1301,8 @@ namespace TestbedDAQ.Forms
         {
             try
             {
+                this.dgv2.CurrentCell = null;
+
                 if (dgv2.Rows.Count < 1) return;
                 if (listView1.Items.Count < 1) return;
 
@@ -1280,7 +1311,7 @@ namespace TestbedDAQ.Forms
                     int SelectRow = listView1.SelectedItems[0].Index;
 
                     dgv2.Rows[SelectRow].Selected = true;
-                    dgv2.CurrentCell = dgv2.Rows[SelectRow].Cells[0];
+                    dgv2.CurrentCell = dgv2.Rows[SelectRow].Cells["path2"];
                 }
             }
             catch (Exception ex)
@@ -1375,11 +1406,14 @@ namespace TestbedDAQ.Forms
                 }
                 else
                 {
-                    this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                    CtrInit();
-                    ComboSetting();
-                    Search(_gbMcCode);
-                    CtrColor();
+                    if (_gbMcCode.Length > 1)
+                    {
+                        this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                        CtrInit();
+                        ComboSetting();
+                        Search(_gbMcCode);
+                        CtrColor();
+                    }
                 }
 
             }
@@ -1392,6 +1426,100 @@ namespace TestbedDAQ.Forms
             {
 
                 //this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            _db.ConnectDB();
+            SqlTransaction sTran = null;
+            DataTable dt = new DataTable();
+            bool isCheck;
+
+            try
+            {
+                #region 변수 선언 설비
+                 string sIdx = txtIdx.Text == null ? string.Empty : txtIdx.Text;
+                #endregion
+
+                #region 유효성 검사
+                if (cbCode.Text.Length < 1)
+                {
+                    MessageBox.Show("설비코드를 입력하십시오.");
+                    cbCode.Focus();
+                    cbCode.SelectAll();
+                    return;
+                }
+
+                if (txtIdx.Text.Length < 1)
+                {
+                    MessageBox.Show("저장되지 않는 데이터입니다.");
+                    cbCode.Focus();
+                    cbCode.SelectAll();
+                    return;
+                }
+                #endregion
+
+                #region  저장 로직
+                if (MessageBox.Show("삭제 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+
+                    sTran = TestbedDB.sqlConn.BeginTransaction();
+
+                    #region 기존 데이터 숨김처리
+                    _sQuery = new StringBuilder();
+                    _sQuery.Append("	update tb_machine_mst set	    ");
+                    _sQuery.Append("		 del_gubun = 'Y'		    ");
+                    _sQuery.Append("		,mod_worker = 'kmg1'        ");
+                    _sQuery.Append("		,mod_datetime = ''		    ");
+                    _sQuery.Append("		,del_datetime = ''		    ");
+                    _sQuery.Append("	where 				            ");
+                    _sQuery.Append("		idx = @pIdx	                ");
+                    _sqlParams = new SqlParameter[]
+                    {
+                        new SqlParameter("@pIdx",   Convert.ToDecimal(sIdx.ToString()))
+                    };
+
+                    isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+
+                    if (!isCheck)
+                    {
+                        sTran.Rollback();
+                        return;
+                    }
+                    else
+                    {
+                        sTran.Commit();
+                        CtrInit();
+                        ComboSetting();
+                        Search(_gbMcCode);
+                        CtrColor();
+                    }
+                    #endregion
+
+                }
+                #endregion
+
+                #region 재조회
+                _imageList = new ImageList();
+                //_listImage = new List<Image>();
+                _listString = new List<string>();
+                //CtrInit();
+                //ComboSetting();
+                //Search(_gbMcCode);
+                //CtrColor();
+                #endregion
+            }
+            catch (Exception ex)
+            {
+                sTran.Rollback();
+                MessageBox.Show(ex.Message, ex.Source);
+            }
+            finally
+            {
+                if (sTran != null) sTran.Dispose();
+                if (dt != null) dt.Dispose();
+                _db.CloseDB();
             }
         }
     }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdx = new System.Windows.Forms.TextBox();
@@ -65,6 +67,30 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.btnPlcDataRemove = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnPlcDataAdd = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.btnFileRemove = new System.Windows.Forms.Button();
+            this.btnFileUpload = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.btnCodeCopy = new System.Windows.Forms.Button();
+            this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mc_idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.path2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origin_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.new_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.file_save2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.del_gubun2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reg_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reg_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mc_idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plc_version = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,30 +112,7 @@
             this.mod_worker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPlcDataRemove = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnPlcDataAdd = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mc_idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.path2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origin_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.new_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.file_save2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.del_gubun2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reg_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reg_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFileRemove = new System.Windows.Forms.Button();
-            this.btnFileUpload = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.btnCodeCopy = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -120,13 +123,13 @@
             // cbCode
             // 
             this.cbCode.BackColor = System.Drawing.SystemColors.Window;
-            this.cbCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.cbCode.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbCode.FormattingEnabled = true;
             this.cbCode.IntegralHeight = false;
-            this.cbCode.ItemHeight = 25;
+            this.cbCode.ItemHeight = 31;
             this.cbCode.Location = new System.Drawing.Point(183, 33);
             this.cbCode.Name = "cbCode";
-            this.cbCode.Size = new System.Drawing.Size(508, 33);
+            this.cbCode.Size = new System.Drawing.Size(560, 39);
             this.cbCode.TabIndex = 201;
             this.cbCode.SelectedIndexChanged += new System.EventHandler(this.cbCode_SelectedIndexChanged);
             this.cbCode.Leave += new System.EventHandler(this.Control_Leave);
@@ -134,7 +137,8 @@
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(394, 342);
+            this.label4.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(416, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 50);
             this.label4.TabIndex = 184;
@@ -145,33 +149,34 @@
             // 
             this.txtIdx.BackColor = System.Drawing.SystemColors.Window;
             this.txtIdx.Enabled = false;
-            this.txtIdx.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtIdx.Location = new System.Drawing.Point(511, 351);
+            this.txtIdx.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdx.Location = new System.Drawing.Point(533, 351);
             this.txtIdx.Name = "txtIdx";
-            this.txtIdx.Size = new System.Drawing.Size(180, 32);
+            this.txtIdx.Size = new System.Drawing.Size(210, 39);
             this.txtIdx.TabIndex = 183;
             // 
             // txtMaker
             // 
-            this.txtMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtMaker.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaker.Location = new System.Drawing.Point(183, 245);
             this.txtMaker.Name = "txtMaker";
-            this.txtMaker.Size = new System.Drawing.Size(180, 32);
+            this.txtMaker.Size = new System.Drawing.Size(210, 39);
             this.txtMaker.TabIndex = 207;
             this.txtMaker.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // txtRemark
             // 
-            this.txtRemark.Location = new System.Drawing.Point(945, 245);
+            this.txtRemark.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
+            this.txtRemark.Location = new System.Drawing.Point(1016, 245);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(508, 139);
+            this.txtRemark.Size = new System.Drawing.Size(508, 145);
             this.txtRemark.TabIndex = 181;
             // 
             // label17
             // 
             this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(828, 236);
+            this.label17.Location = new System.Drawing.Point(881, 236);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(110, 50);
             this.label17.TabIndex = 176;
@@ -181,7 +186,7 @@
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(828, 183);
+            this.label14.Location = new System.Drawing.Point(881, 183);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 50);
             this.label14.TabIndex = 175;
@@ -190,16 +195,16 @@
             // 
             // txtPlcMaker
             // 
-            this.txtPlcMaker.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtPlcMaker.Location = new System.Drawing.Point(945, 139);
+            this.txtPlcMaker.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
+            this.txtPlcMaker.Location = new System.Drawing.Point(1016, 139);
             this.txtPlcMaker.Name = "txtPlcMaker";
-            this.txtPlcMaker.Size = new System.Drawing.Size(508, 32);
+            this.txtPlcMaker.Size = new System.Drawing.Size(508, 39);
             this.txtPlcMaker.TabIndex = 179;
             // 
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(828, 130);
+            this.label15.Location = new System.Drawing.Point(881, 130);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 50);
             this.label15.TabIndex = 174;
@@ -209,7 +214,7 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(828, 77);
+            this.label13.Location = new System.Drawing.Point(881, 77);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(110, 50);
             this.label13.TabIndex = 173;
@@ -218,37 +223,37 @@
             // 
             // txtPlcModel
             // 
-            this.txtPlcModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtPlcModel.Location = new System.Drawing.Point(945, 192);
+            this.txtPlcModel.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
+            this.txtPlcModel.Location = new System.Drawing.Point(1016, 192);
             this.txtPlcModel.Name = "txtPlcModel";
-            this.txtPlcModel.Size = new System.Drawing.Size(508, 32);
+            this.txtPlcModel.Size = new System.Drawing.Size(508, 39);
             this.txtPlcModel.TabIndex = 180;
             // 
             // txtPlcVersion
             // 
-            this.txtPlcVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtPlcVersion.Location = new System.Drawing.Point(945, 86);
+            this.txtPlcVersion.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
+            this.txtPlcVersion.Location = new System.Drawing.Point(1016, 86);
             this.txtPlcVersion.Name = "txtPlcVersion";
-            this.txtPlcVersion.Size = new System.Drawing.Size(508, 32);
+            this.txtPlcVersion.Size = new System.Drawing.Size(508, 39);
             this.txtPlcVersion.TabIndex = 178;
             // 
             // cbFac
             // 
             this.cbFac.BackColor = System.Drawing.SystemColors.Window;
-            this.cbFac.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.cbFac.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
             this.cbFac.FormattingEnabled = true;
             this.cbFac.IntegralHeight = false;
-            this.cbFac.ItemHeight = 25;
-            this.cbFac.Location = new System.Drawing.Point(945, 33);
+            this.cbFac.ItemHeight = 31;
+            this.cbFac.Location = new System.Drawing.Point(1016, 33);
             this.cbFac.Name = "cbFac";
-            this.cbFac.Size = new System.Drawing.Size(508, 33);
+            this.cbFac.Size = new System.Drawing.Size(508, 39);
             this.cbFac.TabIndex = 177;
             this.cbFac.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(828, 27);
+            this.label1.Location = new System.Drawing.Point(881, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 50);
             this.label1.TabIndex = 172;
@@ -257,15 +262,16 @@
             // 
             // txtDept
             // 
-            this.txtDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtDept.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDept.Location = new System.Drawing.Point(183, 192);
             this.txtDept.Name = "txtDept";
-            this.txtDept.Size = new System.Drawing.Size(180, 32);
+            this.txtDept.Size = new System.Drawing.Size(210, 39);
             this.txtDept.TabIndex = 205;
             // 
             // label18
             // 
             this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.Location = new System.Drawing.Point(67, 236);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(110, 50);
@@ -276,6 +282,7 @@
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.Location = new System.Drawing.Point(67, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(110, 50);
@@ -286,6 +293,7 @@
             // label10
             // 
             this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(67, 289);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 50);
@@ -296,19 +304,20 @@
             // cbLocation
             // 
             this.cbLocation.BackColor = System.Drawing.SystemColors.Window;
-            this.cbLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.cbLocation.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLocation.FormattingEnabled = true;
-            this.cbLocation.ItemHeight = 25;
-            this.cbLocation.Location = new System.Drawing.Point(511, 192);
+            this.cbLocation.ItemHeight = 31;
+            this.cbLocation.Location = new System.Drawing.Point(533, 192);
             this.cbLocation.Name = "cbLocation";
-            this.cbLocation.Size = new System.Drawing.Size(180, 33);
+            this.cbLocation.Size = new System.Drawing.Size(210, 39);
             this.cbLocation.TabIndex = 206;
             this.cbLocation.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(394, 183);
+            this.label9.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Location = new System.Drawing.Point(416, 183);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 50);
             this.label9.TabIndex = 158;
@@ -318,6 +327,7 @@
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.Location = new System.Drawing.Point(67, 183);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(110, 50);
@@ -328,17 +338,18 @@
             // txtMotorCount
             // 
             this.txtMotorCount.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMotorCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtMotorCount.Location = new System.Drawing.Point(511, 139);
+            this.txtMotorCount.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
+            this.txtMotorCount.Location = new System.Drawing.Point(533, 139);
             this.txtMotorCount.Name = "txtMotorCount";
-            this.txtMotorCount.Size = new System.Drawing.Size(180, 32);
+            this.txtMotorCount.Size = new System.Drawing.Size(210, 39);
             this.txtMotorCount.TabIndex = 204;
             this.txtMotorCount.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(394, 130);
+            this.label12.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.Location = new System.Drawing.Point(416, 130);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(110, 50);
             this.label12.TabIndex = 156;
@@ -348,6 +359,7 @@
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.White;
+            this.label7.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.Location = new System.Drawing.Point(67, 130);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(110, 50);
@@ -357,63 +369,64 @@
             // 
             // txtMakerDateTime
             // 
-            this.txtMakerDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtMakerDateTime.Location = new System.Drawing.Point(511, 245);
+            this.txtMakerDateTime.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMakerDateTime.Location = new System.Drawing.Point(533, 245);
             this.txtMakerDateTime.Name = "txtMakerDateTime";
-            this.txtMakerDateTime.Size = new System.Drawing.Size(180, 32);
+            this.txtMakerDateTime.Size = new System.Drawing.Size(210, 39);
             this.txtMakerDateTime.TabIndex = 208;
             // 
             // cbState
             // 
             this.cbState.BackColor = System.Drawing.SystemColors.Window;
-            this.cbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.cbState.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbState.FormattingEnabled = true;
             this.cbState.IntegralHeight = false;
-            this.cbState.ItemHeight = 25;
+            this.cbState.ItemHeight = 31;
             this.cbState.Location = new System.Drawing.Point(183, 351);
             this.cbState.Name = "cbState";
-            this.cbState.Size = new System.Drawing.Size(180, 33);
+            this.cbState.Size = new System.Drawing.Size(210, 39);
             this.cbState.TabIndex = 211;
             this.cbState.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // txtPlcPort
             // 
-            this.txtPlcPort.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.txtPlcPort.Location = new System.Drawing.Point(511, 298);
+            this.txtPlcPort.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
+            this.txtPlcPort.Location = new System.Drawing.Point(533, 298);
             this.txtPlcPort.Name = "txtPlcPort";
-            this.txtPlcPort.Size = new System.Drawing.Size(180, 32);
+            this.txtPlcPort.Size = new System.Drawing.Size(210, 39);
             this.txtPlcPort.TabIndex = 210;
             // 
             // txtPlcIp
             // 
-            this.txtPlcIp.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtPlcIp.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
             this.txtPlcIp.Location = new System.Drawing.Point(183, 298);
             this.txtPlcIp.Name = "txtPlcIp";
-            this.txtPlcIp.Size = new System.Drawing.Size(180, 32);
+            this.txtPlcIp.Size = new System.Drawing.Size(210, 39);
             this.txtPlcIp.TabIndex = 209;
             // 
             // txtSpec
             // 
-            this.txtSpec.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtSpec.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
             this.txtSpec.Location = new System.Drawing.Point(183, 139);
             this.txtSpec.Name = "txtSpec";
-            this.txtSpec.Size = new System.Drawing.Size(180, 32);
+            this.txtSpec.Size = new System.Drawing.Size(210, 39);
             this.txtSpec.TabIndex = 203;
             // 
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.txtName.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(183, 86);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(508, 32);
+            this.txtName.Size = new System.Drawing.Size(560, 39);
             this.txtName.TabIndex = 202;
             this.txtName.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(394, 289);
+            this.label11.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Location = new System.Drawing.Point(416, 289);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 50);
             this.label11.TabIndex = 154;
@@ -423,7 +436,8 @@
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(394, 236);
+            this.label5.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(416, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 50);
             this.label5.TabIndex = 153;
@@ -433,6 +447,7 @@
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(67, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(110, 50);
@@ -443,6 +458,7 @@
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(67, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 50);
@@ -458,7 +474,7 @@
             this.tabControl1.Location = new System.Drawing.Point(58, 417);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1395, 411);
+            this.tabControl1.Size = new System.Drawing.Size(1466, 411);
             this.tabControl1.TabIndex = 186;
             // 
             // tabPage1
@@ -471,7 +487,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1387, 385);
+            this.tabPage1.Size = new System.Drawing.Size(1458, 385);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PLC 데이터 주소";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -480,6 +496,14 @@
             // 
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx,
@@ -506,26 +530,309 @@
             this.dgv1.Location = new System.Drawing.Point(3, 43);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 23;
-            this.dgv1.Size = new System.Drawing.Size(1381, 336);
+            this.dgv1.Size = new System.Drawing.Size(1452, 336);
             this.dgv1.TabIndex = 193;
+            // 
+            // btnPlcDataRemove
+            // 
+            this.btnPlcDataRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
+            this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlcDataRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnPlcDataRemove.Location = new System.Drawing.Point(1291, 3);
+            this.btnPlcDataRemove.Name = "btnPlcDataRemove";
+            this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataRemove.TabIndex = 192;
+            this.btnPlcDataRemove.Text = "행 삭제";
+            this.btnPlcDataRemove.UseVisualStyleBackColor = false;
+            this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcel.FlatAppearance.BorderSize = 0;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnExcel.Location = new System.Drawing.Point(957, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(164, 37);
+            this.btnExcel.TabIndex = 191;
+            this.btnExcel.Text = "엑셀 업로드";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnPlcDataAdd
+            // 
+            this.btnPlcDataAdd.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
+            this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlcDataAdd.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnPlcDataAdd.Location = new System.Drawing.Point(1124, 3);
+            this.btnPlcDataAdd.Name = "btnPlcDataAdd";
+            this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataAdd.TabIndex = 190;
+            this.btnPlcDataAdd.Text = "행 추가";
+            this.btnPlcDataAdd.UseVisualStyleBackColor = false;
+            this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgv2);
+            this.tabPage2.Controls.Add(this.btnFileRemove);
+            this.tabPage2.Controls.Add(this.btnFileUpload);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1458, 385);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "이미지 첨부";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgv2
+            // 
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idx2,
+            this.mc_idx2,
+            this.path2,
+            this.origin_name2,
+            this.new_name2,
+            this.file_save2,
+            this.del_gubun2,
+            this.reg_worker2,
+            this.reg_datetime2,
+            this.mod_worker2,
+            this.mod_datetime2,
+            this.del_datetime2});
+            this.dgv2.Location = new System.Drawing.Point(3, 43);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.RowTemplate.Height = 23;
+            this.dgv2.Size = new System.Drawing.Size(1452, 336);
+            this.dgv2.TabIndex = 195;
+            this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
+            // 
+            // btnFileRemove
+            // 
+            this.btnFileRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFileRemove.FlatAppearance.BorderSize = 0;
+            this.btnFileRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnFileRemove.Location = new System.Drawing.Point(1291, 3);
+            this.btnFileRemove.Name = "btnFileRemove";
+            this.btnFileRemove.Size = new System.Drawing.Size(164, 37);
+            this.btnFileRemove.TabIndex = 194;
+            this.btnFileRemove.Text = "이미지 삭제";
+            this.btnFileRemove.UseVisualStyleBackColor = false;
+            this.btnFileRemove.Click += new System.EventHandler(this.btnFileRemove_Click);
+            // 
+            // btnFileUpload
+            // 
+            this.btnFileUpload.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFileUpload.FlatAppearance.BorderSize = 0;
+            this.btnFileUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileUpload.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnFileUpload.Location = new System.Drawing.Point(1124, 3);
+            this.btnFileUpload.Name = "btnFileUpload";
+            this.btnFileUpload.Size = new System.Drawing.Size(164, 37);
+            this.btnFileUpload.TabIndex = 193;
+            this.btnFileUpload.Text = "이미지 첨부";
+            this.btnFileUpload.UseVisualStyleBackColor = false;
+            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnRemove.Location = new System.Drawing.Point(1356, 830);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(164, 62);
+            this.btnRemove.TabIndex = 189;
+            this.btnRemove.Text = "삭제";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnNew.Location = new System.Drawing.Point(1022, 830);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(164, 62);
+            this.btnNew.TabIndex = 188;
+            this.btnNew.Text = "신규";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 16F);
+            this.btnSave.Location = new System.Drawing.Point(1189, 830);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(164, 62);
+            this.btnSave.TabIndex = 187;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(1546, 66);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(321, 830);
+            this.listView1.TabIndex = 194;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            // 
+            // btnCodeCopy
+            // 
+            this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCodeCopy.FlatAppearance.BorderSize = 0;
+            this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCodeCopy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeCopy.Location = new System.Drawing.Point(751, 33);
+            this.btnCodeCopy.Name = "btnCodeCopy";
+            this.btnCodeCopy.Size = new System.Drawing.Size(141, 39);
+            this.btnCodeCopy.TabIndex = 212;
+            this.btnCodeCopy.Text = "다른 코드로 저장";
+            this.btnCodeCopy.UseVisualStyleBackColor = false;
+            this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
+            // 
+            // idx2
+            // 
+            this.idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idx2.DataPropertyName = "idx";
+            this.idx2.HeaderText = "순번";
+            this.idx2.Name = "idx2";
+            this.idx2.ReadOnly = true;
+            // 
+            // mc_idx2
+            // 
+            this.mc_idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mc_idx2.DataPropertyName = "mc_idx";
+            this.mc_idx2.HeaderText = "mc_idx";
+            this.mc_idx2.Name = "mc_idx2";
+            this.mc_idx2.ReadOnly = true;
+            // 
+            // path2
+            // 
+            this.path2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.path2.DataPropertyName = "path";
+            this.path2.HeaderText = "파일경로";
+            this.path2.Name = "path2";
+            this.path2.ReadOnly = true;
+            // 
+            // origin_name2
+            // 
+            this.origin_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.origin_name2.DataPropertyName = "origin_name";
+            this.origin_name2.HeaderText = "원본파일명";
+            this.origin_name2.Name = "origin_name2";
+            this.origin_name2.ReadOnly = true;
+            // 
+            // new_name2
+            // 
+            this.new_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.new_name2.DataPropertyName = "new_name";
+            this.new_name2.HeaderText = "변경된 파일명";
+            this.new_name2.Name = "new_name2";
+            this.new_name2.ReadOnly = true;
+            // 
+            // file_save2
+            // 
+            this.file_save2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.file_save2.DataPropertyName = "file_save";
+            this.file_save2.HeaderText = "파일 저장 유무";
+            this.file_save2.Name = "file_save2";
+            this.file_save2.ReadOnly = true;
+            // 
+            // del_gubun2
+            // 
+            this.del_gubun2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.del_gubun2.DataPropertyName = "del_gubun";
+            this.del_gubun2.HeaderText = "삭제 유무";
+            this.del_gubun2.Name = "del_gubun2";
+            this.del_gubun2.ReadOnly = true;
+            // 
+            // reg_worker2
+            // 
+            this.reg_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.reg_worker2.DataPropertyName = "reg_worker";
+            this.reg_worker2.HeaderText = "등록자";
+            this.reg_worker2.Name = "reg_worker2";
+            this.reg_worker2.ReadOnly = true;
+            // 
+            // reg_datetime2
+            // 
+            this.reg_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.reg_datetime2.DataPropertyName = "reg_datetime";
+            this.reg_datetime2.HeaderText = "등록일시";
+            this.reg_datetime2.Name = "reg_datetime2";
+            this.reg_datetime2.ReadOnly = true;
+            // 
+            // mod_worker2
+            // 
+            this.mod_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mod_worker2.DataPropertyName = "mod_worker";
+            this.mod_worker2.HeaderText = "수정자";
+            this.mod_worker2.Name = "mod_worker2";
+            this.mod_worker2.ReadOnly = true;
+            // 
+            // mod_datetime2
+            // 
+            this.mod_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mod_datetime2.DataPropertyName = "mod_datetime";
+            this.mod_datetime2.HeaderText = "수정일시";
+            this.mod_datetime2.Name = "mod_datetime2";
+            this.mod_datetime2.ReadOnly = true;
+            // 
+            // del_datetime2
+            // 
+            this.del_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.del_datetime2.DataPropertyName = "del_datetime";
+            this.del_datetime2.HeaderText = "삭제시간";
+            this.del_datetime2.Name = "del_datetime2";
+            this.del_datetime2.ReadOnly = true;
             // 
             // idx
             // 
             this.idx.DataPropertyName = "idx";
-            this.idx.HeaderText = "idx";
+            this.idx.HeaderText = "순번";
             this.idx.Name = "idx";
+            this.idx.ReadOnly = true;
             // 
             // mc_idx
             // 
             this.mc_idx.DataPropertyName = "mc_idx";
             this.mc_idx.HeaderText = "mc_idx";
             this.mc_idx.Name = "mc_idx";
+            this.mc_idx.ReadOnly = true;
             // 
             // plc_version
             // 
             this.plc_version.DataPropertyName = "plc_version";
             this.plc_version.HeaderText = "plc_version";
             this.plc_version.Name = "plc_version";
+            this.plc_version.ReadOnly = true;
             // 
             // auto_start_address
             // 
@@ -596,290 +903,63 @@
             // remark
             // 
             this.remark.DataPropertyName = "remark";
-            this.remark.HeaderText = "remark";
+            this.remark.HeaderText = "비고";
             this.remark.Name = "remark";
             // 
             // del_gubun
             // 
             this.del_gubun.DataPropertyName = "del_gubun";
-            this.del_gubun.HeaderText = "del_gubun";
+            this.del_gubun.HeaderText = "삭제유무";
             this.del_gubun.Name = "del_gubun";
+            this.del_gubun.ReadOnly = true;
             // 
             // reg_worker
             // 
             this.reg_worker.DataPropertyName = "reg_worker";
-            this.reg_worker.HeaderText = "reg_worker";
+            this.reg_worker.HeaderText = "등록자";
             this.reg_worker.Name = "reg_worker";
+            this.reg_worker.ReadOnly = true;
             // 
             // reg_datetime
             // 
             this.reg_datetime.DataPropertyName = "reg_datetime";
-            this.reg_datetime.HeaderText = "reg_datetime";
+            this.reg_datetime.HeaderText = "등록일시";
             this.reg_datetime.Name = "reg_datetime";
+            this.reg_datetime.ReadOnly = true;
             // 
             // mod_worker
             // 
             this.mod_worker.DataPropertyName = "mod_worker";
-            this.mod_worker.HeaderText = "mod_worker";
+            this.mod_worker.HeaderText = "수정자";
             this.mod_worker.Name = "mod_worker";
+            this.mod_worker.ReadOnly = true;
             // 
             // mod_datetime
             // 
             this.mod_datetime.DataPropertyName = "mod_datetime";
-            this.mod_datetime.HeaderText = "mod_datetime";
+            this.mod_datetime.HeaderText = "수정일시";
             this.mod_datetime.Name = "mod_datetime";
+            this.mod_datetime.ReadOnly = true;
             // 
             // del_datetime
             // 
             this.del_datetime.DataPropertyName = "del_datetime";
-            this.del_datetime.HeaderText = "del_datetime";
+            this.del_datetime.HeaderText = "삭제일시";
             this.del_datetime.Name = "del_datetime";
+            this.del_datetime.ReadOnly = true;
             // 
-            // btnPlcDataRemove
+            // button1
             // 
-            this.btnPlcDataRemove.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
-            this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlcDataRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnPlcDataRemove.Location = new System.Drawing.Point(1219, 3);
-            this.btnPlcDataRemove.Name = "btnPlcDataRemove";
-            this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
-            this.btnPlcDataRemove.TabIndex = 192;
-            this.btnPlcDataRemove.Text = "행 삭제";
-            this.btnPlcDataRemove.UseVisualStyleBackColor = false;
-            this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnExcel.FlatAppearance.BorderSize = 0;
-            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnExcel.Location = new System.Drawing.Point(885, 3);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(164, 37);
-            this.btnExcel.TabIndex = 191;
-            this.btnExcel.Text = "엑셀 업로드";
-            this.btnExcel.UseVisualStyleBackColor = false;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // btnPlcDataAdd
-            // 
-            this.btnPlcDataAdd.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
-            this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlcDataAdd.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnPlcDataAdd.Location = new System.Drawing.Point(1052, 3);
-            this.btnPlcDataAdd.Name = "btnPlcDataAdd";
-            this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
-            this.btnPlcDataAdd.TabIndex = 190;
-            this.btnPlcDataAdd.Text = "행 추가";
-            this.btnPlcDataAdd.UseVisualStyleBackColor = false;
-            this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dgv2);
-            this.tabPage2.Controls.Add(this.btnFileRemove);
-            this.tabPage2.Controls.Add(this.btnFileUpload);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1387, 385);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "이미지 첨부";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgv2
-            // 
-            this.dgv2.AllowUserToAddRows = false;
-            this.dgv2.AllowUserToDeleteRows = false;
-            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idx2,
-            this.mc_idx2,
-            this.path2,
-            this.origin_name2,
-            this.new_name2,
-            this.file_save2,
-            this.del_gubun2,
-            this.reg_worker2,
-            this.reg_datetime2,
-            this.mod_worker2,
-            this.mod_datetime2,
-            this.del_datetime2});
-            this.dgv2.Location = new System.Drawing.Point(3, 43);
-            this.dgv2.Name = "dgv2";
-            this.dgv2.RowTemplate.Height = 23;
-            this.dgv2.Size = new System.Drawing.Size(1381, 336);
-            this.dgv2.TabIndex = 195;
-            this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
-            // 
-            // idx2
-            // 
-            this.idx2.DataPropertyName = "idx";
-            this.idx2.HeaderText = "idx";
-            this.idx2.Name = "idx2";
-            // 
-            // mc_idx2
-            // 
-            this.mc_idx2.DataPropertyName = "mc_idx";
-            this.mc_idx2.HeaderText = "mc_idx";
-            this.mc_idx2.Name = "mc_idx2";
-            // 
-            // path2
-            // 
-            this.path2.DataPropertyName = "path";
-            this.path2.HeaderText = "path";
-            this.path2.Name = "path2";
-            // 
-            // origin_name2
-            // 
-            this.origin_name2.DataPropertyName = "origin_name";
-            this.origin_name2.HeaderText = "origin_name";
-            this.origin_name2.Name = "origin_name2";
-            // 
-            // new_name2
-            // 
-            this.new_name2.DataPropertyName = "new_name";
-            this.new_name2.HeaderText = "new_name";
-            this.new_name2.Name = "new_name2";
-            // 
-            // file_save2
-            // 
-            this.file_save2.DataPropertyName = "file_save";
-            this.file_save2.HeaderText = "file_save";
-            this.file_save2.Name = "file_save2";
-            // 
-            // del_gubun2
-            // 
-            this.del_gubun2.DataPropertyName = "del_gubun";
-            this.del_gubun2.HeaderText = "del_gubun";
-            this.del_gubun2.Name = "del_gubun2";
-            // 
-            // reg_worker2
-            // 
-            this.reg_worker2.DataPropertyName = "reg_worker";
-            this.reg_worker2.HeaderText = "reg_worker";
-            this.reg_worker2.Name = "reg_worker2";
-            // 
-            // reg_datetime2
-            // 
-            this.reg_datetime2.DataPropertyName = "reg_datetime";
-            this.reg_datetime2.HeaderText = "reg_datetime";
-            this.reg_datetime2.Name = "reg_datetime2";
-            // 
-            // mod_worker2
-            // 
-            this.mod_worker2.DataPropertyName = "mod_worker";
-            this.mod_worker2.HeaderText = "mod_worker";
-            this.mod_worker2.Name = "mod_worker2";
-            // 
-            // mod_datetime2
-            // 
-            this.mod_datetime2.DataPropertyName = "mod_datetime";
-            this.mod_datetime2.HeaderText = "mod_datetime";
-            this.mod_datetime2.Name = "mod_datetime2";
-            // 
-            // del_datetime2
-            // 
-            this.del_datetime2.DataPropertyName = "del_datetime";
-            this.del_datetime2.HeaderText = "del_datetime";
-            this.del_datetime2.Name = "del_datetime2";
-            // 
-            // btnFileRemove
-            // 
-            this.btnFileRemove.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnFileRemove.FlatAppearance.BorderSize = 0;
-            this.btnFileRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFileRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnFileRemove.Location = new System.Drawing.Point(1219, 3);
-            this.btnFileRemove.Name = "btnFileRemove";
-            this.btnFileRemove.Size = new System.Drawing.Size(164, 37);
-            this.btnFileRemove.TabIndex = 194;
-            this.btnFileRemove.Text = "이미지 삭제";
-            this.btnFileRemove.UseVisualStyleBackColor = false;
-            this.btnFileRemove.Click += new System.EventHandler(this.btnFileRemove_Click);
-            // 
-            // btnFileUpload
-            // 
-            this.btnFileUpload.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnFileUpload.FlatAppearance.BorderSize = 0;
-            this.btnFileUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFileUpload.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnFileUpload.Location = new System.Drawing.Point(1052, 3);
-            this.btnFileUpload.Name = "btnFileUpload";
-            this.btnFileUpload.Size = new System.Drawing.Size(164, 37);
-            this.btnFileUpload.TabIndex = 193;
-            this.btnFileUpload.Text = "이미지 첨부";
-            this.btnFileUpload.UseVisualStyleBackColor = false;
-            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnClose.Location = new System.Drawing.Point(1282, 834);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(164, 62);
-            this.btnClose.TabIndex = 189;
-            this.btnClose.Text = "삭제";
-            this.btnClose.UseVisualStyleBackColor = false;
-            // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnNew.FlatAppearance.BorderSize = 0;
-            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnNew.Location = new System.Drawing.Point(948, 834);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(164, 62);
-            this.btnNew.TabIndex = 188;
-            this.btnNew.Text = "신규";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnSave.Location = new System.Drawing.Point(1115, 834);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 62);
-            this.btnSave.TabIndex = 187;
-            this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1484, 33);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(383, 863);
-            this.listView1.TabIndex = 194;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
-            // 
-            // btnCodeCopy
-            // 
-            this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCodeCopy.FlatAppearance.BorderSize = 0;
-            this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCodeCopy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCodeCopy.Location = new System.Drawing.Point(697, 33);
-            this.btnCodeCopy.Name = "btnCodeCopy";
-            this.btnCodeCopy.Size = new System.Drawing.Size(141, 33);
-            this.btnCodeCopy.TabIndex = 212;
-            this.btnCodeCopy.Text = "다른 코드로 저장";
-            this.btnCodeCopy.UseVisualStyleBackColor = false;
-            this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1569, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(257, 33);
+            this.button1.TabIndex = 213;
+            this.button1.Text = "이미지";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmMCManager
             // 
@@ -888,9 +968,10 @@
             this.BackgroundImage = global::TestbedDAQ.Properties.Resources.body_bottom02;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 928);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCodeCopy);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
@@ -985,10 +1066,15 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnPlcDataAdd;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgv1;
+        private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.Button btnFileRemove;
+        private System.Windows.Forms.Button btnFileUpload;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnCodeCopy;
         private System.Windows.Forms.DataGridViewTextBoxColumn idx;
         private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx;
         private System.Windows.Forms.DataGridViewTextBoxColumn plc_version;
@@ -1010,7 +1096,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker;
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime;
         private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime;
-        private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idx2;
         private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx2;
         private System.Windows.Forms.DataGridViewTextBoxColumn path2;
@@ -1023,9 +1108,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker2;
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime2;
         private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime2;
-        private System.Windows.Forms.Button btnFileRemove;
-        private System.Windows.Forms.Button btnFileUpload;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.Button btnCodeCopy;
+        private System.Windows.Forms.Button button1;
     }
 }
