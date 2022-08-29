@@ -19,12 +19,7 @@ namespace TestbedDAQ.Forms
 {
     public partial class frmMCManager : Form
     {
-        private string _host = "ftp://f1lab.co.kr";
-        private string _path = @"ftp://f1lab.co.kr/wf_ftp_SJ_Testbed/img/mc/";
-        private string _userId = "ftpUser";
-        private string _password = "f1soft@95";
-        
-
+        TestbedFTP _Ftp = new TestbedFTP();
         private TestbedDB _db;
         private StringBuilder _sQuery;
         private SqlParameter[] _sqlParams;
@@ -390,7 +385,7 @@ namespace TestbedDAQ.Forms
                     if (dgv2.Rows.Count > 0)
                     {
                         WebClient ftpClient = new WebClient();
-                        ftpClient.Credentials = new NetworkCredential(_userId, _password);
+                        ftpClient.Credentials = new NetworkCredential(_Ftp._userId, _Ftp._password);
 
                         for (int i = 0; i < dgv2.Rows.Count; i++)
                         {
@@ -1135,7 +1130,7 @@ namespace TestbedDAQ.Forms
                                 sNewName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + dgv2["origin_name2", i].Value.ToString();
                             }
 
-                            sPath = _path + sIdx + "/";
+                            sPath = _Ftp._path + sIdx + "/";
                             sFullPath = sPath + sNewName;
 
                             _sqlParams = new SqlParameter[]
@@ -1165,14 +1160,14 @@ namespace TestbedDAQ.Forms
 
                             //트루반환 : 폴더 존재
                             //펄스반환 : 폴더 미존재
-                            chkDir = DoesFtpDirectoryExist(sPath);
+                            chkDir = _Ftp.DoesFtpDirectoryExist(sPath);
 
                             if (!chkDir)
                             {
-                                CreateFolder(sPath);
+                                _Ftp.CreateFolder(sPath);
                             }
 
-                            UploadFile(_listString[iImageIdx], sFullPath);
+                            _Ftp.UploadFile(_listString[iImageIdx], sFullPath);
                             iImageIdx++;
 
                             if (!isCheck)
@@ -1214,67 +1209,6 @@ namespace TestbedDAQ.Forms
                 if (dt != null) dt.Dispose();
                 _db.CloseDB();
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            }
-        }
-
-        public bool DoesFtpDirectoryExist(string dirPath)
-        {
-            bool isexist = false;
-
-            try
-            {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dirPath + "/");
-                request.Credentials = new NetworkCredential(_userId, _password);
-                request.Method = WebRequestMethods.Ftp.ListDirectory;
-                using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
-                {
-                    isexist = true;
-                }
-            }
-            catch (WebException ex)
-            {
-                if (ex.Response != null)
-                {
-                    FtpWebResponse response = (FtpWebResponse)ex.Response;
-                    if (response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return isexist;
-        }
-
-        public bool CreateFolder(string dirPath)
-        {
-            string path = dirPath;
-            bool IsCreated = true;
-            try
-            {
-                WebRequest request = WebRequest.Create(path);
-                request.Method = WebRequestMethods.Ftp.MakeDirectory;
-                request.Credentials = new NetworkCredential(_userId, _password);
-                using (var resp = (FtpWebResponse)request.GetResponse())
-                {
-                    Console.WriteLine(resp.StatusCode);
-                }
-            }
-            catch (Exception ex)
-            {
-                IsCreated = false;
-            }
-            return IsCreated;
-        }
-
-        public void UploadFile(string _From, string _To)
-        {
-            string From = _From;
-            string To = _To;
-
-            using (WebClient client = new WebClient())
-            {
-                client.Credentials = new NetworkCredential(_userId, _password);
-                client.UploadFile(To, WebRequestMethods.Ftp.UploadFile, From);
             }
         }
 

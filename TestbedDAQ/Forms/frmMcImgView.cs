@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestbedDAQ.UseClass;
 
 namespace TestbedDAQ.Forms
 {
@@ -18,9 +19,8 @@ namespace TestbedDAQ.Forms
         private string _sName = string.Empty;
         private string _sFullPath = string.Empty;
 
-        public string host = "ftp://f1lab.co.kr";
-        public string UserId = "ftpUser";
-        public string Password = "f1soft@95";
+        TestbedFTP _Ftp = new TestbedFTP();
+
 
         public frmMcImgView(string sPath, string sName)
         {
@@ -39,7 +39,7 @@ namespace TestbedDAQ.Forms
             if (_sFullPath != string.Empty)
             {
                 WebClient ftpClient = new WebClient();
-                ftpClient.Credentials = new NetworkCredential(UserId, Password);
+                ftpClient.Credentials = new NetworkCredential(_Ftp._userId, _Ftp._password);
 
                 byte[] imageByte = ftpClient.DownloadData(_sPath + "/" +_sName);
 

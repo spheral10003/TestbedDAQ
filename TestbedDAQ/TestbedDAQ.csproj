@@ -102,6 +102,7 @@
     <Compile Include="UseClass\TestbedAPI.cs" />
     <Compile Include="UseClass\TestbedColor.cs" />
     <Compile Include="UseClass\TestbedDB.cs" />
+    <Compile Include="UseClass\TestbedFTP.cs" />
     <Compile Include="UseClass\TestbedLeave.cs" />
     <EmbeddedResource Include="Forms\frmCombo.resx">
       <DependentUpon>frmCombo.cs</DependentUpon>
