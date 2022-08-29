@@ -28,6 +28,7 @@ namespace TestbedDAQ.UseClass
                 using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {
                     isExist = true;
+                    response.Close();
                 }
             }
             catch (WebException ex)
@@ -37,8 +38,9 @@ namespace TestbedDAQ.UseClass
                     FtpWebResponse response = (FtpWebResponse)ex.Response;
                     if (response.StatusCode == FtpStatusCode.ActionNotTakenFileUnavailable)
                     {
-                        return false;
-                    }
+                        response.Close();
+                        return false; 
+                    } 
                 }
             }
             return isExist;
@@ -57,10 +59,12 @@ namespace TestbedDAQ.UseClass
                 using (var resp = (FtpWebResponse)request.GetResponse())
                 {
                     Console.WriteLine(resp.StatusCode);
+                    resp.Close();
                 }
             }
             catch (Exception)
             {
+                
                 IsCreated = false;
             }
             return IsCreated;
@@ -74,6 +78,7 @@ namespace TestbedDAQ.UseClass
             {
                 client.Credentials = new NetworkCredential(_UserId, _Password);
                 client.UploadFile(sTo, WebRequestMethods.Ftp.UploadFile, sFrom);
+                client.Dispose();
             }
         }
     }

@@ -28,8 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle93 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle91 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle92 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle94 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle95 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle96 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle97 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle98 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle99 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle105 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdx = new System.Windows.Forms.TextBox();
@@ -67,6 +100,19 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.btnPlcDataRemove = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnPlcDataAdd = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.btnFileRemove = new System.Windows.Forms.Button();
+            this.btnFileUpload = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lvwImage = new System.Windows.Forms.ListView();
+            this.btnCodeCopy = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mc_idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plc_version = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,11 +134,6 @@
             this.mod_worker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPlcDataRemove = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnPlcDataAdd = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
             this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mc_idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.path2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,14 +146,6 @@
             this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFileRemove = new System.Windows.Forms.Button();
-            this.btnFileUpload = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lvwImage = new System.Windows.Forms.ListView();
-            this.btnCodeCopy = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
@@ -240,6 +273,7 @@
             this.txtPlcVersion.Name = "txtPlcVersion";
             this.txtPlcVersion.Size = new System.Drawing.Size(508, 39);
             this.txtPlcVersion.TabIndex = 213;
+            this.txtPlcVersion.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // cbFac
             // 
@@ -475,7 +509,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("굴림", 9F);
+            this.tabControl1.Font = new System.Drawing.Font("Noto Sans KR Regular", 16F);
             this.tabControl1.Location = new System.Drawing.Point(58, 417);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -488,11 +522,11 @@
             this.tabPage1.Controls.Add(this.btnPlcDataRemove);
             this.tabPage1.Controls.Add(this.btnExcel);
             this.tabPage1.Controls.Add(this.btnPlcDataAdd);
-            this.tabPage1.Font = new System.Drawing.Font("굴림", 9F);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 40);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1458, 385);
+            this.tabPage1.Size = new System.Drawing.Size(1458, 367);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "PLC 데이터 주소";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -501,14 +535,14 @@
             // 
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Noto Sans KR Regular", 9F);
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx,
@@ -535,143 +569,8 @@
             this.dgv1.Location = new System.Drawing.Point(3, 43);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowTemplate.Height = 23;
-            this.dgv1.Size = new System.Drawing.Size(1452, 336);
+            this.dgv1.Size = new System.Drawing.Size(1452, 321);
             this.dgv1.TabIndex = 193;
-            // 
-            // idx
-            // 
-            this.idx.DataPropertyName = "idx";
-            this.idx.HeaderText = "순번";
-            this.idx.Name = "idx";
-            this.idx.ReadOnly = true;
-            // 
-            // mc_idx
-            // 
-            this.mc_idx.DataPropertyName = "mc_idx";
-            this.mc_idx.HeaderText = "mc_idx";
-            this.mc_idx.Name = "mc_idx";
-            this.mc_idx.ReadOnly = true;
-            // 
-            // plc_version
-            // 
-            this.plc_version.DataPropertyName = "plc_version";
-            this.plc_version.HeaderText = "plc_version";
-            this.plc_version.Name = "plc_version";
-            this.plc_version.ReadOnly = true;
-            // 
-            // auto_start_address
-            // 
-            this.auto_start_address.DataPropertyName = "auto_start_address";
-            this.auto_start_address.HeaderText = "auto_start_address";
-            this.auto_start_address.Name = "auto_start_address";
-            // 
-            // speed_address
-            // 
-            this.speed_address.DataPropertyName = "speed_address";
-            this.speed_address.HeaderText = "speed_address";
-            this.speed_address.Name = "speed_address";
-            // 
-            // volt_address
-            // 
-            this.volt_address.DataPropertyName = "volt_address";
-            this.volt_address.HeaderText = "volt_address";
-            this.volt_address.Name = "volt_address";
-            // 
-            // current_address
-            // 
-            this.current_address.DataPropertyName = "current_address";
-            this.current_address.HeaderText = "current_address";
-            this.current_address.Name = "current_address";
-            // 
-            // current_load_address
-            // 
-            this.current_load_address.DataPropertyName = "current_load_address";
-            this.current_load_address.HeaderText = "current_load_address";
-            this.current_load_address.Name = "current_load_address";
-            // 
-            // peak_load_address
-            // 
-            this.peak_load_address.DataPropertyName = "peak_load_address";
-            this.peak_load_address.HeaderText = "peak_load_address";
-            this.peak_load_address.Name = "peak_load_address";
-            // 
-            // machining_time_address
-            // 
-            this.machining_time_address.DataPropertyName = "machining_time_address";
-            this.machining_time_address.HeaderText = "machining_time_address";
-            this.machining_time_address.Name = "machining_time_address";
-            // 
-            // alarm_code_address
-            // 
-            this.alarm_code_address.DataPropertyName = "alarm_code_address";
-            this.alarm_code_address.HeaderText = "alarm_code_address";
-            this.alarm_code_address.Name = "alarm_code_address";
-            // 
-            // product_size_address
-            // 
-            this.product_size_address.DataPropertyName = "product_size_address";
-            this.product_size_address.HeaderText = "product_size_address";
-            this.product_size_address.Name = "product_size_address";
-            // 
-            // current_size_address
-            // 
-            this.current_size_address.DataPropertyName = "current_size_address";
-            this.current_size_address.HeaderText = "current_size_address";
-            this.current_size_address.Name = "current_size_address";
-            // 
-            // machining_count_address
-            // 
-            this.machining_count_address.DataPropertyName = "machining_count_address";
-            this.machining_count_address.HeaderText = "machining_count_address";
-            this.machining_count_address.Name = "machining_count_address";
-            // 
-            // remark
-            // 
-            this.remark.DataPropertyName = "remark";
-            this.remark.HeaderText = "비고";
-            this.remark.Name = "remark";
-            // 
-            // del_gubun
-            // 
-            this.del_gubun.DataPropertyName = "del_gubun";
-            this.del_gubun.HeaderText = "삭제유무";
-            this.del_gubun.Name = "del_gubun";
-            this.del_gubun.ReadOnly = true;
-            // 
-            // reg_worker
-            // 
-            this.reg_worker.DataPropertyName = "reg_worker";
-            this.reg_worker.HeaderText = "등록자";
-            this.reg_worker.Name = "reg_worker";
-            this.reg_worker.ReadOnly = true;
-            // 
-            // reg_datetime
-            // 
-            this.reg_datetime.DataPropertyName = "reg_datetime";
-            this.reg_datetime.HeaderText = "등록일시";
-            this.reg_datetime.Name = "reg_datetime";
-            this.reg_datetime.ReadOnly = true;
-            // 
-            // mod_worker
-            // 
-            this.mod_worker.DataPropertyName = "mod_worker";
-            this.mod_worker.HeaderText = "수정자";
-            this.mod_worker.Name = "mod_worker";
-            this.mod_worker.ReadOnly = true;
-            // 
-            // mod_datetime
-            // 
-            this.mod_datetime.DataPropertyName = "mod_datetime";
-            this.mod_datetime.HeaderText = "수정일시";
-            this.mod_datetime.Name = "mod_datetime";
-            this.mod_datetime.ReadOnly = true;
-            // 
-            // del_datetime
-            // 
-            this.del_datetime.DataPropertyName = "del_datetime";
-            this.del_datetime.HeaderText = "삭제일시";
-            this.del_datetime.Name = "del_datetime";
-            this.del_datetime.ReadOnly = true;
             // 
             // btnPlcDataRemove
             // 
@@ -721,10 +620,10 @@
             this.tabPage2.Controls.Add(this.dgv2);
             this.tabPage2.Controls.Add(this.btnFileRemove);
             this.tabPage2.Controls.Add(this.btnFileUpload);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 40);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1458, 385);
+            this.tabPage2.Size = new System.Drawing.Size(1458, 367);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "이미지 첨부";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -733,14 +632,14 @@
             // 
             this.dgv2.AllowUserToAddRows = false;
             this.dgv2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle93.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle93.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle93.Font = new System.Drawing.Font("Noto Sans KR Regular", 9F);
+            dataGridViewCellStyle93.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle93.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle93.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle93.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle93;
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx2,
@@ -758,105 +657,9 @@
             this.dgv2.Location = new System.Drawing.Point(3, 43);
             this.dgv2.Name = "dgv2";
             this.dgv2.RowTemplate.Height = 23;
-            this.dgv2.Size = new System.Drawing.Size(1452, 336);
+            this.dgv2.Size = new System.Drawing.Size(1452, 321);
             this.dgv2.TabIndex = 195;
             this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
-            // 
-            // idx2
-            // 
-            this.idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idx2.DataPropertyName = "idx";
-            this.idx2.HeaderText = "순번";
-            this.idx2.Name = "idx2";
-            this.idx2.ReadOnly = true;
-            // 
-            // mc_idx2
-            // 
-            this.mc_idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mc_idx2.DataPropertyName = "mc_idx";
-            this.mc_idx2.HeaderText = "mc_idx";
-            this.mc_idx2.Name = "mc_idx2";
-            this.mc_idx2.ReadOnly = true;
-            // 
-            // path2
-            // 
-            this.path2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.path2.DataPropertyName = "path";
-            this.path2.HeaderText = "파일경로";
-            this.path2.Name = "path2";
-            this.path2.ReadOnly = true;
-            // 
-            // origin_name2
-            // 
-            this.origin_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.origin_name2.DataPropertyName = "origin_name";
-            this.origin_name2.HeaderText = "원본파일명";
-            this.origin_name2.Name = "origin_name2";
-            this.origin_name2.ReadOnly = true;
-            // 
-            // new_name2
-            // 
-            this.new_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.new_name2.DataPropertyName = "new_name";
-            this.new_name2.HeaderText = "변경된 파일명";
-            this.new_name2.Name = "new_name2";
-            this.new_name2.ReadOnly = true;
-            // 
-            // file_save2
-            // 
-            this.file_save2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.file_save2.DataPropertyName = "file_save";
-            this.file_save2.HeaderText = "파일 저장 유무";
-            this.file_save2.Name = "file_save2";
-            this.file_save2.ReadOnly = true;
-            // 
-            // del_gubun2
-            // 
-            this.del_gubun2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.del_gubun2.DataPropertyName = "del_gubun";
-            this.del_gubun2.HeaderText = "삭제 유무";
-            this.del_gubun2.Name = "del_gubun2";
-            this.del_gubun2.ReadOnly = true;
-            // 
-            // reg_worker2
-            // 
-            this.reg_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.reg_worker2.DataPropertyName = "reg_worker";
-            this.reg_worker2.HeaderText = "등록자";
-            this.reg_worker2.Name = "reg_worker2";
-            this.reg_worker2.ReadOnly = true;
-            // 
-            // reg_datetime2
-            // 
-            this.reg_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.reg_datetime2.DataPropertyName = "reg_datetime";
-            this.reg_datetime2.HeaderText = "등록일시";
-            this.reg_datetime2.Name = "reg_datetime2";
-            this.reg_datetime2.ReadOnly = true;
-            // 
-            // mod_worker2
-            // 
-            this.mod_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mod_worker2.DataPropertyName = "mod_worker";
-            this.mod_worker2.HeaderText = "수정자";
-            this.mod_worker2.Name = "mod_worker2";
-            this.mod_worker2.ReadOnly = true;
-            // 
-            // mod_datetime2
-            // 
-            this.mod_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mod_datetime2.DataPropertyName = "mod_datetime";
-            this.mod_datetime2.HeaderText = "수정일시";
-            this.mod_datetime2.Name = "mod_datetime2";
-            this.mod_datetime2.ReadOnly = true;
-            // 
-            // del_datetime2
-            // 
-            this.del_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.del_datetime2.DataPropertyName = "del_datetime";
-            this.del_datetime2.HeaderText = "삭제시간";
-            this.del_datetime2.Name = "del_datetime2";
-            this.del_datetime2.ReadOnly = true;
             // 
             // btnFileRemove
             // 
@@ -945,7 +748,7 @@
             this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnCodeCopy.FlatAppearance.BorderSize = 0;
             this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCodeCopy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeCopy.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
             this.btnCodeCopy.Location = new System.Drawing.Point(751, 33);
             this.btnCodeCopy.Name = "btnCodeCopy";
             this.btnCodeCopy.Size = new System.Drawing.Size(141, 39);
@@ -966,6 +769,303 @@
             this.button1.TabIndex = 500;
             this.button1.Text = "이미지";
             this.button1.UseVisualStyleBackColor = false;
+            // 
+            // idx
+            // 
+            this.idx.DataPropertyName = "idx";
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.idx.DefaultCellStyle = dataGridViewCellStyle72;
+            this.idx.HeaderText = "순번";
+            this.idx.Name = "idx";
+            this.idx.ReadOnly = true;
+            // 
+            // mc_idx
+            // 
+            this.mc_idx.DataPropertyName = "mc_idx";
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mc_idx.DefaultCellStyle = dataGridViewCellStyle73;
+            this.mc_idx.HeaderText = "mc_idx";
+            this.mc_idx.Name = "mc_idx";
+            this.mc_idx.ReadOnly = true;
+            // 
+            // plc_version
+            // 
+            this.plc_version.DataPropertyName = "plc_version";
+            dataGridViewCellStyle74.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.plc_version.DefaultCellStyle = dataGridViewCellStyle74;
+            this.plc_version.HeaderText = "plc_version";
+            this.plc_version.Name = "plc_version";
+            this.plc_version.ReadOnly = true;
+            // 
+            // auto_start_address
+            // 
+            this.auto_start_address.DataPropertyName = "auto_start_address";
+            dataGridViewCellStyle75.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.auto_start_address.DefaultCellStyle = dataGridViewCellStyle75;
+            this.auto_start_address.HeaderText = "auto_start_address";
+            this.auto_start_address.Name = "auto_start_address";
+            // 
+            // speed_address
+            // 
+            this.speed_address.DataPropertyName = "speed_address";
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.speed_address.DefaultCellStyle = dataGridViewCellStyle76;
+            this.speed_address.HeaderText = "speed_address";
+            this.speed_address.Name = "speed_address";
+            // 
+            // volt_address
+            // 
+            this.volt_address.DataPropertyName = "volt_address";
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.volt_address.DefaultCellStyle = dataGridViewCellStyle77;
+            this.volt_address.HeaderText = "volt_address";
+            this.volt_address.Name = "volt_address";
+            // 
+            // current_address
+            // 
+            this.current_address.DataPropertyName = "current_address";
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.current_address.DefaultCellStyle = dataGridViewCellStyle78;
+            this.current_address.HeaderText = "current_address";
+            this.current_address.Name = "current_address";
+            // 
+            // current_load_address
+            // 
+            this.current_load_address.DataPropertyName = "current_load_address";
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.current_load_address.DefaultCellStyle = dataGridViewCellStyle79;
+            this.current_load_address.HeaderText = "current_load_address";
+            this.current_load_address.Name = "current_load_address";
+            // 
+            // peak_load_address
+            // 
+            this.peak_load_address.DataPropertyName = "peak_load_address";
+            dataGridViewCellStyle80.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.peak_load_address.DefaultCellStyle = dataGridViewCellStyle80;
+            this.peak_load_address.HeaderText = "peak_load_address";
+            this.peak_load_address.Name = "peak_load_address";
+            // 
+            // machining_time_address
+            // 
+            this.machining_time_address.DataPropertyName = "machining_time_address";
+            dataGridViewCellStyle81.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.machining_time_address.DefaultCellStyle = dataGridViewCellStyle81;
+            this.machining_time_address.HeaderText = "machining_time_address";
+            this.machining_time_address.Name = "machining_time_address";
+            // 
+            // alarm_code_address
+            // 
+            this.alarm_code_address.DataPropertyName = "alarm_code_address";
+            dataGridViewCellStyle82.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.alarm_code_address.DefaultCellStyle = dataGridViewCellStyle82;
+            this.alarm_code_address.HeaderText = "alarm_code_address";
+            this.alarm_code_address.Name = "alarm_code_address";
+            // 
+            // product_size_address
+            // 
+            this.product_size_address.DataPropertyName = "product_size_address";
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.product_size_address.DefaultCellStyle = dataGridViewCellStyle83;
+            this.product_size_address.HeaderText = "product_size_address";
+            this.product_size_address.Name = "product_size_address";
+            // 
+            // current_size_address
+            // 
+            this.current_size_address.DataPropertyName = "current_size_address";
+            dataGridViewCellStyle84.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.current_size_address.DefaultCellStyle = dataGridViewCellStyle84;
+            this.current_size_address.HeaderText = "current_size_address";
+            this.current_size_address.Name = "current_size_address";
+            // 
+            // machining_count_address
+            // 
+            this.machining_count_address.DataPropertyName = "machining_count_address";
+            dataGridViewCellStyle85.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.machining_count_address.DefaultCellStyle = dataGridViewCellStyle85;
+            this.machining_count_address.HeaderText = "machining_count_address";
+            this.machining_count_address.Name = "machining_count_address";
+            // 
+            // remark
+            // 
+            this.remark.DataPropertyName = "remark";
+            dataGridViewCellStyle86.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.remark.DefaultCellStyle = dataGridViewCellStyle86;
+            this.remark.HeaderText = "비고";
+            this.remark.Name = "remark";
+            // 
+            // del_gubun
+            // 
+            this.del_gubun.DataPropertyName = "del_gubun";
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_gubun.DefaultCellStyle = dataGridViewCellStyle87;
+            this.del_gubun.HeaderText = "삭제유무";
+            this.del_gubun.Name = "del_gubun";
+            this.del_gubun.ReadOnly = true;
+            // 
+            // reg_worker
+            // 
+            this.reg_worker.DataPropertyName = "reg_worker";
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_worker.DefaultCellStyle = dataGridViewCellStyle88;
+            this.reg_worker.HeaderText = "등록자";
+            this.reg_worker.Name = "reg_worker";
+            this.reg_worker.ReadOnly = true;
+            // 
+            // reg_datetime
+            // 
+            this.reg_datetime.DataPropertyName = "reg_datetime";
+            dataGridViewCellStyle89.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_datetime.DefaultCellStyle = dataGridViewCellStyle89;
+            this.reg_datetime.HeaderText = "등록일시";
+            this.reg_datetime.Name = "reg_datetime";
+            this.reg_datetime.ReadOnly = true;
+            // 
+            // mod_worker
+            // 
+            this.mod_worker.DataPropertyName = "mod_worker";
+            dataGridViewCellStyle90.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_worker.DefaultCellStyle = dataGridViewCellStyle90;
+            this.mod_worker.HeaderText = "수정자";
+            this.mod_worker.Name = "mod_worker";
+            this.mod_worker.ReadOnly = true;
+            // 
+            // mod_datetime
+            // 
+            this.mod_datetime.DataPropertyName = "mod_datetime";
+            dataGridViewCellStyle91.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_datetime.DefaultCellStyle = dataGridViewCellStyle91;
+            this.mod_datetime.HeaderText = "수정일시";
+            this.mod_datetime.Name = "mod_datetime";
+            this.mod_datetime.ReadOnly = true;
+            // 
+            // del_datetime
+            // 
+            this.del_datetime.DataPropertyName = "del_datetime";
+            dataGridViewCellStyle92.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_datetime.DefaultCellStyle = dataGridViewCellStyle92;
+            this.del_datetime.HeaderText = "삭제일시";
+            this.del_datetime.Name = "del_datetime";
+            this.del_datetime.ReadOnly = true;
+            // 
+            // idx2
+            // 
+            this.idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idx2.DataPropertyName = "idx";
+            dataGridViewCellStyle94.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.idx2.DefaultCellStyle = dataGridViewCellStyle94;
+            this.idx2.HeaderText = "순번";
+            this.idx2.Name = "idx2";
+            this.idx2.ReadOnly = true;
+            // 
+            // mc_idx2
+            // 
+            this.mc_idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mc_idx2.DataPropertyName = "mc_idx";
+            dataGridViewCellStyle95.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mc_idx2.DefaultCellStyle = dataGridViewCellStyle95;
+            this.mc_idx2.HeaderText = "mc_idx";
+            this.mc_idx2.Name = "mc_idx2";
+            this.mc_idx2.ReadOnly = true;
+            // 
+            // path2
+            // 
+            this.path2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.path2.DataPropertyName = "path";
+            dataGridViewCellStyle96.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.path2.DefaultCellStyle = dataGridViewCellStyle96;
+            this.path2.HeaderText = "파일경로";
+            this.path2.Name = "path2";
+            this.path2.ReadOnly = true;
+            // 
+            // origin_name2
+            // 
+            this.origin_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.origin_name2.DataPropertyName = "origin_name";
+            dataGridViewCellStyle97.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.origin_name2.DefaultCellStyle = dataGridViewCellStyle97;
+            this.origin_name2.HeaderText = "원본파일명";
+            this.origin_name2.Name = "origin_name2";
+            this.origin_name2.ReadOnly = true;
+            // 
+            // new_name2
+            // 
+            this.new_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.new_name2.DataPropertyName = "new_name";
+            dataGridViewCellStyle98.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.new_name2.DefaultCellStyle = dataGridViewCellStyle98;
+            this.new_name2.HeaderText = "변경된 파일명";
+            this.new_name2.Name = "new_name2";
+            this.new_name2.ReadOnly = true;
+            // 
+            // file_save2
+            // 
+            this.file_save2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.file_save2.DataPropertyName = "file_save";
+            dataGridViewCellStyle99.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.file_save2.DefaultCellStyle = dataGridViewCellStyle99;
+            this.file_save2.HeaderText = "파일 저장 유무";
+            this.file_save2.Name = "file_save2";
+            this.file_save2.ReadOnly = true;
+            // 
+            // del_gubun2
+            // 
+            this.del_gubun2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.del_gubun2.DataPropertyName = "del_gubun";
+            dataGridViewCellStyle100.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_gubun2.DefaultCellStyle = dataGridViewCellStyle100;
+            this.del_gubun2.HeaderText = "삭제 유무";
+            this.del_gubun2.Name = "del_gubun2";
+            this.del_gubun2.ReadOnly = true;
+            // 
+            // reg_worker2
+            // 
+            this.reg_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.reg_worker2.DataPropertyName = "reg_worker";
+            dataGridViewCellStyle101.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_worker2.DefaultCellStyle = dataGridViewCellStyle101;
+            this.reg_worker2.HeaderText = "등록자";
+            this.reg_worker2.Name = "reg_worker2";
+            this.reg_worker2.ReadOnly = true;
+            // 
+            // reg_datetime2
+            // 
+            this.reg_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.reg_datetime2.DataPropertyName = "reg_datetime";
+            dataGridViewCellStyle102.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_datetime2.DefaultCellStyle = dataGridViewCellStyle102;
+            this.reg_datetime2.HeaderText = "등록일시";
+            this.reg_datetime2.Name = "reg_datetime2";
+            this.reg_datetime2.ReadOnly = true;
+            // 
+            // mod_worker2
+            // 
+            this.mod_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mod_worker2.DataPropertyName = "mod_worker";
+            dataGridViewCellStyle103.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_worker2.DefaultCellStyle = dataGridViewCellStyle103;
+            this.mod_worker2.HeaderText = "수정자";
+            this.mod_worker2.Name = "mod_worker2";
+            this.mod_worker2.ReadOnly = true;
+            // 
+            // mod_datetime2
+            // 
+            this.mod_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mod_datetime2.DataPropertyName = "mod_datetime";
+            dataGridViewCellStyle104.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_datetime2.DefaultCellStyle = dataGridViewCellStyle104;
+            this.mod_datetime2.HeaderText = "수정일시";
+            this.mod_datetime2.Name = "mod_datetime2";
+            this.mod_datetime2.ReadOnly = true;
+            // 
+            // del_datetime2
+            // 
+            this.del_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.del_datetime2.DataPropertyName = "del_datetime";
+            dataGridViewCellStyle105.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_datetime2.DefaultCellStyle = dataGridViewCellStyle105;
+            this.del_datetime2.HeaderText = "삭제시간";
+            this.del_datetime2.Name = "del_datetime2";
+            this.del_datetime2.ReadOnly = true;
             // 
             // frmMCManager
             // 
@@ -1081,6 +1181,7 @@
         private System.Windows.Forms.Button btnFileUpload;
         private System.Windows.Forms.ListView lvwImage;
         private System.Windows.Forms.Button btnCodeCopy;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idx;
         private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx;
         private System.Windows.Forms.DataGridViewTextBoxColumn plc_version;
@@ -1114,6 +1215,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker2;
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime2;
         private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime2;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -389,16 +389,15 @@ namespace TestbedDAQ.Forms
                             mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
                             Bitmap bm = new Bitmap(mStream, false);
                             mStream.Dispose();
-
-                            this._ImageList.Images.Add(bm);
-
+                            this._ImageList.Images.Add(bm);  
                         }
+                        ftpClient.Dispose();
 
                         //기존
                         this.lvwImage.View = View.LargeIcon;
                         this._ImageList.ImageSize = new Size(256, 256);
                         this.lvwImage.LargeImageList = this._ImageList;
-                        //this.lvwImage.SmallImageList = this._ImageList;
+
                         for (int i = 0; i < _ImageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
@@ -433,6 +432,7 @@ namespace TestbedDAQ.Forms
                 TestbedLeave.GetCtrLeaveColor(txtName);
                 TestbedLeave.GetCtrLeaveColor(txtMaker);
                 TestbedLeave.GetCtrLeaveColor(txtMotorCount);
+                TestbedLeave.GetCtrLeaveColor(txtPlcVersion);
 
                 TestbedLeave.GetCtrLeaveColor(cbFac);
                 TestbedLeave.GetCtrLeaveColor(cbLocation);
@@ -898,32 +898,33 @@ namespace TestbedDAQ.Forms
                     }
                     #endregion
 
+                    #region 기존 PLC 데이터 숨김처리
+                    _Query = new StringBuilder();
+                    _Query.Append("	update tb_plc_detail set	    ");
+                    _Query.Append("		 del_gubun = 'Y'		    ");
+                    _Query.Append("		,mod_worker = 'kmg1'        ");
+                    _Query.Append("		,mod_datetime = ''		    ");
+                    _Query.Append("		,del_datetime = ''		    ");
+                    _Query.Append("	where 				            ");
+                    _Query.Append("		mc_idx = @pMc_Idx	        ");
+                    _Query.Append("		and del_gubun = 'N'	        ");
+                    _SqlParams = new SqlParameter[]
+                    {
+                        new SqlParameter("@pMc_Idx",          Convert.ToDecimal(sIdx.ToString()))
+                    };
+
+                    isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+
+                    if (!isCheck)
+                    {
+                        sTran.Rollback();
+                        return;
+                    }
+                    #endregion
+
                     #region plc 데이터 주소 저장
                     if (dgv1.Rows.Count > 0)
                     {
-                        #region 기존 데이터 숨김처리
-                        _Query = new StringBuilder();
-                        _Query.Append("	update tb_plc_detail set	    ");
-                        _Query.Append("		 del_gubun = 'Y'		    ");
-                        _Query.Append("		,mod_worker = 'kmg1'        ");
-                        _Query.Append("		,mod_datetime = ''		    ");
-                        _Query.Append("		,del_datetime = ''		    ");
-                        _Query.Append("	where 				            ");
-                        _Query.Append("		mc_idx = @pMc_Idx	        ");
-                        _SqlParams = new SqlParameter[]
-                        {
-                            new SqlParameter("@pMc_Idx",          Convert.ToDecimal(sIdx.ToString()))
-                        };
-
-                        isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
-
-                        if (!isCheck)
-                        {
-                            sTran.Rollback();
-                            return;
-                        }
-                        #endregion
-
                         #region 신규 데이터 INSERT
                         _Query = new StringBuilder();
                         _Query.Append("	insert into tb_plc_detail				                                                                                                            ");
@@ -1000,32 +1001,33 @@ namespace TestbedDAQ.Forms
                     }
                     #endregion
 
-                    #region 파일 저장
+                    #region 기존 이미지 데이터 숨김처리
+                    _Query = new StringBuilder();
+                    _Query.Append("	update tb_file_detail set	    ");
+                    _Query.Append("		 del_gubun = 'Y'		    ");
+                    _Query.Append("		,mod_worker = 'kmg1'	    ");
+                    _Query.Append("		,mod_datetime = ''		    ");
+                    _Query.Append("		,del_datetime = ''		    ");
+                    _Query.Append("	where 				            ");
+                    _Query.Append("		mc_idx = @pMc_idx	        ");
+                    _Query.Append("		and del_gubun = 'N'	        ");
+                    _SqlParams = new SqlParameter[]
+                    {
+                        new SqlParameter("@pMc_idx",    Convert.ToDecimal(sIdx.ToString()))
+                    };
+
+                    isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+
+                    if (!isCheck)
+                    {
+                        sTran.Rollback();
+                        return;
+                    }
+                    #endregion
+
+                    #region 이미지 데이터 및 이미지 저장
                     if (dgv2.Rows.Count > 0)
                     {
-                        #region 기존 데이터 숨김처리
-                        _Query = new StringBuilder();
-                        _Query.Append("	update tb_file_detail set	    ");
-                        _Query.Append("		 del_gubun = 'Y'		    ");
-                        _Query.Append("		,mod_worker = 'kmg1'	    ");
-                        _Query.Append("		,mod_datetime = ''		    ");
-                        _Query.Append("		,del_datetime = ''		    ");
-                        _Query.Append("	where 				            ");
-                        _Query.Append("		mc_idx = @pMc_idx	        ");
-                        _SqlParams = new SqlParameter[]
-                        {
-                            new SqlParameter("@pMc_idx",          Convert.ToDecimal(sIdx.ToString()))
-                        };
-
-                        isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
-
-                        if (!isCheck)
-                        {
-                            sTran.Rollback();
-                            return;
-                        }
-                        #endregion
-
                         #region 신규 데이터 INSERT
                         _Query = new StringBuilder();
                         _Query.Append("	insert into tb_file_detail					                                           ");
@@ -1101,13 +1103,14 @@ namespace TestbedDAQ.Forms
                         }
                         #endregion
                     }
+                    #endregion
 
                     if (isCheck)
                     {
                         sTran.Commit();
                         MessageBox.Show("저장되었습니다.");
                     }
-                    #endregion
+                    
                 }
                 #endregion
 
