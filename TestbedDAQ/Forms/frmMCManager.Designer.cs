@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdx = new System.Windows.Forms.TextBox();
@@ -67,30 +67,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.btnPlcDataRemove = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
-            this.btnPlcDataAdd = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgv2 = new System.Windows.Forms.DataGridView();
-            this.btnFileRemove = new System.Windows.Forms.Button();
-            this.btnFileUpload = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.btnCodeCopy = new System.Windows.Forms.Button();
-            this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mc_idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.path2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.origin_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.new_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.file_save2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.del_gubun2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reg_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reg_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mc_idx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.plc_version = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,6 +88,30 @@
             this.mod_worker = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPlcDataRemove = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnPlcDataAdd = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgv2 = new System.Windows.Forms.DataGridView();
+            this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mc_idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.path2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.origin_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.new_name2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.file_save2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.del_gubun2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reg_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reg_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFileRemove = new System.Windows.Forms.Button();
+            this.btnFileUpload = new System.Windows.Forms.Button();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.btnCodeCopy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -142,7 +142,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 50);
             this.label4.TabIndex = 184;
-            this.label4.Text = "idx";
+            this.label4.Text = "IDX";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtIdx
@@ -176,7 +176,8 @@
             // label17
             // 
             this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(881, 236);
+            this.label17.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.label17.Location = new System.Drawing.Point(895, 236);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(110, 50);
             this.label17.TabIndex = 176;
@@ -186,7 +187,8 @@
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(881, 183);
+            this.label14.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.label14.Location = new System.Drawing.Point(895, 183);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(110, 50);
             this.label14.TabIndex = 175;
@@ -204,7 +206,8 @@
             // label15
             // 
             this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(881, 130);
+            this.label15.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.label15.Location = new System.Drawing.Point(895, 130);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(110, 50);
             this.label15.TabIndex = 174;
@@ -214,7 +217,8 @@
             // label13
             // 
             this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(881, 77);
+            this.label13.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.label13.Location = new System.Drawing.Point(895, 77);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(110, 50);
             this.label13.TabIndex = 173;
@@ -253,7 +257,8 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(881, 27);
+            this.label1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.label1.Location = new System.Drawing.Point(895, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 50);
             this.label1.TabIndex = 172;
@@ -430,7 +435,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 50);
             this.label11.TabIndex = 154;
-            this.label11.Text = "PLC port";
+            this.label11.Text = "PLC PORT";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
@@ -496,14 +501,14 @@
             // 
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx,
@@ -532,286 +537,6 @@
             this.dgv1.RowTemplate.Height = 23;
             this.dgv1.Size = new System.Drawing.Size(1452, 336);
             this.dgv1.TabIndex = 193;
-            // 
-            // btnPlcDataRemove
-            // 
-            this.btnPlcDataRemove.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
-            this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlcDataRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnPlcDataRemove.Location = new System.Drawing.Point(1291, 3);
-            this.btnPlcDataRemove.Name = "btnPlcDataRemove";
-            this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
-            this.btnPlcDataRemove.TabIndex = 192;
-            this.btnPlcDataRemove.Text = "행 삭제";
-            this.btnPlcDataRemove.UseVisualStyleBackColor = false;
-            this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnExcel.FlatAppearance.BorderSize = 0;
-            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnExcel.Location = new System.Drawing.Point(957, 3);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(164, 37);
-            this.btnExcel.TabIndex = 191;
-            this.btnExcel.Text = "엑셀 업로드";
-            this.btnExcel.UseVisualStyleBackColor = false;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
-            // 
-            // btnPlcDataAdd
-            // 
-            this.btnPlcDataAdd.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
-            this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlcDataAdd.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnPlcDataAdd.Location = new System.Drawing.Point(1124, 3);
-            this.btnPlcDataAdd.Name = "btnPlcDataAdd";
-            this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
-            this.btnPlcDataAdd.TabIndex = 190;
-            this.btnPlcDataAdd.Text = "행 추가";
-            this.btnPlcDataAdd.UseVisualStyleBackColor = false;
-            this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dgv2);
-            this.tabPage2.Controls.Add(this.btnFileRemove);
-            this.tabPage2.Controls.Add(this.btnFileUpload);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1458, 385);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "이미지 첨부";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dgv2
-            // 
-            this.dgv2.AllowUserToAddRows = false;
-            this.dgv2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idx2,
-            this.mc_idx2,
-            this.path2,
-            this.origin_name2,
-            this.new_name2,
-            this.file_save2,
-            this.del_gubun2,
-            this.reg_worker2,
-            this.reg_datetime2,
-            this.mod_worker2,
-            this.mod_datetime2,
-            this.del_datetime2});
-            this.dgv2.Location = new System.Drawing.Point(3, 43);
-            this.dgv2.Name = "dgv2";
-            this.dgv2.RowTemplate.Height = 23;
-            this.dgv2.Size = new System.Drawing.Size(1452, 336);
-            this.dgv2.TabIndex = 195;
-            this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
-            // 
-            // btnFileRemove
-            // 
-            this.btnFileRemove.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnFileRemove.FlatAppearance.BorderSize = 0;
-            this.btnFileRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFileRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnFileRemove.Location = new System.Drawing.Point(1291, 3);
-            this.btnFileRemove.Name = "btnFileRemove";
-            this.btnFileRemove.Size = new System.Drawing.Size(164, 37);
-            this.btnFileRemove.TabIndex = 194;
-            this.btnFileRemove.Text = "이미지 삭제";
-            this.btnFileRemove.UseVisualStyleBackColor = false;
-            this.btnFileRemove.Click += new System.EventHandler(this.btnFileRemove_Click);
-            // 
-            // btnFileUpload
-            // 
-            this.btnFileUpload.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnFileUpload.FlatAppearance.BorderSize = 0;
-            this.btnFileUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFileUpload.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnFileUpload.Location = new System.Drawing.Point(1124, 3);
-            this.btnFileUpload.Name = "btnFileUpload";
-            this.btnFileUpload.Size = new System.Drawing.Size(164, 37);
-            this.btnFileUpload.TabIndex = 193;
-            this.btnFileUpload.Text = "이미지 첨부";
-            this.btnFileUpload.UseVisualStyleBackColor = false;
-            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnRemove.FlatAppearance.BorderSize = 0;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnRemove.Location = new System.Drawing.Point(1356, 830);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(164, 62);
-            this.btnRemove.TabIndex = 189;
-            this.btnRemove.Text = "삭제";
-            this.btnRemove.UseVisualStyleBackColor = false;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnNew.FlatAppearance.BorderSize = 0;
-            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnNew.Location = new System.Drawing.Point(1022, 830);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(164, 62);
-            this.btnNew.TabIndex = 188;
-            this.btnNew.Text = "신규";
-            this.btnNew.UseVisualStyleBackColor = false;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Century Gothic", 16F);
-            this.btnSave.Location = new System.Drawing.Point(1189, 830);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 62);
-            this.btnSave.TabIndex = 187;
-            this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // listView1
-            // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1546, 66);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(321, 830);
-            this.listView1.TabIndex = 194;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
-            // 
-            // btnCodeCopy
-            // 
-            this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.btnCodeCopy.FlatAppearance.BorderSize = 0;
-            this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCodeCopy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCodeCopy.Location = new System.Drawing.Point(751, 33);
-            this.btnCodeCopy.Name = "btnCodeCopy";
-            this.btnCodeCopy.Size = new System.Drawing.Size(141, 39);
-            this.btnCodeCopy.TabIndex = 212;
-            this.btnCodeCopy.Text = "다른 코드로 저장";
-            this.btnCodeCopy.UseVisualStyleBackColor = false;
-            this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
-            // 
-            // idx2
-            // 
-            this.idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idx2.DataPropertyName = "idx";
-            this.idx2.HeaderText = "순번";
-            this.idx2.Name = "idx2";
-            this.idx2.ReadOnly = true;
-            // 
-            // mc_idx2
-            // 
-            this.mc_idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mc_idx2.DataPropertyName = "mc_idx";
-            this.mc_idx2.HeaderText = "mc_idx";
-            this.mc_idx2.Name = "mc_idx2";
-            this.mc_idx2.ReadOnly = true;
-            // 
-            // path2
-            // 
-            this.path2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.path2.DataPropertyName = "path";
-            this.path2.HeaderText = "파일경로";
-            this.path2.Name = "path2";
-            this.path2.ReadOnly = true;
-            // 
-            // origin_name2
-            // 
-            this.origin_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.origin_name2.DataPropertyName = "origin_name";
-            this.origin_name2.HeaderText = "원본파일명";
-            this.origin_name2.Name = "origin_name2";
-            this.origin_name2.ReadOnly = true;
-            // 
-            // new_name2
-            // 
-            this.new_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.new_name2.DataPropertyName = "new_name";
-            this.new_name2.HeaderText = "변경된 파일명";
-            this.new_name2.Name = "new_name2";
-            this.new_name2.ReadOnly = true;
-            // 
-            // file_save2
-            // 
-            this.file_save2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.file_save2.DataPropertyName = "file_save";
-            this.file_save2.HeaderText = "파일 저장 유무";
-            this.file_save2.Name = "file_save2";
-            this.file_save2.ReadOnly = true;
-            // 
-            // del_gubun2
-            // 
-            this.del_gubun2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.del_gubun2.DataPropertyName = "del_gubun";
-            this.del_gubun2.HeaderText = "삭제 유무";
-            this.del_gubun2.Name = "del_gubun2";
-            this.del_gubun2.ReadOnly = true;
-            // 
-            // reg_worker2
-            // 
-            this.reg_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.reg_worker2.DataPropertyName = "reg_worker";
-            this.reg_worker2.HeaderText = "등록자";
-            this.reg_worker2.Name = "reg_worker2";
-            this.reg_worker2.ReadOnly = true;
-            // 
-            // reg_datetime2
-            // 
-            this.reg_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.reg_datetime2.DataPropertyName = "reg_datetime";
-            this.reg_datetime2.HeaderText = "등록일시";
-            this.reg_datetime2.Name = "reg_datetime2";
-            this.reg_datetime2.ReadOnly = true;
-            // 
-            // mod_worker2
-            // 
-            this.mod_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mod_worker2.DataPropertyName = "mod_worker";
-            this.mod_worker2.HeaderText = "수정자";
-            this.mod_worker2.Name = "mod_worker2";
-            this.mod_worker2.ReadOnly = true;
-            // 
-            // mod_datetime2
-            // 
-            this.mod_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mod_datetime2.DataPropertyName = "mod_datetime";
-            this.mod_datetime2.HeaderText = "수정일시";
-            this.mod_datetime2.Name = "mod_datetime2";
-            this.mod_datetime2.ReadOnly = true;
-            // 
-            // del_datetime2
-            // 
-            this.del_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.del_datetime2.DataPropertyName = "del_datetime";
-            this.del_datetime2.HeaderText = "삭제시간";
-            this.del_datetime2.Name = "del_datetime2";
-            this.del_datetime2.ReadOnly = true;
             // 
             // idx
             // 
@@ -948,12 +673,293 @@
             this.del_datetime.Name = "del_datetime";
             this.del_datetime.ReadOnly = true;
             // 
+            // btnPlcDataRemove
+            // 
+            this.btnPlcDataRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
+            this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlcDataRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnPlcDataRemove.Location = new System.Drawing.Point(1291, 3);
+            this.btnPlcDataRemove.Name = "btnPlcDataRemove";
+            this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataRemove.TabIndex = 192;
+            this.btnPlcDataRemove.Text = "행 삭제";
+            this.btnPlcDataRemove.UseVisualStyleBackColor = false;
+            this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnExcel.FlatAppearance.BorderSize = 0;
+            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcel.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnExcel.Location = new System.Drawing.Point(957, 3);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(164, 37);
+            this.btnExcel.TabIndex = 191;
+            this.btnExcel.Text = "엑셀 업로드";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Visible = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnPlcDataAdd
+            // 
+            this.btnPlcDataAdd.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
+            this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlcDataAdd.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnPlcDataAdd.Location = new System.Drawing.Point(1124, 3);
+            this.btnPlcDataAdd.Name = "btnPlcDataAdd";
+            this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataAdd.TabIndex = 190;
+            this.btnPlcDataAdd.Text = "행 추가";
+            this.btnPlcDataAdd.UseVisualStyleBackColor = false;
+            this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgv2);
+            this.tabPage2.Controls.Add(this.btnFileRemove);
+            this.tabPage2.Controls.Add(this.btnFileUpload);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1458, 385);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "이미지 첨부";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgv2
+            // 
+            this.dgv2.AllowUserToAddRows = false;
+            this.dgv2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idx2,
+            this.mc_idx2,
+            this.path2,
+            this.origin_name2,
+            this.new_name2,
+            this.file_save2,
+            this.del_gubun2,
+            this.reg_worker2,
+            this.reg_datetime2,
+            this.mod_worker2,
+            this.mod_datetime2,
+            this.del_datetime2});
+            this.dgv2.Location = new System.Drawing.Point(3, 43);
+            this.dgv2.Name = "dgv2";
+            this.dgv2.RowTemplate.Height = 23;
+            this.dgv2.Size = new System.Drawing.Size(1452, 336);
+            this.dgv2.TabIndex = 195;
+            this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
+            // 
+            // idx2
+            // 
+            this.idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idx2.DataPropertyName = "idx";
+            this.idx2.HeaderText = "순번";
+            this.idx2.Name = "idx2";
+            this.idx2.ReadOnly = true;
+            // 
+            // mc_idx2
+            // 
+            this.mc_idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mc_idx2.DataPropertyName = "mc_idx";
+            this.mc_idx2.HeaderText = "mc_idx";
+            this.mc_idx2.Name = "mc_idx2";
+            this.mc_idx2.ReadOnly = true;
+            // 
+            // path2
+            // 
+            this.path2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.path2.DataPropertyName = "path";
+            this.path2.HeaderText = "파일경로";
+            this.path2.Name = "path2";
+            this.path2.ReadOnly = true;
+            // 
+            // origin_name2
+            // 
+            this.origin_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.origin_name2.DataPropertyName = "origin_name";
+            this.origin_name2.HeaderText = "원본파일명";
+            this.origin_name2.Name = "origin_name2";
+            this.origin_name2.ReadOnly = true;
+            // 
+            // new_name2
+            // 
+            this.new_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.new_name2.DataPropertyName = "new_name";
+            this.new_name2.HeaderText = "변경된 파일명";
+            this.new_name2.Name = "new_name2";
+            this.new_name2.ReadOnly = true;
+            // 
+            // file_save2
+            // 
+            this.file_save2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.file_save2.DataPropertyName = "file_save";
+            this.file_save2.HeaderText = "파일 저장 유무";
+            this.file_save2.Name = "file_save2";
+            this.file_save2.ReadOnly = true;
+            // 
+            // del_gubun2
+            // 
+            this.del_gubun2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.del_gubun2.DataPropertyName = "del_gubun";
+            this.del_gubun2.HeaderText = "삭제 유무";
+            this.del_gubun2.Name = "del_gubun2";
+            this.del_gubun2.ReadOnly = true;
+            // 
+            // reg_worker2
+            // 
+            this.reg_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.reg_worker2.DataPropertyName = "reg_worker";
+            this.reg_worker2.HeaderText = "등록자";
+            this.reg_worker2.Name = "reg_worker2";
+            this.reg_worker2.ReadOnly = true;
+            // 
+            // reg_datetime2
+            // 
+            this.reg_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.reg_datetime2.DataPropertyName = "reg_datetime";
+            this.reg_datetime2.HeaderText = "등록일시";
+            this.reg_datetime2.Name = "reg_datetime2";
+            this.reg_datetime2.ReadOnly = true;
+            // 
+            // mod_worker2
+            // 
+            this.mod_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mod_worker2.DataPropertyName = "mod_worker";
+            this.mod_worker2.HeaderText = "수정자";
+            this.mod_worker2.Name = "mod_worker2";
+            this.mod_worker2.ReadOnly = true;
+            // 
+            // mod_datetime2
+            // 
+            this.mod_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mod_datetime2.DataPropertyName = "mod_datetime";
+            this.mod_datetime2.HeaderText = "수정일시";
+            this.mod_datetime2.Name = "mod_datetime2";
+            this.mod_datetime2.ReadOnly = true;
+            // 
+            // del_datetime2
+            // 
+            this.del_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.del_datetime2.DataPropertyName = "del_datetime";
+            this.del_datetime2.HeaderText = "삭제시간";
+            this.del_datetime2.Name = "del_datetime2";
+            this.del_datetime2.ReadOnly = true;
+            // 
+            // btnFileRemove
+            // 
+            this.btnFileRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFileRemove.FlatAppearance.BorderSize = 0;
+            this.btnFileRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnFileRemove.Location = new System.Drawing.Point(1291, 3);
+            this.btnFileRemove.Name = "btnFileRemove";
+            this.btnFileRemove.Size = new System.Drawing.Size(164, 37);
+            this.btnFileRemove.TabIndex = 194;
+            this.btnFileRemove.Text = "이미지 삭제";
+            this.btnFileRemove.UseVisualStyleBackColor = false;
+            this.btnFileRemove.Click += new System.EventHandler(this.btnFileRemove_Click);
+            // 
+            // btnFileUpload
+            // 
+            this.btnFileUpload.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnFileUpload.FlatAppearance.BorderSize = 0;
+            this.btnFileUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFileUpload.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnFileUpload.Location = new System.Drawing.Point(1124, 3);
+            this.btnFileUpload.Name = "btnFileUpload";
+            this.btnFileUpload.Size = new System.Drawing.Size(164, 37);
+            this.btnFileUpload.TabIndex = 193;
+            this.btnFileUpload.Text = "이미지 첨부";
+            this.btnFileUpload.UseVisualStyleBackColor = false;
+            this.btnFileUpload.Click += new System.EventHandler(this.btnFileUpload_Click);
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRemove.FlatAppearance.BorderSize = 0;
+            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnRemove.Location = new System.Drawing.Point(1356, 833);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(164, 62);
+            this.btnRemove.TabIndex = 189;
+            this.btnRemove.Text = "삭제";
+            this.btnRemove.UseVisualStyleBackColor = false;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNew.FlatAppearance.BorderSize = 0;
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnNew.Location = new System.Drawing.Point(1022, 833);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(164, 62);
+            this.btnNew.TabIndex = 188;
+            this.btnNew.Text = "신규";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.btnSave.Location = new System.Drawing.Point(1189, 833);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(164, 62);
+            this.btnSave.TabIndex = 187;
+            this.btnSave.Text = "저장";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(1546, 66);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(321, 830);
+            this.listView1.TabIndex = 194;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            // 
+            // btnCodeCopy
+            // 
+            this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCodeCopy.FlatAppearance.BorderSize = 0;
+            this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCodeCopy.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodeCopy.Location = new System.Drawing.Point(751, 33);
+            this.btnCodeCopy.Name = "btnCodeCopy";
+            this.btnCodeCopy.Size = new System.Drawing.Size(141, 39);
+            this.btnCodeCopy.TabIndex = 212;
+            this.btnCodeCopy.Text = "다른 코드로 저장";
+            this.btnCodeCopy.UseVisualStyleBackColor = false;
+            this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
             this.button1.Location = new System.Drawing.Point(1569, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(257, 33);

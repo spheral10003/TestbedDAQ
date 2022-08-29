@@ -270,19 +270,11 @@ namespace TestbedDAQ.Forms
         {
             _db.ConnectDB();
             DataTable dt = new DataTable();
-            
-            //_imageList1 = new List<Image>();
-
             string sIdx = string.Empty;
-
-            //if (ComDB.testCode.Length > 0)
-            //{
-            //    cbCode.Text = ComDB.testCode;
-            //}
 
             try
             {
-                #region 설비정보 SELECT
+                #region 설비정보 SELECT 쿼리
                 _sQuery = new StringBuilder();
                 _sQuery.Append("	SELECT a.idx							");
                 _sQuery.Append("	      ,a.fac							");
@@ -314,17 +306,13 @@ namespace TestbedDAQ.Forms
 
                 _sqlParams = new SqlParameter[]
                 {
-                    //new SqlParameter("@pCode", cbCode.Text)
                     new SqlParameter("@pCode", sMcCode)
                 };
 
                 dt = _db.GetDataView("Search", _sQuery, _sqlParams).Table;
+                #endregion
 
-                //int x = 0;
-                //int y = 0;
-                //int maxheight = 0;
-                //int j = 0;
-
+                #region  설비 정보, PLC, 이미지 View
                 if (dt.Rows.Count > 0)
                 {
                     #region 설비정보 컨트롤에 매칭
@@ -380,7 +368,6 @@ namespace TestbedDAQ.Forms
 
                     #region 이미지 VIEW
                     this.listView1.Items.Clear();
-                    //flowLayoutPanel1.Controls.Clear();
                     _imageList = new ImageList();
                     if (dgv2.Rows.Count > 0)
                     {
@@ -393,56 +380,6 @@ namespace TestbedDAQ.Forms
                             {
                                 continue;
                             }
-
-                            //기존
-                            //this._imageList.Images.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
-                            //                            dgv2.Rows[i].Cells["new_name2"].Value.ToString()));
-
-                            #region 신규(플로우 패널)
-                            //this._imageList1.Add(Image.FromFile(dgv2.Rows[i].Cells["path2"].Value.ToString() + "\\" +
-                            //                           dgv2.Rows[i].Cells["new_name2"].Value.ToString()));
-
-
-                            ////Size nSize = new Size(_imageList1[j].Width, _imageList1[j].Height);
-                            //Size nSize = new Size(350, 425);
-                            //Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
-                            //Graphics grfx = Graphics.FromImage(imgGdi);
-                            //grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                            //grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                            //grfx.DrawImage(_imageList1[j], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _imageList1[j].Size), GraphicsUnit.Pixel);
-
-
-                            //Panel pPanel = new Panel();
-                            //pPanel.BackColor = Color.White;
-                            //pPanel.Size = new Size(350, 425);
-                            //pPanel.Padding = new System.Windows.Forms.Padding(4);
-
-
-                            //PictureBox pBox = new PictureBox();
-                            //pBox.Dock = DockStyle.Fill;
-
-                            //pBox.Location = new Point(x, y);
-                            //x += pBox.Width + 10;
-                            //maxheight = Math.Max(pBox.Height, maxheight);
-                            //if (x > this.ClientSize.Width - 100)
-                            //{
-                            //    //x = 20;
-                            //    y += maxheight + 10;
-                            //}
-
-                            ////pBox.Image = _imageList1[j].GetThumbnailImage(350, 425, null, IntPtr.Zero);
-                            //pBox.Image = imgGdi.GetThumbnailImage(350, 425, null, IntPtr.Zero);
-
-
-                            //pPanel.Controls.Add(pBox);
-                            //this.flowLayoutPanel1.Controls.Add(pPanel);
-                            //j++;
-
-                            //grfx.Dispose();
-                            //imgGdi.Dispose();
-                            #endregion
-
-
 
                             byte[] imageByte = ftpClient.DownloadData(dgv2.Rows[i].Cells["path2"].Value.ToString() + "/" +
                                                         dgv2.Rows[i].Cells["new_name2"].Value.ToString());
@@ -457,20 +394,6 @@ namespace TestbedDAQ.Forms
 
                         }
 
-                        #region 주석
-                    //Size nSize = new Size(_listImage[iImageIdx].Width, _listImage[iImageIdx].Height);
-                    //Image imgGdi = new Bitmap(nSize.Width, nSize.Height);
-                    //Graphics grfx = Graphics.FromImage(imgGdi);
-                    //grfx.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    //grfx.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                    //grfx.DrawImage(_listImage[iImageIdx], new Rectangle(new Point(0, 0), nSize), new Rectangle(new Point(0, 0), _listImage[iImageIdx].Size), GraphicsUnit.Pixel);
-                    //grfx.Dispose();
-                    //imgGdi.Save(sFullPath);
-                    //imgGdi.Dispose();
-                    //iImageIdx++;
-                    #endregion
-
-
                         //기존
                         this.listView1.View = View.LargeIcon;
                         this._imageList.ImageSize = new Size(256, 256);
@@ -478,9 +401,8 @@ namespace TestbedDAQ.Forms
                         for (int i = 0; i < _imageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
-                              item.ImageIndex = i;
+                            item.ImageIndex = i;
                             this.listView1.Items.Add(item);
-
                         }
                     }
                     #endregion
@@ -498,7 +420,6 @@ namespace TestbedDAQ.Forms
                 if (_sQuery != null) _sQuery.Clear();
                 if (_sqlParams != null) _sqlParams = null;
                 _db.CloseDB();
-                //TestbedDB.testCode = string.Empty;
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
         }
@@ -1196,6 +1117,7 @@ namespace TestbedDAQ.Forms
                 ComboSetting();
                 Search(sMcCode);
                 CtrColor();
+                DataGridViewVisible();
                 #endregion
             }
             catch (Exception ex)
@@ -1219,6 +1141,7 @@ namespace TestbedDAQ.Forms
                 Search(cbCode.Text);
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 CtrColor();
+                DataGridViewVisible();
             }
             catch (Exception ex)
             {
@@ -1347,6 +1270,7 @@ namespace TestbedDAQ.Forms
                         ComboSetting();
                         Search(_gbMcCode);
                         CtrColor();
+                        DataGridViewVisible();
                     }
                 }
 
@@ -1428,6 +1352,7 @@ namespace TestbedDAQ.Forms
                         ComboSetting();
                         Search(_gbMcCode);
                         CtrColor();
+                        DataGridViewVisible();
                     }
                     #endregion
 
