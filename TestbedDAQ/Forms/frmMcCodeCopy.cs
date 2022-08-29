@@ -15,32 +15,32 @@ namespace TestbedDAQ.Forms
     public partial class frmMcCodeCopy : Form
     {
 
-        TestbedDB _db;
+        TestbedDB _DB;
 
-        public string _code;
-        ComboBox _comboBox;
+        public string _McCode;
+        ComboBox _ComboBox;
 
-        public frmMcCodeCopy(ComboBox comboBox, string code)
+        public frmMcCodeCopy(ComboBox comboBox, string sMcCode)
         {
             InitializeComponent();
 
-            _comboBox = comboBox;
-            this._code = code;
+            _ComboBox = comboBox;
+            this._McCode = sMcCode;
         }
 
         private void frmMcCodeCopy_Load(object sender, EventArgs e)
         {
             try
             {
-                var tmpItems = _comboBox.Items.Cast<Object>().ToArray();
+                var tmpItems = _ComboBox.Items.Cast<Object>().ToArray();
                 var filteredItems = tmpItems;
 
                 cbOfferCode.Items.Clear();
                 cbOfferCode.Items.AddRange(filteredItems);
 
-                txtNewCode.Text = _code;
+                txtNewCode.Text = _McCode;
 
-                _db = new TestbedDB();
+                _DB = new TestbedDB();
                 this.cbOfferCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
             catch (Exception ex)
@@ -75,7 +75,7 @@ namespace TestbedDAQ.Forms
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            _db.ConnectDB();
+            _DB.ConnectDB();
             SqlTransaction sTran = null;
             DataTable dt = new DataTable();
             StringBuilder _sQuery;
@@ -179,7 +179,7 @@ namespace TestbedDAQ.Forms
                          new SqlParameter("@pNewCode",    sMcNewCode)
                         ,new SqlParameter("@pOfferCode",  sMcOfferCode)
                     };
-                    isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                    isCheck = _DB.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
 
                     if (!isCheck)
                     {
@@ -190,9 +190,9 @@ namespace TestbedDAQ.Forms
                     {
                         sTran.Commit();
                         MessageBox.Show("복사되었습니다.");
-                        _db.CloseDB();
+                        _DB.CloseDB();
 
-                        frmMCManager._gbMcCode = sMcNewCode;
+                        frmMCManager._GlobalMcCode = sMcNewCode;
 
                         this.DialogResult = DialogResult.OK;
                         this.Close();
@@ -204,7 +204,7 @@ namespace TestbedDAQ.Forms
             catch (Exception ex)
             {
                 sTran.Rollback();
-                _db.CloseDB();
+                _DB.CloseDB();
                 MessageBox.Show(ex.Message, ex.Source);
                 return;
             }

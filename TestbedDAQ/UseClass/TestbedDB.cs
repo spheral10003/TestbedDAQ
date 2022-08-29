@@ -13,7 +13,9 @@ namespace TestbedDAQ.UseClass
     {
         public static string sConn = String.Format("Data Source=218.155.74.35;Initial Catalog=iPlusPOP_SJSM_TEST;Persist Security Info=True;User ID=erpUser;Password=erpPasswd");
 
+
         public static SqlConnection sqlConn = new SqlConnection();
+
 
         /// <summary>
         /// DB 연결
@@ -54,6 +56,7 @@ namespace TestbedDAQ.UseClass
                 return;
             }
         }
+
 
         /// <summary>
         /// 트랜잭션 미사용 SELECT 전용 메서드
@@ -106,7 +109,7 @@ namespace TestbedDAQ.UseClass
         public bool ExecuteQuery(StringBuilder strQuery, SqlParameter[] sqlParams, bool showProgressDialog = false)
         {
             SqlCommand cmd = new SqlCommand();
-            bool blRtv = true;
+            bool IsRtv = true;
             try
             {
                 //sqlConn.ConnectionString = sConn;
@@ -125,7 +128,7 @@ namespace TestbedDAQ.UseClass
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
-                blRtv = false;
+                IsRtv = false;
             }
             finally
             {
@@ -133,7 +136,7 @@ namespace TestbedDAQ.UseClass
                 if (cmd != null) cmd.Dispose();
                 //if (sqlConn != null) sqlConn.Close();
             }
-            return blRtv;
+            return IsRtv;
         }
 
 
@@ -184,7 +187,7 @@ namespace TestbedDAQ.UseClass
         public bool ExecuteQuery_Tran(StringBuilder strQuery, SqlParameter[] sqlParams, SqlTransaction sTran, bool showProgressDialog = false)
         {
             SqlCommand cmd = new SqlCommand();
-            bool blRtv = true;
+            bool IsRtv = true;
             try
             {
                 cmd.Connection = sqlConn;
@@ -201,14 +204,14 @@ namespace TestbedDAQ.UseClass
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
-                return blRtv = false;
+                return IsRtv = false;
             }
             finally
             {
                 if (cmd.Parameters != null) cmd.Parameters.Clear();
                 if (cmd != null) cmd.Dispose();
             }
-            return blRtv;
+            return IsRtv;
         }
 
 

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdx = new System.Windows.Forms.TextBox();
@@ -110,7 +110,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvwImage = new System.Windows.Forms.ListView();
             this.btnCodeCopy = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -501,14 +501,14 @@
             // 
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx,
@@ -733,14 +733,14 @@
             // 
             this.dgv2.AllowUserToAddRows = false;
             this.dgv2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("굴림", 9F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx2,
@@ -928,17 +928,17 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // listView1
+            // lvwImage
             // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1546, 51);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(321, 845);
-            this.listView1.TabIndex = 194;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.lvwImage.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lvwImage.HideSelection = false;
+            this.lvwImage.Location = new System.Drawing.Point(1546, 51);
+            this.lvwImage.Name = "lvwImage";
+            this.lvwImage.Size = new System.Drawing.Size(321, 845);
+            this.lvwImage.TabIndex = 194;
+            this.lvwImage.UseCompatibleStateImageBehavior = false;
+            this.lvwImage.SelectedIndexChanged += new System.EventHandler(this.lvwImage_SelectedIndexChanged);
+            this.lvwImage.DoubleClick += new System.EventHandler(this.lvwImage_DoubleClick);
             // 
             // btnCodeCopy
             // 
@@ -976,7 +976,7 @@
             this.ClientSize = new System.Drawing.Size(1920, 928);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCodeCopy);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvwImage);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnSave);
@@ -1079,7 +1079,7 @@
         private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.Button btnFileRemove;
         private System.Windows.Forms.Button btnFileUpload;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvwImage;
         private System.Windows.Forms.Button btnCodeCopy;
         private System.Windows.Forms.DataGridViewTextBoxColumn idx;
         private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx;

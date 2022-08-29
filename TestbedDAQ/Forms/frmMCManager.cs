@@ -19,18 +19,19 @@ namespace TestbedDAQ.Forms
 {
     public partial class frmMCManager : Form
     {
-        TestbedFTP _Ftp = new TestbedFTP();
-        private TestbedDB _db;
-        private StringBuilder _sQuery;
-        private SqlParameter[] _sqlParams;
+        private TestbedFTP _Ftp = new TestbedFTP();
+        private TestbedDB _DB;
+        private StringBuilder _Query;
+        private SqlParameter[] _SqlParams;
 
-        private OpenFileDialog _diaLog;
+        private OpenFileDialog _Dialog;
 
-        private ImageList _imageList;  //이미지 View할대 이미지 목록 담는 역할
-        private List<string> _listString = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
+        private ImageList _ImageList;  //이미지 View할대 이미지 목록 담는 역할
+        private List<string> _StringList = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
+
+        public static string _GlobalMcCode = string.Empty;
 
 
-        public static string _gbMcCode = string.Empty;
 
         private List<MachineInformation> _MachineInformation;
         private List<PLCAddressMap> _PLCAddressMap;
@@ -58,7 +59,7 @@ namespace TestbedDAQ.Forms
                 CreateDB();
                 CtrInit();
                 ComboSetting();
-                Search(_gbMcCode);
+                Search(_GlobalMcCode);
                 CtrColor();
                 DataGridViewVisible();
             }
@@ -77,7 +78,7 @@ namespace TestbedDAQ.Forms
         {
             try
             {
-                _db = new TestbedDB();
+                _DB = new TestbedDB();
             }
             catch (Exception ex)
             {
@@ -179,17 +180,17 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region TAB2 리스트 뷰 초기화
-                listView1.Items.Clear();
+                lvwImage.Items.Clear();
                 #endregion
 
                 #region 각 생성자 초기화
-                _imageList = null;
+                _ImageList = null;
                 //_imageList1 = new List<Image>();
                 //_listImage = new List<Image>();
-                _listString = new List<string>();
-                _diaLog = null;
-                _sqlParams = null;
-                _sQuery = null;
+                _StringList = new List<string>();
+                _Dialog = null;
+                _SqlParams = null;
+                _Query = null;
                 #endregion
             }
             catch (Exception ex)
@@ -225,17 +226,17 @@ namespace TestbedDAQ.Forms
         public void ComboSetting()
         {
             DataTable dt = new DataTable();
-            _db.ConnectDB();
+            _DB.ConnectDB();
             try
             {
-                _sQuery = new StringBuilder();
-                _sQuery.Append("	select	a.code  as code                     ");
-                _sQuery.Append("	from	tb_machine_mst a WITH(NOLOCK)       ");
-                _sQuery.Append("	where  1 = 1                                ");
-                _sQuery.Append("	    and del_gubun = 'N'                     ");
-                _sqlParams = new SqlParameter[] { };
+                _Query = new StringBuilder();
+                _Query.Append("	select	a.code  as code                     ");
+                _Query.Append("	from	tb_machine_mst a WITH(NOLOCK)       ");
+                _Query.Append("	where  1 = 1                                ");
+                _Query.Append("	    and del_gubun = 'N'                     ");
+                _SqlParams = new SqlParameter[] { };
 
-                dt = _db.GetDataView("search_code", _sQuery, _sqlParams).Table;
+                dt = _DB.GetDataView("search_code", _Query, _SqlParams).Table;
 
                 cbCode.Items.Clear();
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -259,56 +260,56 @@ namespace TestbedDAQ.Forms
             finally
             {
                 if (dt != null) dt.Dispose();
-                if (_sQuery != null) _sQuery.Clear();
-                if (_sqlParams != null) _sqlParams = null;
-                _db.CloseDB();
+                if (_Query != null) _Query.Clear();
+                if (_SqlParams != null) _SqlParams = null;
+                _DB.CloseDB();
             }
         }
 
         public void Search(string sMcCode)
         {
-            _db.ConnectDB();
+            _DB.ConnectDB();
             DataTable dt = new DataTable();
             string sIdx = string.Empty;
 
             try
             {
                 #region 설비정보 SELECT 쿼리
-                _sQuery = new StringBuilder();
-                _sQuery.Append("	SELECT a.idx							");
-                _sQuery.Append("	      ,a.fac							");
-                _sQuery.Append("	      ,a.code							");
-                _sQuery.Append("	      ,a.name							");
-                _sQuery.Append("	      ,a.spec							");
-                _sQuery.Append("	      ,a.motor_count					");
-                _sQuery.Append("	      ,a.dept							");
-                _sQuery.Append("	      ,a.location						");
-                _sQuery.Append("	      ,a.maker							");
-                _sQuery.Append("	      ,a.maker_date						");
-                _sQuery.Append("	      ,a.ip								");
-                _sQuery.Append("	      ,a.port							");
-                _sQuery.Append("	      ,a.state							");
-                _sQuery.Append("	      ,a.plc_maker						");
-                _sQuery.Append("	      ,a.plc_model						");
-                _sQuery.Append("	      ,a.plc_version					");
-                _sQuery.Append("	      ,a.remark							");
-                _sQuery.Append("	      ,a.del_gubun						");
-                _sQuery.Append("	      ,a.reg_worker						");
-                _sQuery.Append("		  ,a.reg_datetime					");
-                _sQuery.Append("	      ,a.mod_worker						");
-                _sQuery.Append("	      ,a.mod_datetime					");
-                _sQuery.Append("	      ,a.del_datetime					");
-                _sQuery.Append("	  FROM tb_machine_mst a with(nolock)	");
-                _sQuery.Append("	  where 1 = 1							");
-                _sQuery.Append("	    and a.code = @pCode				    ");
-                _sQuery.Append("	    and a.del_gubun = 'N'				");
+                _Query = new StringBuilder();
+                _Query.Append("	SELECT a.idx							");
+                _Query.Append("	      ,a.fac							");
+                _Query.Append("	      ,a.code							");
+                _Query.Append("	      ,a.name							");
+                _Query.Append("	      ,a.spec							");
+                _Query.Append("	      ,a.motor_count					");
+                _Query.Append("	      ,a.dept							");
+                _Query.Append("	      ,a.location						");
+                _Query.Append("	      ,a.maker							");
+                _Query.Append("	      ,a.maker_date						");
+                _Query.Append("	      ,a.ip								");
+                _Query.Append("	      ,a.port							");
+                _Query.Append("	      ,a.state							");
+                _Query.Append("	      ,a.plc_maker						");
+                _Query.Append("	      ,a.plc_model						");
+                _Query.Append("	      ,a.plc_version					");
+                _Query.Append("	      ,a.remark							");
+                _Query.Append("	      ,a.del_gubun						");
+                _Query.Append("	      ,a.reg_worker						");
+                _Query.Append("		  ,a.reg_datetime					");
+                _Query.Append("	      ,a.mod_worker						");
+                _Query.Append("	      ,a.mod_datetime					");
+                _Query.Append("	      ,a.del_datetime					");
+                _Query.Append("	  FROM tb_machine_mst a with(nolock)	");
+                _Query.Append("	  where 1 = 1							");
+                _Query.Append("	    and a.code = @pCode				    ");
+                _Query.Append("	    and a.del_gubun = 'N'				");
 
-                _sqlParams = new SqlParameter[]
+                _SqlParams = new SqlParameter[]
                 {
                     new SqlParameter("@pCode", sMcCode)
                 };
 
-                dt = _db.GetDataView("Search", _sQuery, _sqlParams).Table;
+                dt = _DB.GetDataView("Search", _Query, _SqlParams).Table;
                 #endregion
 
                 #region  설비 정보, PLC, 이미지 View
@@ -337,41 +338,41 @@ namespace TestbedDAQ.Forms
                     #endregion
 
                     #region PLC 데이터 주소 SELECT
-                    _sQuery = new StringBuilder();
-                    _sQuery.Append("	select	* from tb_plc_detail with(nolock)		");
-                    _sQuery.Append("	where 1 = 1					                    ");
-                    _sQuery.Append("	    and mc_idx = @pMc_idx                       ");
-                    _sQuery.Append("	    and plc_version = @pPlc_version             ");
-                    _sQuery.Append("	    and del_gubun = 'N'                         ");
-                    _sqlParams = new SqlParameter[]
+                    _Query = new StringBuilder();
+                    _Query.Append("	select	* from tb_plc_detail with(nolock)		");
+                    _Query.Append("	where 1 = 1					                    ");
+                    _Query.Append("	    and mc_idx = @pMc_idx                       ");
+                    _Query.Append("	    and plc_version = @pPlc_version             ");
+                    _Query.Append("	    and del_gubun = 'N'                         ");
+                    _SqlParams = new SqlParameter[]
                     {
                          new SqlParameter("@pMc_idx",          Convert.ToDecimal(sIdx.ToString()))
                         ,new SqlParameter("@pPlc_version",     txtPlcVersion.Text)
                     };
-                    dt = _db.GetDataView("Search_plc", _sQuery, _sqlParams).Table;
+                    dt = _DB.GetDataView("Search_plc", _Query, _SqlParams).Table;
                     dgv1.DataSource = dt;
                     #endregion
 
                     #region 이미지 DATA SELECT
-                    _sQuery = new StringBuilder();
-                    _sQuery.Append("	SELECT	* from tb_file_detail with(nolock)		");
-                    _sQuery.Append("	where 1 = 1					                    ");
-                    _sQuery.Append("	    and mc_idx = @pMc_idx and del_gubun = 'N'   ");
-                    _sqlParams = new SqlParameter[]
+                    _Query = new StringBuilder();
+                    _Query.Append("	SELECT	* from tb_file_detail with(nolock)		");
+                    _Query.Append("	where 1 = 1					                    ");
+                    _Query.Append("	    and mc_idx = @pMc_idx and del_gubun = 'N'   ");
+                    _SqlParams = new SqlParameter[]
                     {
                         new SqlParameter("@pMc_idx",          Convert.ToDecimal(sIdx.ToString()))
                     };
-                    dt = _db.GetDataView("Search_file", _sQuery, _sqlParams).Table;
+                    dt = _DB.GetDataView("Search_file", _Query, _SqlParams).Table;
                     dgv2.DataSource = dt;
                     #endregion
 
                     #region 이미지 VIEW
-                    this.listView1.Items.Clear();
-                    _imageList = new ImageList();
+                    this.lvwImage.Items.Clear();
+                    _ImageList = new ImageList();
                     if (dgv2.Rows.Count > 0)
                     {
                         WebClient ftpClient = new WebClient();
-                        ftpClient.Credentials = new NetworkCredential(_Ftp._userId, _Ftp._password);
+                        ftpClient.Credentials = new NetworkCredential(_Ftp._UserId, _Ftp._Password);
 
                         for (int i = 0; i < dgv2.Rows.Count; i++)
                         {
@@ -389,19 +390,19 @@ namespace TestbedDAQ.Forms
                             Bitmap bm = new Bitmap(mStream, false);
                             mStream.Dispose();
 
-                            this._imageList.Images.Add(bm);
+                            this._ImageList.Images.Add(bm);
 
                         }
 
                         //기존
-                        this.listView1.View = View.LargeIcon;
-                        this._imageList.ImageSize = new Size(256, 256);
-                        this.listView1.LargeImageList = this._imageList;
-                        for (int i = 0; i < _imageList.Images.Count; i++)
+                        this.lvwImage.View = View.LargeIcon;
+                        this._ImageList.ImageSize = new Size(256, 256);
+                        this.lvwImage.LargeImageList = this._ImageList;
+                        for (int i = 0; i < _ImageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
                             item.ImageIndex = i;
-                            this.listView1.Items.Add(item);
+                            this.lvwImage.Items.Add(item);
                         }
                     }
                     #endregion
@@ -416,9 +417,9 @@ namespace TestbedDAQ.Forms
             finally
             {
                 if (dt != null) dt.Dispose();
-                if (_sQuery != null) _sQuery.Clear();
-                if (_sqlParams != null) _sqlParams = null;
-                _db.CloseDB();
+                if (_Query != null) _Query.Clear();
+                if (_SqlParams != null) _SqlParams = null;
+                _DB.CloseDB();
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
         }
@@ -614,17 +615,17 @@ namespace TestbedDAQ.Forms
 
             try
             {
-                _diaLog = new OpenFileDialog();
-                _diaLog.Filter = "jpg (*.jpg)|*.jpg|bmp (*.bmp)|*.bmp|png (*.png)|*.png|jpeg (*.jpeg)|*.jpeg";
+                _Dialog = new OpenFileDialog();
+                _Dialog.Filter = "jpg (*.jpg)|*.jpg|bmp (*.bmp)|*.bmp|png (*.png)|*.png|jpeg (*.jpeg)|*.jpeg";
 
-                _diaLog.Multiselect = true;
+                _Dialog.Multiselect = true;
 
-                DialogResult dr = _diaLog.ShowDialog();
+                DialogResult dr = _Dialog.ShowDialog();
 
                 if (dr == System.Windows.Forms.DialogResult.OK)
                 {
-                    files = _diaLog.FileNames;
-                    name = _diaLog.SafeFileNames;
+                    files = _Dialog.FileNames;
+                    name = _Dialog.SafeFileNames;
 
                     dt = dgv2.DataSource as DataTable;
 
@@ -637,7 +638,7 @@ namespace TestbedDAQ.Forms
                     foreach (string img in files)
                     {
                         //_listImage.Add(Image.FromFile(img));
-                        _listString.Add(img);
+                        _StringList.Add(img);
                     }
                 }
             }
@@ -696,7 +697,7 @@ namespace TestbedDAQ.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _db.ConnectDB();
+            _DB.ConnectDB();
             SqlTransaction sTran = null;
             DataTable dt = new DataTable();
             bool isCheck;
@@ -821,45 +822,45 @@ namespace TestbedDAQ.Forms
                     #region 설비 key 자동채번
                     if (sIdx.ToString().Length < 1)
                     {
-                        _sQuery = new StringBuilder();
-                        _sQuery.Append("	select	isnull(max(a.idx), 0) + 1  as idx ");
-                        _sQuery.Append("	from	tb_machine_mst a with(nolock)     ");
-                        _sQuery.Append("	where  1 = 1                              ");
-                        _sqlParams = new SqlParameter[] { };
+                        _Query = new StringBuilder();
+                        _Query.Append("	select	isnull(max(a.idx), 0) + 1  as idx ");
+                        _Query.Append("	from	tb_machine_mst a with(nolock)     ");
+                        _Query.Append("	where  1 = 1                              ");
+                        _SqlParams = new SqlParameter[] { };
 
-                        dt = _db.GetDataView_Tran("Key_idx", _sQuery, _sqlParams, sTran).Table;
+                        dt = _DB.GetDataView_Tran("Key_idx", _Query, _SqlParams, sTran).Table;
 
                         sIdx = dt.DataSet.Tables["Key_idx"].Rows[0]["idx"].ToString();
                     }
                     #endregion
 
                     #region     설비 정보 저장
-                    _sQuery = new StringBuilder();
-                    _sQuery.Append("	merge into tb_machine_mst as a					    				                                                                                    ");
-                    _sQuery.Append("	using(select count(a.idx) as cnt from tb_machine_mst a with(nolock) where a.idx = @pIdx) as b                                                           ");
-                    _sQuery.Append("	on (b.cnt > 0)																		                                                                    ");
-                    _sQuery.Append("	when matched and a.idx = @pIdx then													                                                                    ");
-                    _sQuery.Append("		update set                                                                                                                                          ");
-                    _sQuery.Append("            a.fac           = @pFac             ,a.name         = @pName                                                                                    ");
-                    _sQuery.Append("           ,a.spec          = @pSpec      	    ,a.motor_count  = @pMotor_count		                                                                        ");
-                    _sQuery.Append("		   ,a.dept          = @pDept            ,a.location     = @pLocation					                                                            ");
-                    _sQuery.Append("		   ,a.maker         = @pMaker	        ,a.maker_date   = @pMaker_date	                                                                            ");
-                    _sQuery.Append("		   ,a.ip            = @pIp              ,a.port         = @pPort                                                                                    ");
-                    _sQuery.Append("           ,a.state         = @pState           ,a.plc_maker    = @pPlc_maker                                                                               ");
-                    _sQuery.Append("           ,a.plc_model     = @pPlc_model       ,a.plc_version  = @pPlc_version     			                                                            ");
-                    _sQuery.Append("           ,a.remark        = @pRemark     	    ,a.del_gubun    = @pDel_gubun	            	                                                            ");
-                    _sQuery.Append("           ,a.reg_worker    = @pReg_worker      ,a.reg_datetime = @pReg_datetime     			                                                            ");
-                    _sQuery.Append("           ,a.mod_worker    = @pMod_worker      ,a.mod_datetime = @pMod_datetime     			                                                            ");
-                    _sQuery.Append("           ,a.del_datetime  = @pDel_datetime                             			                                                                        ");
-                    _sQuery.Append("	when not matched then																	                                                                ");
-                    _sQuery.Append("		insert (idx         ,fac            ,code           ,name           ,spec           ,motor_count    ,dept           ,location       ,maker          ");
-                    _sQuery.Append("		       ,maker_date  ,ip             ,port           ,state          ,plc_maker      ,plc_model      ,plc_version    ,remark         ,del_gubun      ");
-                    _sQuery.Append("		       ,reg_worker  ,reg_datetime   ,mod_worker     ,mod_datetime   ,del_datetime)                                                                  ");
-                    _sQuery.Append("		values (@pIdx       ,@pFac          ,@pCode         ,@pName         ,@pSpec         ,@pMotor_count  ,@pDept         ,@pLocation     ,@pMaker        ");
-                    _sQuery.Append("		       ,@pMaker_date,@pIp           ,@pPort         ,@pState        ,@pPlc_maker    ,@pPlc_model    ,@pPlc_version  ,@pRemark       ,@pDel_gubun    ");
-                    _sQuery.Append("		       ,@pReg_worker,@pReg_datetime ,@pMod_worker   ,@pMod_datetime ,@pDel_datetime);                                                               ");
+                    _Query = new StringBuilder();
+                    _Query.Append("	merge into tb_machine_mst as a					    				                                                                                    ");
+                    _Query.Append("	using(select count(a.idx) as cnt from tb_machine_mst a with(nolock) where a.idx = @pIdx) as b                                                           ");
+                    _Query.Append("	on (b.cnt > 0)																		                                                                    ");
+                    _Query.Append("	when matched and a.idx = @pIdx then													                                                                    ");
+                    _Query.Append("		update set                                                                                                                                          ");
+                    _Query.Append("            a.fac           = @pFac             ,a.name         = @pName                                                                                    ");
+                    _Query.Append("           ,a.spec          = @pSpec      	    ,a.motor_count  = @pMotor_count		                                                                        ");
+                    _Query.Append("		   ,a.dept          = @pDept            ,a.location     = @pLocation					                                                            ");
+                    _Query.Append("		   ,a.maker         = @pMaker	        ,a.maker_date   = @pMaker_date	                                                                            ");
+                    _Query.Append("		   ,a.ip            = @pIp              ,a.port         = @pPort                                                                                    ");
+                    _Query.Append("           ,a.state         = @pState           ,a.plc_maker    = @pPlc_maker                                                                               ");
+                    _Query.Append("           ,a.plc_model     = @pPlc_model       ,a.plc_version  = @pPlc_version     			                                                            ");
+                    _Query.Append("           ,a.remark        = @pRemark     	    ,a.del_gubun    = @pDel_gubun	            	                                                            ");
+                    _Query.Append("           ,a.reg_worker    = @pReg_worker      ,a.reg_datetime = @pReg_datetime     			                                                            ");
+                    _Query.Append("           ,a.mod_worker    = @pMod_worker      ,a.mod_datetime = @pMod_datetime     			                                                            ");
+                    _Query.Append("           ,a.del_datetime  = @pDel_datetime                             			                                                                        ");
+                    _Query.Append("	when not matched then																	                                                                ");
+                    _Query.Append("		insert (idx         ,fac            ,code           ,name           ,spec           ,motor_count    ,dept           ,location       ,maker          ");
+                    _Query.Append("		       ,maker_date  ,ip             ,port           ,state          ,plc_maker      ,plc_model      ,plc_version    ,remark         ,del_gubun      ");
+                    _Query.Append("		       ,reg_worker  ,reg_datetime   ,mod_worker     ,mod_datetime   ,del_datetime)                                                                  ");
+                    _Query.Append("		values (@pIdx       ,@pFac          ,@pCode         ,@pName         ,@pSpec         ,@pMotor_count  ,@pDept         ,@pLocation     ,@pMaker        ");
+                    _Query.Append("		       ,@pMaker_date,@pIp           ,@pPort         ,@pState        ,@pPlc_maker    ,@pPlc_model    ,@pPlc_version  ,@pRemark       ,@pDel_gubun    ");
+                    _Query.Append("		       ,@pReg_worker,@pReg_datetime ,@pMod_worker   ,@pMod_datetime ,@pDel_datetime);                                                               ");
 
-                    _sqlParams = new SqlParameter[]
+                    _SqlParams = new SqlParameter[]
                     {
                          new SqlParameter("@pIdx",              Convert.ToDecimal(sIdx.ToString()))
                         ,new SqlParameter("@pFac",              sFac.ToString())
@@ -887,7 +888,7 @@ namespace TestbedDAQ.Forms
                         ,new SqlParameter("@pMod_datetime",     string.Empty)
                         ,new SqlParameter("@pDel_datetime",     string.Empty)
                     };
-                    isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                    isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
                     if (!isCheck)
                     {
@@ -900,20 +901,20 @@ namespace TestbedDAQ.Forms
                     if (dgv1.Rows.Count > 0)
                     {
                         #region 기존 데이터 숨김처리
-                        _sQuery = new StringBuilder();
-                        _sQuery.Append("	update tb_plc_detail set	    ");
-                        _sQuery.Append("		 del_gubun = 'Y'		    ");
-                        _sQuery.Append("		,mod_worker = 'kmg1'        ");
-                        _sQuery.Append("		,mod_datetime = ''		    ");
-                        _sQuery.Append("		,del_datetime = ''		    ");
-                        _sQuery.Append("	where 				            ");
-                        _sQuery.Append("		mc_idx = @pMc_Idx	        ");
-                        _sqlParams = new SqlParameter[]
+                        _Query = new StringBuilder();
+                        _Query.Append("	update tb_plc_detail set	    ");
+                        _Query.Append("		 del_gubun = 'Y'		    ");
+                        _Query.Append("		,mod_worker = 'kmg1'        ");
+                        _Query.Append("		,mod_datetime = ''		    ");
+                        _Query.Append("		,del_datetime = ''		    ");
+                        _Query.Append("	where 				            ");
+                        _Query.Append("		mc_idx = @pMc_Idx	        ");
+                        _SqlParams = new SqlParameter[]
                         {
                             new SqlParameter("@pMc_Idx",          Convert.ToDecimal(sIdx.ToString()))
                         };
 
-                        isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                        isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
                         if (!isCheck)
                         {
@@ -923,21 +924,21 @@ namespace TestbedDAQ.Forms
                         #endregion
 
                         #region 신규 데이터 INSERT
-                        _sQuery = new StringBuilder();
-                        _sQuery.Append("	insert into tb_plc_detail				                                                                                                            ");
-                        _sQuery.Append("	(										                                                                                                            ");
-                        _sQuery.Append("		 mc_idx                     ,plc_version                ,auto_start_address             ,speed_address                  ,volt_address           ");
-                        _sQuery.Append("	    ,current_address            ,current_load_address       ,peak_load_address              ,machining_time_address         ,alarm_code_address     ");
-                        _sQuery.Append("	    ,product_size_address       ,current_size_address       ,machining_count_address        ,remark                         ,del_gubun              ");
-                        _sQuery.Append("	    ,reg_worker                 ,reg_datetime               ,del_datetime                                                                           ");
-                        _sQuery.Append("	)										                                                                                                            ");
-                        _sQuery.Append("	values									                                                                                                            ");
-                        _sQuery.Append("	(										                                                                                                            ");
-                        _sQuery.Append("		 @pMc_idx                   ,@pPlc_version              ,@pAuto_start_address           ,@pSpeed_address                ,@pVolt_address         ");
-                        _sQuery.Append("	    ,@pCurrent_address          ,@pCurrent_load_address     ,@pPeak_load_address            ,@pMachining_time_address       ,@pAlarm_code_address   ");
-                        _sQuery.Append("	    ,@pProduct_size_address     ,@pCurrent_size_address     ,@pMachining_count_address      ,@pRemark                       ,@pDel_gubun            ");
-                        _sQuery.Append("	    ,@pReg_worker               ,@pReg_datetime             ,@pDel_datetime                                                                         ");
-                        _sQuery.Append("	)										                                                                                                            ");
+                        _Query = new StringBuilder();
+                        _Query.Append("	insert into tb_plc_detail				                                                                                                            ");
+                        _Query.Append("	(										                                                                                                            ");
+                        _Query.Append("		 mc_idx                     ,plc_version                ,auto_start_address             ,speed_address                  ,volt_address           ");
+                        _Query.Append("	    ,current_address            ,current_load_address       ,peak_load_address              ,machining_time_address         ,alarm_code_address     ");
+                        _Query.Append("	    ,product_size_address       ,current_size_address       ,machining_count_address        ,remark                         ,del_gubun              ");
+                        _Query.Append("	    ,reg_worker                 ,reg_datetime               ,del_datetime                                                                           ");
+                        _Query.Append("	)										                                                                                                            ");
+                        _Query.Append("	values									                                                                                                            ");
+                        _Query.Append("	(										                                                                                                            ");
+                        _Query.Append("		 @pMc_idx                   ,@pPlc_version              ,@pAuto_start_address           ,@pSpeed_address                ,@pVolt_address         ");
+                        _Query.Append("	    ,@pCurrent_address          ,@pCurrent_load_address     ,@pPeak_load_address            ,@pMachining_time_address       ,@pAlarm_code_address   ");
+                        _Query.Append("	    ,@pProduct_size_address     ,@pCurrent_size_address     ,@pMachining_count_address      ,@pRemark                       ,@pDel_gubun            ");
+                        _Query.Append("	    ,@pReg_worker               ,@pReg_datetime             ,@pDel_datetime                                                                         ");
+                        _Query.Append("	)										                                                                                                            ");
 
                         for (int i = 0; i < dgv1.RowCount; i++)
                         {
@@ -961,7 +962,7 @@ namespace TestbedDAQ.Forms
                             sRemark1 = dgv1.Rows[i].Cells["remark"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["remark"].Value.ToString();
                             sDel_gubun1 = dgv1.Rows[i].Cells["del_gubun"].Value.ToString() == null ? string.Empty : dgv1.Rows[i].Cells["del_gubun"].Value.ToString();
 
-                            _sqlParams = new SqlParameter[]
+                            _SqlParams = new SqlParameter[]
                             {
                                  new SqlParameter("@pMc_idx",                   Convert.ToDecimal(sMcIdx2.ToString()))
                                 ,new SqlParameter("@pPlc_version",              sPlcVersion2.ToString())
@@ -986,7 +987,7 @@ namespace TestbedDAQ.Forms
                                 ,new SqlParameter("@pDel_datetime",             string.Empty)
                             };
 
-                            isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                            isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
                             if (!isCheck)
                             {
@@ -1002,20 +1003,20 @@ namespace TestbedDAQ.Forms
                     if (dgv2.Rows.Count > 0)
                     {
                         #region 기존 데이터 숨김처리
-                        _sQuery = new StringBuilder();
-                        _sQuery.Append("	update tb_file_detail set	    ");
-                        _sQuery.Append("		 del_gubun = 'Y'		    ");
-                        _sQuery.Append("		,mod_worker = 'kmg1'	    ");
-                        _sQuery.Append("		,mod_datetime = ''		    ");
-                        _sQuery.Append("		,del_datetime = ''		    ");
-                        _sQuery.Append("	where 				            ");
-                        _sQuery.Append("		mc_idx = @pMc_idx	        ");
-                        _sqlParams = new SqlParameter[]
+                        _Query = new StringBuilder();
+                        _Query.Append("	update tb_file_detail set	    ");
+                        _Query.Append("		 del_gubun = 'Y'		    ");
+                        _Query.Append("		,mod_worker = 'kmg1'	    ");
+                        _Query.Append("		,mod_datetime = ''		    ");
+                        _Query.Append("		,del_datetime = ''		    ");
+                        _Query.Append("	where 				            ");
+                        _Query.Append("		mc_idx = @pMc_idx	        ");
+                        _SqlParams = new SqlParameter[]
                         {
                             new SqlParameter("@pMc_idx",          Convert.ToDecimal(sIdx.ToString()))
                         };
 
-                        isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                        isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
                         if (!isCheck)
                         {
@@ -1025,17 +1026,17 @@ namespace TestbedDAQ.Forms
                         #endregion
 
                         #region 신규 데이터 INSERT
-                        _sQuery = new StringBuilder();
-                        _sQuery.Append("	insert into tb_file_detail					                                           ");
-                        _sQuery.Append("	(										                                               ");
-                        _sQuery.Append("		 mc_idx         ,path           ,origin_name        ,new_name       ,file_save	   ");
-                        _sQuery.Append("		,del_gubun      ,reg_worker     ,reg_datetime       ,del_datetime                  ");
-                        _sQuery.Append("	)										                                               ");
-                        _sQuery.Append("	values									                                               ");
-                        _sQuery.Append("	(										                                               ");
-                        _sQuery.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save   ");
-                        _sQuery.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pDel_datetime                ");
-                        _sQuery.Append("	)										                                               ");
+                        _Query = new StringBuilder();
+                        _Query.Append("	insert into tb_file_detail					                                           ");
+                        _Query.Append("	(										                                               ");
+                        _Query.Append("		 mc_idx         ,path           ,origin_name        ,new_name       ,file_save	   ");
+                        _Query.Append("		,del_gubun      ,reg_worker     ,reg_datetime       ,del_datetime                  ");
+                        _Query.Append("	)										                                               ");
+                        _Query.Append("	values									                                               ");
+                        _Query.Append("	(										                                               ");
+                        _Query.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save   ");
+                        _Query.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pDel_datetime                ");
+                        _Query.Append("	)										                                               ");
                         for (int i = 0; i < dgv2.Rows.Count; i++)
                         {
                             sOriginName = dgv2.Rows[i].Cells["origin_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["origin_name2"].Value.ToString();
@@ -1049,10 +1050,10 @@ namespace TestbedDAQ.Forms
                                 sNewName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + dgv2["origin_name2", i].Value.ToString();
                             }
 
-                            sPath = _Ftp._path + sIdx + "/";
+                            sPath = _Ftp._Path + sIdx + "/";
                             sFullPath = sPath + sNewName;
 
-                            _sqlParams = new SqlParameter[]
+                            _SqlParams = new SqlParameter[]
                             {
                                  new SqlParameter("@pMc_idx",           Convert.ToDecimal(sIdx.ToString()))
                                 ,new SqlParameter("@pPath",             sPath.ToString())
@@ -1065,7 +1066,7 @@ namespace TestbedDAQ.Forms
                                 ,new SqlParameter("@pDel_datetime",     string.Empty)
                             };
 
-                            isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                            isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
                             if (dgv2["file_save2", i].Value.ToString() == "Y")
                             {
@@ -1086,7 +1087,7 @@ namespace TestbedDAQ.Forms
                                 _Ftp.CreateFolder(sPath);
                             }
 
-                            _Ftp.UploadFile(_listString[iImageIdx], sFullPath);
+                            _Ftp.UploadFile(_StringList[iImageIdx], sFullPath);
                             iImageIdx++;
 
                             if (!isCheck)
@@ -1109,9 +1110,9 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region 재조회
-                _imageList = new ImageList();
+                _ImageList = new ImageList();
                 //_listImage = new List<Image>();
-                _listString = new List<string>();
+                _StringList = new List<string>();
                 ComboSetting();
                 Search(sMcCode);
                 CtrColor();
@@ -1127,7 +1128,7 @@ namespace TestbedDAQ.Forms
             {
                 if (sTran != null) sTran.Dispose();
                 if (dt != null) dt.Dispose();
-                _db.CloseDB();
+                _DB.CloseDB();
                 this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             }
         }
@@ -1152,83 +1153,22 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                this.dgv2.CurrentCell = null;
-
-                if (dgv2.Rows.Count < 1) return;
-                if (listView1.Items.Count < 1) return;
-
-                if (listView1.SelectedItems.Count != 0)
-                {
-                    int SelectRow = listView1.SelectedItems[0].Index;
-
-                    dgv2.Rows[SelectRow].Selected = true;
-                    dgv2.CurrentCell = dgv2.Rows[SelectRow].Cells["path2"];
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source);
-                return;
-            }
-            finally
-            {
-
-            }
-        }
-
         private void dgv2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (dgv2.Rows.Count < 1) return;
-                if (listView1.Items.Count < 1) return;
+                if (lvwImage.Items.Count < 1) return;
 
                 int iIndex = dgv2.CurrentRow.Index;
 
-                for (int i = 0; i < listView1.Items.Count; i++)
+                for (int i = 0; i < lvwImage.Items.Count; i++)
                 {
-                    listView1.Items[i].Focused = false;
-                    listView1.Items[i].Selected = false;
+                    lvwImage.Items[i].Focused = false;
+                    lvwImage.Items[i].Selected = false;
                 }
-                listView1.Items[iIndex].Focused = true;
-                listView1.Items[iIndex].Selected = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source);
-                return;
-            }
-            finally
-            {
-
-            }
-        }
-
-        private void listView1_DoubleClick(object sender, EventArgs e)
-        {
-            string sPath = string.Empty;
-            string sName = string.Empty;
-
-            try
-            {
-                if (listView1.Items.Count < 1) return;
-
-                if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    int iIndex = dgv2.CurrentRow.Index;
-
-                    sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
-                    sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
-
-                    frmMcImgView frm = new frmMcImgView(sPath, sName);
-
-                    if (frm.ShowDialog() != DialogResult.OK)
-                        return;
-                }
+                lvwImage.Items[iIndex].Focused = true;
+                lvwImage.Items[iIndex].Selected = true;
             }
             catch (Exception ex)
             {
@@ -1261,18 +1201,16 @@ namespace TestbedDAQ.Forms
                 }
                 else
                 {
-                    if (_gbMcCode.Length > 0)
+                    if (_GlobalMcCode.Length > 0)
                     {
-                        this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
                         CtrInit();
                         ComboSetting();
-                        Search(_gbMcCode);
+                        Search(_GlobalMcCode);
                         CtrColor();
                         DataGridViewVisible();
-                        _gbMcCode = string.Empty;
+                        _GlobalMcCode = string.Empty;
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -1287,7 +1225,7 @@ namespace TestbedDAQ.Forms
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            _db.ConnectDB();
+            _DB.ConnectDB();
             SqlTransaction sTran = null;
             DataTable dt = new DataTable();
             bool isCheck;
@@ -1323,20 +1261,20 @@ namespace TestbedDAQ.Forms
                     sTran = TestbedDB.sqlConn.BeginTransaction();
 
                     #region 기존 데이터 숨김처리
-                    _sQuery = new StringBuilder();
-                    _sQuery.Append("	update tb_machine_mst set	    ");
-                    _sQuery.Append("		 del_gubun = 'Y'		    ");
-                    _sQuery.Append("		,mod_worker = 'kmg1'        ");
-                    _sQuery.Append("		,mod_datetime = ''		    ");
-                    _sQuery.Append("		,del_datetime = ''		    ");
-                    _sQuery.Append("	where 				            ");
-                    _sQuery.Append("		idx = @pIdx	                ");
-                    _sqlParams = new SqlParameter[]
+                    _Query = new StringBuilder();
+                    _Query.Append("	update tb_machine_mst set	    ");
+                    _Query.Append("		 del_gubun = 'Y'		    ");
+                    _Query.Append("		,mod_worker = 'kmg1'        ");
+                    _Query.Append("		,mod_datetime = ''		    ");
+                    _Query.Append("		,del_datetime = ''		    ");
+                    _Query.Append("	where 				            ");
+                    _Query.Append("		idx = @pIdx	                ");
+                    _SqlParams = new SqlParameter[]
                     {
                         new SqlParameter("@pIdx",   Convert.ToDecimal(sIdx.ToString()))
                     };
 
-                    isCheck = _db.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
+                    isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
                     if (!isCheck)
                     {
@@ -1348,7 +1286,7 @@ namespace TestbedDAQ.Forms
                         sTran.Commit();
                         CtrInit();
                         ComboSetting();
-                        Search(_gbMcCode);
+                        Search(_GlobalMcCode);
                         CtrColor();
                         DataGridViewVisible();
                     }
@@ -1358,9 +1296,9 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region 재조회
-                _imageList = new ImageList();
+                _ImageList = new ImageList();
                 //_listImage = new List<Image>();
-                _listString = new List<string>();
+                _StringList = new List<string>();
                 //CtrInit();
                 //ComboSetting();
                 //Search(_gbMcCode);
@@ -1376,7 +1314,68 @@ namespace TestbedDAQ.Forms
             {
                 if (sTran != null) sTran.Dispose();
                 if (dt != null) dt.Dispose();
-                _db.CloseDB();
+                _DB.CloseDB();
+            }
+        }
+
+        private void lvwImage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.dgv2.CurrentCell = null;
+
+                if (dgv2.Rows.Count < 1) return;
+                if (lvwImage.Items.Count < 1) return;
+
+                if (lvwImage.SelectedItems.Count != 0)
+                {
+                    int SelectRow = lvwImage.SelectedItems[0].Index;
+
+                    dgv2.Rows[SelectRow].Selected = true;
+                    dgv2.CurrentCell = dgv2.Rows[SelectRow].Cells["path2"];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+                return;
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void lvwImage_DoubleClick(object sender, EventArgs e)
+        {
+            string sPath = string.Empty;
+            string sName = string.Empty;
+
+            try
+            {
+                if (lvwImage.Items.Count < 1) return;
+
+                if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int iIndex = dgv2.CurrentRow.Index;
+
+                    sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
+                    sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
+
+                    frmMcImgView frm = new frmMcImgView(sPath, sName);
+
+                    if (frm.ShowDialog() != DialogResult.OK)
+                        return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+                return;
+            }
+            finally
+            {
+
             }
         }
     }

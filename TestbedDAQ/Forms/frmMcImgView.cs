@@ -15,9 +15,9 @@ namespace TestbedDAQ.Forms
 {
     public partial class frmMcImgView : Form
     {
-        private string _sPath = string.Empty;
-        private string _sName = string.Empty;
-        private string _sFullPath = string.Empty;
+        private string _Path = string.Empty;
+        private string _Name = string.Empty;
+        private string _FullPath = string.Empty;
 
         TestbedFTP _Ftp = new TestbedFTP();
 
@@ -26,9 +26,9 @@ namespace TestbedDAQ.Forms
         {
             InitializeComponent();
 
-            this._sPath = sPath;
-            this._sName = sName;
-            this._sFullPath = sPath + "\\" + _sName;
+            this._Path = sPath;
+            this._Name = sName;
+            this._FullPath = sPath + "\\" + _Name;
 
             pictureBox1.MouseWheel += MouseWheelEvent;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -36,12 +36,12 @@ namespace TestbedDAQ.Forms
 
         private void frmMcImgView_Load(object sender, EventArgs e)
         {
-            if (_sFullPath != string.Empty)
+            if (_FullPath != string.Empty)
             {
                 WebClient ftpClient = new WebClient();
-                ftpClient.Credentials = new NetworkCredential(_Ftp._userId, _Ftp._password);
+                ftpClient.Credentials = new NetworkCredential(_Ftp._UserId, _Ftp._Password);
 
-                byte[] imageByte = ftpClient.DownloadData(_sPath + "/" +_sName);
+                byte[] imageByte = ftpClient.DownloadData(_Path + "/" +_Name);
 
                 MemoryStream mStream = new MemoryStream();
                 byte[] pData = imageByte;
