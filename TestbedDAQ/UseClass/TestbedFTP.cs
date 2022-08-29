@@ -15,18 +15,18 @@ namespace TestbedDAQ.UseClass
         public string _password = "f1soft@95";
 
         //FTP내에서 폴더가 존재하는지 검사
-        public bool DoesFtpDirectoryExist(string dirPath)
+        public bool DoesFtpDirectoryExist(string sDirPath)
         {
-            bool isexist = false;
+            bool isExist = false;
 
             try
             {
-                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(dirPath + "/");
+                FtpWebRequest request = (FtpWebRequest)WebRequest.Create(sDirPath + "/");
                 request.Credentials = new NetworkCredential(_userId, _password);
                 request.Method = WebRequestMethods.Ftp.ListDirectory;
                 using (FtpWebResponse response = (FtpWebResponse)request.GetResponse())
                 {
-                    isexist = true;
+                    isExist = true;
                 }
             }
             catch (WebException ex)
@@ -40,17 +40,17 @@ namespace TestbedDAQ.UseClass
                     }
                 }
             }
-            return isexist;
+            return isExist;
         }
 
         //FTP내에서 폴더를 생성
-        public bool CreateFolder(string dirPath)
+        public bool CreateFolder(string sDirPath)
         {
-            string path = dirPath;
+            string sPath = sDirPath;
             bool IsCreated = true;
             try
             {
-                WebRequest request = WebRequest.Create(path);
+                WebRequest request = WebRequest.Create(sPath);
                 request.Method = WebRequestMethods.Ftp.MakeDirectory;
                 request.Credentials = new NetworkCredential(_userId, _password);
                 using (var resp = (FtpWebResponse)request.GetResponse())
@@ -58,7 +58,7 @@ namespace TestbedDAQ.UseClass
                     Console.WriteLine(resp.StatusCode);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 IsCreated = false;
             }
@@ -68,13 +68,13 @@ namespace TestbedDAQ.UseClass
         //FTP내에서 파일을 업로드
         public void UploadFile(string _From, string _To)
         {
-            string From = _From;
-            string To = _To;
+            string sFrom = _From;
+            string sTo = _To;
 
             using (WebClient client = new WebClient())
             {
                 client.Credentials = new NetworkCredential(_userId, _password);
-                client.UploadFile(To, WebRequestMethods.Ftp.UploadFile, From);
+                client.UploadFile(sTo, WebRequestMethods.Ftp.UploadFile, sFrom);
             }
         }
     }

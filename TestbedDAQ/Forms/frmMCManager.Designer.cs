@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIdx = new System.Windows.Forms.TextBox();
@@ -171,7 +171,7 @@
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.Size = new System.Drawing.Size(508, 145);
-            this.txtRemark.TabIndex = 181;
+            this.txtRemark.TabIndex = 216;
             // 
             // label17
             // 
@@ -201,7 +201,7 @@
             this.txtPlcMaker.Location = new System.Drawing.Point(1016, 139);
             this.txtPlcMaker.Name = "txtPlcMaker";
             this.txtPlcMaker.Size = new System.Drawing.Size(508, 39);
-            this.txtPlcMaker.TabIndex = 179;
+            this.txtPlcMaker.TabIndex = 214;
             // 
             // label15
             // 
@@ -231,7 +231,7 @@
             this.txtPlcModel.Location = new System.Drawing.Point(1016, 192);
             this.txtPlcModel.Name = "txtPlcModel";
             this.txtPlcModel.Size = new System.Drawing.Size(508, 39);
-            this.txtPlcModel.TabIndex = 180;
+            this.txtPlcModel.TabIndex = 215;
             // 
             // txtPlcVersion
             // 
@@ -239,7 +239,7 @@
             this.txtPlcVersion.Location = new System.Drawing.Point(1016, 86);
             this.txtPlcVersion.Name = "txtPlcVersion";
             this.txtPlcVersion.Size = new System.Drawing.Size(508, 39);
-            this.txtPlcVersion.TabIndex = 178;
+            this.txtPlcVersion.TabIndex = 213;
             // 
             // cbFac
             // 
@@ -251,7 +251,7 @@
             this.cbFac.Location = new System.Drawing.Point(1016, 33);
             this.cbFac.Name = "cbFac";
             this.cbFac.Size = new System.Drawing.Size(508, 39);
-            this.cbFac.TabIndex = 177;
+            this.cbFac.TabIndex = 212;
             this.cbFac.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // label1
@@ -501,14 +501,14 @@
             // 
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx,
@@ -682,7 +682,7 @@
             this.btnPlcDataRemove.Location = new System.Drawing.Point(1291, 3);
             this.btnPlcDataRemove.Name = "btnPlcDataRemove";
             this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
-            this.btnPlcDataRemove.TabIndex = 192;
+            this.btnPlcDataRemove.TabIndex = 303;
             this.btnPlcDataRemove.Text = "행 삭제";
             this.btnPlcDataRemove.UseVisualStyleBackColor = false;
             this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
@@ -711,7 +711,7 @@
             this.btnPlcDataAdd.Location = new System.Drawing.Point(1124, 3);
             this.btnPlcDataAdd.Name = "btnPlcDataAdd";
             this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
-            this.btnPlcDataAdd.TabIndex = 190;
+            this.btnPlcDataAdd.TabIndex = 302;
             this.btnPlcDataAdd.Text = "행 추가";
             this.btnPlcDataAdd.UseVisualStyleBackColor = false;
             this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
@@ -733,14 +733,14 @@
             // 
             this.dgv2.AllowUserToAddRows = false;
             this.dgv2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("굴림", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx2,
@@ -895,7 +895,7 @@
             this.btnRemove.Location = new System.Drawing.Point(1356, 833);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(164, 62);
-            this.btnRemove.TabIndex = 189;
+            this.btnRemove.TabIndex = 218;
             this.btnRemove.Text = "삭제";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -909,7 +909,7 @@
             this.btnNew.Location = new System.Drawing.Point(1022, 833);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(164, 62);
-            this.btnNew.TabIndex = 188;
+            this.btnNew.TabIndex = 341;
             this.btnNew.Text = "신규";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -923,7 +923,7 @@
             this.btnSave.Location = new System.Drawing.Point(1189, 833);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(164, 62);
-            this.btnSave.TabIndex = 187;
+            this.btnSave.TabIndex = 217;
             this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -932,9 +932,9 @@
             // 
             this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(1546, 66);
+            this.listView1.Location = new System.Drawing.Point(1546, 51);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(321, 830);
+            this.listView1.Size = new System.Drawing.Size(321, 845);
             this.listView1.TabIndex = 194;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -949,7 +949,7 @@
             this.btnCodeCopy.Location = new System.Drawing.Point(751, 33);
             this.btnCodeCopy.Name = "btnCodeCopy";
             this.btnCodeCopy.Size = new System.Drawing.Size(141, 39);
-            this.btnCodeCopy.TabIndex = 212;
+            this.btnCodeCopy.TabIndex = 301;
             this.btnCodeCopy.Text = "다른 코드로 저장";
             this.btnCodeCopy.UseVisualStyleBackColor = false;
             this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
@@ -960,10 +960,10 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.button1.Location = new System.Drawing.Point(1569, 27);
+            this.button1.Location = new System.Drawing.Point(1569, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(257, 33);
-            this.button1.TabIndex = 213;
+            this.button1.TabIndex = 500;
             this.button1.Text = "이미지";
             this.button1.UseVisualStyleBackColor = false;
             // 

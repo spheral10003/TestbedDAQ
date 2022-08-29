@@ -28,7 +28,6 @@ namespace TestbedDAQ.Forms
 
         private ImageList _imageList;  //이미지 View할대 이미지 목록 담는 역할
         private List<string> _listString = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
-        //private List<Image> _listImage = new List<Image>();
 
 
         public static string _gbMcCode = string.Empty;
@@ -817,7 +816,6 @@ namespace TestbedDAQ.Forms
                 #region  저장 로직
                 if (MessageBox.Show("저장 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-
                     sTran = TestbedDB.sqlConn.BeginTransaction();
 
                     #region 설비 key 자동채번
@@ -1263,7 +1261,7 @@ namespace TestbedDAQ.Forms
                 }
                 else
                 {
-                    if (_gbMcCode.Length > 1)
+                    if (_gbMcCode.Length > 0)
                     {
                         this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
                         CtrInit();
@@ -1271,6 +1269,7 @@ namespace TestbedDAQ.Forms
                         Search(_gbMcCode);
                         CtrColor();
                         DataGridViewVisible();
+                        _gbMcCode = string.Empty;
                     }
                 }
 
@@ -1283,7 +1282,6 @@ namespace TestbedDAQ.Forms
             finally
             {
 
-                //this.cbCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
         }
 
