@@ -15,13 +15,9 @@ namespace TestbedDAQ.Forms
     public partial class frmMCManager : Form
     {
         private List<MachineInformation> _MachineInformation;
-        private List<PLCAddressMap> _PLCAddressMap;
-
-
+        
         public List<MachineInformation> MachineInformationList { get => _MachineInformation; set => _MachineInformation = value; }
-        public List<PLCAddressMap> PLCAddressMap { get => _PLCAddressMap; set => _PLCAddressMap = value; }
-
-
+        
         public frmMCManager()
         {
             InitializeComponent();

@@ -14,6 +14,7 @@ namespace TestbedDAQ.Forms
     {
         public string CompanyName { get; set; }
 
+        private bool _Check;
         public frmCombo()
         {
             InitializeComponent();
@@ -34,18 +35,33 @@ namespace TestbedDAQ.Forms
             lblCombo.Text = ((Label)sender).Text;
             CompanyName = lblCombo.Text;
             this.Size = new Size(179, 41);
+
+
         }
 
 
         private void lblCombo_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(179, 165);
+            if(_Check)
+            {
+                this.Size = new Size(179, 41);
+                _Check = false;
+
+            }
+            else
+            {
+                this.Size = new Size(179, 165);
+                _Check = true;
+            }
+            
         }
 
         private void frmCombo_Load(object sender, EventArgs e)
         {
             lblCombo.Text = "정남사업장";
             this.Size = new Size(179, 41);
+
+            _Check = false;
         }
     }
 }

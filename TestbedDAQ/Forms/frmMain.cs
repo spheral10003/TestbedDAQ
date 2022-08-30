@@ -15,19 +15,9 @@ namespace TestbedDAQ.Forms
     public partial class frmMain : Form
     {
         private bool _Check = false;
+        
         private Form _ManuForm = new Form();
         private TestbedAPI _API = new TestbedAPI();
-
-        private Motor _SpindleX;
-        private Motor _SpindleY;
-
-        private PLCAddressMap _PLCAddressMap;
-        private MachineInformation _MachineInformation;
-        private List<MachineInformation> _MachineInformationList;
-
-        public PLCAddressMap PLCAddressMap { get => _PLCAddressMap; set => _PLCAddressMap = value; }
-        public MachineInformation MachineInformation { get => _MachineInformation; set => _MachineInformation = value; }
-        public List<MachineInformation> MachineInformationList { get => _MachineInformationList; set => _MachineInformationList = value; }
 
         public frmMain()
         {
@@ -37,15 +27,9 @@ namespace TestbedDAQ.Forms
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            frmCombo Combo = new frmCombo();
+            InitControls();
 
-            Combo.Owner = this;
-            Combo.TopLevel = false;
-            Combo.Location = new Point(350,20);
-            //pnlCombo.Controls.Add(Combo);
-            this.Controls.Add(Combo);
-            Combo.Show();
-            Combo.BringToFront();
+            
 
             Menu_Click(lblMonitor, null);
 
@@ -70,10 +54,9 @@ namespace TestbedDAQ.Forms
                     MonitorForm.Location = new Point(0, 0);
 
                     _ManuForm = MonitorForm;
-
-                    pnlView.Controls.Add(_ManuForm);
                     _ManuForm.Show();
 
+                    pnlView.Controls.Add(_ManuForm);
                     _API.SelectScreen(lblMonitor, lblManager, true);
 
                     break;
@@ -90,10 +73,9 @@ namespace TestbedDAQ.Forms
                     ManagerForm.Location = new Point(0, 0);
 
                     _ManuForm = ManagerForm;
-
-                    pnlView.Controls.Add(_ManuForm);
                     _ManuForm.Show();
 
+                    pnlView.Controls.Add(_ManuForm);
                     _API.SelectScreen(lblMonitor, lblManager, false);
 
                     break;
@@ -101,22 +83,23 @@ namespace TestbedDAQ.Forms
             }
         }
 
+        private void InitControls()
+        {
+            frmCombo Combo = new frmCombo();
+
+            Combo.Owner = this;
+            Combo.TopLevel = false;
+            Combo.Location = new Point(350, 20);
+            Combo.Show();
+            Combo.BringToFront();
+
+            this.Controls.Add(Combo);
+        }
+
+
         private void InitInfo()
         {
-            _SpindleX = new Motor();
-            _SpindleY = new Motor();
-
-            MachineInformation = new MachineInformation();
-            PLCAddressMap = new PLCAddressMap();
-
-            _SpindleX.Init();
-            _SpindleY.Init();
-
-            MachineInformation.Init();
-            PLCAddressMap.init();
-
             GetMachineInfo();   
-
         }
 
         private void GetMachineInfo()
@@ -130,10 +113,5 @@ namespace TestbedDAQ.Forms
         {
             Application.Exit();
         }
-
-        //private void pnlCombo_Click(object sender, EventArgs e)
-        //{
-        //    pnlCombo.Size = new Size(179, 165);
-        //}
     }
 }

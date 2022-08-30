@@ -13,9 +13,9 @@ namespace Library
         /// </summary>
         string Speed { get; set; }
         /// <summary>
-        /// 모터 현재 전압
+        /// 모터 현재 위치
         /// </summary>
-        string Volt { get; set; }
+        string Position { get; set; }
         /// <summary>
         /// 모터 현재 전류
         /// </summary>
@@ -23,10 +23,15 @@ namespace Library
         /// <summary>
         /// 모터 현재 부하
         /// </summary>
-        string CuttentLoad { get; set; }
+        string CurrentLoad { get; set; }
         /// <summary>
         /// 모터 최대 부하
         /// </summary>
         string PeakLoad { get; set; }
+
+        /// <summary>
+        /// 모터 에러 넘버
+        /// </summary>
+        string ErrorNumber { get; set; }
     }
 }

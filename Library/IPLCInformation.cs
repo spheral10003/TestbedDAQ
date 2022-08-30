@@ -28,5 +28,17 @@ namespace Library
         /// PLC 프로그램 버전
         /// </summary>
         string ProgramVersion { get; set; }
+        /// <summary>
+        /// PLC IP 주소
+        /// </summary>
+        string PlcIp { get; set; }
+        /// <summary>
+        /// PLC IP 포트
+        /// </summary>
+        string PlcPort { get; set; }
+        /// <summary>
+        /// PLC 개발 프로그램 버전
+        /// </summary>
+        string ToolVersion { get; set; }
     }
 }

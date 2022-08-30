@@ -8,6 +8,14 @@ namespace Library
 {
     public class MachineInformation : IMachineInformation
     {
+        public enum ALARMTYPE
+        {
+            None,
+            Waring,
+            Error
+        }
+
+        // 내부 변수
         private string _MachineName;            // 설비 명
         private string _MachineDescription;     // 설비 설명
         private string _MachineCode;            // 설비 모델 코드
@@ -18,6 +26,7 @@ namespace Library
         private string _MachineType;            // 설비 타입
         private string _MachineVersion;         // 설비 버전
 
+        // 프로퍼티
         public string MachineName { get => _MachineName; set => _MachineName = value; }
         public string MachineDescription { get => _MachineDescription; set => _MachineDescription = value; }
         public string MachineCode { get => _MachineCode; set => _MachineCode = value; }
@@ -28,7 +37,7 @@ namespace Library
         public string MachineType { get => _MachineType; set => _MachineType = value; }
         public string MachineVersion { get => _MachineVersion; set => _MachineVersion = value; }
 
-
+        
         public void Init()
         {
             _MachineName = string.Empty;            // 설비 명

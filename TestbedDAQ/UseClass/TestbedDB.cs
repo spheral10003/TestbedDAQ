@@ -226,7 +226,8 @@ namespace TestbedDAQ.UseClass
         //_db.ConnectDB();
         //SqlTransaction sTran = TestbedDB.sqlConn.BeginTransaction();
         //DataTable dt = new DataTable();
-        //dt = _db.GetDataView_Tran("Key_idx", _sQuery, _sqlParams, sTran).Table;
+
+        //dt = _db.GetDataView_Tran("15", _sQuery, _sqlParams, sTran).Table;
         //if (sTran != null) sTran.Dispose();
         //if (dt != null) dt.Dispose();
         //_db.CloseDB();

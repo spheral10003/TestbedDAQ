@@ -36,15 +36,43 @@ namespace TestbedDAQ.UseClass
             }
         }
 
-        public void AlarmBackColorChange(Label lbl, bool Enable)
+        public void MachineActiveChange(Label lbl, bool Enable)
         {
             if (Enable)
             {
-                lbl.BackColor = Color.IndianRed;
+                lbl.Image = Properties.Resources.button_ing;
             }
             else
             {
-                lbl.BackColor = Color.FromArgb(60, 71, 93);
+                lbl.Image = Properties.Resources.button_stop;
+            }
+        }
+
+        public void AlarmChange(Label Alarm, Label Run, bool Enable)
+        {
+            if (Enable)
+            {
+                Alarm.Image = Properties.Resources.icon_notice_on;
+                Run.Image = Properties.Resources.button_warring;
+            }
+            else
+            {
+                Alarm.Image = Properties.Resources.icon_notice_off;
+                Run.Image = Properties.Resources.button_stop;
+            }
+        }
+
+        public void AlarmFormChange(Form frm, bool Enable)
+        {
+            if (Enable)
+            {
+                frm.BackgroundImage = Properties.Resources.container_warning01;
+                
+            }
+            else
+            {
+                frm.BackgroundImage = Properties.Resources.container;
+                
             }
         }
 

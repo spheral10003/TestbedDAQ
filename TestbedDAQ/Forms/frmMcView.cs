@@ -8,90 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestbedDAQ.UseClass;
+using Library;
+
 
 namespace TestbedDAQ.Forms
 {
     public partial class frmMcView : Form
     {
-        private string _SpindleSpeed;
-        private string _SpindleVolt;
-        private string _SpindleCurrent;
-        private string _SpindleCuttentLoad;
-        private string _SpindlePeakLoad;
-        private string _SpindleServoPos;
-        private string _BedServoPos;
-
-        public string SpindleSpeed 
-        { 
-            get => _SpindleSpeed; 
-            set
-            {
-                _SpindleSpeed = value;
-                //lblSpindleSpd.Text = value;
-            }
-        }
-
-
-        public string SpindleVolt 
-        { 
-            get => _SpindleVolt; 
-            set
-            { 
-                _SpindleVolt = value;
-                //lblSpindleVolt.Text = value;
-            }
-        }
-
-        public string SpindleCurrent 
-        { 
-            get => _SpindleCurrent; 
-            set
-            {
-                _SpindleCurrent = value;
-                //lblSpindleCurrent.Text = value;
-            }
-             
-        }
-        public string SpindleCuttentLoad 
-        { 
-            get => _SpindleCuttentLoad; 
-            set
-            {
-                _SpindleCuttentLoad = value;
-                //lblSpindleCurrentLoad.Text = value;
-            }
-        }
-        public string SpindlePeakLoad 
-        { 
-            get => _SpindlePeakLoad; 
-            set
-            {
-                _SpindlePeakLoad = value;
-                //lblSpindlePeakLoad.Text = value;
-            }
-        }
-        public string SpindleServoPos 
-        { 
-            get => _SpindleServoPos; 
-            set
-            {
-                _SpindleServoPos = value;
-                //lblSpindleServoPos.Text = value;
-            }
-        }
-        public string BedServoPos 
-        { 
-            get => _BedServoPos; 
-            set
-            { 
-                _BedServoPos = value;
-                //lblBedServoPos.Text = value;    
-            }
-        }
-
-
         private TestbedAPI _UseAPI;
+        private ViewData _ViewData;
 
+        public ViewData ViewData { get => _ViewData; set => _ViewData = value; }
 
         public frmMcView()
         {
@@ -106,34 +33,62 @@ namespace TestbedDAQ.Forms
 
         private void InitVariable()
         {
-            _SpindleSpeed = string.Empty;
-            _SpindleVolt = string.Empty;
-            _SpindleCurrent = string.Empty;
-            _SpindleCuttentLoad = string.Empty;
-            _SpindlePeakLoad = string.Empty;
-            _SpindleServoPos = string.Empty;
-            _BedServoPos = string.Empty;
-
+            ViewData = new ViewData();
             _UseAPI = new TestbedAPI();
         }
 
 
         private void InitColtrol()
         {
-            //lblSpindleSpd.Text = string.Empty;
-            //lblSpindleVolt.Text = string.Empty;
-            //lblSpindleCurrent.Text = string.Empty;
-            //lblSpindleCurrentLoad.Text = string.Empty;
-            //lblSpindlePeakLoad.Text = string.Empty;
-            //lblSpindleServoPos.Text = string.Empty;
-            //lblBedServoPos.Text = string.Empty;
-            //lblAlarmMsg.Text = string.Empty;    
+            lblMCName.Text = string.Empty;
 
-            //_UseAPI.MachineActiveChange(btnActive, false);
-            //_UseAPI.NetworkChange(lblPlcConn, false);
-            //_UseAPI.AlarmBackColorChange(lblAlarmFlag, false);
-            //_UseAPI.AlarmBackColorChange(lblAlarmMsg, false);
+            lblSpindleXRpm.Text = string.Empty;
+            lblSpindleXCurrent.Text = string.Empty;
+            lblSpindleXLoad.Text = string.Empty;
+            lblSpindleXPeakLoad.Text = string.Empty;
+            lblSpindleServoXPosition.Text = string.Empty;
 
+            lblSpindleYRpm.Text = string.Empty;
+            lblSpindleYCurrent.Text = string.Empty;
+            lblSpindleYLoad.Text = string.Empty;
+            lblSpindleYPeakLoad.Text = string.Empty;
+            lblSpindleServoYPosition.Text = string.Empty;
+
+            lblBedServoPosition.Text = string.Empty;
+            lblGuideServoPosition.Text = string.Empty;
+            lblAlarmMessage.Text = string.Empty;
+
+            lblRunTime.Text = string.Empty;
+            lblStopTime.Text = string.Empty;
+
+            _UseAPI.MachineActiveChange(lblRun, false);
+            _UseAPI.NetworkChange(lblNetworkStatus, false);
+            _UseAPI.AlarmChange(lblAlarmNotice, lblRun, false);
+            _UseAPI.AlarmFormChange(this, false);
+        }
+
+        private void DataView()
+        {
+            lblMCName.Text = _ViewData.MCName;
+
+            lblSpindleXRpm.Text = _ViewData.SpindleX.Speed;
+            lblSpindleXCurrent.Text = _ViewData.SpindleX.Current;
+            lblSpindleXLoad.Text = _ViewData.SpindleX.CurrentLoad;
+            lblSpindleXPeakLoad.Text = _ViewData.SpindleX.PeakLoad;
+            lblSpindleServoXPosition.Text = _ViewData.SpindleServoX.Position;
+
+            lblSpindleYRpm.Text = _ViewData.SpindleY.Speed;
+            lblSpindleYCurrent.Text = _ViewData.SpindleY.Current;
+            lblSpindleYLoad.Text = _ViewData.SpindleY.CurrentLoad; 
+            lblSpindleYPeakLoad.Text = _ViewData.SpindleY.PeakLoad;
+            lblSpindleServoYPosition.Text = _ViewData.SpindleServoY.Position;
+
+            lblBedServoPosition.Text = _ViewData.BedServo.Position;
+            lblGuideServoPosition.Text = _ViewData.GuideServo.Position;
+            lblAlarmMessage.Text = _ViewData.MCStatus.AlarmDescription[int.Parse(_ViewData.MCStatus.AlarmCode)];
+
+            lblRunTime.Text = _ViewData.MCStatus.RunningTime;
+            lblStopTime.Text = _ViewData.MCStatus.StopTime;
         }
 
     }

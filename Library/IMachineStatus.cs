@@ -24,14 +24,16 @@ namespace Library
         /// 하루 설비 비가동 시간
         /// </summary>
         string StopTime { get; set; }           // 설비 비가동 시간
+
         /// <summary>
-        /// 알람 코드
+        /// 알람 코드 확인
         /// </summary>
-        string AlarmCode { get; set; }          // 알람 코드
+        string AlarmCode { get; set; }                // 알람 코드
+
         /// <summary>
-        /// 알람 내용
+        /// 알람 코드, 알람 내용
         /// </summary>
-        string AlarmDescription { get; set; }   // 알람 코멘트
-        
+        Dictionary<int, string> AlarmDescription { get; set; }
+
     }
 }

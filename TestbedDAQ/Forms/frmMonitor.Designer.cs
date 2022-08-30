@@ -43,7 +43,6 @@
             this.Name = "frmMonitor";
             this.Text = "frmMonitor";
             this.Load += new System.EventHandler(this.frmMonitor_Load);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.frmMonitor_MouseClick);
             this.ResumeLayout(false);
 
         }

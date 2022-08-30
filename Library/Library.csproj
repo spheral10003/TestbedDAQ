@@ -45,15 +45,14 @@
     <Compile Include="IMachineInformation.cs" />
     <Compile Include="IMachineStatus.cs" />
     <Compile Include="IMotor.cs" />
-    <Compile Include="IPLCAddress.cs" />
-    <Compile Include="IPLCData.cs" />
+    <Compile Include="IMotorAddress.cs" />
+    <Compile Include="IPLCDataAddress.cs" />
     <Compile Include="IPLCInformation.cs" />
     <Compile Include="MachineInformation.cs" />
     <Compile Include="MachineStatus.cs" />
     <Compile Include="Motor.cs" />
-    <Compile Include="PLCAddressMap.cs" />
-    <Compile Include="PLCData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
