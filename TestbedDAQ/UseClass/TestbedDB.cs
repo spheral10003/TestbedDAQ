@@ -13,9 +13,9 @@ namespace TestbedDAQ.UseClass
     {
         public static string sConn = String.Format("Data Source=218.155.74.35;Initial Catalog=iPlusPOP_SJSM_TEST;Persist Security Info=True;User ID=erpUser;Password=erpPasswd");
 
+
         public static SqlConnection sqlConn = new SqlConnection();
 
-        //ㅁ
 
         /// <summary>
         /// DB 연결
@@ -57,6 +57,7 @@ namespace TestbedDAQ.UseClass
             }
         }
 
+
         /// <summary>
         /// 트랜잭션 미사용 SELECT 전용 메서드
         /// </summary>
@@ -69,8 +70,8 @@ namespace TestbedDAQ.UseClass
 
             try
             {
-                sqlConn.ConnectionString = sConn;
-                sqlConn.Open();
+                //sqlConn.ConnectionString = sConn;
+                //sqlConn.Open();
 
                 cmd.Connection = sqlConn;
                 cmd.CommandText = strQuery.ToString();
@@ -95,7 +96,7 @@ namespace TestbedDAQ.UseClass
                 if (SqlAdapter != null) SqlAdapter.Dispose();
                 if (cmd.Parameters != null) cmd.Parameters.Clear();
                 if (cmd != null) cmd.Dispose();
-                if (sqlConn != null) sqlConn.Close();
+                //if (sqlConn != null) sqlConn.Close();
             }
             return returnView;
 
@@ -108,11 +109,11 @@ namespace TestbedDAQ.UseClass
         public bool ExecuteQuery(StringBuilder strQuery, SqlParameter[] sqlParams, bool showProgressDialog = false)
         {
             SqlCommand cmd = new SqlCommand();
-            bool blRtv = true;
+            bool IsRtv = true;
             try
             {
-                sqlConn.ConnectionString = sConn;
-                sqlConn.Open();
+                //sqlConn.ConnectionString = sConn;
+                //sqlConn.Open();
 
                 cmd.Connection = sqlConn;
 
@@ -127,15 +128,15 @@ namespace TestbedDAQ.UseClass
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
-                blRtv = false;
+                IsRtv = false;
             }
             finally
             {
                 if (cmd.Parameters != null) cmd.Parameters.Clear();
                 if (cmd != null) cmd.Dispose();
-                if (sqlConn != null) sqlConn.Close();
+                //if (sqlConn != null) sqlConn.Close();
             }
-            return blRtv;
+            return IsRtv;
         }
 
 
@@ -186,7 +187,7 @@ namespace TestbedDAQ.UseClass
         public bool ExecuteQuery_Tran(StringBuilder strQuery, SqlParameter[] sqlParams, SqlTransaction sTran, bool showProgressDialog = false)
         {
             SqlCommand cmd = new SqlCommand();
-            bool blRtv = true;
+            bool IsRtv = true;
             try
             {
                 cmd.Connection = sqlConn;
@@ -203,14 +204,14 @@ namespace TestbedDAQ.UseClass
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
-                return blRtv = false;
+                return IsRtv = false;
             }
             finally
             {
                 if (cmd.Parameters != null) cmd.Parameters.Clear();
                 if (cmd != null) cmd.Dispose();
             }
-            return blRtv;
+            return IsRtv;
         }
 
 
@@ -226,8 +227,10 @@ namespace TestbedDAQ.UseClass
         //_db.ConnectDB();
         //SqlTransaction sTran = TestbedDB.sqlConn.BeginTransaction();
         //DataTable dt = new DataTable();
-
-        //dt = _db.GetDataView_Tran("15", _sQuery, _sqlParams, sTran).Table;
+        //쿼리문
+        //dt = _db.GetDataView_Tran("Key_idx", _sQuery, _sqlParams, sTran).Table;
+        
+        //파이날리부분
         //if (sTran != null) sTran.Dispose();
         //if (dt != null) dt.Dispose();
         //_db.CloseDB();
