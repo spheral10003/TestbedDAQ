@@ -271,7 +271,7 @@ namespace TestbedDAQ.Forms
             {
                 #region 설비정보 SELECT 쿼리
                 _Query = new StringBuilder();
-                _Query.Append("	SELECT a.idx							");
+                _Query.Append("	select a.idx							");
                 _Query.Append("	      ,a.fac							");
                 _Query.Append("	      ,a.code							");
                 _Query.Append("	      ,a.name							");
@@ -294,7 +294,7 @@ namespace TestbedDAQ.Forms
                 _Query.Append("	      ,a.mod_worker						");
                 _Query.Append("	      ,a.mod_datetime					");
                 _Query.Append("	      ,a.del_datetime					");
-                _Query.Append("	  FROM tb_machine_mst a with(nolock)	");
+                _Query.Append("	  from tb_machine_mst a with(nolock)	");
                 _Query.Append("	  where 1 = 1							");
                 _Query.Append("	    and a.code = @pCode				    ");
                 _Query.Append("	    and a.del_gubun = 'N'				");
@@ -1122,6 +1122,7 @@ namespace TestbedDAQ.Forms
             {
                 sTran.Rollback();
                 MessageBox.Show(ex.Message, ex.Source);
+                return;
             }
             finally
             {
@@ -1294,7 +1295,7 @@ namespace TestbedDAQ.Forms
                 }
                 #endregion
 
-                #region 재조회
+                #region 초기화
                 _ImageList = new ImageList();
                 _StringList = new List<string>();
                 #endregion
@@ -1303,6 +1304,7 @@ namespace TestbedDAQ.Forms
             {
                 sTran.Rollback();
                 MessageBox.Show(ex.Message, ex.Source);
+                return;
             }
             finally
             {
@@ -1366,6 +1368,55 @@ namespace TestbedDAQ.Forms
             {
                 MessageBox.Show(ex.Message, ex.Source);
                 return;
+            }
+            finally
+            {
+
+            }
+        }
+
+        public void MultiThreadData()
+        {
+            try
+            {
+                int index = MachineInformationList.FindIndex(MachineInformation => MachineInformation.MachineCode == cbCode.Text);
+
+                if (index == -1)
+                {
+                    //첫 데이터 생성 기준은 코드이나 idx로 변경해야함.
+                    MachineInformationList.Add(new MachineInformation
+                    {
+                         MachineName = txtName.Text
+                        ,MachineDescription = ""
+                        ,MachineCode = cbCode.Text
+                        ,MachineStandard = ""
+                        ,MachineMakeDate = txtMakerDateTime.Text
+                        ,MachineMaker = txtMaker.Text
+                        ,MachineLocation = cbLocation.Text
+                        ,MachineType = txtPlcModel.Text
+                        ,MachineVersion = txtPlcVersion.Text
+                    });
+                }
+                else
+                {
+                    //기존 데이터 수정
+                    foreach (MachineInformation p in MachineInformationList.Where(p => p.MachineCode.ToString() == cbCode.Text))
+                    {
+                        p.MachineName = txtName.Text;
+                        p.MachineDescription = "";
+                        p.MachineCode = cbCode.Text;
+                        p.MachineStandard = "";
+                        p.MachineMakeDate = txtMakerDateTime.Text;
+                        p.MachineMaker = txtMaker.Text;
+                        p.MachineLocation = cbLocation.Text;
+                        p.MachineType = txtPlcModel.Text;
+                        p.MachineVersion = txtPlcVersion.Text;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
             }
             finally
             {
