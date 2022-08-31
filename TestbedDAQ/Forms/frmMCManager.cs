@@ -25,8 +25,7 @@ namespace TestbedDAQ.Forms
 
         //이미지를 한번에 여러개 첨부하는게 아닌
         //하나 첨부, 하나 첨부, 하나 첨부했을경우 때문에 전역으로 선언
-        private OpenFileDialog _Dialog;
-
+        //private OpenFileDialog _Dialog;
         private ImageList _ImageList;  //이미지를 Search 메서드에서 View할때 이미지 목록 담는 역할
         private List<string> _StringList = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
 
@@ -71,7 +70,7 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void CreateDB()
+        private void CreateDB()
         {
             try
             {
@@ -88,7 +87,7 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void CtrInit()
+        private void CtrInit()
         {
             DataTable dt1 = new DataTable();
             DataTable dt2 = new DataTable();
@@ -112,8 +111,10 @@ namespace TestbedDAQ.Forms
                 txtDept.Text = string.Empty;
                 txtIdx.Text = string.Empty;
 
+                this.cbFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 cbFac.Text = string.Empty;
                 cbLocation.Text = string.Empty;
+                this.cbState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 cbState.Text = string.Empty;
                 #endregion
 
@@ -183,7 +184,7 @@ namespace TestbedDAQ.Forms
                 #region 각 생성자 초기화
                 _ImageList = null;
                 _StringList = new List<string>();
-                _Dialog = null;
+                //_Dialog = null;
                 _SqlParams = null;
                 _Query = null;
                 #endregion
@@ -218,7 +219,7 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void ComboSetting()
+        private void ComboSetting()
         {
             DataTable dt = new DataTable();
             _DB.ConnectDB();
@@ -226,7 +227,7 @@ namespace TestbedDAQ.Forms
             {
                 _Query = new StringBuilder();
                 _Query.Append("	select	a.code  as code                     ");
-                _Query.Append("	from	tb_machine_mst a WITH(NOLOCK)       ");
+                _Query.Append("	from	tb_machine_mst a with(nolock)       ");
                 _Query.Append("	where  1 = 1                                ");
                 _Query.Append("	    and del_gubun = 'N'                     ");
                 _SqlParams = new SqlParameter[] { };
@@ -261,7 +262,7 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void Search(string sMcCode)
+        private void Search(string sMcCode)
         {
             _DB.ConnectDB();
             DataTable dt = new DataTable();
@@ -419,7 +420,7 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void CtrColor()
+        private void CtrColor()
         {
             try
             {
@@ -443,7 +444,7 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void DataGridViewVisible()
+        private void DataGridViewVisible()
         {
             try
             {
@@ -611,7 +612,7 @@ namespace TestbedDAQ.Forms
 
             try
             {
-                _Dialog = new OpenFileDialog();
+                OpenFileDialog _Dialog = new OpenFileDialog();
                 _Dialog.Filter = "jpg (*.jpg)|*.jpg|bmp (*.bmp)|*.bmp|png (*.png)|*.png|jpeg (*.jpeg)|*.jpeg";
 
                 _Dialog.Multiselect = true;
@@ -1105,7 +1106,6 @@ namespace TestbedDAQ.Forms
                         sTran.Commit();
                         MessageBox.Show("저장되었습니다.");
                     }
-                    
                 }
                 #endregion
 
@@ -1375,15 +1375,16 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        public void MultiThreadData()
+        private void MultiThreadSetData()
         {
             try
             {
                 int index = MachineInformationList.FindIndex(MachineInformation => MachineInformation.MachineCode == cbCode.Text);
 
+
+                //신규 데이터일시 ADD
                 if (index == -1)
                 {
-                    //첫 데이터 생성 기준은 코드이나 idx로 변경해야함.
                     MachineInformationList.Add(new MachineInformation
                     {
                          MachineName = txtName.Text
@@ -1400,6 +1401,7 @@ namespace TestbedDAQ.Forms
                 else
                 {
                     //기존 데이터 수정
+                    //기준은 코드이나 idx로 변경해야함.
                     foreach (MachineInformation p in MachineInformationList.Where(p => p.MachineCode.ToString() == cbCode.Text))
                     {
                         p.MachineName = txtName.Text;
@@ -1417,6 +1419,7 @@ namespace TestbedDAQ.Forms
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
+                return;
             }
             finally
             {
