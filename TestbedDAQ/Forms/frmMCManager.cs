@@ -30,10 +30,9 @@ namespace TestbedDAQ.Forms
 
         public static string _GlobalMcCode = string.Empty;
 
-        public delegate void MultiThread_SetData();
 
-        private List<MachineInformation> _MachineInformation = new List<MachineInformation>();
-        public List<MachineInformation> MachineInformationList { get => _MachineInformation; set => _MachineInformation = value; }
+        //public List<MachineInformation> _MachineInformation = new List<MachineInformation>();
+        //public List<MachineInformation> MachineInformationList { get => _MachineInformation; set => _MachineInformation = value; }
 
 
         public frmMCManager()
@@ -49,9 +48,9 @@ namespace TestbedDAQ.Forms
             //frm.label3_Click(null, null);
             #endregion
 
-            MultiThread_SetData del1 = new MultiThread_SetData(MultiThreadSetData_McInfo);
-            MultiThread_SetData del2 = new MultiThread_SetData(MultiThreadSetData_PlcInfo);
-            MultiThread_SetData del3 = new MultiThread_SetData(MultiThreadSetData_PlcDataAdd);
+            //MultiThread_SetData del1 = new MultiThread_SetData(MultiThreadSetData_McInfo);
+            //MultiThread_SetData del2 = new MultiThread_SetData(MultiThreadSetData_PlcInfo);
+            //MultiThread_SetData del3 = new MultiThread_SetData(MultiThreadSetData_PlcDataAdd);
 
             try
             {
@@ -101,13 +100,14 @@ namespace TestbedDAQ.Forms
                 this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 this.cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 this.cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                this.cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
                 txtMcIdx.Text = string.Empty;
                 cbMcCode.Text = string.Empty;
                 txtMcName.Text = string.Empty;
                 cbMcFac.Text = string.Empty;
-                cbMcLocation.Text = string.Empty;
-                txtMcType.Text = string.Empty;
+                txtMcLocation.Text = string.Empty;
+                cbMcType.Text = string.Empty;
                 txtMcVersion.Text = string.Empty;
                 txtMcStandard.Text = string.Empty;
                 txtMotorCount.Text = string.Empty;
@@ -272,6 +272,12 @@ namespace TestbedDAQ.Forms
                 cbMcFac.Items.Clear();
                 cbMcFac.Items.Add("정남사업장");
                 cbMcFac.Items.Add("장수사업장");
+
+                cbMcType.Items.Clear();
+                cbMcType.Items.Add("절단");
+                cbMcType.Items.Add("평면가공");
+                cbMcType.Items.Add("측면가공");
+                cbMcType.Items.Add("사면가공");
             }
             catch (Exception ex)
             {
@@ -365,8 +371,8 @@ namespace TestbedDAQ.Forms
                     cbMcCode.Text = dt.DataSet.Tables["Search"].Rows[0]["aCode"].ToString();
                     txtMcName.Text = dt.DataSet.Tables["Search"].Rows[0]["aName"].ToString();
                     cbMcFac.Text = dt.DataSet.Tables["Search"].Rows[0]["aFac"].ToString();
-                    cbMcLocation.Text = dt.DataSet.Tables["Search"].Rows[0]["aLocation"].ToString();
-                    txtMcType.Text = dt.DataSet.Tables["Search"].Rows[0]["aType"].ToString();
+                    txtMcLocation.Text = dt.DataSet.Tables["Search"].Rows[0]["aLocation"].ToString();
+                    cbMcType.Text = dt.DataSet.Tables["Search"].Rows[0]["aType"].ToString();
                     txtMcVersion.Text = dt.DataSet.Tables["Search"].Rows[0]["aVersion"].ToString();
                     txtMcStandard.Text = dt.DataSet.Tables["Search"].Rows[0]["aStandard"].ToString();
                     txtMotorCount.Text = dt.DataSet.Tables["Search"].Rows[0]["aMotor_count"].ToString();
@@ -488,7 +494,7 @@ namespace TestbedDAQ.Forms
                 TestbedLeave.GetCtrLeaveColor(cbMcCode);
                 TestbedLeave.GetCtrLeaveColor(txtMcName);
                 TestbedLeave.GetCtrLeaveColor(cbMcFac);
-                TestbedLeave.GetCtrLeaveColor(cbMcLocation);
+                TestbedLeave.GetCtrLeaveColor(txtMcLocation);
                 TestbedLeave.GetCtrLeaveColor(cbMcState);
                 TestbedLeave.GetCtrLeaveColor(txtPlcVersion);
             }
@@ -768,10 +774,12 @@ namespace TestbedDAQ.Forms
                 this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
                 this.cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
                 this.cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                this.cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
 
                 this.cbMcCode.Text = string.Empty;
                 this.cbMcFac.Text = string.Empty;
                 this.cbMcState.Text = string.Empty;
+                this.cbMcType.Text = string.Empty;
 
                 CtrColor();
             }
@@ -802,8 +810,8 @@ namespace TestbedDAQ.Forms
                 string sMcCode          =   cbMcCode.Text == null ? string.Empty : cbMcCode.Text;
                 string sMcName          =   txtMcName.Text == null ? string.Empty : txtMcName.Text;
                 string sMcFac           =   cbMcFac.Text == null ? string.Empty : cbMcFac.Text;
-                string sMcLocation      =   cbMcLocation.Text == null ? string.Empty : cbMcLocation.Text;
-                string sMcType          =   txtMcType.Text == null ? string.Empty : txtMcType.Text;
+                string sMcLocation      =   txtMcLocation.Text == null ? string.Empty : txtMcLocation.Text;
+                string sMcType          =   cbMcType.Text == null ? string.Empty : cbMcType.Text;
                 string sMcVersion       =   txtMcVersion.Text == null ? string.Empty : txtMcVersion.Text;
                 string sMcStandard      =   txtMcStandard.Text == null ? string.Empty : txtMcStandard.Text;
                 string sMotorCount      =   txtMotorCount.Text == null ? string.Empty : txtMotorCount.Text;
@@ -957,11 +965,11 @@ namespace TestbedDAQ.Forms
                 }
 
 
-                if (cbMcLocation.Text.Length < 1)
+                if (txtMcLocation.Text.Length < 1)
                 {
                     MessageBox.Show("설비 위치를 입력하십시오.");
-                    cbMcLocation.Focus();
-                    cbMcLocation.SelectAll();
+                    txtMcLocation.Focus();
+                    txtMcLocation.SelectAll();
                     return;
                 }
 
@@ -1454,6 +1462,8 @@ namespace TestbedDAQ.Forms
                         CtrColor();
                         DataGridViewVisible();
                         MultiThreadSetData_McInfo();
+                        MultiThreadSetData_PlcInfo();
+                        MultiThreadSetData_PlcDataAdd();
                     }
                 }
                 #endregion
@@ -1487,9 +1497,9 @@ namespace TestbedDAQ.Forms
             try
             {
                 Search(cbMcCode.Text);
-                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                //this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 CtrColor();
-                DataGridViewVisible();
+                //DataGridViewVisible();
             }
             catch (Exception ex)
             {
@@ -1726,147 +1736,90 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        //private void MultiThreadSetData()
-        //{
-        //    //try
-        //    //{
-        //    //    int index = _MachineInformation.FindIndex(_MachineInformation => _MachineInformation.MachineCode == cbMcCode.Text);
-
-        //    //    if (index == -1)
-        //    //    {
-        //    //        //첫 데이터 생성 기준은 코드이나 idx로 변경해야함.
-        //    //        _MachineInformation.Add(new MachineInformation
-        //    //        {
-        //    //             MachineName = txtMcName.Text
-        //    //            ,MachineDescription = ""
-        //    //            ,MachineCode = cbMcCode.Text
-        //    //            ,MachineStandard = ""
-        //    //            ,MachineMakeDate = txtMakerDateTime.Text
-        //    //            ,MachineMaker = txtMaker.Text
-        //    //            ,MachineLocation = cbMcLocation.Text
-        //    //            ,MachineType = txtPlcModel.Text
-        //    //            ,MachineVersion = txtPlcVersion.Text
-        //    //        });
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        //기존 데이터 수정
-        //    //        foreach (MachineInformation p in _MachineInformation.Where(p => p.MachineCode.ToString() == cbMcCode.Text))
-        //    //        {
-        //    //            p.MachineName = txtMcName.Text;
-        //    //            p.MachineDescription = "";
-        //    //            p.MachineCode = cbMcCode.Text;
-        //    //            p.MachineStandard = "";
-        //    //            p.MachineMakeDate = txtMakerDateTime.Text;
-        //    //            p.MachineMaker = txtMaker.Text;
-        //    //            p.MachineLocation = cbMcLocation.Text;
-        //    //            p.MachineType = txtPlcModel.Text;
-        //    //            p.MachineVersion = txtPlcVersion.Text;
-        //    //        }
-        //    //    }
-        //    //}
-        //    //catch (Exception ex)
-        //    //{
-        //    //    MessageBox.Show(ex.Message, ex.Source);
-        //    //    return;
-        //    //}
-        //    //finally
-        //    //{
-
-        //    //}
-        //}
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            MultiThreadSetData_McInfo();
-            MultiThreadSetData_PlcInfo();
-            MultiThreadSetData_PlcDataAdd();
-        }
-
         private void MultiThreadSetData_McInfo()
         {
-            try
-            {
-                //예제. 손봐야함.
-                int index = _MachineInformation.FindIndex(_MachineInformation => _MachineInformation.MachineCode == cbMcCode.Text);
+            //try
+            //{
+            //    //예제. 손봐야함.
+            //    int index = _MachineInformation.FindIndex(_MachineInformation => _MachineInformation.MachineCode == cbMcCode.Text);
 
-                if (index == -1)
-                {
-                    //첫 데이터 생성 기준은 코드이나 idx로 변경해야함.
-                    //_MachineInformation.Add(new MachineInformation
-                    _MachineInformation.Add(new MachineInformation
-                    {
-                         MachineName = txtMcName.Text
-                        ,MachineDescription = ""
-                        ,MachineCode = cbMcCode.Text
-                        ,MachineStandard = ""
-                        ,MachineMakeDate = txtMcMakerDate.Text
-                        ,MachineMaker = txtMcMaker.Text
-                        ,MachineLocation = cbMcLocation.Text
-                        ,MachineType = txtPlcType.Text
-                        ,MachineVersion = txtPlcVersion.Text
-                    });
-                }
-                else
-                {
-                    //기존 데이터 수정
-                    foreach (MachineInformation p in _MachineInformation.Where(p => p.MachineCode.ToString() == cbMcCode.Text))
-                    {
-                        p.MachineName = txtMcName.Text;
-                        p.MachineDescription = "";
-                        p.MachineCode = cbMcCode.Text;
-                        p.MachineStandard = "";
-                        p.MachineMakeDate = txtMcMakerDate.Text;
-                        p.MachineMaker = txtMcMaker.Text;
-                        p.MachineLocation = cbMcLocation.Text;
-                        p.MachineType = txtPlcType.Text;
-                        p.MachineVersion = txtPlcVersion.Text;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source);
-                return;
-            }
-            finally
-            {
+            //    if (index == -1)
+            //    {
+            //        //첫 데이터 생성 기준은 코드이나 idx로 변경해야함.
+            //        //_MachineInformation.Add(new MachineInformation
+            //        _MachineInformation.Add(new MachineInformation
+            //        {
+            //            MachineName = txtMcName.Text
+            //            ,MachineDescription = ""
+            //            ,MachineCode = cbMcCode.Text
+            //            ,MachineStandard = ""
+            //            ,MachineMakeDate = txtMcMakerDate.Text
+            //            ,MachineMaker = txtMcMaker.Text
+            //            ,MachineLocation = cbMcLocation.Text
+            //            ,MachineType = txtPlcType.Text
+            //            ,MachineVersion = txtPlcVersion.Text
+            //        });
+            //    }
+            //    else
+            //    {
+            //        //기존 데이터 수정
+            //        foreach (MachineInformation p in _MachineInformation.Where(p => p.MachineCode.ToString() == cbMcCode.Text))
+            //        {
+            //            p.MachineName = txtMcName.Text;
+            //            p.MachineDescription = "";
+            //            p.MachineCode = cbMcCode.Text;
+            //            p.MachineStandard = "";
+            //            p.MachineMakeDate = txtMcMakerDate.Text;
+            //            p.MachineMaker = txtMcMaker.Text;
+            //            p.MachineLocation = cbMcLocation.Text;
+            //            p.MachineType = txtPlcType.Text;
+            //            p.MachineVersion = txtPlcVersion.Text;
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, ex.Source);
+            //    return;
+            //}
+            //finally
+            //{
 
-            }
+            //}
         }
 
         private void MultiThreadSetData_PlcInfo()
         {
-            try
-            {
+            //try
+            //{
                 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source);
-                return;
-            }
-            finally
-            {
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, ex.Source);
+            //    return;
+            //}
+            //finally
+            //{
 
-            }
+            //}
         }
 
         private void MultiThreadSetData_PlcDataAdd()
         {
-            try
-            {
+            //try
+            //{
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source);
-                return;
-            }
-            finally
-            {
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, ex.Source);
+            //    return;
+            //}
+            //finally
+            //{
 
-            }
+            //}
         }
     }
 }
