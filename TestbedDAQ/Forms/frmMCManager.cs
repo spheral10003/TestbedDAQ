@@ -18,6 +18,14 @@ namespace TestbedDAQ.Forms
 {
     public partial class frmMCManager : Form
     {
+        int PagesCount;
+        int maxRec;
+        int pageRows = 3;
+        int currentPage;
+        int recNo;
+        DataTable table = new DataTable();
+
+
         private TestbedFTP _Ftp = new TestbedFTP();
         private TestbedDB _DB;
         private StringBuilder _Query;
@@ -412,63 +420,67 @@ namespace TestbedDAQ.Forms
                         ,new SqlParameter("@pPlcVersion",       txtPlcVersion.Text)
                     };
                     dt = _DB.GetDataView("Search_plc", _Query, _SqlParams).Table;
-                    dgv1.DataSource = dt;
+                    dgv1.DataSource = dt;                    //table = _DB.GetDataView("Search_plc", _Query, _SqlParams).Table;
+                    //PagesCount = Convert.ToInt32(Math.Ceiling(table.Rows.Count * 1.0 / pageRows));
+                    //CurrentPage = 1;
+
+
                     #endregion
 
-                    #region 이미지 DATA SELECT
-                    _Query = new StringBuilder();
-                    _Query.Append("	select	a.* from tb_file_info a with(nolock)	");
-                    _Query.Append("	where 1 = 1					                    ");
-                    _Query.Append("	    and mc_idx = @pMc_idx                       ");
-                    _Query.Append("	    and del_gubun = 'N'                         ");
-                    _SqlParams = new SqlParameter[]
-                    {
-                        new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
-                    };
-                    dt = _DB.GetDataView("Search_file", _Query, _SqlParams).Table;
-                    dgv2.DataSource = dt;
-                    #endregion
+                    //#region 이미지 DATA SELECT
+                    //_Query = new StringBuilder();
+                    //_Query.Append("	select	a.* from tb_file_info a with(nolock)	");
+                    //_Query.Append("	where 1 = 1					                    ");
+                    //_Query.Append("	    and mc_idx = @pMc_idx                       ");
+                    //_Query.Append("	    and del_gubun = 'N'                         ");
+                    //_SqlParams = new SqlParameter[]
+                    //{
+                    //    new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
+                    //};
+                    //dt = _DB.GetDataView("Search_file", _Query, _SqlParams).Table;
+                    //dgv2.DataSource = dt;
+                    //#endregion
 
-                    #region 이미지 VIEW
-                    this.lvwImage.Items.Clear();
-                    _ImageList = new ImageList();
-                    if (dgv2.Rows.Count > 0)
-                    {
-                        WebClient ftpClient = new WebClient();
-                        ftpClient.Credentials = new NetworkCredential(_Ftp._UserId, _Ftp._Password);
+                    //#region 이미지 VIEW
+                    //this.lvwImage.Items.Clear();
+                    //_ImageList = new ImageList();
+                    //if (dgv2.Rows.Count > 0)
+                    //{
+                    //    WebClient ftpClient = new WebClient();
+                    //    ftpClient.Credentials = new NetworkCredential(_Ftp._UserId, _Ftp._Password);
 
-                        for (int i = 0; i < dgv2.Rows.Count; i++)
-                        {
-                            if (dgv2.Rows[i].Cells["file_save2"].Value.ToString() == "Y" && dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == "Y")
-                            {
-                                continue;
-                            }
+                    //    for (int i = 0; i < dgv2.Rows.Count; i++)
+                    //    {
+                    //        if (dgv2.Rows[i].Cells["file_save2"].Value.ToString() == "Y" && dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == "Y")
+                    //        {
+                    //            continue;
+                    //        }
 
-                            byte[] imageByte = ftpClient.DownloadData(dgv2.Rows[i].Cells["path2"].Value.ToString() + "/" +
-                                                        dgv2.Rows[i].Cells["new_name2"].Value.ToString());
+                    //        byte[] imageByte = ftpClient.DownloadData(dgv2.Rows[i].Cells["path2"].Value.ToString() + "/" +
+                    //                                    dgv2.Rows[i].Cells["new_name2"].Value.ToString());
 
-                            MemoryStream mStream = new MemoryStream();
-                            byte[] pData = imageByte;
-                            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-                            Bitmap bm = new Bitmap(mStream, false);
-                            mStream.Dispose();
-                            this._ImageList.Images.Add(bm);
-                        }
-                        ftpClient.Dispose();
+                    //        MemoryStream mStream = new MemoryStream();
+                    //        byte[] pData = imageByte;
+                    //        mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                    //        Bitmap bm = new Bitmap(mStream, false);
+                    //        mStream.Dispose();
+                    //        this._ImageList.Images.Add(bm);
+                    //    }
+                    //    ftpClient.Dispose();
 
-                        //기존
-                        this.lvwImage.View = View.LargeIcon;
-                        this._ImageList.ImageSize = new Size(256, 256);
-                        this.lvwImage.LargeImageList = this._ImageList;
+                    //    //기존
+                    //    this.lvwImage.View = View.LargeIcon;
+                    //    this._ImageList.ImageSize = new Size(256, 256);
+                    //    this.lvwImage.LargeImageList = this._ImageList;
 
-                        for (int i = 0; i < _ImageList.Images.Count; i++)
-                        {
-                            ListViewItem item = new ListViewItem();
-                            item.ImageIndex = i;
-                            this.lvwImage.Items.Add(item);
-                        }
-                    }
-                    #endregion
+                    //    for (int i = 0; i < _ImageList.Images.Count; i++)
+                    //    {
+                    //        ListViewItem item = new ListViewItem();
+                    //        item.ImageIndex = i;
+                    //        this.lvwImage.Items.Add(item);
+                    //    }
+                    //}
+                    //#endregion
                 }
                 #endregion
             }
@@ -487,6 +499,9 @@ namespace TestbedDAQ.Forms
             }
         }
 
+
+
+        
         private void CtrColor()
         {
             try
