@@ -18,15 +18,7 @@ namespace TestbedDAQ.Forms
 {
     public partial class frmMCManager : Form
     {
-        int PagesCount;
-        int maxRec;
-        int pageRows = 3;
-        int currentPage;
-        int recNo;
-        DataTable table = new DataTable();
-
-
-        private TestbedFTP _Ftp = new TestbedFTP();
+        private TestbedFTP _Ftp;
         private TestbedDB _DB;
         private StringBuilder _Query;
         private SqlParameter[] _SqlParams;
@@ -37,11 +29,7 @@ namespace TestbedDAQ.Forms
         private List<string> _StringList = new List<string>(); //이미지 첨부할때 파일 경로들 담는 역할
 
         public static string _GlobalMcCode = string.Empty;
-
-
-        //public List<MachineInformation> _MachineInformation = new List<MachineInformation>();
-        //public List<MachineInformation> MachineInformationList { get => _MachineInformation; set => _MachineInformation = value; }
-
+        private string sUser = "KMG";
 
         public frmMCManager()
         {
@@ -50,19 +38,9 @@ namespace TestbedDAQ.Forms
 
         private void frmMCManager_Load(object sender, EventArgs e)
         {
-            #region 주석
-            //frmMain frm = (frmMain)this.Owner;
-            //frm.MachineInformationList = _MachineInformation;
-            //frm.label3_Click(null, null);
-            #endregion
-
-            //MultiThread_SetData del1 = new MultiThread_SetData(MultiThreadSetData_McInfo);
-            //MultiThread_SetData del2 = new MultiThread_SetData(MultiThreadSetData_PlcInfo);
-            //MultiThread_SetData del3 = new MultiThread_SetData(MultiThreadSetData_PlcDataAdd);
-
             try
             {
-                CreateDB();
+                CreateInstance();
                 CtrInit();
                 ComboSetting();
                 Search(_GlobalMcCode);
@@ -80,12 +58,13 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        private void CreateDB()
+        private void CreateInstance()
         {
             try
             {
                 _DB = new TestbedDB();
-            }
+                _Ftp = new TestbedFTP();
+    }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ex.Source);
@@ -204,6 +183,11 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region TAB2 이미지 파일 그리드 초기화
+
+                dgv2.Visible = false;
+                btnFileUpload.Visible = false;
+                btnFileRemove.Visible = false;
+
                 int dgvCount2 = dgv2.Rows.Count;
                 for (int i = 0; i < dgvCount2; i++)
                 {
@@ -229,7 +213,7 @@ namespace TestbedDAQ.Forms
                 dgv2.Rows.Remove(dgv2.Rows[0]);
                 #endregion
 
-                #region TAB2 리스트 뷰 초기화
+                #region 리스트 뷰 초기화
                 lvwImage.Items.Clear();
                 #endregion
 
@@ -394,6 +378,8 @@ namespace TestbedDAQ.Forms
 
                     #region PLC 정보 컨트롤에 매칭
                     sPlcIdx = dt.DataSet.Tables["Search"].Rows[0]["bIdx"].ToString();
+                    if (sPlcIdx == string.Empty) sPlcIdx = "0";
+
                     txtPlcIdx.Text = dt.DataSet.Tables["Search"].Rows[0]["bIdx"].ToString();
                     txtPlcVersion.Text = dt.DataSet.Tables["Search"].Rows[0]["bProgramversion"].ToString();
                     txtPlcName.Text = dt.DataSet.Tables["Search"].Rows[0]["bName"].ToString();
@@ -420,67 +406,64 @@ namespace TestbedDAQ.Forms
                         ,new SqlParameter("@pPlcVersion",       txtPlcVersion.Text)
                     };
                     dt = _DB.GetDataView("Search_plc", _Query, _SqlParams).Table;
-                    dgv1.DataSource = dt;                    //table = _DB.GetDataView("Search_plc", _Query, _SqlParams).Table;
-                    //PagesCount = Convert.ToInt32(Math.Ceiling(table.Rows.Count * 1.0 / pageRows));
-                    //CurrentPage = 1;
-
-
+                    dgv1.DataSource = dt;
                     #endregion
 
-                    //#region 이미지 DATA SELECT
-                    //_Query = new StringBuilder();
-                    //_Query.Append("	select	a.* from tb_file_info a with(nolock)	");
-                    //_Query.Append("	where 1 = 1					                    ");
-                    //_Query.Append("	    and mc_idx = @pMc_idx                       ");
-                    //_Query.Append("	    and del_gubun = 'N'                         ");
-                    //_SqlParams = new SqlParameter[]
-                    //{
-                    //    new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
-                    //};
-                    //dt = _DB.GetDataView("Search_file", _Query, _SqlParams).Table;
-                    //dgv2.DataSource = dt;
-                    //#endregion
+                    #region 이미지 DATA SELECT
+                    _Query = new StringBuilder();
+                    _Query.Append("	select	a.* from tb_file_info a with(nolock)	");
+                    _Query.Append("	where 1 = 1					                    ");
+                    _Query.Append("	    and mc_idx = @pMc_idx                       ");
+                    _Query.Append("	    and del_gubun = 'N'                         ");
+                    _SqlParams = new SqlParameter[]
+                    {
+                        new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
+                    };
+                    dt = _DB.GetDataView("Search_file", _Query, _SqlParams).Table;
+                    dgv2.DataSource = dt;
+                    #endregion
 
-                    //#region 이미지 VIEW
-                    //this.lvwImage.Items.Clear();
-                    //_ImageList = new ImageList();
-                    //if (dgv2.Rows.Count > 0)
-                    //{
-                    //    WebClient ftpClient = new WebClient();
-                    //    ftpClient.Credentials = new NetworkCredential(_Ftp._UserId, _Ftp._Password);
+                    #region 이미지 VIEW
+                    this.lvwImage.Items.Clear();
+                    _ImageList = new ImageList();
+                    if (dgv2.Rows.Count > 0)
+                    {
+                        WebClient ftpClient = new WebClient();
+                        ftpClient.Credentials = new NetworkCredential(_Ftp._UserId, _Ftp._Password);
 
-                    //    for (int i = 0; i < dgv2.Rows.Count; i++)
-                    //    {
-                    //        if (dgv2.Rows[i].Cells["file_save2"].Value.ToString() == "Y" && dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == "Y")
-                    //        {
-                    //            continue;
-                    //        }
+                        for (int i = 0; i < dgv2.Rows.Count; i++)
+                        {
+                            if (dgv2.Rows[i].Cells["file_save2"].Value.ToString() == "Y" && dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == "Y")
+                            {
+                                continue;
+                            }
 
-                    //        byte[] imageByte = ftpClient.DownloadData(dgv2.Rows[i].Cells["path2"].Value.ToString() + "/" +
-                    //                                    dgv2.Rows[i].Cells["new_name2"].Value.ToString());
+                            byte[] imageByte = ftpClient.DownloadData(dgv2.Rows[i].Cells["path2"].Value.ToString() + "/" +
+                                                        dgv2.Rows[i].Cells["new_name2"].Value.ToString());
 
-                    //        MemoryStream mStream = new MemoryStream();
-                    //        byte[] pData = imageByte;
-                    //        mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-                    //        Bitmap bm = new Bitmap(mStream, false);
-                    //        mStream.Dispose();
-                    //        this._ImageList.Images.Add(bm);
-                    //    }
-                    //    ftpClient.Dispose();
+                            MemoryStream mStream = new MemoryStream();
+                            byte[] pData = imageByte;
+                            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                            Bitmap bm = new Bitmap(mStream, false);
+                            mStream.Dispose();
+                            this._ImageList.Images.Add(bm);
+                        }
+                        ftpClient.Dispose();
 
-                    //    //기존
-                    //    this.lvwImage.View = View.LargeIcon;
-                    //    this._ImageList.ImageSize = new Size(256, 256);
-                    //    this.lvwImage.LargeImageList = this._ImageList;
+                        //기존
+                        this.lvwImage.View = View.LargeIcon;
+                        this._ImageList.ImageSize = new Size(256, 256);
+                        this.lvwImage.LargeImageList = this._ImageList;
+                        lvwImage.CheckBoxes = true;
 
-                    //    for (int i = 0; i < _ImageList.Images.Count; i++)
-                    //    {
-                    //        ListViewItem item = new ListViewItem();
-                    //        item.ImageIndex = i;
-                    //        this.lvwImage.Items.Add(item);
-                    //    }
-                    //}
-                    //#endregion
+                        for (int i = 0; i < _ImageList.Images.Count; i++)
+                        {
+                            ListViewItem item = new ListViewItem();
+                            item.ImageIndex = i;
+                            this.lvwImage.Items.Add(item);
+                        }
+                    }
+                    #endregion
                 }
                 #endregion
             }
@@ -499,9 +482,6 @@ namespace TestbedDAQ.Forms
             }
         }
 
-
-
-        
         private void CtrColor()
         {
             try
@@ -537,14 +517,14 @@ namespace TestbedDAQ.Forms
                 this.dgv1.Columns["del_datetime1"].Visible = false;
 
                 //grid col name으로 지정해야함
-                this.dgv2.Columns["idx2"].Visible = false;
-                this.dgv2.Columns["mc_idx2"].Visible = false;
-                this.dgv2.Columns["new_name2"].Visible = false;
-                this.dgv2.Columns["file_save2"].Visible = false;
-                this.dgv2.Columns["del_gubun2"].Visible = false;
-                this.dgv2.Columns["mod_worker2"].Visible = false;
-                this.dgv2.Columns["mod_datetime2"].Visible = false;
-                this.dgv2.Columns["del_datetime2"].Visible = false;
+                //this.dgv2.Columns["idx2"].Visible = false;
+                //this.dgv2.Columns["mc_idx2"].Visible = false;
+                //this.dgv2.Columns["new_name2"].Visible = false;
+                //this.dgv2.Columns["file_save2"].Visible = false;
+                //this.dgv2.Columns["del_gubun2"].Visible = false;
+                //this.dgv2.Columns["mod_worker2"].Visible = false;
+                //this.dgv2.Columns["mod_datetime2"].Visible = false;
+                //this.dgv2.Columns["del_datetime2"].Visible = false;
             }
             catch (Exception ex)
             {
@@ -796,6 +776,9 @@ namespace TestbedDAQ.Forms
                 this.cbMcState.Text = string.Empty;
                 this.cbMcType.Text = string.Empty;
 
+                this.cbMcCode.Focus();
+                this.cbMcCode.Select();
+
                 CtrColor();
             }
             catch (Exception ex)
@@ -817,7 +800,6 @@ namespace TestbedDAQ.Forms
 
             try
             {
-                string sUser = "KMG";
                 bool isCheck;
 
                 #region 변수 선언 설비 정보
@@ -892,13 +874,13 @@ namespace TestbedDAQ.Forms
                 string sDel_datetime                 = string.Empty;
                 #endregion
 
-                #region 변수 선언 이미지 관리(TAB2)
-                string sPath = string.Empty;
-                string sFullPath = string.Empty;
-                int iImageIdx = 0;
+                #region 변수 선언 이미지 관리(TAB2) 주석
+                //string sPath = string.Empty;
+                //string sFullPath = string.Empty;
+                //int iImageIdx = 0;
 
-                string sOriginName = string.Empty;
-                string sNewName = string.Empty;
+                //string sOriginName = string.Empty;
+                //string sNewName = string.Empty;
                 #endregion
 
                 #region 기존 주석
@@ -1076,7 +1058,6 @@ namespace TestbedDAQ.Forms
                         ,new SqlParameter("@pRemark",           sMcRemark.ToString())
                         ,new SqlParameter("@pUser",             sUser.ToString())
                     };
-
 
                     isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
@@ -1332,154 +1313,154 @@ namespace TestbedDAQ.Forms
                     }
                     #endregion
 
+                    #region 이미지 관련 주석
                     #region 기존 이미지 데이터 숨김처리
-                    _Query = new StringBuilder();
-                    _Query.Append("	update tb_file_info set	                                                                                            ");
-                    _Query.Append("		 del_gubun = 'Y'		                                                                                        ");
-                    _Query.Append("		,mod_worker = @pUser	                                                                                        ");
-                    _Query.Append("		,mod_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
-                    _Query.Append("		,del_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
-                    _Query.Append("	where 1 = 1				                                                                                            ");
-                    _Query.Append("		and mc_idx = @pMc_idx	                                                                                        ");
-                    _Query.Append("		and del_gubun = 'N'	                                                                                            ");
-                    _SqlParams = new SqlParameter[]
-                    {
-                         new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
-                        ,new SqlParameter("@pUser",      sUser.ToString())
-                    };
+                    //_Query = new StringBuilder();
+                    //_Query.Append("	update tb_file_info set	                                                                                            ");
+                    //_Query.Append("		 del_gubun = 'Y'		                                                                                        ");
+                    //_Query.Append("		,mod_worker = @pUser	                                                                                        ");
+                    //_Query.Append("		,mod_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
+                    //_Query.Append("		,del_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
+                    //_Query.Append("	where 1 = 1				                                                                                            ");
+                    //_Query.Append("		and mc_idx = @pMc_idx	                                                                                        ");
+                    //_Query.Append("		and del_gubun = 'N'	                                                                                            ");
+                    //_SqlParams = new SqlParameter[]
+                    //{
+                    //     new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
+                    //    ,new SqlParameter("@pUser",      sUser.ToString())
+                    //};
 
-                    isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+                    //isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
-                    if (!isCheck)
-                    {
-                        sTran.Rollback();
-                        return;
-                    }
+                    //if (!isCheck)
+                    //{
+                    //    sTran.Rollback();
+                    //    return;
+                    //}
                     #endregion
 
-                    #region 이미지 데이터 및 이미지 저장
-                    if (dgv2.Rows.Count > 0)
-                    {
-                        #region 신규 데이터 INSERT
-                        _Query = new StringBuilder();
-                        _Query.Append("	insert into tb_file_info					                                            ");
-                        _Query.Append("	(										                                                ");
-                        _Query.Append("		 mc_idx         ,path           ,origin_name        ,new_name       ,file_save	    ");
-                        _Query.Append("		,del_gubun      ,reg_worker     ,reg_datetime       ,mod_worker     ,mod_datetime   ");
-                        _Query.Append("		,del_datetime                                                                       ");
-                        _Query.Append("	)										                                                ");
-                        _Query.Append("	values									                                                ");
-                        _Query.Append("	(										                                                ");
-                        _Query.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save    ");
-                        _Query.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pMod_worker   ,@pMod_datetime ");
-                        _Query.Append("		,@pdel_datetime                                                                     ");
-                        _Query.Append("	)										                                                ");
+                    //#region 이미지 데이터 및 이미지 저장
+                    //if (dgv2.Rows.Count > 0)
+                    //{
+                    //    #region 신규 데이터 INSERT
+                    //    _Query = new StringBuilder();
+                    //    _Query.Append("	insert into tb_file_info					                                            ");
+                    //    _Query.Append("	(										                                                ");
+                    //    _Query.Append("		 mc_idx         ,path           ,origin_name        ,new_name       ,file_save	    ");
+                    //    _Query.Append("		,del_gubun      ,reg_worker     ,reg_datetime       ,mod_worker     ,mod_datetime   ");
+                    //    _Query.Append("		,del_datetime                                                                       ");
+                    //    _Query.Append("	)										                                                ");
+                    //    _Query.Append("	values									                                                ");
+                    //    _Query.Append("	(										                                                ");
+                    //    _Query.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save    ");
+                    //    _Query.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pMod_worker   ,@pMod_datetime ");
+                    //    _Query.Append("		,@pdel_datetime                                                                     ");
+                    //    _Query.Append("	)										                                                ");
 
-                        for (int i = 0; i < dgv2.Rows.Count; i++)
-                        {
-                            sOriginName = dgv2.Rows[i].Cells["origin_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["origin_name2"].Value.ToString();
+                    //    for (int i = 0; i < dgv2.Rows.Count; i++)
+                    //    {
+                    //        sOriginName = dgv2.Rows[i].Cells["origin_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["origin_name2"].Value.ToString();
 
-                            sDel_gubun = dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_gubun2"].Value.ToString();
-                            sReg_worker = dgv2.Rows[i].Cells["reg_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_worker2"].Value.ToString();
-                            sReg_datetime = dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString();
-                            sMod_worker = dgv2.Rows[i].Cells["mod_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_worker2"].Value.ToString();
-                            sMod_datetime = dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString();
-                            sDel_datetime = dgv2.Rows[i].Cells["del_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_datetime2"].Value.ToString();
-
-
-                            if (dgv2["file_save2", i].Value.ToString() == "Y")
-                            {
-                                sNewName = dgv2.Rows[i].Cells["new_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["new_name2"].Value.ToString();
-                            }
-                            else
-                            {
-                                sNewName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + dgv2["origin_name2", i].Value.ToString();
-                            }
+                    //        sDel_gubun = dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_gubun2"].Value.ToString();
+                    //        sReg_worker = dgv2.Rows[i].Cells["reg_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_worker2"].Value.ToString();
+                    //        sReg_datetime = dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString();
+                    //        sMod_worker = dgv2.Rows[i].Cells["mod_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_worker2"].Value.ToString();
+                    //        sMod_datetime = dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString();
+                    //        sDel_datetime = dgv2.Rows[i].Cells["del_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_datetime2"].Value.ToString();
 
 
-                            //신규 등록
-                            if (sReg_worker == string.Empty)
-                            {
-                                sReg_worker = sUser;
-                                sReg_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
-                                sMod_worker = string.Empty;
-                                sMod_datetime = string.Empty;
-                            }
-                            else//수정 등록
-                            {
-                                sMod_worker = sUser;
-                                sMod_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
-                            }
+                    //        if (dgv2["file_save2", i].Value.ToString() == "Y")
+                    //        {
+                    //            sNewName = dgv2.Rows[i].Cells["new_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["new_name2"].Value.ToString();
+                    //        }
+                    //        else
+                    //        {
+                    //            sNewName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + dgv2["origin_name2", i].Value.ToString();
+                    //        }
 
 
-                            sPath = _Ftp._Path + sMcIdx + "/";
-                            sFullPath = sPath + sNewName;
-
-                            _SqlParams = new SqlParameter[]
-                            {
-                                 new SqlParameter("@pMc_idx",           Convert.ToDecimal(sMcIdx.ToString()))
-                                ,new SqlParameter("@pPath",             sPath.ToString())
-                                ,new SqlParameter("@pOrigin_name",      sOriginName.ToString())
-                                ,new SqlParameter("@pNew_name",         sNewName.ToString())
-                                ,new SqlParameter("@pFile_save",        "Y")
-                                ,new SqlParameter("@pDel_gubun",        "N")
-                                ,new SqlParameter("@pReg_worker",       sReg_worker)
-                                ,new SqlParameter("@pReg_datetime",     sReg_datetime)
-                                ,new SqlParameter("@pMod_worker",       sMod_worker)
-                                ,new SqlParameter("@pMod_datetime",     sMod_datetime)
-                                ,new SqlParameter("@pDel_datetime",     sDel_datetime)
-                            };
-
-                            isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
-
-                            if (dgv2["file_save2", i].Value.ToString() == "Y")
-                            {
-                                iImageIdx = 0;
-                                continue;
-                            }
+                    //        //신규 등록
+                    //        if (sReg_worker == string.Empty)
+                    //        {
+                    //            sReg_worker = sUser;
+                    //            sReg_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    //            sMod_worker = string.Empty;
+                    //            sMod_datetime = string.Empty;
+                    //        }
+                    //        else//수정 등록
+                    //        {
+                    //            sMod_worker = sUser;
+                    //            sMod_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+                    //        }
 
 
-                            #region     IMAGE 저장
-                            bool chkDir;
+                    //        sPath = _Ftp._Path + sMcIdx + "/";
+                    //        sFullPath = sPath + sNewName;
 
-                            //트루반환 : 폴더 존재
-                            //펄스반환 : 폴더 미존재
-                            chkDir = _Ftp.DoesFtpDirectoryExist(sPath);
+                    //        _SqlParams = new SqlParameter[]
+                    //        {
+                    //             new SqlParameter("@pMc_idx",           Convert.ToDecimal(sMcIdx.ToString()))
+                    //            ,new SqlParameter("@pPath",             sPath.ToString())
+                    //            ,new SqlParameter("@pOrigin_name",      sOriginName.ToString())
+                    //            ,new SqlParameter("@pNew_name",         sNewName.ToString())
+                    //            ,new SqlParameter("@pFile_save",        "Y")
+                    //            ,new SqlParameter("@pDel_gubun",        "N")
+                    //            ,new SqlParameter("@pReg_worker",       sReg_worker)
+                    //            ,new SqlParameter("@pReg_datetime",     sReg_datetime)
+                    //            ,new SqlParameter("@pMod_worker",       sMod_worker)
+                    //            ,new SqlParameter("@pMod_datetime",     sMod_datetime)
+                    //            ,new SqlParameter("@pDel_datetime",     sDel_datetime)
+                    //        };
 
-                            if (!chkDir)
-                            {
-                                _Ftp.CreateFolder(sPath);
-                            }
+                    //        isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
 
-                            _Ftp.UploadFile(_StringList[iImageIdx], sFullPath);
-                            iImageIdx++;
+                    //        if (dgv2["file_save2", i].Value.ToString() == "Y")
+                    //        {
+                    //            iImageIdx = 0;
+                    //            continue;
+                    //        }
 
-                            if (!isCheck)
-                            {
-                                sTran.Rollback();
-                                return;
-                            }
-                            #endregion
-                        }
-                        #endregion
-                    }
+
+                    //        #region     IMAGE 저장
+                    //        bool chkDir;
+
+                    //        //트루반환 : 폴더 존재
+                    //        //펄스반환 : 폴더 미존재
+                    //        chkDir = _Ftp.DoesFtpDirectoryExist(sPath);
+
+                    //        if (!chkDir)
+                    //        {
+                    //            _Ftp.CreateFolder(sPath);
+                    //        }
+
+                    //        _Ftp.UploadFile(_StringList[iImageIdx], sFullPath);
+                    //        iImageIdx++;
+
+                    //        if (!isCheck)
+                    //        {
+                    //            sTran.Rollback();
+                    //            return;
+                    //        }
+                    //        #endregion
+                    //    }
+                    //    #endregion
+                    //}
+                    //#endregion
                     #endregion
 
+                    #region 커밋
                     if (isCheck)
                     {
                         sTran.Commit();
                         MessageBox.Show("저장되었습니다.");
-
                         _ImageList = new ImageList();
                         _StringList = new List<string>();
                         ComboSetting();
                         Search(sMcCode);
                         CtrColor();
                         DataGridViewVisible();
-                        MultiThreadSetData_McInfo();
-                        MultiThreadSetData_PlcInfo();
-                        MultiThreadSetData_PlcDataAdd();
                     }
+                    #endregion
                 }
                 #endregion
 
@@ -1718,7 +1699,451 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        private void lvwImage_DoubleClick(object sender, EventArgs e)
+        private void btnImgSave_Click(object sender, EventArgs e)
+        {
+            #region 변수, 생성자, 인스턴스 선언
+            _DB.ConnectDB();
+
+            DataTable dt = new DataTable();
+            SqlTransaction sTran = null;
+
+            string[] sFiles;
+            string[] sName;
+
+            string sMcIdx = string.Empty;
+            string sMcCode = string.Empty;
+            string sPath = string.Empty;
+            string sFullPath = string.Empty;
+            int iImageIdx = 0;
+
+            string sOriginName = string.Empty;
+            string sNewName = string.Empty;
+
+            string sDel_gubun = string.Empty;
+            string sReg_worker = string.Empty;
+            string sReg_datetime = string.Empty;
+            string sMod_worker = string.Empty;
+            string sMod_datetime = string.Empty;
+            string sDel_datetime = string.Empty;
+            bool isCheck;
+            #endregion
+
+            try
+            {
+                #region 변수에 값 할당
+                sMcIdx = txtMcIdx.Text == null ? string.Empty : txtMcIdx.Text;
+                sMcCode = cbMcCode.Text == null ? string.Empty : cbMcCode.Text;
+                #endregion
+
+                #region 유효성 검사
+                if (sMcIdx.Length < 1 || sMcIdx == "0")
+                {
+                    MessageBox.Show("설비 정보 등록 후 이미지를 등록하여 주십시오.");
+                    return;
+                }
+                #endregion
+
+                if (MessageBox.Show("이미지를 등록 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    OpenFileDialog _Dialog = new OpenFileDialog();
+                    _Dialog.Filter = "jpg (*.jpg)|*.jpg|bmp (*.bmp)|*.bmp|png (*.png)|*.png|jpeg (*.jpeg)|*.jpeg";
+                    _Dialog.Multiselect = true;
+
+                    DialogResult dr = _Dialog.ShowDialog();
+
+                    if (dr == System.Windows.Forms.DialogResult.OK)
+                    {
+                        #region 파일첨부 로직
+                        sFiles = _Dialog.FileNames;
+                        sName = _Dialog.SafeFileNames;
+
+                        dt = dgv2.DataSource as DataTable;
+
+                        foreach (string sImg in sName)
+                        {
+                            dt.Rows.Add(0, 0, "", sImg, "", "N", "N", "", "", "", "", "");
+                        }
+                        dgv2.DataSource = dt;
+
+                        foreach (string sImg in sFiles)
+                        {
+                            _StringList.Add(sImg);
+                        }
+                        #endregion
+
+                        sTran = TestbedDB.sqlConn.BeginTransaction();
+
+                        #region 기존 이미지 데이터 숨김처리
+                        _Query = new StringBuilder();
+                        _Query.Append("	update tb_file_info set	                                                                                            ");
+                        _Query.Append("		 del_gubun = 'Y'		                                                                                        ");
+                        _Query.Append("		,mod_worker = @pUser	                                                                                        ");
+                        _Query.Append("		,mod_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
+                        _Query.Append("		,del_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
+                        _Query.Append("	where 1 = 1				                                                                                            ");
+                        _Query.Append("		and mc_idx = @pMc_idx	                                                                                        ");
+                        _Query.Append("		and del_gubun = 'N'	                                                                                            ");
+                        _SqlParams = new SqlParameter[]
+                        {
+                             new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
+                            ,new SqlParameter("@pUser",      sUser.ToString())
+                        };
+
+                        isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+
+                        if (!isCheck)
+                        {
+                            sTran.Rollback();
+                            return;
+                        }
+                        #endregion
+
+                        #region 이미지 데이터 및 이미지 저장
+                        if (dgv2.Rows.Count > 0)
+                        {
+                            #region 신규 이미지 데이터 INSERT 및 이미지 파일 저장
+                            _Query = new StringBuilder();
+                            _Query.Append("	insert into tb_file_info					                                            ");
+                            _Query.Append("	(										                                                ");
+                            _Query.Append("		 mc_idx         ,path           ,origin_name        ,new_name       ,file_save	    ");
+                            _Query.Append("		,del_gubun      ,reg_worker     ,reg_datetime       ,mod_worker     ,mod_datetime   ");
+                            _Query.Append("		,del_datetime                                                                       ");
+                            _Query.Append("	)										                                                ");
+                            _Query.Append("	values									                                                ");
+                            _Query.Append("	(										                                                ");
+                            _Query.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save    ");
+                            _Query.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pMod_worker   ,@pMod_datetime ");
+                            _Query.Append("		,@pdel_datetime                                                                     ");
+                            _Query.Append("	)										                                                ");
+
+                            for (int i = 0; i < dgv2.Rows.Count; i++)
+                            {
+                                #region 이미지 DATA 저장
+                                sOriginName = dgv2.Rows[i].Cells["origin_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["origin_name2"].Value.ToString();
+                                sDel_gubun = dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_gubun2"].Value.ToString();
+                                sReg_worker = dgv2.Rows[i].Cells["reg_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_worker2"].Value.ToString();
+                                sReg_datetime = dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString();
+                                sMod_worker = dgv2.Rows[i].Cells["mod_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_worker2"].Value.ToString();
+                                sMod_datetime = dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString();
+                                sDel_datetime = dgv2.Rows[i].Cells["del_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_datetime2"].Value.ToString();
+
+
+                                if (dgv2["file_save2", i].Value.ToString() == "Y")
+                                {
+                                    sNewName = dgv2.Rows[i].Cells["new_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["new_name2"].Value.ToString();
+                                }
+                                else
+                                {
+                                    sNewName = DateTime.Now.ToString("yyyyMMddHHmmss") + "_" + dgv2["origin_name2", i].Value.ToString();
+                                }
+
+
+                                //신규 등록
+                                if (sReg_worker == string.Empty)
+                                {
+                                    sReg_worker = sUser;
+                                    sReg_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+                                    sMod_worker = string.Empty;
+                                    sMod_datetime = string.Empty;
+                                }
+                                else//수정 등록
+                                {
+                                    sMod_worker = sUser;
+                                    sMod_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+                                }
+
+
+                                sPath = _Ftp._Path + sMcIdx + "/";
+                                sFullPath = sPath + sNewName;
+
+                                _SqlParams = new SqlParameter[]
+                                {
+                                     new SqlParameter("@pMc_idx",           Convert.ToDecimal(sMcIdx.ToString()))
+                                    ,new SqlParameter("@pPath",             sPath.ToString())
+                                    ,new SqlParameter("@pOrigin_name",      sOriginName.ToString())
+                                    ,new SqlParameter("@pNew_name",         sNewName.ToString())
+                                    ,new SqlParameter("@pFile_save",        "Y")
+                                    ,new SqlParameter("@pDel_gubun",        "N")
+                                    ,new SqlParameter("@pReg_worker",       sReg_worker)
+                                    ,new SqlParameter("@pReg_datetime",     sReg_datetime)
+                                    ,new SqlParameter("@pMod_worker",       sMod_worker)
+                                    ,new SqlParameter("@pMod_datetime",     sMod_datetime)
+                                    ,new SqlParameter("@pDel_datetime",     sDel_datetime)
+                                };
+
+                                isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+
+                                if (dgv2["file_save2", i].Value.ToString() == "Y")
+                                {
+                                    iImageIdx = 0;
+                                    continue;
+                                }
+                                #endregion
+
+                                #region     IMAGE 저장
+                                bool chkDir;
+
+                                //트루반환 : 폴더 존재
+                                //펄스반환 : 폴더 미존재
+                                chkDir = _Ftp.DoesFtpDirectoryExist(sPath);
+
+                                if (!chkDir)
+                                {
+                                    _Ftp.CreateFolder(sPath);
+                                }
+
+                                _Ftp.UploadFile(_StringList[iImageIdx], sFullPath);
+                                iImageIdx++;
+
+                                if (!isCheck)
+                                {
+                                    sTran.Rollback();
+                                    return;
+                                }
+                                #endregion
+                            }
+                            #endregion
+                        }
+                        #endregion
+
+                        #region 커밋
+                        if (isCheck)
+                        {
+                            sTran.Commit();
+                            _ImageList = new ImageList();
+                            _StringList = new List<string>();
+                            //ComboSetting();
+                            Search(sMcCode);
+                            MessageBox.Show("이미지가 등록되었습니다.");
+                            //CtrColor();
+                            //DataGridViewVisible();
+                        }
+                        #endregion
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                sTran.Rollback();
+                MessageBox.Show(ex.ToString());
+                return;
+            }
+            finally
+            {
+                if (sTran != null) sTran.Dispose();
+                if (dt != null) dt.Dispose();
+                _DB.CloseDB();
+            }
+        }
+
+        private void btnImgDel_Click(object sender, EventArgs e)
+        {
+            #region  변수, 생성자, 인스턴스 선언
+            _DB.ConnectDB();
+
+            DataTable dt = new DataTable();
+            SqlTransaction sTran = null;
+
+            bool isCheck;
+
+            string sMcIdx = string.Empty;
+            string sMcCode = string.Empty;
+
+            string sFullPath = string.Empty;
+
+            string sOriginName = string.Empty;
+            string sNewName = string.Empty;
+            string sFileSave = string.Empty;
+
+            string sDel_gubun = string.Empty;
+            string sReg_worker = string.Empty;
+            string sReg_datetime = string.Empty;
+            string sMod_worker = string.Empty;
+            string sMod_datetime = string.Empty;
+            string sDel_datetime = string.Empty;
+
+            int _lvwCount = 0;
+            #endregion
+
+            try
+            {
+                #region 변수에 값 할당
+                sMcIdx = txtMcIdx.Text == null ? string.Empty : txtMcIdx.Text;
+                sMcCode = cbMcCode.Text == null ? string.Empty : cbMcCode.Text;
+                #endregion
+
+                #region 유효성 검사
+                if (sMcIdx.Length < 1 || sMcIdx == "0")
+                {
+                    MessageBox.Show("설비 정보 등록 후 이미지를 등록하여 주십시오.");
+                    return;
+                }
+
+                if (dgv2.Rows.Count < 1)
+                {
+                    MessageBox.Show("등록된 이미지가 없습니다. 확인하십시오.");
+                    return;
+                }
+
+                for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
+                {
+                    if (lvwImage.Items[row].Checked)
+                    {
+                        _lvwCount++;
+                    }
+                }
+
+                if (_lvwCount < 1)
+                {
+                    MessageBox.Show("삭제할 이미지를 체크하여주십시오.");
+                    return;
+                }
+                #endregion
+
+                if (MessageBox.Show("이미지를 삭제 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    #region 그리드에서 데이터 숨기기
+                    for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
+                    {
+                        if (lvwImage.Items[row].Checked)
+                        {
+                            dgv2.Rows.RemoveAt(row);
+                        }
+                    }
+                    #endregion
+
+                    sTran = TestbedDB.sqlConn.BeginTransaction();
+
+                    #region 기존 이미지 데이터 숨김처리
+                    _Query = new StringBuilder();
+                    _Query.Append("	update tb_file_info set	                                                                                            ");
+                    _Query.Append("		 del_gubun = 'Y'		                                                                                        ");
+                    _Query.Append("		,mod_worker = @pUser	                                                                                        ");
+                    _Query.Append("		,mod_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
+                    _Query.Append("		,del_datetime = (select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	");
+                    _Query.Append("	where 1 = 1				                                                                                            ");
+                    _Query.Append("		and mc_idx = @pMc_idx	                                                                                        ");
+                    _Query.Append("		and del_gubun = 'N'	                                                                                            ");
+                    _SqlParams = new SqlParameter[]
+                    {
+                        new SqlParameter("@pMc_idx",    Convert.ToDecimal(sMcIdx.ToString()))
+                        ,new SqlParameter("@pUser",      sUser.ToString())
+                    };
+
+                    isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+
+                    if (!isCheck)
+                    {
+                        sTran.Rollback();
+                        return;
+                    }
+                    #endregion
+
+                    #region 이미지 데이터 삭제
+                    if (dgv2.Rows.Count > 0)
+                    {
+                        #region 신규 이미지 데이터 INSERT 및 이미지 파일 저장
+                        _Query = new StringBuilder();
+                        _Query.Append("	insert into tb_file_info					                                            ");
+                        _Query.Append("	(										                                                ");
+                        _Query.Append("		 mc_idx         ,path           ,origin_name        ,new_name       ,file_save	    ");
+                        _Query.Append("		,del_gubun      ,reg_worker     ,reg_datetime       ,mod_worker     ,mod_datetime   ");
+                        _Query.Append("		,del_datetime                                                                       ");
+                        _Query.Append("	)										                                                ");
+                        _Query.Append("	values									                                                ");
+                        _Query.Append("	(										                                                ");
+                        _Query.Append("		 @pMc_idx       ,@pPath         ,@pOrigin_name      ,@pNew_name     ,@pFile_save    ");
+                        _Query.Append("		,@pDel_gubun    ,@pReg_worker   ,@pReg_datetime     ,@pMod_worker   ,@pMod_datetime ");
+                        _Query.Append("		,@pdel_datetime                                                                     ");
+                        _Query.Append("	)										                                                ");
+
+                        for (int i = 0; i < dgv2.Rows.Count; i++)
+                        {
+                            #region 이미지 DATA 저장
+                            sFullPath = dgv2.Rows[i].Cells["path2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["path2"].Value.ToString();
+                            sOriginName = dgv2.Rows[i].Cells["origin_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["origin_name2"].Value.ToString();
+                            sNewName = dgv2.Rows[i].Cells["new_name2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["new_name2"].Value.ToString();
+                            sFileSave = dgv2.Rows[i].Cells["file_save2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["file_save2"].Value.ToString();
+                            sDel_gubun = dgv2.Rows[i].Cells["del_gubun2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_gubun2"].Value.ToString();
+                            sReg_worker = dgv2.Rows[i].Cells["reg_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_worker2"].Value.ToString();
+                            sReg_datetime = dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["reg_datetime2"].Value.ToString();
+                            sMod_worker = dgv2.Rows[i].Cells["mod_worker2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_worker2"].Value.ToString();
+                            sMod_datetime = dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["mod_datetime2"].Value.ToString();
+                            sDel_datetime = dgv2.Rows[i].Cells["del_datetime2"].Value.ToString() == null ? string.Empty : dgv2.Rows[i].Cells["del_datetime2"].Value.ToString();
+
+
+                            //신규 등록
+                            if (sReg_worker == string.Empty)
+                            {
+                                sReg_worker = sUser;
+                                sReg_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+                                sMod_worker = string.Empty;
+                                sMod_datetime = string.Empty;
+                            }
+                            else//수정 등록
+                            {
+                                sMod_worker = sUser;
+                                sMod_datetime = DateTime.Now.ToString("yyyyMMddHHmmss");
+                            }
+
+                            _SqlParams = new SqlParameter[]
+                            {
+                                 new SqlParameter("@pMc_idx",           Convert.ToDecimal(sMcIdx.ToString()))
+                                ,new SqlParameter("@pPath",             sFullPath.ToString())
+                                ,new SqlParameter("@pOrigin_name",      sOriginName.ToString())
+                                ,new SqlParameter("@pNew_name",         sNewName.ToString())
+                                ,new SqlParameter("@pFile_save",        sFileSave.ToString())
+                                ,new SqlParameter("@pDel_gubun",        sDel_gubun.ToString())
+                                ,new SqlParameter("@pReg_worker",       sReg_worker.ToString())
+                                ,new SqlParameter("@pReg_datetime",     sReg_datetime.ToString())
+                                ,new SqlParameter("@pMod_worker",       sMod_worker.ToString())
+                                ,new SqlParameter("@pMod_datetime",     sMod_datetime.ToString())
+                                ,new SqlParameter("@pDel_datetime",     sDel_datetime.ToString())
+                            };
+
+                            isCheck = _DB.ExecuteQuery_Tran(_Query, _SqlParams, sTran);
+
+                            if (!isCheck)
+                            {
+                                sTran.Rollback();
+                                return;
+                            }
+                            #endregion
+                        }
+                        #endregion
+                    }
+                    #endregion
+
+                    #region 커밋
+                    if (isCheck)
+                    {
+                        sTran.Commit();
+                        //ComboSetting();
+                        Search(sMcCode);
+                        MessageBox.Show("이미지가 삭제되었습니다.");
+                        //CtrColor();
+                        //DataGridViewVisible();
+                    }
+                    #endregion
+
+                }
+            }
+            catch (Exception ex)
+            {
+                sTran.Rollback();
+                MessageBox.Show(ex.ToString());
+                return;
+            }
+            finally
+            {
+                if (sTran != null) sTran.Dispose();
+                if (dt != null) dt.Dispose();
+                _DB.CloseDB();
+            }
+        }
+
+        private void lvwImage_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string sPath = string.Empty;
             string sName = string.Empty;
@@ -1727,8 +2152,13 @@ namespace TestbedDAQ.Forms
             {
                 if (lvwImage.Items.Count < 1) return;
 
+                //더블클릭하면 자동으로 체크되는 현상.... 임시 조치
+                var firstSelectedItem = lvwImage.SelectedItems[0];
+                firstSelectedItem.Checked = false;
+
                 if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+
                     int iIndex = dgv2.CurrentRow.Index;
 
                     sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
@@ -1749,92 +2179,6 @@ namespace TestbedDAQ.Forms
             {
 
             }
-        }
-
-        private void MultiThreadSetData_McInfo()
-        {
-            //try
-            //{
-            //    //예제. 손봐야함.
-            //    int index = _MachineInformation.FindIndex(_MachineInformation => _MachineInformation.MachineCode == cbMcCode.Text);
-
-            //    if (index == -1)
-            //    {
-            //        //첫 데이터 생성 기준은 코드이나 idx로 변경해야함.
-            //        //_MachineInformation.Add(new MachineInformation
-            //        _MachineInformation.Add(new MachineInformation
-            //        {
-            //            MachineName = txtMcName.Text
-            //            ,MachineDescription = ""
-            //            ,MachineCode = cbMcCode.Text
-            //            ,MachineStandard = ""
-            //            ,MachineMakeDate = txtMcMakerDate.Text
-            //            ,MachineMaker = txtMcMaker.Text
-            //            ,MachineLocation = cbMcLocation.Text
-            //            ,MachineType = txtPlcType.Text
-            //            ,MachineVersion = txtPlcVersion.Text
-            //        });
-            //    }
-            //    else
-            //    {
-            //        //기존 데이터 수정
-            //        foreach (MachineInformation p in _MachineInformation.Where(p => p.MachineCode.ToString() == cbMcCode.Text))
-            //        {
-            //            p.MachineName = txtMcName.Text;
-            //            p.MachineDescription = "";
-            //            p.MachineCode = cbMcCode.Text;
-            //            p.MachineStandard = "";
-            //            p.MachineMakeDate = txtMcMakerDate.Text;
-            //            p.MachineMaker = txtMcMaker.Text;
-            //            p.MachineLocation = cbMcLocation.Text;
-            //            p.MachineType = txtPlcType.Text;
-            //            p.MachineVersion = txtPlcVersion.Text;
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, ex.Source);
-            //    return;
-            //}
-            //finally
-            //{
-
-            //}
-        }
-
-        private void MultiThreadSetData_PlcInfo()
-        {
-            //try
-            //{
-                
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, ex.Source);
-            //    return;
-            //}
-            //finally
-            //{
-
-            //}
-        }
-
-        private void MultiThreadSetData_PlcDataAdd()
-        {
-            //try
-            //{
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, ex.Source);
-            //    return;
-            //}
-            //finally
-            //{
-
-            //}
         }
     }
 }
