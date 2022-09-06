@@ -183,11 +183,6 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region TAB2 이미지 파일 그리드 초기화
-
-                dgv2.Visible = false;
-                btnFileUpload.Visible = false;
-                btnFileRemove.Visible = false;
-
                 int dgvCount2 = dgv2.Rows.Count;
                 for (int i = 0; i < dgvCount2; i++)
                 {
@@ -980,9 +975,9 @@ namespace TestbedDAQ.Forms
 
                 if (txtPlcVersion.Text.Length < 1)
                 {
-                    MessageBox.Show("설비 제조사를 입력하십시오.");
-                    txtMcMaker.Focus();
-                    txtMcMaker.SelectAll();
+                    MessageBox.Show("PLC 버전을 입력하십시오.");
+                    txtPlcVersion.Focus();
+                    txtPlcVersion.SelectAll();
                     return;
                 }
                 #endregion
@@ -1484,7 +1479,6 @@ namespace TestbedDAQ.Forms
                 if (sTran != null) sTran.Dispose();
                 if (dt != null) dt.Dispose();
                 _DB.CloseDB();
-                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             }
         }
 
@@ -2145,40 +2139,46 @@ namespace TestbedDAQ.Forms
 
         private void lvwImage_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string sPath = string.Empty;
-            string sName = string.Empty;
+            //foreach (ListViewItem item in lvwImage.Items)
+            //{
+            //    if (item.Checked)
+            //        item.Checked = false;
+            //}
 
-            try
-            {
-                if (lvwImage.Items.Count < 1) return;
+            //string sPath = string.Empty;
+            //string sName = string.Empty;
 
-                //더블클릭하면 자동으로 체크되는 현상.... 임시 조치
-                var firstSelectedItem = lvwImage.SelectedItems[0];
-                firstSelectedItem.Checked = false;
+            //try
+            //{
+            //    if (lvwImage.Items.Count < 1) return;
 
-                if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
+            //    //더블클릭하면 자동으로 체크되는 현상.... 임시 조치
+            //    var firstSelectedItem = lvwImage.SelectedItems[0];
+            //    firstSelectedItem.Checked = false;
 
-                    int iIndex = dgv2.CurrentRow.Index;
 
-                    sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
-                    sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
+            //    if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    {
+            //        int iIndex = dgv2.CurrentRow.Index;
 
-                    frmMcImgView frm = new frmMcImgView(sPath, sName);
+            //        sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
+            //        sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
 
-                    if (frm.ShowDialog() != DialogResult.OK)
-                        return;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, ex.Source);
-                return;
-            }
-            finally
-            {
+            //        frmMcImgView frm = new frmMcImgView(sPath, sName);
 
-            }
+            //        if (frm.ShowDialog() != DialogResult.OK)
+            //            return;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, ex.Source);
+            //    return;
+            //}
+            //finally
+            //{
+
+            //}
         }
     }
 }

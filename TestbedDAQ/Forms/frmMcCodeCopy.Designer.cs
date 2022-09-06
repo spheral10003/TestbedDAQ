@@ -38,10 +38,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Location = new System.Drawing.Point(701, 57);
+            this.btnClose.Font = new System.Drawing.Font("Noto Sans KR Regular", 11.25F);
+            this.btnClose.Location = new System.Drawing.Point(701, 51);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(113, 23);
+            this.btnClose.Size = new System.Drawing.Size(113, 27);
             this.btnClose.TabIndex = 11;
             this.btnClose.Text = "닫기";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -49,10 +49,10 @@
             // 
             // btnCopy
             // 
-            this.btnCopy.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnCopy.Location = new System.Drawing.Point(701, 19);
+            this.btnCopy.Font = new System.Drawing.Font("Noto Sans KR Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnCopy.Location = new System.Drawing.Point(701, 13);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(113, 23);
+            this.btnCopy.Size = new System.Drawing.Size(113, 32);
             this.btnCopy.TabIndex = 10;
             this.btnCopy.Text = "복사하기";
             this.btnCopy.UseVisualStyleBackColor = true;
@@ -61,18 +61,18 @@
             // txtNewCode
             // 
             this.txtNewCode.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtNewCode.Location = new System.Drawing.Point(83, 19);
+            this.txtNewCode.Location = new System.Drawing.Point(103, 22);
             this.txtNewCode.Name = "txtNewCode";
-            this.txtNewCode.Size = new System.Drawing.Size(235, 25);
+            this.txtNewCode.Size = new System.Drawing.Size(210, 25);
             this.txtNewCode.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(369, 23);
+            this.label2.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Location = new System.Drawing.Point(349, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 18);
+            this.label2.Size = new System.Drawing.Size(85, 24);
             this.label2.TabIndex = 8;
             this.label2.Text = "복사제공자";
             // 
@@ -80,7 +80,7 @@
             // 
             this.cbOfferCode.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.cbOfferCode.FormattingEnabled = true;
-            this.cbOfferCode.Location = new System.Drawing.Point(440, 20);
+            this.cbOfferCode.Location = new System.Drawing.Point(431, 22);
             this.cbOfferCode.Name = "cbOfferCode";
             this.cbOfferCode.Size = new System.Drawing.Size(240, 26);
             this.cbOfferCode.TabIndex = 7;
@@ -88,10 +88,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 18);
+            this.label1.Size = new System.Drawing.Size(85, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "복사대상자";
             // 
