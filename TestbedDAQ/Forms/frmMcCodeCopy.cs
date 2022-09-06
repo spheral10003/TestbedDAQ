@@ -20,6 +20,8 @@ namespace TestbedDAQ.Forms
         public string _McCode;
         ComboBox _ComboBox;
 
+        private string sUser = "KMG";
+
         public frmMcCodeCopy(ComboBox comboBox, string sMcCode)
         {
             InitializeComponent();
@@ -119,66 +121,61 @@ namespace TestbedDAQ.Forms
 
                     #region     설비 정보 복사
                     _sQuery = new StringBuilder();
-                    _sQuery.Append("	insert into tb_machine_mst							");
-                    _sQuery.Append("	(													");
-                    _sQuery.Append("		 idx											");
-                    _sQuery.Append("	    ,fac											");
-                    _sQuery.Append("	    ,code											");
-                    _sQuery.Append("	    ,name											");
-                    _sQuery.Append("	    ,spec											");
-                    _sQuery.Append("	    ,motor_count									");
-                    _sQuery.Append("	    ,dept											");
-                    _sQuery.Append("	    ,location										");
-                    _sQuery.Append("	    ,maker											");
-                    _sQuery.Append("	    ,maker_date										");
-                    _sQuery.Append("	    ,ip												");
-                    _sQuery.Append("	    ,port											");
-                    _sQuery.Append("	    ,state											");
-                    _sQuery.Append("	    ,plc_maker										");
-                    _sQuery.Append("	    ,plc_model										");
-                    _sQuery.Append("	    ,plc_version									");
-                    _sQuery.Append("	    ,remark											");
-                    _sQuery.Append("	    ,del_gubun										");
-                    _sQuery.Append("	    ,reg_worker										");
-                    _sQuery.Append("	    ,reg_datetime									");
-                    _sQuery.Append("	    ,mod_worker										");
-                    _sQuery.Append("	    ,mod_datetime									");
-                    _sQuery.Append("	    ,del_datetime									");
-                    _sQuery.Append("	)													");
-                    _sQuery.Append("	select 												");
-                    _sQuery.Append("		 (	select	isnull(max(a.idx), 0) + 1  as idx	");
-                    _sQuery.Append("			from	tb_machine_mst a with(nolock)    	");
-                    _sQuery.Append("			where  1 = 1) 								");
-                    _sQuery.Append("	    ,fac											");
-                    _sQuery.Append("	    ,@pNewCode										");
-                    _sQuery.Append("	    ,name											");
-                    _sQuery.Append("	    ,spec											");
-                    _sQuery.Append("	    ,motor_count									");
-                    _sQuery.Append("	    ,dept											");
-                    _sQuery.Append("	    ,location										");
-                    _sQuery.Append("	    ,maker											");
-                    _sQuery.Append("	    ,maker_date										");
-                    _sQuery.Append("	    ,ip												");
-                    _sQuery.Append("	    ,port											");
-                    _sQuery.Append("	    ,state											");
-                    _sQuery.Append("	    ,plc_maker										");
-                    _sQuery.Append("	    ,plc_model										");
-                    _sQuery.Append("	    ,plc_version									");
-                    _sQuery.Append("	    ,remark											");
-                    _sQuery.Append("	    ,del_gubun										");
-                    _sQuery.Append("	    ,reg_worker										");
-                    _sQuery.Append("	    ,reg_datetime									");
-                    _sQuery.Append("	    ,mod_worker										");
-                    _sQuery.Append("	    ,mod_datetime									");
-                    _sQuery.Append("	    ,del_datetime									");
-                    _sQuery.Append("	from tb_machine_mst a with(nolock)					");
-                    _sQuery.Append("	where 1 = 1 										");
-                    _sQuery.Append("		and  code = @pOfferCode							");
+                    _sQuery.Append("	insert into tb_machine_info							                                                    ");
+                    _sQuery.Append("	(													                                                    ");
+                    _sQuery.Append("		 idx											                                                    ");
+                    _sQuery.Append("	    ,fac											                                                    ");
+                    _sQuery.Append("	    ,code											                                                    ");
+                    _sQuery.Append("	    ,name											                                                    ");
+                    _sQuery.Append("	    ,spec											                                                    ");
+                    _sQuery.Append("	    ,motor_count									                                                    ");
+                    _sQuery.Append("	    ,dept											                                                    ");
+                    _sQuery.Append("	    ,location										                                                    ");
+                    _sQuery.Append("	    ,maker											                                                    ");
+                    _sQuery.Append("	    ,makerdate										                                                    ");
+                    _sQuery.Append("	    ,state											                                                    ");
+                    _sQuery.Append("	    ,type										                                                        ");
+                    _sQuery.Append("	    ,version										                                                    ");
+                    _sQuery.Append("	    ,standard									                                                        ");
+                    _sQuery.Append("	    ,remark											                                                    ");
+                    _sQuery.Append("	    ,del_gubun										                                                    ");
+                    _sQuery.Append("	    ,reg_worker										                                                    ");
+                    _sQuery.Append("	    ,reg_datetime									                                                    ");
+                    _sQuery.Append("	    ,mod_worker										                                                    ");
+                    _sQuery.Append("	    ,mod_datetime									                                                    ");
+                    _sQuery.Append("	)													                                                    ");
+                    _sQuery.Append("	select 												                                                    ");
+                    _sQuery.Append("		 (	select	isnull(max(a.idx), 0) + 1  as idx	                                                    ");
+                    _sQuery.Append("			from	tb_machine_info a with(nolock)    	                                                    ");
+                    _sQuery.Append("			where  1 = 1) 								                                                    ");
+                    _sQuery.Append("	    ,a.fac											                                                    ");
+                    _sQuery.Append("	    ,@pNewCode										                                                    ");
+                    _sQuery.Append("	    ,a.name			                                                                                    ");
+                    _sQuery.Append("	    ,a.spec			                                                                                    ");
+                    _sQuery.Append("	    ,a.motor_count	                                                                                    ");
+                    _sQuery.Append("	    ,a.dept			                                                                                    ");
+                    _sQuery.Append("	    ,a.location		                                                                                    ");
+                    _sQuery.Append("	    ,a.maker		                                                                                    ");
+                    _sQuery.Append("	    ,a.makerdate	                                                                                    ");
+                    _sQuery.Append("	    ,a.state		                                                                                    ");
+                    _sQuery.Append("	    ,a.type			                                                                                    ");
+                    _sQuery.Append("	    ,a.version		                                                                                    ");
+                    _sQuery.Append("	    ,a.standard		                                                                                    ");
+                    _sQuery.Append("	    ,a.remark		                                                                                    ");
+                    _sQuery.Append("	    ,a.del_gubun	                                                                                    ");
+                    _sQuery.Append("	    ,@pUser	                                                                                            ");
+                    _sQuery.Append("	    ,(select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	    ");
+                    _sQuery.Append("	    ,@pUser	                                                                                            ");
+                    _sQuery.Append("	    ,(select replace(replace(replace(convert( varchar , getdate()  ,120),'-',''),':',''),' ',''))	    ");
+                    _sQuery.Append("	from tb_machine_info a with(nolock)					                                                    ");
+                    _sQuery.Append("	where 1 = 1 										                                                    ");
+                    _sQuery.Append("		and  code = @pOfferCode							                                                    ");
 
                     _sqlParams = new SqlParameter[]
                     {
                          new SqlParameter("@pNewCode",    sMcNewCode)
                         ,new SqlParameter("@pOfferCode",  sMcOfferCode)
+                        ,new SqlParameter("@pUser",       sUser)
                     };
                     isCheck = _DB.ExecuteQuery_Tran(_sQuery, _sqlParams, sTran);
 
