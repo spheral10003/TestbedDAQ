@@ -12,9 +12,11 @@ namespace TestbedDAQ.Forms
 {
     public partial class frmCombo : Form
     {
-        public string CompanyName { get; set; }
-
+        private string _CompanyName;
         private bool _Check;
+
+        public string Company { get => _CompanyName; set => _CompanyName = value; }
+
         public frmCombo()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace TestbedDAQ.Forms
         private void ComboItem_Click(object sender, EventArgs e)
         {
             lblCombo.Text = ((Label)sender).Text;
-            CompanyName = lblCombo.Text;
+            _CompanyName = lblCombo.Text;
             this.Size = new Size(179, 41);
 
 
@@ -63,5 +65,6 @@ namespace TestbedDAQ.Forms
 
             _Check = false;
         }
+
     }
 }

@@ -12,7 +12,6 @@ namespace Library
         /// 제품가공 자동 시작 주소
         /// </summary>
         int AutoStartAddress { get; set; }
-
         /// <summary>
         /// 가공 시간 주소
         /// </summary>

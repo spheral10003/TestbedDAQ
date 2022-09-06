@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KwonLib">
+      <HintPath>..\TestbedDAQ\Dlls\KwonLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -42,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataChangeEvent.cs" />
+    <Compile Include="IDataChangeEvent.cs" />
+    <Compile Include="ThreadManagerBase.cs" />
+    <Compile Include="ThreadMelsecDaq.cs" />
     <Compile Include="IMachineInformation.cs" />
     <Compile Include="IMachineStatus.cs" />
     <Compile Include="IMotor.cs" />
@@ -52,6 +60,8 @@
     <Compile Include="MachineStatus.cs" />
     <Compile Include="Motor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadManager.cs" />
+    <Compile Include="ThreadMelsecBase.cs" />
     <Compile Include="ViewData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,11 +11,14 @@ namespace TestbedDAQ.UseClass
 {
     public class TestbedDB
     {
-        public static string sConn = String.Format("Data Source=218.155.74.35;Initial Catalog=iPlusPOP_SJSM_TEST;Persist Security Info=True;User ID=erpUser;Password=erpPasswd");
+        public static string sConn = String.Format($"Data Source={Properties.Settings.Default.ServerIP};" +
+            $"Initial Catalog={Properties.Settings.Default.DataBaseName};" +
+            $"Persist Security Info=True;" +
+            $"User ID={Properties.Settings.Default.dbID};" +
+            $"Password={Properties.Settings.Default.dbPW}");
 
 
         public static SqlConnection sqlConn = new SqlConnection();
-
 
         /// <summary>
         /// DB 연결
