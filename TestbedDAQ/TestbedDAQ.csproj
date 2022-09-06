@@ -268,5 +268,41 @@
   <ItemGroup>
     <None Include="Resources\button_close.png" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\keypad,popup\bt_buho01.png" />
+    <Content Include="Resources\keypad,popup\bt_buhobg.png" />
+    <Content Include="Resources\keypad,popup\bt_buho_..png" />
+    <Content Include="Resources\keypad,popup\bt_buho_dele.png" />
+    <Content Include="Resources\keypad,popup\bt_buho_minus.png" />
+    <Content Include="Resources\keypad,popup\bt_buho_plus.png" />
+    <Content Include="Resources\keypad,popup\bt_number.png" />
+    <Content Include="Resources\keypad,popup\numper_key_basic.png" />
+    <Content Include="Resources\keypad,popup\numper_key_basic02.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose – 1.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose – 2.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose – 5.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose – 6.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose – 7.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose – 8.png" />
+    <Content Include="Resources\keypad,popup\numper_key_btclose.png" />
+    <Content Include="Resources\keypad,popup\numper_key_icon.png" />
+    <Content Include="Resources\keypad,popup\numper_key_원본.png" />
+    <Content Include="Resources\keypad,popup\popup_bg – 1.png" />
+    <Content Include="Resources\keypad,popup\popup_bg.png" />
+    <Content Include="Resources\keypad,popup\popup_bt_no.png" />
+    <Content Include="Resources\keypad,popup\popup_bt_yes.png" />
+    <Content Include="Resources\keypad,popup\popup_icon.png" />
+    <Content Include="Resources\McSetting\body_bottom02.png" />
+    <Content Include="Resources\McSetting\setting_bg02.png" />
+    <Content Include="Resources\McSetting\setting_bg03.png" />
+    <Content Include="Resources\McSetting\setting_bt_minus.png" />
+    <Content Include="Resources\McSetting\setting_bt_new.png" />
+    <Content Include="Resources\McSetting\setting_bt_plus.png" />
+    <Content Include="Resources\McSetting\setting_bt_remov.png" />
+    <Content Include="Resources\McSetting\setting_bt_save.png" />
+    <Content Include="Resources\McSetting\setting_bt_saveas.png" />
+    <Content Include="Resources\McSetting\설비관리전체시안.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
