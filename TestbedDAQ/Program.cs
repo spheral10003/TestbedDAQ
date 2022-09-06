@@ -1,5 +1,6 @@
 ﻿using KwonLib;
 using KwonLib.Tool;
+using Library;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,15 @@ namespace TestbedDAQ
     internal static class Program
     {
         static public LogManager ErrLog = new LogManager("Err_", null);
-
+        
         /// <summary>
         /// 해당 애플리케이션의 주 진입점입니다.
         /// </summary>
         [STAThread]
         static void Main()
         {
-
             bool createdNew;
+
             Mutex mutex = new Mutex(true, "TestbedDAQ", out createdNew);
 
             if (!createdNew)
@@ -45,8 +46,6 @@ namespace TestbedDAQ
             Application.ThreadException += Application_ThreadException;
             Application.SetUnhandledExceptionMode(UnhandledExceptionMode.Automatic);
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-
-
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

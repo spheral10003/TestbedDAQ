@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Library;
-using OpenQA.Selenium.Remote;
+//using OpenQA.Selenium.Remote;
 using TestbedDAQ.UseClass;
 
 namespace TestbedDAQ.Forms
@@ -38,13 +38,7 @@ namespace TestbedDAQ.Forms
         private List<MachineInformation> _MachineInformation;
         
         public List<MachineInformation> MachineInformationList { get => _MachineInformation; set => _MachineInformation = value; }
-<<<<<<< HEAD
-        
-=======
-        
-        
 
->>>>>>> effa18e5919140a1240480f0aa5625a221cc3c72
         public frmMCManager()
         {
             InitializeComponent();
