@@ -296,12 +296,15 @@
     <Content Include="Resources\McSetting\body_bottom02.png" />
     <Content Include="Resources\McSetting\setting_bg02.png" />
     <Content Include="Resources\McSetting\setting_bg03.png" />
+    <Content Include="Resources\McSetting\setting_bt_imageminus.png" />
+    <Content Include="Resources\McSetting\setting_bt_imageplus.png" />
     <Content Include="Resources\McSetting\setting_bt_minus.png" />
     <Content Include="Resources\McSetting\setting_bt_new.png" />
     <Content Include="Resources\McSetting\setting_bt_plus.png" />
     <Content Include="Resources\McSetting\setting_bt_remov.png" />
     <Content Include="Resources\McSetting\setting_bt_save.png" />
     <Content Include="Resources\McSetting\setting_bt_saveas.png" />
+    <Content Include="Resources\McSetting\설비관리_sian.png" />
     <Content Include="Resources\McSetting\설비관리전체시안.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
