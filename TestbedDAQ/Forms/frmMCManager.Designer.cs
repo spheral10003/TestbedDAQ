@@ -173,6 +173,8 @@
             this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
             this.SuspendLayout();
@@ -290,7 +292,7 @@
             this.cbMcFac.ItemHeight = 31;
             this.cbMcFac.Location = new System.Drawing.Point(183, 125);
             this.cbMcFac.Name = "cbMcFac";
-            this.cbMcFac.Size = new System.Drawing.Size(606, 39);
+            this.cbMcFac.Size = new System.Drawing.Size(591, 39);
             this.cbMcFac.TabIndex = 203;
             this.cbMcFac.Leave += new System.EventHandler(this.Control_Leave);
             // 
@@ -404,7 +406,7 @@
             this.txtMcMakerDate.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMcMakerDate.Location = new System.Drawing.Point(549, 390);
             this.txtMcMakerDate.Name = "txtMcMakerDate";
-            this.txtMcMakerDate.Size = new System.Drawing.Size(240, 39);
+            this.txtMcMakerDate.Size = new System.Drawing.Size(225, 39);
             this.txtMcMakerDate.TabIndex = 213;
             // 
             // cbMcState
@@ -416,7 +418,7 @@
             this.cbMcState.ItemHeight = 31;
             this.cbMcState.Location = new System.Drawing.Point(549, 337);
             this.cbMcState.Name = "cbMcState";
-            this.cbMcState.Size = new System.Drawing.Size(240, 39);
+            this.cbMcState.Size = new System.Drawing.Size(225, 39);
             this.cbMcState.TabIndex = 211;
             this.cbMcState.Leave += new System.EventHandler(this.Control_Leave);
             // 
@@ -441,7 +443,7 @@
             this.txtMcSpec.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
             this.txtMcSpec.Location = new System.Drawing.Point(549, 284);
             this.txtMcSpec.Name = "txtMcSpec";
-            this.txtMcSpec.Size = new System.Drawing.Size(240, 39);
+            this.txtMcSpec.Size = new System.Drawing.Size(225, 39);
             this.txtMcSpec.TabIndex = 209;
             // 
             // txtMcName
@@ -450,7 +452,7 @@
             this.txtMcName.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMcName.Location = new System.Drawing.Point(183, 72);
             this.txtMcName.Name = "txtMcName";
-            this.txtMcName.Size = new System.Drawing.Size(606, 39);
+            this.txtMcName.Size = new System.Drawing.Size(591, 39);
             this.txtMcName.TabIndex = 202;
             this.txtMcName.Leave += new System.EventHandler(this.Control_Leave);
             // 
@@ -501,42 +503,42 @@
             // btnRemove
             // 
             this.btnRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRemove.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_remov;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnRemove.Location = new System.Drawing.Point(1356, 850);
+            this.btnRemove.Location = new System.Drawing.Point(1340, 847);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(164, 48);
+            this.btnRemove.Size = new System.Drawing.Size(180, 55);
             this.btnRemove.TabIndex = 343;
-            this.btnRemove.Text = "삭제";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
             // 
             // btnNew
             // 
             this.btnNew.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnNew.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_new;
             this.btnNew.FlatAppearance.BorderSize = 0;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnNew.Location = new System.Drawing.Point(1022, 850);
+            this.btnNew.Location = new System.Drawing.Point(968, 847);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(164, 48);
+            this.btnNew.Size = new System.Drawing.Size(180, 55);
             this.btnNew.TabIndex = 341;
-            this.btnNew.Text = "신규";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnSave.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_save;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnSave.Location = new System.Drawing.Point(1189, 850);
+            this.btnSave.Location = new System.Drawing.Point(1154, 847);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(164, 48);
+            this.btnSave.Size = new System.Drawing.Size(180, 55);
             this.btnSave.TabIndex = 342;
-            this.btnSave.Text = "저장";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -547,9 +549,9 @@
             this.lvwImage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cck});
             this.lvwImage.HideSelection = false;
-            this.lvwImage.Location = new System.Drawing.Point(1542, 51);
+            this.lvwImage.Location = new System.Drawing.Point(1542, 91);
             this.lvwImage.Name = "lvwImage";
-            this.lvwImage.Size = new System.Drawing.Size(337, 845);
+            this.lvwImage.Size = new System.Drawing.Size(337, 805);
             this.lvwImage.TabIndex = 194;
             this.lvwImage.UseCompatibleStateImageBehavior = false;
             this.lvwImage.SelectedIndexChanged += new System.EventHandler(this.lvwImage_SelectedIndexChanged);
@@ -562,28 +564,28 @@
             // btnCodeCopy
             // 
             this.btnCodeCopy.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCodeCopy.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_saveas3;
             this.btnCodeCopy.FlatAppearance.BorderSize = 0;
             this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCodeCopy.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
             this.btnCodeCopy.Location = new System.Drawing.Point(648, 19);
             this.btnCodeCopy.Name = "btnCodeCopy";
-            this.btnCodeCopy.Size = new System.Drawing.Size(141, 39);
+            this.btnCodeCopy.Size = new System.Drawing.Size(126, 42);
             this.btnCodeCopy.TabIndex = 301;
-            this.btnCodeCopy.Text = "다른 코드로 저장";
             this.btnCodeCopy.UseVisualStyleBackColor = false;
             this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
             // 
             // btnImgSave
             // 
             this.btnImgSave.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnImgSave.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_imageplus;
             this.btnImgSave.FlatAppearance.BorderSize = 0;
             this.btnImgSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgSave.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnImgSave.Location = new System.Drawing.Point(1578, 12);
+            this.btnImgSave.Location = new System.Drawing.Point(1578, 55);
             this.btnImgSave.Name = "btnImgSave";
-            this.btnImgSave.Size = new System.Drawing.Size(125, 33);
+            this.btnImgSave.Size = new System.Drawing.Size(110, 30);
             this.btnImgSave.TabIndex = 500;
-            this.btnImgSave.Text = "이미지 등록";
             this.btnImgSave.UseVisualStyleBackColor = false;
             this.btnImgSave.Click += new System.EventHandler(this.btnImgSave_Click);
             // 
@@ -622,7 +624,7 @@
             this.txtMcStandard.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMcStandard.Location = new System.Drawing.Point(549, 231);
             this.txtMcStandard.Name = "txtMcStandard";
-            this.txtMcStandard.Size = new System.Drawing.Size(240, 39);
+            this.txtMcStandard.Size = new System.Drawing.Size(225, 39);
             this.txtMcStandard.TabIndex = 207;
             // 
             // label20
@@ -744,7 +746,7 @@
             this.cbMcType.ItemHeight = 31;
             this.cbMcType.Location = new System.Drawing.Point(549, 178);
             this.cbMcType.Name = "cbMcType";
-            this.cbMcType.Size = new System.Drawing.Size(240, 39);
+            this.cbMcType.Size = new System.Drawing.Size(225, 39);
             this.cbMcType.TabIndex = 205;
             // 
             // txtMcLocation
@@ -789,14 +791,14 @@
             // btnImgDel
             // 
             this.btnImgDel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnImgDel.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_imageminus;
             this.btnImgDel.FlatAppearance.BorderSize = 0;
             this.btnImgDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgDel.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnImgDel.Location = new System.Drawing.Point(1710, 12);
+            this.btnImgDel.Location = new System.Drawing.Point(1726, 55);
             this.btnImgDel.Name = "btnImgDel";
-            this.btnImgDel.Size = new System.Drawing.Size(125, 33);
+            this.btnImgDel.Size = new System.Drawing.Size(110, 30);
             this.btnImgDel.TabIndex = 524;
-            this.btnImgDel.Text = "이미지삭제";
             this.btnImgDel.UseVisualStyleBackColor = false;
             this.btnImgDel.Click += new System.EventHandler(this.btnImgDel_Click);
             // 
@@ -1252,14 +1254,14 @@
             // btnPlcDataRemove
             // 
             this.btnPlcDataRemove.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataRemove.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_minus;
             this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
             this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlcDataRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnPlcDataRemove.Location = new System.Drawing.Point(1356, 462);
+            this.btnPlcDataRemove.Location = new System.Drawing.Point(1435, 466);
             this.btnPlcDataRemove.Name = "btnPlcDataRemove";
-            this.btnPlcDataRemove.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataRemove.Size = new System.Drawing.Size(88, 33);
             this.btnPlcDataRemove.TabIndex = 528;
-            this.btnPlcDataRemove.Text = "행 삭제";
             this.btnPlcDataRemove.UseVisualStyleBackColor = false;
             this.btnPlcDataRemove.Click += new System.EventHandler(this.btnPlcDataRemove_Click);
             // 
@@ -1281,14 +1283,14 @@
             // btnPlcDataAdd
             // 
             this.btnPlcDataAdd.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnPlcDataAdd.BackgroundImage = global::TestbedDAQ.Properties.Resources.setting_bt_plus;
             this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
             this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlcDataAdd.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnPlcDataAdd.Location = new System.Drawing.Point(1189, 462);
+            this.btnPlcDataAdd.Location = new System.Drawing.Point(1341, 466);
             this.btnPlcDataAdd.Name = "btnPlcDataAdd";
-            this.btnPlcDataAdd.Size = new System.Drawing.Size(164, 37);
+            this.btnPlcDataAdd.Size = new System.Drawing.Size(88, 33);
             this.btnPlcDataAdd.TabIndex = 527;
-            this.btnPlcDataAdd.Text = "행 추가";
             this.btnPlcDataAdd.UseVisualStyleBackColor = false;
             this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
             // 
@@ -1457,6 +1459,29 @@
             this.del_datetime2.Name = "del_datetime2";
             this.del_datetime2.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
+            this.button1.Location = new System.Drawing.Point(1578, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(258, 29);
+            this.button1.TabIndex = 531;
+            this.button1.Text = "이미지";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(710, 454);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 532;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmMCManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -1464,6 +1489,8 @@
             this.BackgroundImage = global::TestbedDAQ.Properties.Resources.body_bottom02;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 928);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv2);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.dgv1);
@@ -1603,6 +1630,20 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnPlcDataAdd;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DataGridView dgv2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idx2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn path2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn origin_name2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn new_name2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn file_save2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn del_gubun2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reg_worker2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reg_datetime2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime2;
+        private System.Windows.Forms.ColumnHeader cck;
         private System.Windows.Forms.DataGridViewTextBoxColumn idx1;
         private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx1;
         private System.Windows.Forms.DataGridViewTextBoxColumn plc_idx1;
@@ -1646,19 +1687,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime1;
         private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime1;
-        private System.Windows.Forms.DataGridView dgv2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idx2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn path2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn origin_name2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn new_name2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn file_save2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn del_gubun2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reg_worker2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reg_datetime2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime2;
-        private System.Windows.Forms.ColumnHeader cck;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

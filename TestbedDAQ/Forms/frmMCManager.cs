@@ -31,15 +31,27 @@ namespace TestbedDAQ.Forms
         public static string _GlobalMcCode = string.Empty;
         private string sUser = "KMG";
 
+        private DataChangeEvent _DataChangeEvent;
+
+
+        private frmMain _frm;
+
         public frmMCManager()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
         private void frmMCManager_Load(object sender, EventArgs e)
         {
             try
             {
+                _DataChangeEvent = new DataChangeEvent();
+                _frm = new frmMain();
+
+
+                //_DataChangeEvent.MCDataChange("변경");
+                //_DataChangeEvent.OnPLCAddressChange += OnPlcAddressChange;
+
                 CreateInstance();
                 CtrInit();
                 ComboSetting();
@@ -473,7 +485,7 @@ namespace TestbedDAQ.Forms
                 if (_Query != null) _Query.Clear();
                 if (_SqlParams != null) _SqlParams = null;
                 _DB.CloseDB();
-                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                //this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
         }
 
@@ -1487,9 +1499,9 @@ namespace TestbedDAQ.Forms
             try
             {
                 Search(cbMcCode.Text);
-                //this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
                 CtrColor();
                 //DataGridViewVisible();
+                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             }
             catch (Exception ex)
             {
@@ -2139,46 +2151,47 @@ namespace TestbedDAQ.Forms
 
         private void lvwImage_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //foreach (ListViewItem item in lvwImage.Items)
-            //{
-            //    if (item.Checked)
-            //        item.Checked = false;
-            //}
+            string sPath = string.Empty;
+            string sName = string.Empty;
 
-            //string sPath = string.Empty;
-            //string sName = string.Empty;
+            try
+            {
+                if (lvwImage.Items.Count < 1) return;
 
-            //try
-            //{
-            //    if (lvwImage.Items.Count < 1) return;
-
-            //    //더블클릭하면 자동으로 체크되는 현상.... 임시 조치
-            //    var firstSelectedItem = lvwImage.SelectedItems[0];
-            //    firstSelectedItem.Checked = false;
+                //더블클릭하면 자동으로 체크되는 현상.... 임시 조치
+                var firstSelectedItem = lvwImage.SelectedItems[0];
+                firstSelectedItem.Checked = false;
 
 
-            //    if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
-            //        int iIndex = dgv2.CurrentRow.Index;
+                if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    int iIndex = dgv2.CurrentRow.Index;
 
-            //        sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
-            //        sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
+                    sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
+                    sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
 
-            //        frmMcImgView frm = new frmMcImgView(sPath, sName);
+                    frmMcImgView frm = new frmMcImgView(sPath, sName);
 
-            //        if (frm.ShowDialog() != DialogResult.OK)
-            //            return;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, ex.Source);
-            //    return;
-            //}
-            //finally
-            //{
+                    if (frm.ShowDialog() != DialogResult.OK)
+                        return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+                return;
+            }
+            finally
+            {
 
-            //}
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //DialogResult = DialogResult.OK;
+            //frmMain frm = (frmMain)Owner;
+            //frm._ReceiveData = "우헹헹";
         }
     }
 }
