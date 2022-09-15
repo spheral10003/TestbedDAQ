@@ -70,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(349, 23);
+            this.label2.Location = new System.Drawing.Point(344, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 24);
             this.label2.TabIndex = 8;

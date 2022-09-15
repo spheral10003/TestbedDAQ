@@ -458,16 +458,30 @@ namespace TestbedDAQ.Forms
                         ftpClient.Dispose();
 
                         //기존
-                        this.lvwImage.View = View.LargeIcon;
+                        //this.lvwImage.View = View.LargeIcon;
                         this._ImageList.ImageSize = new Size(256, 256);
                         this.lvwImage.LargeImageList = this._ImageList;
-                        lvwImage.CheckBoxes = true;
+                        //lvwImage.CheckBoxes = true;
+
+
+
 
                         for (int i = 0; i < _ImageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
                             item.ImageIndex = i;
                             this.lvwImage.Items.Add(item);
+                            //this.lvwImage.Items.Add(i.ToString() + "_1", i);
+
+                            //Button btn = new Button();
+                            //btn.Text = "Click Me";
+                            //Point p = this.lvwImage.Items[0].Position;
+                            //p.X -= 21;
+                            //p.Y += 51;
+                            //btn.Location = p;
+                            //btn.Size = this.lvwImage.Items[0].Bounds.Size;
+                            //this.lvwImage.Controls.Add(btn);
+
                         }
                     }
                     #endregion
@@ -1780,6 +1794,7 @@ namespace TestbedDAQ.Forms
                         sTran = TestbedDB.sqlConn.BeginTransaction();
 
                         #region 기존 이미지 데이터 숨김처리
+                        //file_info의 idx도 조건에 넣어야함
                         _Query = new StringBuilder();
                         _Query.Append("	update tb_file_info set	                                                                                            ");
                         _Query.Append("		 del_gubun = 'Y'		                                                                                        ");
@@ -1969,7 +1984,7 @@ namespace TestbedDAQ.Forms
             string sMod_datetime = string.Empty;
             string sDel_datetime = string.Empty;
 
-            int _lvwCount = 0;
+            //int _lvwCount = 0;
             #endregion
 
             try
@@ -1992,31 +2007,40 @@ namespace TestbedDAQ.Forms
                     return;
                 }
 
-                for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
-                {
-                    if (lvwImage.Items[row].Checked)
-                    {
-                        _lvwCount++;
-                    }
-                }
+                //for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
+                //{
+                //    if (lvwImage.Items[row].Checked)
+                //    {
+                //        _lvwCount++;
+                //    }
+                //}
 
-                if (_lvwCount < 1)
-                {
-                    MessageBox.Show("삭제할 이미지를 체크하여주십시오.");
-                    return;
-                }
+                //if (_lvwCount < 1)
+                //{
+                //    MessageBox.Show("삭제할 이미지를 체크하여주십시오.");
+                //    return;
+                //}
                 #endregion
 
                 if (MessageBox.Show("이미지를 삭제 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+
+                    int iIndex = dgv2.CurrentRow.Index;
+                    string sfileIdx = dgv2.Rows[iIndex].Cells["idx2"].Value.ToString();
+                    //MessageBox.Show(sMcIdx + "\n" + sfileIdx);
+
+
                     #region 그리드에서 데이터 숨기기
-                    for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
-                    {
-                        if (lvwImage.Items[row].Checked)
-                        {
-                            dgv2.Rows.RemoveAt(row);
-                        }
-                    }
+                    dgv2.Rows.RemoveAt(iIndex);
+                    //for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
+                    //{
+                    //    if (lvwImage.Items[row].Checked)
+                    //    {
+                    //        dgv2.Rows.RemoveAt(row);
+                    //    }
+                    //}
+                    MessageBox.Show(dgv2.Rows.Count.ToString());
+                    return;
                     #endregion
 
                     sTran = TestbedDB.sqlConn.BeginTransaction();
@@ -2046,7 +2070,7 @@ namespace TestbedDAQ.Forms
                     }
                     #endregion
 
-                    #region 이미지 데이터 삭제
+                    #region 이미지 데이터 처리 로직
                     if (dgv2.Rows.Count > 0)
                     {
                         #region 신규 이미지 데이터 INSERT 및 이미지 파일 저장
@@ -2158,22 +2182,26 @@ namespace TestbedDAQ.Forms
             {
                 if (lvwImage.Items.Count < 1) return;
 
+
+
                 //더블클릭하면 자동으로 체크되는 현상.... 임시 조치
                 var firstSelectedItem = lvwImage.SelectedItems[0];
                 firstSelectedItem.Checked = false;
 
-
-                if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (e.Button == MouseButtons.Left)
                 {
-                    int iIndex = dgv2.CurrentRow.Index;
+                    if (MessageBox.Show("이미지를 뷰어하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        int iIndex = dgv2.CurrentRow.Index;
 
-                    sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
-                    sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
+                        sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
+                        sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
 
-                    frmMcImgView frm = new frmMcImgView(sPath, sName);
+                        frmMcImgView frm = new frmMcImgView(sPath, sName);
 
-                    if (frm.ShowDialog() != DialogResult.OK)
-                        return;
+                        if (frm.ShowDialog() != DialogResult.OK)
+                            return;
+                    }
                 }
             }
             catch (Exception ex)
@@ -2192,6 +2220,102 @@ namespace TestbedDAQ.Forms
             //DialogResult = DialogResult.OK;
             //frmMain frm = (frmMain)Owner;
             //frm._ReceiveData = "우헹헹";
+        }
+
+        private void lvwImage_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Right)
+            {
+                var focusedItem = lvwImage.FocusedItem;
+
+                if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+                {
+                    //int iIndex = dgv2.CurrentRow.Index.ToString() == null ? -1 : dgv2.CurrentRow.Index;
+
+                    //if (iIndex == -1) return;
+
+                    //string sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
+                    //string sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
+                    //MessageBox.Show(sPath + "\n" + sName);
+
+                    //오른쪽 메뉴를 만듭니다
+                    ContextMenu m = new ContextMenu();
+
+                    //메뉴에 들어갈 아이템을 만듭니다
+                    MenuItem m1 = new MenuItem();
+
+                    m1.Text = "삭제하기";
+
+                    // 각 메뉴를 선택했을 때의 이벤트 핸들러를 작성합니다. 람다식을 이용해 작성하는것이 해법입니다.
+                    //검색 넣어줌
+                    m1.Click += (senders, es) =>
+                    {
+                        btnImgDel_Click(null, null);
+                            //외부 함수에 아까 선택했던 아이템의 정보를 넘겨줍니다.
+                            //friendFeedSearch(selectedNickname);
+                            //MessageBox.Show(sPath + "\n" + sName);
+                    };
+
+                    m.MenuItems.Add(m1);
+
+                    //현재 마우스가 위치한 장소에 메뉴를 띄워줍니다
+                    m.Show(lvwImage, new Point(e.X, e.Y));
+
+                    //GetRecommendFriends();
+
+                //ContextMenuStrip m = new ContextMenuStrip();
+                //m.Show(Cursor.Position);
+                }
+            }
+
+
+
+            //if (e.Button.Equals(MouseButtons.Right))
+            //{
+            //    string selectedNickname = lvwImage.GetItemAt(e.X, e.Y).Text;
+
+            //    //ListView.SelectedListViewItemCollection items = lvwImage.SelectedItems;
+            //    //ListViewItem lvItem = items[0];
+            //    //string add = lvItem.SubItems[0].Text;
+            //    //string lat = lvItem.SubItems[1].Text;
+            //    //string lng = lvItem.SubItems[2].Text;
+
+
+
+            //    int iIndex = dgv2.CurrentRow.Index == null ? -1 : dgv2.CurrentRow.Index;
+
+            //    if (iIndex == -1) return;
+
+            //    string sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
+            //    string sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
+            //    //MessageBox.Show(sPath + "\n" + sName);
+
+            //    //오른쪽 메뉴를 만듭니다
+            //    ContextMenu m = new ContextMenu();
+
+            //    //메뉴에 들어갈 아이템을 만듭니다
+            //    MenuItem m1 = new MenuItem();
+
+            //    m1.Text = "삭제하기";
+
+            //    // 각 메뉴를 선택했을 때의 이벤트 핸들러를 작성합니다. 람다식을 이용해 작성하는것이 해법입니다.
+            //    //검색 넣어줌
+            //    m1.Click += (senders, es) =>
+            //    {
+            //        btnImgDel_Click(null, null);
+            //        //외부 함수에 아까 선택했던 아이템의 정보를 넘겨줍니다.
+            //        //friendFeedSearch(selectedNickname);
+            //        //MessageBox.Show(sPath + "\n" + sName);
+            //    };
+
+            //    m.MenuItems.Add(m1);
+
+            //    //현재 마우스가 위치한 장소에 메뉴를 띄워줍니다
+            //    m.Show(lvwImage, new Point(e.X, e.Y));
+
+            //    //GetRecommendFriends();
+            //}
         }
     }
 }

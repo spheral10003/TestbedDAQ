@@ -89,6 +89,7 @@ namespace TestbedDAQ.Forms
 
             string sMcNewCode = string.Empty;
             string sMcOfferCode = string.Empty;
+
             try
             {
                 #region 변수에 값 할당
