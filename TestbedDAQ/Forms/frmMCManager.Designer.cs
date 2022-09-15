@@ -28,63 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbMcCode = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMcIdx = new System.Windows.Forms.TextBox();
             this.txtMcMaker = new System.Windows.Forms.TextBox();
             this.txtRemark = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.txtPlcMaker = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtPlcVersion = new System.Windows.Forms.TextBox();
             this.cbMcFac = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtMcDept = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtMotorCount = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtMcMakerDate = new System.Windows.Forms.TextBox();
             this.cbMcState = new System.Windows.Forms.ComboBox();
             this.txtPlcPort = new System.Windows.Forms.TextBox();
             this.txtPlcIp = new System.Windows.Forms.TextBox();
             this.txtMcSpec = new System.Windows.Forms.TextBox();
             this.txtMcName = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -92,18 +77,11 @@
             this.cck = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCodeCopy = new System.Windows.Forms.Button();
             this.btnImgSave = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
             this.txtMcVersion = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.txtMcStandard = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.txtPlcName = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.txtPlcType = new System.Windows.Forms.TextBox();
             this.txtPlcMakerDate = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtPlcToolVersion = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.txtPlcIdx = new System.Windows.Forms.TextBox();
@@ -159,7 +137,6 @@
             this.btnPlcDataRemove = new System.Windows.Forms.Button();
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnPlcDataAdd = new System.Windows.Forms.Button();
-            this.label25 = new System.Windows.Forms.Label();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mc_idx2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -173,7 +150,6 @@
             this.mod_worker2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mod_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.del_datetime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv2)).BeginInit();
@@ -186,9 +162,9 @@
             this.cbMcCode.FormattingEnabled = true;
             this.cbMcCode.IntegralHeight = false;
             this.cbMcCode.ItemHeight = 31;
-            this.cbMcCode.Location = new System.Drawing.Point(183, 19);
+            this.cbMcCode.Location = new System.Drawing.Point(209, 40);
             this.cbMcCode.Name = "cbMcCode";
-            this.cbMcCode.Size = new System.Drawing.Size(459, 39);
+            this.cbMcCode.Size = new System.Drawing.Size(492, 39);
             this.cbMcCode.TabIndex = 201;
             this.cbMcCode.SelectedIndexChanged += new System.EventHandler(this.cbCode_SelectedIndexChanged);
             this.cbMcCode.Leave += new System.EventHandler(this.Control_Leave);
@@ -197,7 +173,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(230, 448);
+            this.label4.Location = new System.Drawing.Point(244, 416);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 30);
             this.label4.TabIndex = 184;
@@ -210,7 +186,7 @@
             this.txtMcIdx.BackColor = System.Drawing.SystemColors.Window;
             this.txtMcIdx.Enabled = false;
             this.txtMcIdx.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtMcIdx.Location = new System.Drawing.Point(267, 448);
+            this.txtMcIdx.Location = new System.Drawing.Point(281, 416);
             this.txtMcIdx.Name = "txtMcIdx";
             this.txtMcIdx.Size = new System.Drawing.Size(94, 25);
             this.txtMcIdx.TabIndex = 183;
@@ -219,7 +195,7 @@
             // txtMcMaker
             // 
             this.txtMcMaker.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcMaker.Location = new System.Drawing.Point(184, 390);
+            this.txtMcMaker.Location = new System.Drawing.Point(212, 364);
             this.txtMcMaker.Name = "txtMcMaker";
             this.txtMcMaker.Size = new System.Drawing.Size(240, 39);
             this.txtMcMaker.TabIndex = 212;
@@ -227,57 +203,24 @@
             // txtRemark
             // 
             this.txtRemark.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtRemark.Location = new System.Drawing.Point(908, 231);
+            this.txtRemark.Location = new System.Drawing.Point(977, 253);
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
-            this.txtRemark.Size = new System.Drawing.Size(612, 193);
+            this.txtRemark.Size = new System.Drawing.Size(588, 150);
             this.txtRemark.TabIndex = 222;
-            // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.White;
-            this.label17.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label17.Location = new System.Drawing.Point(797, 214);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(110, 50);
-            this.label17.TabIndex = 176;
-            this.label17.Text = "비고";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtPlcMaker
             // 
             this.txtPlcMaker.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcMaker.Location = new System.Drawing.Point(908, 72);
+            this.txtPlcMaker.Location = new System.Drawing.Point(968, 91);
             this.txtPlcMaker.Name = "txtPlcMaker";
             this.txtPlcMaker.Size = new System.Drawing.Size(240, 39);
             this.txtPlcMaker.TabIndex = 216;
             // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.White;
-            this.label15.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label15.Location = new System.Drawing.Point(797, 66);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(110, 50);
-            this.label15.TabIndex = 174;
-            this.label15.Text = "PLC 제조사";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label13
-            // 
-            this.label13.BackColor = System.Drawing.Color.White;
-            this.label13.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label13.Location = new System.Drawing.Point(831, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 50);
-            this.label13.TabIndex = 173;
-            this.label13.Text = "PLC 버전";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtPlcVersion
             // 
             this.txtPlcVersion.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcVersion.Location = new System.Drawing.Point(908, 19);
+            this.txtPlcVersion.Location = new System.Drawing.Point(968, 39);
             this.txtPlcVersion.Name = "txtPlcVersion";
             this.txtPlcVersion.Size = new System.Drawing.Size(240, 39);
             this.txtPlcVersion.TabIndex = 214;
@@ -290,121 +233,33 @@
             this.cbMcFac.FormattingEnabled = true;
             this.cbMcFac.IntegralHeight = false;
             this.cbMcFac.ItemHeight = 31;
-            this.cbMcFac.Location = new System.Drawing.Point(183, 125);
+            this.cbMcFac.Location = new System.Drawing.Point(209, 130);
             this.cbMcFac.Name = "cbMcFac";
-            this.cbMcFac.Size = new System.Drawing.Size(591, 39);
+            this.cbMcFac.Size = new System.Drawing.Size(620, 39);
             this.cbMcFac.TabIndex = 203;
             this.cbMcFac.Leave += new System.EventHandler(this.Control_Leave);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label1.Location = new System.Drawing.Point(62, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 50);
-            this.label1.TabIndex = 172;
-            this.label1.Text = "사업장";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtMcDept
             // 
             this.txtMcDept.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcDept.Location = new System.Drawing.Point(184, 337);
+            this.txtMcDept.Location = new System.Drawing.Point(212, 318);
             this.txtMcDept.Name = "txtMcDept";
             this.txtMcDept.Size = new System.Drawing.Size(240, 39);
             this.txtMcDept.TabIndex = 210;
-            // 
-            // label18
-            // 
-            this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label18.Location = new System.Drawing.Point(67, 384);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(110, 50);
-            this.label18.TabIndex = 161;
-            this.label18.Text = "설비 제조사";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.Location = new System.Drawing.Point(439, 331);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 50);
-            this.label6.TabIndex = 160;
-            this.label6.Text = "설비 상태";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.White;
-            this.label10.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.Location = new System.Drawing.Point(797, 119);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(110, 50);
-            this.label10.TabIndex = 159;
-            this.label10.Text = "PLC IP";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.Location = new System.Drawing.Point(66, 172);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 50);
-            this.label9.TabIndex = 158;
-            this.label9.Text = "설비 위치";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(67, 331);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 50);
-            this.label8.TabIndex = 157;
-            this.label8.Text = "설비 작업 부서";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtMotorCount
             // 
             this.txtMotorCount.BackColor = System.Drawing.SystemColors.Window;
             this.txtMotorCount.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtMotorCount.Location = new System.Drawing.Point(184, 284);
+            this.txtMotorCount.Location = new System.Drawing.Point(212, 268);
             this.txtMotorCount.Name = "txtMotorCount";
             this.txtMotorCount.Size = new System.Drawing.Size(240, 39);
             this.txtMotorCount.TabIndex = 208;
             // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.Location = new System.Drawing.Point(66, 278);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(110, 50);
-            this.label12.TabIndex = 156;
-            this.label12.Text = "설비 모터 수";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(439, 278);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 50);
-            this.label7.TabIndex = 155;
-            this.label7.Text = "설비규격";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtMcMakerDate
             // 
             this.txtMcMakerDate.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcMakerDate.Location = new System.Drawing.Point(549, 390);
+            this.txtMcMakerDate.Location = new System.Drawing.Point(603, 368);
             this.txtMcMakerDate.Name = "txtMcMakerDate";
             this.txtMcMakerDate.Size = new System.Drawing.Size(225, 39);
             this.txtMcMakerDate.TabIndex = 213;
@@ -416,7 +271,7 @@
             this.cbMcState.FormattingEnabled = true;
             this.cbMcState.IntegralHeight = false;
             this.cbMcState.ItemHeight = 31;
-            this.cbMcState.Location = new System.Drawing.Point(549, 337);
+            this.cbMcState.Location = new System.Drawing.Point(604, 323);
             this.cbMcState.Name = "cbMcState";
             this.cbMcState.Size = new System.Drawing.Size(225, 39);
             this.cbMcState.TabIndex = 211;
@@ -425,7 +280,7 @@
             // txtPlcPort
             // 
             this.txtPlcPort.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcPort.Location = new System.Drawing.Point(1280, 125);
+            this.txtPlcPort.Location = new System.Drawing.Point(1340, 142);
             this.txtPlcPort.Name = "txtPlcPort";
             this.txtPlcPort.Size = new System.Drawing.Size(240, 39);
             this.txtPlcPort.TabIndex = 219;
@@ -433,7 +288,7 @@
             // txtPlcIp
             // 
             this.txtPlcIp.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcIp.Location = new System.Drawing.Point(908, 125);
+            this.txtPlcIp.Location = new System.Drawing.Point(968, 153);
             this.txtPlcIp.Name = "txtPlcIp";
             this.txtPlcIp.Size = new System.Drawing.Size(240, 39);
             this.txtPlcIp.TabIndex = 218;
@@ -441,7 +296,7 @@
             // txtMcSpec
             // 
             this.txtMcSpec.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtMcSpec.Location = new System.Drawing.Point(549, 284);
+            this.txtMcSpec.Location = new System.Drawing.Point(605, 268);
             this.txtMcSpec.Name = "txtMcSpec";
             this.txtMcSpec.Size = new System.Drawing.Size(225, 39);
             this.txtMcSpec.TabIndex = 209;
@@ -450,55 +305,11 @@
             // 
             this.txtMcName.BackColor = System.Drawing.SystemColors.Window;
             this.txtMcName.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcName.Location = new System.Drawing.Point(183, 72);
+            this.txtMcName.Location = new System.Drawing.Point(209, 85);
             this.txtMcName.Name = "txtMcName";
-            this.txtMcName.Size = new System.Drawing.Size(591, 39);
+            this.txtMcName.Size = new System.Drawing.Size(621, 39);
             this.txtMcName.TabIndex = 202;
             this.txtMcName.Leave += new System.EventHandler(this.Control_Leave);
-            // 
-            // label11
-            // 
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label11.Location = new System.Drawing.Point(1178, 119);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(89, 50);
-            this.label11.TabIndex = 154;
-            this.label11.Text = "PLC PORT";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.Location = new System.Drawing.Point(438, 384);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(110, 50);
-            this.label5.TabIndex = 153;
-            this.label5.Text = "설비 제조일자";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(67, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 50);
-            this.label3.TabIndex = 152;
-            this.label3.Text = "설비명";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label2.Location = new System.Drawing.Point(67, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 50);
-            this.label2.TabIndex = 151;
-            this.label2.Text = "설비코드";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnRemove
             // 
@@ -507,7 +318,7 @@
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnRemove.Location = new System.Drawing.Point(1340, 847);
+            this.btnRemove.Location = new System.Drawing.Point(1385, 804);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(180, 55);
             this.btnRemove.TabIndex = 343;
@@ -521,7 +332,7 @@
             this.btnNew.FlatAppearance.BorderSize = 0;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnNew.Location = new System.Drawing.Point(968, 847);
+            this.btnNew.Location = new System.Drawing.Point(1013, 804);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(180, 55);
             this.btnNew.TabIndex = 341;
@@ -535,7 +346,7 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnSave.Location = new System.Drawing.Point(1154, 847);
+            this.btnSave.Location = new System.Drawing.Point(1199, 804);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 55);
             this.btnSave.TabIndex = 342;
@@ -548,9 +359,9 @@
             this.lvwImage.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.cck});
             this.lvwImage.HideSelection = false;
-            this.lvwImage.Location = new System.Drawing.Point(1542, 91);
+            this.lvwImage.Location = new System.Drawing.Point(1593, 81);
             this.lvwImage.Name = "lvwImage";
-            this.lvwImage.Size = new System.Drawing.Size(337, 805);
+            this.lvwImage.Size = new System.Drawing.Size(254, 700);
             this.lvwImage.TabIndex = 194;
             this.lvwImage.UseCompatibleStateImageBehavior = false;
             this.lvwImage.SelectedIndexChanged += new System.EventHandler(this.lvwImage_SelectedIndexChanged);
@@ -568,9 +379,9 @@
             this.btnCodeCopy.FlatAppearance.BorderSize = 0;
             this.btnCodeCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCodeCopy.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnCodeCopy.Location = new System.Drawing.Point(648, 19);
+            this.btnCodeCopy.Location = new System.Drawing.Point(704, 39);
             this.btnCodeCopy.Name = "btnCodeCopy";
-            this.btnCodeCopy.Size = new System.Drawing.Size(126, 42);
+            this.btnCodeCopy.Size = new System.Drawing.Size(124, 42);
             this.btnCodeCopy.TabIndex = 301;
             this.btnCodeCopy.UseVisualStyleBackColor = false;
             this.btnCodeCopy.Click += new System.EventHandler(this.btnCodeCopy_Click);
@@ -582,96 +393,41 @@
             this.btnImgSave.FlatAppearance.BorderSize = 0;
             this.btnImgSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgSave.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnImgSave.Location = new System.Drawing.Point(1578, 55);
+            this.btnImgSave.Location = new System.Drawing.Point(1664, 44);
             this.btnImgSave.Name = "btnImgSave";
             this.btnImgSave.Size = new System.Drawing.Size(110, 30);
             this.btnImgSave.TabIndex = 500;
             this.btnImgSave.UseVisualStyleBackColor = false;
             this.btnImgSave.Click += new System.EventHandler(this.btnImgSave_Click);
             // 
-            // label16
-            // 
-            this.label16.BackColor = System.Drawing.Color.White;
-            this.label16.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label16.Location = new System.Drawing.Point(438, 172);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(110, 50);
-            this.label16.TabIndex = 502;
-            this.label16.Text = "설비 타입";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtMcVersion
             // 
             this.txtMcVersion.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcVersion.Location = new System.Drawing.Point(184, 231);
+            this.txtMcVersion.Location = new System.Drawing.Point(212, 223);
             this.txtMcVersion.Name = "txtMcVersion";
             this.txtMcVersion.Size = new System.Drawing.Size(240, 39);
             this.txtMcVersion.TabIndex = 206;
             // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label19.Location = new System.Drawing.Point(67, 225);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 50);
-            this.label19.TabIndex = 504;
-            this.label19.Text = "설비 버전";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtMcStandard
             // 
             this.txtMcStandard.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcStandard.Location = new System.Drawing.Point(549, 231);
+            this.txtMcStandard.Location = new System.Drawing.Point(605, 223);
             this.txtMcStandard.Name = "txtMcStandard";
             this.txtMcStandard.Size = new System.Drawing.Size(225, 39);
             this.txtMcStandard.TabIndex = 207;
             // 
-            // label20
-            // 
-            this.label20.BackColor = System.Drawing.Color.White;
-            this.label20.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label20.Location = new System.Drawing.Point(438, 225);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(110, 50);
-            this.label20.TabIndex = 506;
-            this.label20.Text = "설비 표준";
-            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.White;
-            this.label21.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label21.Location = new System.Drawing.Point(1168, 13);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(99, 50);
-            this.label21.TabIndex = 508;
-            this.label21.Text = "PLC 명칭";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtPlcName
             // 
             this.txtPlcName.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcName.Location = new System.Drawing.Point(1280, 19);
+            this.txtPlcName.Location = new System.Drawing.Point(1340, 42);
             this.txtPlcName.Name = "txtPlcName";
             this.txtPlcName.Size = new System.Drawing.Size(240, 39);
             this.txtPlcName.TabIndex = 215;
             // 
-            // label22
-            // 
-            this.label22.BackColor = System.Drawing.Color.White;
-            this.label22.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label22.Location = new System.Drawing.Point(808, 172);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(99, 50);
-            this.label22.TabIndex = 510;
-            this.label22.Text = "PLC 타입";
-            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtPlcType
             // 
             this.txtPlcType.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcType.Location = new System.Drawing.Point(908, 178);
+            this.txtPlcType.Location = new System.Drawing.Point(968, 198);
             this.txtPlcType.Name = "txtPlcType";
             this.txtPlcType.Size = new System.Drawing.Size(240, 39);
             this.txtPlcType.TabIndex = 220;
@@ -679,37 +435,15 @@
             // txtPlcMakerDate
             // 
             this.txtPlcMakerDate.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcMakerDate.Location = new System.Drawing.Point(1280, 72);
+            this.txtPlcMakerDate.Location = new System.Drawing.Point(1340, 91);
             this.txtPlcMakerDate.Name = "txtPlcMakerDate";
             this.txtPlcMakerDate.Size = new System.Drawing.Size(240, 39);
             this.txtPlcMakerDate.TabIndex = 217;
             // 
-            // label23
-            // 
-            this.label23.BackColor = System.Drawing.Color.White;
-            this.label23.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label23.Location = new System.Drawing.Point(1163, 66);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(104, 50);
-            this.label23.TabIndex = 512;
-            this.label23.Text = "PLC 제조일자";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.label14.Location = new System.Drawing.Point(1176, 172);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(91, 50);
-            this.label14.TabIndex = 514;
-            this.label14.Text = "PLC 툴버전";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtPlcToolVersion
             // 
             this.txtPlcToolVersion.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F);
-            this.txtPlcToolVersion.Location = new System.Drawing.Point(1280, 178);
+            this.txtPlcToolVersion.Location = new System.Drawing.Point(1340, 198);
             this.txtPlcToolVersion.Name = "txtPlcToolVersion";
             this.txtPlcToolVersion.Size = new System.Drawing.Size(240, 39);
             this.txtPlcToolVersion.TabIndex = 221;
@@ -718,7 +452,7 @@
             // 
             this.label24.BackColor = System.Drawing.Color.White;
             this.label24.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label24.Location = new System.Drawing.Point(376, 448);
+            this.label24.Location = new System.Drawing.Point(390, 416);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(76, 30);
             this.label24.TabIndex = 517;
@@ -731,7 +465,7 @@
             this.txtPlcIdx.BackColor = System.Drawing.SystemColors.Window;
             this.txtPlcIdx.Enabled = false;
             this.txtPlcIdx.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.txtPlcIdx.Location = new System.Drawing.Point(458, 448);
+            this.txtPlcIdx.Location = new System.Drawing.Point(472, 416);
             this.txtPlcIdx.Name = "txtPlcIdx";
             this.txtPlcIdx.Size = new System.Drawing.Size(89, 25);
             this.txtPlcIdx.TabIndex = 516;
@@ -744,7 +478,7 @@
             this.cbMcType.FormattingEnabled = true;
             this.cbMcType.IntegralHeight = false;
             this.cbMcType.ItemHeight = 31;
-            this.cbMcType.Location = new System.Drawing.Point(549, 178);
+            this.cbMcType.Location = new System.Drawing.Point(605, 178);
             this.cbMcType.Name = "cbMcType";
             this.cbMcType.Size = new System.Drawing.Size(225, 39);
             this.cbMcType.TabIndex = 205;
@@ -752,7 +486,7 @@
             // txtMcLocation
             // 
             this.txtMcLocation.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMcLocation.Location = new System.Drawing.Point(184, 178);
+            this.txtMcLocation.Location = new System.Drawing.Point(212, 178);
             this.txtMcLocation.Name = "txtMcLocation";
             this.txtMcLocation.Size = new System.Drawing.Size(240, 39);
             this.txtMcLocation.TabIndex = 204;
@@ -764,7 +498,7 @@
             this.btnFileUpload.FlatAppearance.BorderSize = 0;
             this.btnFileUpload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFileUpload.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnFileUpload.Location = new System.Drawing.Point(432, 856);
+            this.btnFileUpload.Location = new System.Drawing.Point(496, 813);
             this.btnFileUpload.Name = "btnFileUpload";
             this.btnFileUpload.Size = new System.Drawing.Size(164, 37);
             this.btnFileUpload.TabIndex = 522;
@@ -779,7 +513,7 @@
             this.btnFileRemove.FlatAppearance.BorderSize = 0;
             this.btnFileRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFileRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnFileRemove.Location = new System.Drawing.Point(602, 856);
+            this.btnFileRemove.Location = new System.Drawing.Point(666, 813);
             this.btnFileRemove.Name = "btnFileRemove";
             this.btnFileRemove.Size = new System.Drawing.Size(164, 37);
             this.btnFileRemove.TabIndex = 523;
@@ -795,7 +529,7 @@
             this.btnImgDel.FlatAppearance.BorderSize = 0;
             this.btnImgDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgDel.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnImgDel.Location = new System.Drawing.Point(1726, 55);
+            this.btnImgDel.Location = new System.Drawing.Point(1737, 45);
             this.btnImgDel.Name = "btnImgDel";
             this.btnImgDel.Size = new System.Drawing.Size(110, 30);
             this.btnImgDel.TabIndex = 524;
@@ -806,14 +540,14 @@
             // 
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Noto Sans KR Regular", 9F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Noto Sans KR Regular", 9F);
+            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle27;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx1,
@@ -859,34 +593,34 @@
             this.mod_worker1,
             this.mod_datetime1,
             this.del_datetime1});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv1.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgv1.Location = new System.Drawing.Point(72, 505);
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle38.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle38.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv1.DefaultCellStyle = dataGridViewCellStyle38;
+            this.dgv1.Location = new System.Drawing.Point(74, 453);
             this.dgv1.Name = "dgv1";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv1.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv1.RowHeadersDefaultCellStyle = dataGridViewCellStyle39;
             this.dgv1.RowTemplate.Height = 23;
-            this.dgv1.Size = new System.Drawing.Size(1448, 339);
+            this.dgv1.Size = new System.Drawing.Size(1491, 335);
             this.dgv1.TabIndex = 526;
             // 
             // idx1
             // 
             this.idx1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.idx1.DataPropertyName = "idx";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.idx1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.idx1.DefaultCellStyle = dataGridViewCellStyle28;
             this.idx1.HeaderText = "순번";
             this.idx1.Name = "idx1";
             this.idx1.ReadOnly = true;
@@ -896,8 +630,8 @@
             // 
             this.mc_idx1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.mc_idx1.DataPropertyName = "mc_idx";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.mc_idx1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mc_idx1.DefaultCellStyle = dataGridViewCellStyle29;
             this.mc_idx1.HeaderText = "mc_idx";
             this.mc_idx1.Name = "mc_idx1";
             this.mc_idx1.ReadOnly = true;
@@ -907,8 +641,8 @@
             // 
             this.plc_idx1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.plc_idx1.DataPropertyName = "plc_idx";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.plc_idx1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.plc_idx1.DefaultCellStyle = dataGridViewCellStyle30;
             this.plc_idx1.HeaderText = "plc_idx";
             this.plc_idx1.Name = "plc_idx1";
             this.plc_idx1.Width = 72;
@@ -1179,8 +913,8 @@
             // 
             this.remark1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.remark1.DataPropertyName = "remark";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.remark1.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.remark1.DefaultCellStyle = dataGridViewCellStyle31;
             this.remark1.HeaderText = "비고";
             this.remark1.Name = "remark1";
             this.remark1.Width = 52;
@@ -1189,8 +923,8 @@
             // 
             this.del_gubun1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.del_gubun1.DataPropertyName = "del_gubun";
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.del_gubun1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_gubun1.DefaultCellStyle = dataGridViewCellStyle32;
             this.del_gubun1.HeaderText = "삭제유무";
             this.del_gubun1.Name = "del_gubun1";
             this.del_gubun1.ReadOnly = true;
@@ -1200,8 +934,8 @@
             // 
             this.reg_worker1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.reg_worker1.DataPropertyName = "reg_worker";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.reg_worker1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_worker1.DefaultCellStyle = dataGridViewCellStyle33;
             this.reg_worker1.HeaderText = "등록자";
             this.reg_worker1.Name = "reg_worker1";
             this.reg_worker1.ReadOnly = true;
@@ -1211,8 +945,8 @@
             // 
             this.reg_datetime1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.reg_datetime1.DataPropertyName = "reg_datetime";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.reg_datetime1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_datetime1.DefaultCellStyle = dataGridViewCellStyle34;
             this.reg_datetime1.HeaderText = "등록일시";
             this.reg_datetime1.Name = "reg_datetime1";
             this.reg_datetime1.ReadOnly = true;
@@ -1222,8 +956,8 @@
             // 
             this.mod_worker1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.mod_worker1.DataPropertyName = "mod_worker";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.mod_worker1.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_worker1.DefaultCellStyle = dataGridViewCellStyle35;
             this.mod_worker1.HeaderText = "수정자";
             this.mod_worker1.Name = "mod_worker1";
             this.mod_worker1.ReadOnly = true;
@@ -1233,8 +967,8 @@
             // 
             this.mod_datetime1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.mod_datetime1.DataPropertyName = "mod_datetime";
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.mod_datetime1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_datetime1.DefaultCellStyle = dataGridViewCellStyle36;
             this.mod_datetime1.HeaderText = "수정일시";
             this.mod_datetime1.Name = "mod_datetime1";
             this.mod_datetime1.ReadOnly = true;
@@ -1244,8 +978,8 @@
             // 
             this.del_datetime1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.del_datetime1.DataPropertyName = "del_datetime";
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.del_datetime1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_datetime1.DefaultCellStyle = dataGridViewCellStyle37;
             this.del_datetime1.HeaderText = "삭제일시";
             this.del_datetime1.Name = "del_datetime1";
             this.del_datetime1.ReadOnly = true;
@@ -1258,7 +992,7 @@
             this.btnPlcDataRemove.FlatAppearance.BorderSize = 0;
             this.btnPlcDataRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlcDataRemove.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnPlcDataRemove.Location = new System.Drawing.Point(1435, 466);
+            this.btnPlcDataRemove.Location = new System.Drawing.Point(1471, 418);
             this.btnPlcDataRemove.Name = "btnPlcDataRemove";
             this.btnPlcDataRemove.Size = new System.Drawing.Size(88, 33);
             this.btnPlcDataRemove.TabIndex = 528;
@@ -1271,7 +1005,7 @@
             this.btnExcel.FlatAppearance.BorderSize = 0;
             this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcel.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnExcel.Location = new System.Drawing.Point(1022, 462);
+            this.btnExcel.Location = new System.Drawing.Point(1106, 414);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(164, 37);
             this.btnExcel.TabIndex = 525;
@@ -1287,36 +1021,25 @@
             this.btnPlcDataAdd.FlatAppearance.BorderSize = 0;
             this.btnPlcDataAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlcDataAdd.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnPlcDataAdd.Location = new System.Drawing.Point(1341, 466);
+            this.btnPlcDataAdd.Location = new System.Drawing.Point(1377, 416);
             this.btnPlcDataAdd.Name = "btnPlcDataAdd";
             this.btnPlcDataAdd.Size = new System.Drawing.Size(88, 33);
             this.btnPlcDataAdd.TabIndex = 527;
             this.btnPlcDataAdd.UseVisualStyleBackColor = false;
             this.btnPlcDataAdd.Click += new System.EventHandler(this.btnPlcDataAdd_Click);
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.White;
-            this.label25.Font = new System.Drawing.Font("Noto Sans KR Regular", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.Location = new System.Drawing.Point(72, 468);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(156, 31);
-            this.label25.TabIndex = 529;
-            this.label25.Text = "PLC 데이터 주소";
-            // 
             // dgv2
             // 
             this.dgv2.AllowUserToAddRows = false;
             this.dgv2.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Noto Sans KR Regular", 9F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Noto Sans KR Regular", 9F);
+            dataGridViewCellStyle40.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle40;
             this.dgv2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idx2,
@@ -1331,10 +1054,10 @@
             this.mod_worker2,
             this.mod_datetime2,
             this.del_datetime2});
-            this.dgv2.Location = new System.Drawing.Point(73, 566);
+            this.dgv2.Location = new System.Drawing.Point(74, 501);
             this.dgv2.Name = "dgv2";
             this.dgv2.RowTemplate.Height = 23;
-            this.dgv2.Size = new System.Drawing.Size(1448, 258);
+            this.dgv2.Size = new System.Drawing.Size(1491, 258);
             this.dgv2.TabIndex = 530;
             this.dgv2.Visible = false;
             this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
@@ -1343,8 +1066,8 @@
             // 
             this.idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.idx2.DataPropertyName = "idx";
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.idx2.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.idx2.DefaultCellStyle = dataGridViewCellStyle41;
             this.idx2.HeaderText = "순번";
             this.idx2.Name = "idx2";
             this.idx2.ReadOnly = true;
@@ -1353,8 +1076,8 @@
             // 
             this.mc_idx2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.mc_idx2.DataPropertyName = "mc_idx";
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.mc_idx2.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mc_idx2.DefaultCellStyle = dataGridViewCellStyle42;
             this.mc_idx2.HeaderText = "mc_idx";
             this.mc_idx2.Name = "mc_idx2";
             this.mc_idx2.ReadOnly = true;
@@ -1363,8 +1086,8 @@
             // 
             this.path2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.path2.DataPropertyName = "path";
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.path2.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.path2.DefaultCellStyle = dataGridViewCellStyle43;
             this.path2.HeaderText = "파일경로";
             this.path2.Name = "path2";
             this.path2.ReadOnly = true;
@@ -1373,8 +1096,8 @@
             // 
             this.origin_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.origin_name2.DataPropertyName = "origin_name";
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.origin_name2.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.origin_name2.DefaultCellStyle = dataGridViewCellStyle44;
             this.origin_name2.HeaderText = "원본파일명";
             this.origin_name2.Name = "origin_name2";
             this.origin_name2.ReadOnly = true;
@@ -1383,8 +1106,8 @@
             // 
             this.new_name2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.new_name2.DataPropertyName = "new_name";
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.new_name2.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.new_name2.DefaultCellStyle = dataGridViewCellStyle45;
             this.new_name2.HeaderText = "변경된 파일명";
             this.new_name2.Name = "new_name2";
             this.new_name2.ReadOnly = true;
@@ -1393,8 +1116,8 @@
             // 
             this.file_save2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.file_save2.DataPropertyName = "file_save";
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.file_save2.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.file_save2.DefaultCellStyle = dataGridViewCellStyle46;
             this.file_save2.HeaderText = "파일 저장 유무";
             this.file_save2.Name = "file_save2";
             this.file_save2.ReadOnly = true;
@@ -1403,8 +1126,8 @@
             // 
             this.del_gubun2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.del_gubun2.DataPropertyName = "del_gubun";
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.del_gubun2.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_gubun2.DefaultCellStyle = dataGridViewCellStyle47;
             this.del_gubun2.HeaderText = "삭제 유무";
             this.del_gubun2.Name = "del_gubun2";
             this.del_gubun2.ReadOnly = true;
@@ -1413,8 +1136,8 @@
             // 
             this.reg_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.reg_worker2.DataPropertyName = "reg_worker";
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.reg_worker2.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_worker2.DefaultCellStyle = dataGridViewCellStyle48;
             this.reg_worker2.HeaderText = "등록자";
             this.reg_worker2.Name = "reg_worker2";
             this.reg_worker2.ReadOnly = true;
@@ -1423,8 +1146,8 @@
             // 
             this.reg_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.reg_datetime2.DataPropertyName = "reg_datetime";
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.reg_datetime2.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.reg_datetime2.DefaultCellStyle = dataGridViewCellStyle49;
             this.reg_datetime2.HeaderText = "등록일시";
             this.reg_datetime2.Name = "reg_datetime2";
             this.reg_datetime2.ReadOnly = true;
@@ -1433,8 +1156,8 @@
             // 
             this.mod_worker2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.mod_worker2.DataPropertyName = "mod_worker";
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.mod_worker2.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_worker2.DefaultCellStyle = dataGridViewCellStyle50;
             this.mod_worker2.HeaderText = "수정자";
             this.mod_worker2.Name = "mod_worker2";
             this.mod_worker2.ReadOnly = true;
@@ -1443,8 +1166,8 @@
             // 
             this.mod_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.mod_datetime2.DataPropertyName = "mod_datetime";
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.mod_datetime2.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.mod_datetime2.DefaultCellStyle = dataGridViewCellStyle51;
             this.mod_datetime2.HeaderText = "수정일시";
             this.mod_datetime2.Name = "mod_datetime2";
             this.mod_datetime2.ReadOnly = true;
@@ -1453,28 +1176,15 @@
             // 
             this.del_datetime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.del_datetime2.DataPropertyName = "del_datetime";
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
-            this.del_datetime2.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Noto Sans KR Regular", 8.999999F);
+            this.del_datetime2.DefaultCellStyle = dataGridViewCellStyle52;
             this.del_datetime2.HeaderText = "삭제시간";
             this.del_datetime2.Name = "del_datetime2";
             this.del_datetime2.ReadOnly = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.button1.Location = new System.Drawing.Point(1578, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(258, 29);
-            this.button1.TabIndex = 531;
-            this.button1.Text = "이미지";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(710, 454);
+            this.button2.Location = new System.Drawing.Point(626, 418);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 532;
@@ -1486,13 +1196,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::TestbedDAQ.Properties.Resources.body_bottom02;
+            this.BackgroundImage = global::TestbedDAQ.Properties.Resources.설비관리전체시안_NEW;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1920, 880);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv2);
-            this.Controls.Add(this.label25);
             this.Controls.Add(this.dgv1);
             this.Controls.Add(this.btnPlcDataRemove);
             this.Controls.Add(this.btnExcel);
@@ -1504,19 +1212,12 @@
             this.Controls.Add(this.cbMcType);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.txtPlcIdx);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.txtPlcToolVersion);
             this.Controls.Add(this.txtPlcMakerDate);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.txtPlcType);
-            this.Controls.Add(this.label21);
             this.Controls.Add(this.txtPlcName);
             this.Controls.Add(this.txtMcStandard);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.txtMcVersion);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.btnImgSave);
             this.Controls.Add(this.btnCodeCopy);
             this.Controls.Add(this.lvwImage);
@@ -1528,32 +1229,17 @@
             this.Controls.Add(this.txtMcIdx);
             this.Controls.Add(this.txtMcMaker);
             this.Controls.Add(this.txtRemark);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.txtPlcMaker);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtPlcVersion);
             this.Controls.Add(this.cbMcFac);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMcDept);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtMotorCount);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.txtMcMakerDate);
             this.Controls.Add(this.cbMcState);
             this.Controls.Add(this.txtPlcPort);
             this.Controls.Add(this.txtPlcIp);
             this.Controls.Add(this.txtMcSpec);
             this.Controls.Add(this.txtMcName);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMCManager";
@@ -1573,50 +1259,28 @@
         private System.Windows.Forms.TextBox txtMcIdx;
         private System.Windows.Forms.TextBox txtMcMaker;
         private System.Windows.Forms.TextBox txtRemark;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtPlcMaker;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtPlcVersion;
         private System.Windows.Forms.ComboBox cbMcFac;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMcDept;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMotorCount;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMcMakerDate;
         private System.Windows.Forms.ComboBox cbMcState;
         private System.Windows.Forms.TextBox txtPlcPort;
         private System.Windows.Forms.TextBox txtPlcIp;
         private System.Windows.Forms.TextBox txtMcSpec;
         private System.Windows.Forms.TextBox txtMcName;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.ListView lvwImage;
         private System.Windows.Forms.Button btnCodeCopy;
         private System.Windows.Forms.Button btnImgSave;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtMcVersion;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtMcStandard;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtPlcName;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtPlcType;
         private System.Windows.Forms.TextBox txtPlcMakerDate;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtPlcToolVersion;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtPlcIdx;
@@ -1629,7 +1293,6 @@
         private System.Windows.Forms.Button btnPlcDataRemove;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnPlcDataAdd;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataGridView dgv2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idx2;
         private System.Windows.Forms.DataGridViewTextBoxColumn mc_idx2;
@@ -1687,7 +1350,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_worker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn mod_datetime1;
         private System.Windows.Forms.DataGridViewTextBoxColumn del_datetime1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
 }

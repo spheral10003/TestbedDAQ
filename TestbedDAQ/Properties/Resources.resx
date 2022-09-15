@@ -124,8 +124,14 @@
   <data name="body_bottom02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\body_bottom02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="button_ing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_ing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="setting_bg02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McSetting\setting_bg02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_bt_imageminus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McSetting\setting_bt_imageminus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="design_sian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\design_sian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,11 +154,11 @@
   <data name="setting_bt_saveas3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McSetting\setting_bt_saveas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icon_wifi_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_wifi_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="tab02_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tab02_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="setting_bt_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McSetting\setting_bt_minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setting_bt_imageplus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McSetting\setting_bt_imageplus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,20 +166,20 @@
   <data name="icon_Foundation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_Foundation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting_bt_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McSetting\setting_bt_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_wifi_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_wifi_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_side" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_side.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_warring" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_warring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="setting_bg03" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McSetting\setting_bg03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ssss" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ssss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,9 +211,6 @@
   <data name="body_bottom01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\body_bottom01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tab01_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tab01_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="setting_bt_saveas2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McSetting\setting_bt_saveas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,20 +226,20 @@
   <data name="title_bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\title_bar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting_bt_saveas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McSetting\setting_bt_saveas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="setting_bg03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McSetting\setting_bg03.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="container" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\container.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_wifi_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_wifi_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tab01_on" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tab01_on.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="setting_bt_saveas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McSetting\setting_bt_saveas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button_ing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\button_ing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="setting_bt_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McSetting\setting_bt_minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="all_body" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\all_body.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,8 +256,8 @@
   <data name="setting_bt_save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McSetting\setting_bt_save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting_bt_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McSetting\setting_bt_plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="button_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\button_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_notice_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_notice_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -265,7 +268,7 @@
   <data name="tab01_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tab01_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="setting_bt_imageminus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\McSetting\setting_bt_imageminus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="설비관리전체시안_NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\McSetting\설비관리전체시안_NEW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
