@@ -306,6 +306,7 @@
     <Content Include="Resources\McSetting\setting_bt_saveas.png" />
     <Content Include="Resources\McSetting\설비관리_sian.png" />
     <Content Include="Resources\McSetting\설비관리전체시안.png" />
+    <Content Include="Resources\McSetting\설비관리전체시안_NEW.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
