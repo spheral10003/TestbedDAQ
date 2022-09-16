@@ -2222,7 +2222,9 @@ namespace TestbedDAQ.Forms
                 {
                     contextMenuStrip1.ShowImageMargin = true;
                     contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-                    ToolStripMenuItem1.Image = System.Drawing.Image.FromFile(@"D:\test\그림1.jpg");
+                    var bmp = new Bitmap(Properties.Resources.setting_bt_minus1);
+
+                    ToolStripMenuItem1.Image = System.Drawing.Image.FromFile(bmp.ToString());
 
                     contextMenuStrip1.Show(lvwImage, new Point(e.X, e.Y));
 

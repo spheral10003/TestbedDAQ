@@ -271,4 +271,7 @@
   <data name="설비관리전체시안_NEW" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\McSetting\설비관리전체시안_NEW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="setting_bt_minus2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\mcsetting\setting_bt_minus2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
