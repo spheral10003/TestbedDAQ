@@ -48,10 +48,6 @@ namespace TestbedDAQ.Forms
                 _DataChangeEvent = new DataChangeEvent();
                 _frm = new frmMain();
 
-
-                //_DataChangeEvent.MCDataChange("변경");
-                //_DataChangeEvent.OnPLCAddressChange += OnPlcAddressChange;
-
                 CreateInstance();
                 CtrInit();
                 ComboSetting();
@@ -459,7 +455,7 @@ namespace TestbedDAQ.Forms
 
                         //기존
                         //this.lvwImage.View = View.LargeIcon;
-                        this._ImageList.ImageSize = new Size(256, 256);
+                        this._ImageList.ImageSize = new Size(255, 256);
                         this.lvwImage.LargeImageList = this._ImageList;
                         //lvwImage.CheckBoxes = true;
 
@@ -788,9 +784,9 @@ namespace TestbedDAQ.Forms
                 //콤보박스 텍스트 내용을 초기화 시킬려면 스타일을 드롭다운으로 변경후
                 //콤보박스 텍스트 값을 공백으로 변경한다.
                 this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                this.cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                this.cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                this.cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                //this.cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                //this.cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                //this.cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
 
                 this.cbMcCode.Text = string.Empty;
                 this.cbMcFac.Text = string.Empty;
@@ -1631,7 +1627,7 @@ namespace TestbedDAQ.Forms
                 #endregion
 
                 #region  저장 로직
-                if (MessageBox.Show("삭제 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("설비 정보를 삭제 하시겠습니까?", "YN", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     sTran = TestbedDB.sqlConn.BeginTransaction();
 
@@ -2215,13 +2211,6 @@ namespace TestbedDAQ.Forms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            //DialogResult = DialogResult.OK;
-            //frmMain frm = (frmMain)Owner;
-            //frm._ReceiveData = "우헹헹";
-        }
-
         private void lvwImage_MouseClick(object sender, MouseEventArgs e)
         {
 
@@ -2231,41 +2220,33 @@ namespace TestbedDAQ.Forms
 
                 if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
                 {
-                    //int iIndex = dgv2.CurrentRow.Index.ToString() == null ? -1 : dgv2.CurrentRow.Index;
+                    contextMenuStrip1.ShowImageMargin = true;
+                    contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+                    ToolStripMenuItem1.Image = System.Drawing.Image.FromFile(@"D:\test\그림1.jpg");
 
-                    //if (iIndex == -1) return;
+                    contextMenuStrip1.Show(lvwImage, new Point(e.X, e.Y));
 
-                    //string sPath = dgv2.Rows[iIndex].Cells["path2"].Value.ToString();
-                    //string sName = dgv2.Rows[iIndex].Cells["new_name2"].Value.ToString();
-                    //MessageBox.Show(sPath + "\n" + sName);
+                    ////오른쪽 메뉴를 만듭니다
+                    //ContextMenu m = new ContextMenu();
 
-                    //오른쪽 메뉴를 만듭니다
-                    ContextMenu m = new ContextMenu();
+                    ////메뉴에 들어갈 아이템을 만듭니다
+                    //MenuItem m1 = new MenuItem();
 
-                    //메뉴에 들어갈 아이템을 만듭니다
-                    MenuItem m1 = new MenuItem();
+                    //m1.Text = "삭제하기";
 
-                    m1.Text = "삭제하기";
+                    //// 각 메뉴를 선택했을 때의 이벤트 핸들러를 작성합니다. 람다식을 이용해 작성하는것이 해법입니다.
+                    ////검색 넣어줌
+                    //m1.Click += (senders, es) =>
+                    //{
+                    //    btnImgDel_Click(null, null);
+                    //};
 
-                    // 각 메뉴를 선택했을 때의 이벤트 핸들러를 작성합니다. 람다식을 이용해 작성하는것이 해법입니다.
-                    //검색 넣어줌
-                    m1.Click += (senders, es) =>
-                    {
-                        btnImgDel_Click(null, null);
-                            //외부 함수에 아까 선택했던 아이템의 정보를 넘겨줍니다.
-                            //friendFeedSearch(selectedNickname);
-                            //MessageBox.Show(sPath + "\n" + sName);
-                    };
+                    //m.MenuItems.Add(m1);
 
-                    m.MenuItems.Add(m1);
+                    ////현재 마우스가 위치한 장소에 메뉴를 띄워줍니다
+                    //m.Show(lvwImage, new Point(e.X, e.Y));
 
-                    //현재 마우스가 위치한 장소에 메뉴를 띄워줍니다
-                    m.Show(lvwImage, new Point(e.X, e.Y));
-
-                    //GetRecommendFriends();
-
-                //ContextMenuStrip m = new ContextMenuStrip();
-                //m.Show(Cursor.Position);
+                    ////GetRecommendFriends();
                 }
             }
 
@@ -2316,6 +2297,37 @@ namespace TestbedDAQ.Forms
 
             //    //GetRecommendFriends();
             //}
+        }
+
+        private void ComboTextCenter(object sender, DrawItemEventArgs e)
+        {
+            // By using Sender, one method could handle multiple ComboBoxes
+            ComboBox cbx = sender as ComboBox;
+            if (cbx != null)
+            {
+                // Always draw the background
+                e.DrawBackground();
+
+                // Drawing one of the items?
+                if (e.Index >= 0)
+                {
+                    // Set the string alignment.  Choices are Center, Near and Far
+                    StringFormat sf = new StringFormat();
+                    sf.LineAlignment = StringAlignment.Center;
+                    sf.Alignment = StringAlignment.Center;
+
+                    // Set the Brush to ComboBox ForeColor to maintain any ComboBox color settings
+                    // Assumes Brush is solid
+                    Brush brush = new SolidBrush(cbx.ForeColor);
+
+                    // If drawing highlighted selection, change brush
+                    if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+                        brush = SystemBrushes.HighlightText;
+
+                    // Draw the string
+                    e.Graphics.DrawString(cbx.Items[e.Index].ToString(), cbx.Font, brush, e.Bounds, sf);
+                }
+            }
         }
     }
 }

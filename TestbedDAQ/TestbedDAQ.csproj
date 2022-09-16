@@ -299,6 +299,7 @@
     <Content Include="Resources\McSetting\setting_bt_imageminus.png" />
     <Content Include="Resources\McSetting\setting_bt_imageplus.png" />
     <Content Include="Resources\McSetting\setting_bt_minus.png" />
+    <Content Include="Resources\McSetting\setting_bt_minus2.png" />
     <Content Include="Resources\McSetting\setting_bt_new.png" />
     <Content Include="Resources\McSetting\setting_bt_plus.png" />
     <Content Include="Resources\McSetting\setting_bt_remov.png" />
