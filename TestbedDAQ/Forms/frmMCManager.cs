@@ -31,23 +31,15 @@ namespace TestbedDAQ.Forms
         public static string _GlobalMcCode = string.Empty;
         private string sUser = "KMG";
 
-        private DataChangeEvent _DataChangeEvent;
-
-
-        private frmMain _frm;
-
         public frmMCManager()
         {
-            InitializeComponent();          
+            InitializeComponent();
         }
 
         private void frmMCManager_Load(object sender, EventArgs e)
         {
             try
             {
-                _DataChangeEvent = new DataChangeEvent();
-                _frm = new frmMain();
-
                 CreateInstance();
                 CtrInit();
                 ComboSetting();
@@ -92,10 +84,6 @@ namespace TestbedDAQ.Forms
             try
             {
                 #region 설비정보 초기화 및 셋팅
-                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                this.cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                this.cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                this.cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
                 txtMcIdx.Text = string.Empty;
                 cbMcCode.Text = string.Empty;
@@ -122,6 +110,12 @@ namespace TestbedDAQ.Forms
                 txtPlcPort.Text = string.Empty;
                 txtPlcType.Text = string.Empty;
                 txtPlcToolVersion.Text = string.Empty;
+
+                cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
                 #endregion
 
                 #region TAB1 PLC 그리드1 초기화
@@ -459,15 +453,14 @@ namespace TestbedDAQ.Forms
                         this.lvwImage.LargeImageList = this._ImageList;
                         //lvwImage.CheckBoxes = true;
 
-
-
-
                         for (int i = 0; i < _ImageList.Images.Count; i++)
                         {
                             ListViewItem item = new ListViewItem();
                             item.ImageIndex = i;
                             this.lvwImage.Items.Add(item);
                             //this.lvwImage.Items.Add(i.ToString() + "_1", i);
+
+
 
                             //Button btn = new Button();
                             //btn.Text = "Click Me";
@@ -477,7 +470,6 @@ namespace TestbedDAQ.Forms
                             //btn.Location = p;
                             //btn.Size = this.lvwImage.Items[0].Bounds.Size;
                             //this.lvwImage.Controls.Add(btn);
-
                         }
                     }
                     #endregion
@@ -779,23 +771,32 @@ namespace TestbedDAQ.Forms
         {
             try
             {
+
+                //콤보박스 텍스트 초기화 시키는거 에러있음... 고쳐야함
+
+
+
                 CtrInit();
 
-                //콤보박스 텍스트 내용을 초기화 시킬려면 스타일을 드롭다운으로 변경후
-                //콤보박스 텍스트 값을 공백으로 변경한다.
-                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                //this.cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                //this.cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                //this.cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-
-                this.cbMcCode.Text = string.Empty;
                 this.cbMcFac.Text = string.Empty;
                 this.cbMcState.Text = string.Empty;
                 this.cbMcType.Text = string.Empty;
 
-                this.cbMcCode.Focus();
-                this.cbMcCode.Select();
+                //콤보박스 텍스트 내용을 초기화 시킬려면 스타일을 드롭다운으로 변경후
+                //콤보박스 텍스트 값을 공백으로 변경한다.
 
+                cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                cbMcCode.Text = string.Empty;
+                cbMcFac.Text = string.Empty;
+                cbMcState.Text = string.Empty;
+                cbMcType.Text = string.Empty;
+
+
+                cbMcCode.Focus();
+                cbMcCode.Select();
                 CtrColor();
             }
             catch (Exception ex)
@@ -2023,20 +2024,16 @@ namespace TestbedDAQ.Forms
 
                     int iIndex = dgv2.CurrentRow.Index;
                     string sfileIdx = dgv2.Rows[iIndex].Cells["idx2"].Value.ToString();
-                    //MessageBox.Show(sMcIdx + "\n" + sfileIdx);
-
 
                     #region 그리드에서 데이터 숨기기
                     dgv2.Rows.RemoveAt(iIndex);
-                    //for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
-                    //{
-                    //    if (lvwImage.Items[row].Checked)
-                    //    {
-                    //        dgv2.Rows.RemoveAt(row);
-                    //    }
-                    //}
-                    MessageBox.Show(dgv2.Rows.Count.ToString());
-                    return;
+                    for (int row = lvwImage.Items.Count - 1; row >= 0; row--)
+                    {
+                        if (lvwImage.Items[row].Checked)
+                        {
+                            dgv2.Rows.RemoveAt(row);
+                        }
+                    }
                     #endregion
 
                     sTran = TestbedDB.sqlConn.BeginTransaction();
@@ -2220,35 +2217,36 @@ namespace TestbedDAQ.Forms
 
                 if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
                 {
-                    contextMenuStrip1.ShowImageMargin = true;
-                    contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-                    var bmp = new Bitmap(Properties.Resources.setting_bt_minus1);
+                    //contextMenuStrip1.ShowImageMargin = true;
+                    //contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
 
-                    ToolStripMenuItem1.Image = System.Drawing.Image.FromFile(bmp.ToString());
+                    //var bmp = new Bitmap(Properties.Resources.setting_bt_minus1);
 
-                    contextMenuStrip1.Show(lvwImage, new Point(e.X, e.Y));
+                    //ToolStripMenuItem1.Image = System.Drawing.Image.FromFile(bmp.ToString());
 
-                    ////오른쪽 메뉴를 만듭니다
-                    //ContextMenu m = new ContextMenu();
+                    //contextMenuStrip1.Show(lvwImage, new Point(e.X, e.Y));
 
-                    ////메뉴에 들어갈 아이템을 만듭니다
-                    //MenuItem m1 = new MenuItem();
+                    //오른쪽 메뉴를 만듭니다
+                    ContextMenu m = new ContextMenu();
 
-                    //m1.Text = "삭제하기";
+                    //메뉴에 들어갈 아이템을 만듭니다
+                    MenuItem m1 = new MenuItem();
 
-                    //// 각 메뉴를 선택했을 때의 이벤트 핸들러를 작성합니다. 람다식을 이용해 작성하는것이 해법입니다.
-                    ////검색 넣어줌
-                    //m1.Click += (senders, es) =>
-                    //{
-                    //    btnImgDel_Click(null, null);
-                    //};
+                    m1.Text = "삭제하기";
 
-                    //m.MenuItems.Add(m1);
+                    // 각 메뉴를 선택했을 때의 이벤트 핸들러를 작성합니다. 람다식을 이용해 작성하는것이 해법입니다.
+                    //검색 넣어줌
+                    m1.Click += (senders, es) =>
+                    {
+                        btnImgDel_Click(null, null);
+                    };
 
-                    ////현재 마우스가 위치한 장소에 메뉴를 띄워줍니다
-                    //m.Show(lvwImage, new Point(e.X, e.Y));
+                    m.MenuItems.Add(m1);
 
-                    ////GetRecommendFriends();
+                    //현재 마우스가 위치한 장소에 메뉴를 띄워줍니다
+                    m.Show(lvwImage, new Point(e.X, e.Y));
+
+                    //GetRecommendFriends();
                 }
             }
 

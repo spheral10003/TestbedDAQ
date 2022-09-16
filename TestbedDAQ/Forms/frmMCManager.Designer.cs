@@ -442,7 +442,7 @@
             this.btnImgSave.FlatAppearance.BorderSize = 0;
             this.btnImgSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImgSave.Font = new System.Drawing.Font("Noto Sans KR Regular", 12F);
-            this.btnImgSave.Location = new System.Drawing.Point(1737, 44);
+            this.btnImgSave.Location = new System.Drawing.Point(1697, 44);
             this.btnImgSave.Name = "btnImgSave";
             this.btnImgSave.Size = new System.Drawing.Size(110, 30);
             this.btnImgSave.TabIndex = 500;
@@ -614,6 +614,7 @@
             this.btnImgDel.Size = new System.Drawing.Size(110, 30);
             this.btnImgDel.TabIndex = 524;
             this.btnImgDel.UseVisualStyleBackColor = false;
+            this.btnImgDel.Visible = false;
             this.btnImgDel.Click += new System.EventHandler(this.btnImgDel_Click);
             // 
             // btnPlcDataRemove
@@ -685,10 +686,10 @@
             this.mod_worker2,
             this.mod_datetime2,
             this.del_datetime2});
-            this.dgv2.Location = new System.Drawing.Point(643, 498);
+            this.dgv2.Location = new System.Drawing.Point(105, 498);
             this.dgv2.Name = "dgv2";
             this.dgv2.RowTemplate.Height = 23;
-            this.dgv2.Size = new System.Drawing.Size(756, 258);
+            this.dgv2.Size = new System.Drawing.Size(1416, 258);
             this.dgv2.TabIndex = 530;
             this.dgv2.Visible = false;
             this.dgv2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv2_CellClick);
