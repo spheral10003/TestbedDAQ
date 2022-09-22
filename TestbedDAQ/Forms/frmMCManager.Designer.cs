@@ -257,6 +257,7 @@
             this.cbMcFac.Name = "cbMcFac";
             this.cbMcFac.Size = new System.Drawing.Size(618, 41);
             this.cbMcFac.TabIndex = 203;
+            this.cbMcFac.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Combo_KeyPress);
             this.cbMcFac.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // txtMcDept
@@ -309,6 +310,7 @@
             this.cbMcState.Size = new System.Drawing.Size(226, 39);
             this.cbMcState.TabIndex = 211;
             this.cbMcState.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboTextCenter);
+            this.cbMcState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Combo_KeyPress);
             this.cbMcState.Leave += new System.EventHandler(this.Control_Leave);
             // 
             // txtPlcPort
@@ -558,6 +560,7 @@
             this.cbMcType.Size = new System.Drawing.Size(226, 39);
             this.cbMcType.TabIndex = 205;
             this.cbMcType.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.ComboTextCenter);
+            this.cbMcType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Combo_KeyPress);
             // 
             // txtMcLocation
             // 

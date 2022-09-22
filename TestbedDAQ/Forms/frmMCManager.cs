@@ -84,7 +84,6 @@ namespace TestbedDAQ.Forms
             try
             {
                 #region 설비정보 초기화 및 셋팅
-
                 txtMcIdx.Text = string.Empty;
                 cbMcCode.Text = string.Empty;
                 txtMcName.Text = string.Empty;
@@ -111,11 +110,7 @@ namespace TestbedDAQ.Forms
                 txtPlcType.Text = string.Empty;
                 txtPlcToolVersion.Text = string.Empty;
 
-                cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-                cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-
+                this.Invoke(new Action(delegate () { cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList; }));
                 #endregion
 
                 #region TAB1 PLC 그리드1 초기화
@@ -771,29 +766,13 @@ namespace TestbedDAQ.Forms
         {
             try
             {
-
-                //콤보박스 텍스트 초기화 시키는거 에러있음... 고쳐야함
-
-
-
                 CtrInit();
 
-                this.cbMcFac.Text = string.Empty;
-                this.cbMcState.Text = string.Empty;
-                this.cbMcType.Text = string.Empty;
-
-                //콤보박스 텍스트 내용을 초기화 시킬려면 스타일을 드롭다운으로 변경후
-                //콤보박스 텍스트 값을 공백으로 변경한다.
-
-                cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                cbMcFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                cbMcState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-                cbMcType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+                this.Invoke(new Action(delegate () { cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown; }));
                 cbMcCode.Text = string.Empty;
                 cbMcFac.Text = string.Empty;
                 cbMcState.Text = string.Empty;
                 cbMcType.Text = string.Empty;
-
 
                 cbMcCode.Focus();
                 cbMcCode.Select();
@@ -1511,8 +1490,7 @@ namespace TestbedDAQ.Forms
             {
                 Search(cbMcCode.Text);
                 CtrColor();
-                //DataGridViewVisible();
-                this.cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+                this.Invoke(new Action(delegate () { cbMcCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList; }));
             }
             catch (Exception ex)
             {
@@ -2327,6 +2305,23 @@ namespace TestbedDAQ.Forms
                     // Draw the string
                     e.Graphics.DrawString(cbx.Items[e.Index].ToString(), cbx.Font, brush, e.Bounds, sf);
                 }
+            }
+        }
+
+        private void Combo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.Source);
+                return;
+            }
+            finally
+            {
+
             }
         }
     }
